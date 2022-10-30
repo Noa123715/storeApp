@@ -1,10 +1,11 @@
-﻿
-namespace Dal.DO;
-/// <summary>
+﻿/// <summary>
 /// structor for enum
 /// </summary>
-    public struct Enums
-    {
 
+namespace Dal.DO;
+
+    public enum eCategory
+    {
+        exesorice, women, men, children    
     }
 
