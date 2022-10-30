@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace />
+    <BaseOutputPath>Dal</BaseOutputPath>
 	  <Project Sdk="Microsoft.NET.Sdk">
 		  <PropertyGroup>
 			  <TargetFramework>net6.0</TargetFramework>
@@ -14,8 +15,11 @@
 			  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 			  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 			  <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
-			  <RootNamespace />
+			  <RootNamespace>Dal</RootNamespace>
 		  </PropertyGroup>
 	  </Project>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DalFacade\DalFacade.csproj" />
+  </ItemGroup>
 </Project>
