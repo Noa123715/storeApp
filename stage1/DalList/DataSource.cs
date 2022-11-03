@@ -31,9 +31,6 @@ namespace Dal;
         public static int OrderItemId { get { return orderItemId++; } }
         private static int orderId = 1;
         public static int OrderId { get { return orderId++; } }
-     
-     
-
     }
     private static void initProductData()
     {
@@ -74,20 +71,8 @@ namespace Dal;
                 product.inStock = instock;
             }
             productList[Config.productIdx++] = product;
-
-
-
-
-
-
-
-
-
-
-        }
-      
+        } 
     }
-
 
     private static void initOrdersData()
     {

@@ -1,5 +1,7 @@
 ﻿/// <summary>
-/// 
+/// An entity that defines an order 
+/// and holds the details of the customer that ordered 
+/// and the details of the order
 /// </summary>
 
 namespace Dal.DO;

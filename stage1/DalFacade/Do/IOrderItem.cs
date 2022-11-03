@@ -1,5 +1,6 @@
 ﻿/// <summary>
-/// 
+/// An entity that defines an item in an order 
+/// and holds the item and order details
 /// </summary>
 
 namespace Dal.DO;

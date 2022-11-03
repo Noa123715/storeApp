@@ -4,8 +4,8 @@
 
 namespace Dal.DO;
 
-    public enum eCategory
-    {
-    accessories, women, men, children , beauty 
+public enum eCategory
+{
+    accessories, women, men, children, beauty
 }
 

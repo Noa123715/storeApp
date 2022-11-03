@@ -1,4 +1,6 @@
-﻿/// <summary>
+﻿
+using System;
+/// <summary>
 /// 
 /// </summary>
 
@@ -16,12 +18,12 @@ public struct DalOrder
     {
         for (int i = 0; i < DataSource.Config.orderIdx; i++)
         {
-            if (DataSource.Config.orderList[i].ID == id)
+            if (DataSource.orderList[i].ID == id)
             {
-                return DataSource.Config.orderList[i];
+                return DataSource.orderList[i];
             }
         }
-        throw new Exception("The order was not found in the list");
+        throw new System.Exception("The order was not found in the list");
     }
 
     public static IOrder[] ReadOrder()
@@ -29,7 +31,7 @@ public struct DalOrder
         IOrder[] newOrderList = new IOrder[DataSource.Config.orderIdx];
         for (int i = 0; i < DataSource.Config.orderIdx; i++)
         {
-            newOrderList[i] = DataSource.Config.orderList[i];
+            newOrderList[i] = DataSource.orderList[i];
         }
         return newOrderList;
     }
@@ -38,32 +40,32 @@ public struct DalOrder
     {
         for (int i = 0; i < DataSource.Config.orderIdx - 1; i++)
         {
-            if (DataSource.Config.orderList[i].ID == id)
+            if (DataSource.orderList[i].ID == id)
             {
-                DataSource.Config.orderList[i] = DataSource.Config.orderList[DataSource.Config.orderIdx];
+                DataSource.orderList[i] = DataSource.orderList[DataSource.Config.orderIdx];
                 DataSource.Config.orderIdx--;
                 return;
             }
         }
-        if (DataSource.Config.orderList[DataSource.Config.orderIdx] == id)
+        if (DataSource.orderList[DataSource.Config.orderIdx] == id)
         {
             DataSource.Config.orderIdx--;
             return;
         }
-        throw new Exception("The order was not found in the list");
+        throw new System.Exception("The order was not found in the list");
     }
 
     public static void UpDateOrder(IOrder UpOrder)
     {
         for (int i = 0; i < DataSource.Config.orderIdx; i++)
         {
-            if (DataSource.Config.orderList[i].ID == UpOrder.ID)
+            if (DataSource.orderList[i].ID == UpOrder.ID)
             {
-                DataSource.Config.orderList[i] = UpOrder;
+                DataSource.orderList[i] = UpOrder;
                 return;
             }
         }
-        throw new Exception("The order was not found in the list");
+        throw new System.Exception("The order was not found in the list");
     }
 }
 

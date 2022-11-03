@@ -16,12 +16,12 @@ public struct DalProduct
     {
         for (int i = 0; i < DataSource.Config.ProductIdx; i++)
         {
-            if (DataSource.Config.productList[i].ID == id)
+            if (DataSource.productList[i].ID == id)
             {
-                return DataSource.Config.productList[i];
+                return DataSource.productList[i];
             }
         }
-        throw new Exception("The product was not found in the list");
+        throw new System.Exception("The product was not found in the list");
     }
 
     public static IProduct[] ReadProduct()
@@ -29,7 +29,7 @@ public struct DalProduct
         IProduct[] newProductList = new IProduct[DataSource.Config.productIdx];
         for (int i = 0; i < DataSource.Config.productIdx; i++)
         {
-            newProductList[i] = DataSource.Config.productList[i];
+            newProductList[i] = DataSource.productList[i];
         }
         return newProductList;
     }
@@ -38,32 +38,32 @@ public struct DalProduct
     {
         for (int i = 0; i < DataSource.Config.productIdx - 1; i++)
         {
-            if (DataSource.Config.productList[i].ID == id)
+            if (DataSource.productList[i].ID == id)
             {
-                DataSource.Config.productList[i] = DataSource.Config.productList[DataSource.Config.productIdx];
+                DataSource.productList[i] = DataSource.productList[DataSource.Config.productIdx];
                 DataSource.Config.productIdx--;
                 return;
             }
         }
-        if (DataSource.Config.productList[DataSource.Config.productIdx] == id)
+        if (DataSource.productList[DataSource.Config.productIdx] == id)
         {
             DataSource.Config.productIdx--;
             return;
         }
-        throw new Exception("The product was not found in the list");
+        throw new System.Exception("The product was not found in the list");
     }
 
     public static void UpDateProduct(IProduct UpProduct)
     {
         for (int i = 0; i < DataSource.Config.productIdx; i++)
         {
-            if (DataSource.Config.productList[i].ID == UpProduct.ID)
+            if (DataSource.productList[i].ID == UpProduct.ID)
             {
-                DataSource.Config.productList[i] = UpProduct;
+                DataSource.productList[i] = UpProduct;
                 return;
             }
         }
-        throw new Exception("The product was not found in the list");
+        throw new System.Exception("The product was not found in the list");
     }
 }
 
