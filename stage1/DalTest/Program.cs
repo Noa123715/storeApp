@@ -1,9 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System;
+using System.Collections.Specialized;
 using System.IO;
 
-namespace Stage0;
+namespace Stage1;
 
 partial class program 
 {
@@ -11,10 +12,12 @@ partial class program
     {
         Exit, Order, OrderItem, Product
     }
-    /// אפשר לעשות ENUM של מספרים למרות שהדרישה היא אותיות כפי הנראה
-
+    
     static void main(string[] arg)
     {
+        IOrder order = new IOrder();
+        IOrderItem orderItem = new IOrderItem();
+        IProduct product = new IProduct();
         Console.WriteLine("Please enter a number: \r\n0- to exit\r\n1- to check the Order\r\n2- to check the Order Item\r\n3- to check the Product");
         int exitCode = Console.ReadLine();
         switch (exitCode)
@@ -22,34 +25,45 @@ partial class program
             case eOptions.Exit:
                 break;
             case eOptions.Order:
-                OrderCRUD();
+                OrderCRUD(order);
                 break;
             case eOptions.OrderItem:
-                OrderItemCRUD();
+                OrderItemCRUD(orderItem);
                 break;
             case eOptions.Product:
-                ProductCRUD();
+                ProductCRUD(product);
                 break;
             default:
-                throw new System.Exception("Wrong number!");
+                throw new Exception("Wrong number!");
                 break;
         }
     }
 
-    private static void OrderCRUD()
+    private static void OrderCRUD(IOrder order)
     {
         Console.WriteLine("Please enter a letter: \r\na- Adding an object to the list\r\nb- Object display by ID\r\nc- entity list view\r\nd- object update\r\ne- Deleting an object from the list");
         char choice = Console.ReadLine();
-       ///צריך לעשות SWITCH
+        switch (choice)
+        {
+            case 'a':
+                Console.WriteLine("Please enter the order details: \nId, Name, Mail, Adress, Date Order");
+                int id = Console.ReadLine();
+                string name = Console.ReadLine();
+                string mail = Console.ReadLine();
+                string adress = Console.ReadLine();
+                DateTime dateOrder = Console.ReadLine();
+            default:
+                break;
+        }
     }
 
-    private static void OrderItemCRUD()
+    private static void OrderItemCRUD(IOrderItem orderItem)
     {
         Console.WriteLine("Please enter a letter: \r\na- Adding an object to the list\r\nb- Object display by ID\r\nc- entity list view\r\nd- object update\r\ne- Deleting an object from the list");
         char choice = Console.ReadLine();
     }
 
-    private static void ProductCRUD()
+    private static void ProductCRUD(IProduct product)
     {
         Console.WriteLine("Please enter a letter: \r\na- Adding an object to the list\r\nb- Object display by ID\r\nc- entity list view\r\nd- object update\r\ne- Deleting an object from the list");
         char choice = Console.ReadLine();

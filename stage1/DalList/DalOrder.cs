@@ -1,9 +1,8 @@
-﻿
-using System;
-/// <summary>
+﻿/// <summary>
 /// 
 /// </summary>
 
+using System;
 namespace Dal;
 
 public struct DalOrder
@@ -23,7 +22,7 @@ public struct DalOrder
                 return DataSource.orderList[i];
             }
         }
-        throw new System.Exception("The order was not found in the list");
+        throw new Exception("The order was not found in the list");
     }
 
     public static IOrder[] ReadOrder()
@@ -52,7 +51,7 @@ public struct DalOrder
             DataSource.Config.orderIdx--;
             return;
         }
-        throw new System.Exception("The order was not found in the list");
+        throw new Exception("The order was not found in the list");
     }
 
     public static void UpDateOrder(IOrder UpOrder)
@@ -65,7 +64,7 @@ public struct DalOrder
                 return;
             }
         }
-        throw new System.Exception("The order was not found in the list");
+        throw new Exception("The order was not found in the list");
     }
 }
 
