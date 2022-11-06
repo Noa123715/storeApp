@@ -1,10 +1,10 @@
-﻿
+
 using System;
 /// <summary>
 /// 
 /// </summary>
-
-namespace Dal;
+using Dal,DO;
+namespace DalList;
 
 public struct DalOrderItem
 {
