@@ -1,9 +1,10 @@
-﻿/// <summary>
+/// <summary>
 /// 
 /// </summary>
 
 using System;
-namespace Dal;
+using DalList.DO;
+namespace DalList;
 
 public struct DalOrder
 {

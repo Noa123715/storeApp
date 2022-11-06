@@ -1,8 +1,8 @@
-﻿/// <summary>
+/// <summary>
 /// 
 /// </summary>
-
-namespace Dal;
+using Dal.DO;
+namespace DalList;
 
 public struct DalProduct
 {
