@@ -14,9 +14,16 @@ public enum eCategories
 }
 
 public enum eOptions
-    {
-        Exit,
-        Order,
-        OrderItem,
-        Product
-    }
+{
+    Exit,
+    Order,
+    OrderItem,
+    Product
+}
+
+public enum eUpDate 
+{ 
+    Name = 1,
+    Mail,
+    Adress
+}
