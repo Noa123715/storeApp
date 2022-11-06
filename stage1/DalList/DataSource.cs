@@ -3,15 +3,15 @@
 /// <summary>
 /// 
 /// </summary>
-
-namespace Dal;
+using Dal.DO;
+namespace DalList;
 
     internal static class DataSource
     {
     const int numOfproducts = 50;
     const int numOfOrders = 100;
     const int numOfOrderItems = 200;
-    public static IProduct[] productList = new IProduct[numOfProducts];
+    public static IProduct[] productList = new IProduct[numOfproducts];
     public static IOrder[] orderList = new IOrder[numOfOrders];
     public static IOrderItem[] orderItemList = new IOrderItem[numOfOrderItems];
     static DataSource() { s_Initialize(); }
@@ -47,7 +47,7 @@ namespace Dal;
 
         for(int i=0; i < 10; i++)
         {
-            IProduct product = new DalProduct();
+            IProduct product = new IProduct();
             do
             {
                 exists = false;
@@ -55,20 +55,20 @@ namespace Dal;
                 barcode = rand.Next(100000, 10000000);
                 for (int j = 0; j < Config.productIdx; j++)
                 {
-                    if (productList[j] = barcode)
-                        exists = true
+                    if (productList[j].ID == barcode)
+                        exists = true;
                 }
             } while (exists);
             product.ID = barcode;
             (product.Name, product.Category) = productNames[i];
             price = rand.Next(1000, 30000);
             product.Price = price;
-            if (i = 0)
-                product.inStock = 0;
+            if (i == 0)
+                product.InStock = 0;
             else
             {
                 instock = rand.Next(0, 1000);
-                product.inStock = instock;
+                product.InStock = instock;
             }
             productList[Config.productIdx++] = product;
         } 
@@ -79,20 +79,20 @@ namespace Dal;
         Random random = new Random();
         string[] customerNames = { "Donald Trump", "Bill Gates ", "Elon Musk", "Jeff Bezos", "Mark Zuckerberg", "undro macclum", "Hadar Muchtar", "Binyamin Netanyahu", "Lis Taras", "Queen Elizabeth", "Magen Merkel", "kate Middleton", "Ivanka trump", "Dan Gertler", "Liora Ofer", "Sari Aricsone", "Marev Michaeli", "Itamar Ben Gvir", "poor Benet", "Eisenkot the dreamer" };
         string[] customerEmails = { "DonaldTrump@gmail.com", "billgates@gmail.com", "Elonmusk@gmail.com", "jeffbezos@gmail.com", "markzuckerberg@gmail.com", "undromacclum@gmail.com", "hadarmuchtar@gmail.com", "binyaminnetanyahu@gmail.com", "listaras@gmail.com", "queenelizabeth@gmail.com", "magenmerkel@gmail.com", "katemiddleton@gmail.com", "ivankatrump@gmail.com", "dangertler@gmail.com", "Liorafer@gmail.com", "sariaricsone@gmail.com", "marevmichaeli@gmail.com", "itamarbengvir@gmail.com", "poorbenet@gmail.com", "thedreamer@gmail.com" };
-        string[] customerAddresses = { "Seychelles", "Savion", "Bakingham", "Balfur", "Prison", "Ramla Lod market", "Dubai", "Homeless (address not available)", "Assisted living", "Hostel", "Ein Kerem, 7th floor"ת"Seychelles", "Savion", "Bakingham", "Balfur", "Neve Tirtza Prison", "Ramla Lod market", "Dubai", "Homeless (address not available)", "Assisted living", "Hostel", "Ein Kerem, 7th floor" };
+        string[] customerAddresses = { "Seychelles", "Savion", "Bakingham", "Balfur", "Prison", "Ramla Lod market", "Dubai", "Homeless (address not available)", "Assisted living", "Hostel", "Ein Kerem, 7th floor","Seychelles", "Savion", "Bakingham", "Balfur", "Neve Tirtza Prison", "Ramla Lod market", "Dubai", "Homeless (address not available)", "Assisted living", "Hostel", "Ein Kerem, 7th floor" };
         
         for (int i = 0; i < 20; i++)
         {
-            Order order = new Order();
+            IOrder order = new IOrder();
             order.ID = Config.OrderId;
             order.CustomerName = customerNames[i];
             order.CustomerEmail = customerEmails[i];
-            order.CustomerAddress = customerAddresses[i];
+            order.CustomerAdress = customerAddresses[i];
 
             
             DateTime startDate = new DateTime(2022, 1, 1);
             int range = (DateTime.Today - startDate).Days;
-            order.OrderDate = startDate.AddDays(randome.Next(range));
+            order.OrderDate = startDate.AddDays(random.Next(range));
 
 
             int dateShipExsist = random.Next(0,5);
@@ -104,7 +104,7 @@ namespace Dal;
                 if (dateDeliveryExsist > 1)
                 {
                     TimeSpan spanDeliveryDays = TimeSpan.FromDays(10);
-                    order.DeliveryDate = order.ShipDate + spanShipDelivery;
+                    order.DeliveryDate = order.ShipDate + spanDeliveryDays;
                 }
                 else
                     order.DeliveryDate = DateTime.MinValue;
