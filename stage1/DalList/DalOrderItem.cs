@@ -3,20 +3,20 @@ using System;
 /// <summary>
 /// 
 /// </summary>
-using Dal,DO;
+using Dal.DO;
 namespace DalList;
 
 public struct DalOrderItem
 {
     public static int CreateOrderItem(IOrderItem newOrderItem)
     {
-        DataSource.orderItemList[DataSource.Config.OrderItemIdx++] = newOrderItem;
-        return newOrderItem.OrderId;
+        DataSource.orderItemList[DataSource.Config.orderItemIdx++] = newOrderItem;
+        return newOrderItem.OrderID;
     }
 
     public static IOrderItem ReadOrderItem(int orderID)
     {
-        for (int i = 0; i < DataSource.Config.OrderItemIdx; i++)
+        for (int i = 0; i < DataSource.Config.orderItemIdx; i++)
         {
             if (DataSource.orderItemList[i].OrderID == orderID)
             {

@@ -21,9 +21,23 @@ public enum eOptions
     Product
 }
 
-public enum eUpDate 
+public enum eUpDateOrder 
 { 
     Name = 1,
     Mail,
     Adress
+}
+
+public enum eUpDateOrderItem
+{ 
+    Amount = 1,
+    Price
+}
+
+public enum eUpDateProduct
+{
+    Name= 1,
+    Price,
+    InStock,
+    Category
 }
