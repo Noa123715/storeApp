@@ -1,24 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	  <BaseOutputPath></BaseOutputPath>
-	<OutputPath>$(SolutionDir)\bin\</OutputPath>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
-	<RootNamespace></RootNamespace>
-	  <OutputPath>$(SolutionDir)\bin\</OutputPath>
-	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	  <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
-	  
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<BaseOutputPath></BaseOutputPath>
+		<OutputPath>$(SolutionDir)\bin\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+		<RootNamespace />
 
-  <ItemGroup>
-    <ProjectReference Include="..\DalFacade\DalFacade.csproj" />
-  </ItemGroup>
+	</PropertyGroup>
 
 </Project>

@@ -3,14 +3,14 @@
 /// </summary>
 
 using System;
-using DalList.DO;
+using Dal.DO;
 namespace DalList;
 
 public struct DalOrder
 {
     public static int CreateOrder(IOrder newOrder)
     {
-        DataSource.orderList[DataSource.Config.OrderIdx++] = newOrder;
+        DataSource.orderList[DataSource.Config.orderIdx++] = newOrder;
         return newOrder.ID;
     }
 
@@ -47,7 +47,7 @@ public struct DalOrder
                 return;
             }
         }
-        if (DataSource.orderList[DataSource.Config.orderIdx] == id)
+        if (DataSource.orderList[DataSource.Config.orderIdx].ID == id)
         {
             DataSource.Config.orderIdx--;
             return;
