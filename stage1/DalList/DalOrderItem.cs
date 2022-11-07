@@ -1,7 +1,8 @@
-
-using System;
 /// <summary>
-/// 
+/// CRUD operations department:
+/// for adding a new order item list,
+/// reading the existing order item,
+/// updating order item and deletions.
 /// </summary>
 using Dal.DO;
 namespace DalList;

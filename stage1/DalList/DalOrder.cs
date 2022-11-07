@@ -1,5 +1,8 @@
 /// <summary>
-/// 
+/// CRUD operations department:
+/// for adding a new order list,
+/// reading the existing orders,
+/// updating order lists and deletions.
 /// </summary>
 
 using System;

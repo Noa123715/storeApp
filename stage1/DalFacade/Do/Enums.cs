@@ -3,7 +3,9 @@
 /// </summary>
 
 namespace Dal.DO;
-
+/// <summary>
+/// ENUM for defining the categories for an product class
+/// </summary>
 public enum eCategories
 {
     accessories,
@@ -13,6 +15,9 @@ public enum eCategories
     beauty
 }
 
+/// <summary>
+/// ENUM to select the entity to test in the main program
+/// </summary>
 public enum eOptions
 {
     Exit,
@@ -21,6 +26,9 @@ public enum eOptions
     Product
 }
 
+/// <summary>
+/// ENUM for selecting the part in the Order class to update
+/// </summary>
 public enum eUpDateOrder 
 { 
     Name = 1,
@@ -28,12 +36,18 @@ public enum eUpDateOrder
     Adress
 }
 
+/// <summary>
+/// ENUM for selecting the part in the Order Item class to update
+/// </summary>
 public enum eUpDateOrderItem
 { 
     Amount = 1,
     Price
 }
 
+/// <summary>
+/// ENUM for selecting the part in the Product class to update
+/// </summary>
 public enum eUpDateProduct
 {
     Name= 1,

@@ -4,10 +4,12 @@ using Dal.DO;
 
 try
 {
+    //A variable that checks the selection of the user: end the program (by 0) or not.
     bool exitCode = true;
     do
     {
         Console.WriteLine("Please enter a number: \r\n0- to exit\r\n1- to check the Order\r\n2- to check the Order Item\r\n3- to check the Product");
+        //Accepting the user's choice
         int option = Convert.ToInt32(Console.ReadLine());
         switch (option)
         {
@@ -40,25 +42,26 @@ void OrderCRUD()
         IOrder order = new IOrder();
         int id, option;
         Console.WriteLine("Please enter a letter: \r\na- Adding an object to the list\r\nb- Object display by ID\r\nc- entity list view\r\nd- object update\r\ne- Deleting an object from the list");
+        //Accepting the user's choice
         char choice = Console.ReadKey().KeyChar;
         switch (choice)
         {
-            case 'a':
+            case 'a': //to add a new order list
                 addNewOrder();
                 break;
-            case 'b':
+            case 'b': //to read a order by id
                 Console.WriteLine("Enter the ID number of the order you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
                 order = DalOrder.ReadOrder(id);
                 Console.WriteLine(order);
                 break;
-            case 'c':
+            case 'c': //to read all the exsiting orders
                 IOrder[] allOrders =  DalOrder.ReadOrder();
                 foreach(IOrder oneOrder in allOrders)
                     Console.WriteLine(oneOrder);
                 break;
-            case 'd':
+            case 'd': //to update an exsiting orders
                 Console.WriteLine("Please enter the ID number of the order you want to update: ");
                 if (!int.TryParse(Console.ReadLine(), out id))
                     throw new Exception("You entered a none valid number");
@@ -66,17 +69,18 @@ void OrderCRUD()
                 Console.WriteLine("What do you want to update: \n1- name\n2- mail\n3- adress");
                 if (!(int.TryParse(Console.ReadLine(), out option)))
                     throw new Exception("You entered a none valid number");
+                //Accepting the user's choice
                 switch (option) 
                 {
-                    case (int)eUpDateOrder.Name:
+                    case (int)eUpDateOrder.Name: //update the name of the order's owner
                         Console.WriteLine("Please enter the name to update: ");
                         order.CustomerName = Console.ReadLine();
                         break;
-                    case (int)eUpDateOrder.Mail:
+                    case (int)eUpDateOrder.Mail: //update the mail of the order's owner
                         Console.WriteLine("Please enter the mail to update: ");
                         order.CustomerEmail = Console.ReadLine();
                         break;
-                    case (int)eUpDateOrder.Adress:
+                    case (int)eUpDateOrder.Adress: //update the adress to send the order
                         Console.WriteLine("Please enter the adress to update: ");
                         order.CustomerAdress = Console.ReadLine();
                         break;
@@ -86,7 +90,7 @@ void OrderCRUD()
                 }
                 DalOrder.UpDateOrder(order);
                 break;
-            case 'e':
+            case 'e': //to dalete the order
                 Console.WriteLine("Please enter the ID number of the order you want to delete: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
@@ -103,7 +107,7 @@ void OrderCRUD()
 }
 
 void addNewOrder()
-{
+{ //add a new order list - write in a separate function to make the code easier to read
     try
     {
         IOrder newOrder = new IOrder();
@@ -138,24 +142,25 @@ void OrderItemCRUD()
         int id, option, amount, price;
         Console.WriteLine("Please enter a letter: \r\na- Adding an object to the list\r\nb- Object display by ID\r\nc- entity list view\r\nd- object update\r\ne- Deleting an object from the list");
         char choice = Console.ReadKey().KeyChar;
+        //Accepting the user's choice
         switch (choice)
         {
-            case 'a':
+            case 'a': //to add a new order item
                 addNewOrderItem();
                 break;
-            case 'b':
+            case 'b': //to read a order item by id
                 Console.WriteLine("Enter the ID number of the order item you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
                 orderItem = DalOrderItem.ReadOrderItem(id);
                 Console.WriteLine(orderItem);
                 break;
-            case 'c':
+            case 'c': //to read all the exsiting orders item
                 IOrderItem[] allOrderItems = DalOrderItem.ReadOrderItem();
                 foreach (IOrderItem item in allOrderItems)
                     Console.WriteLine(item);
                 break;
-            case 'd':
+            case 'd': //to update an exsiting orders item
                 Console.WriteLine("Please enter the ID number of the order item you want to update: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
@@ -163,15 +168,16 @@ void OrderItemCRUD()
                 Console.WriteLine("What do you want to update: \n1- amount\n2- price");
                 if (!(int.TryParse(Console.ReadLine(), out option)))
                     throw new Exception("You entered a none valid number");
+                //Accepting the user's choice
                 switch (option) 
                 {
-                    case (int)eUpDateOrderItem.Amount:
+                    case (int)eUpDateOrderItem.Amount: //update the amount of the order item
                         Console.WriteLine("Please enter the new amount to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out amount)))
                             throw new Exception("You entered a none valid number");
                         orderItem.Amount = amount;
                         break;
-                    case (int)eUpDateOrderItem.Price:
+                    case (int)eUpDateOrderItem.Price: //update the price of the order item
                         Console.WriteLine("Please enter the new amount to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out price)))
                             throw new Exception("You entered a none valid number");
@@ -182,7 +188,7 @@ void OrderItemCRUD()
                 }
                 DalOrderItem.UpDateOrderItem(orderItem);
                 break;
-            case 'e':
+            case 'e': //to dalete the order item
                 Console.WriteLine("");
                 Console.WriteLine("Please enter the ID number of the order item you want to delete: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
@@ -198,7 +204,7 @@ void OrderItemCRUD()
 }
 
 void addNewOrderItem()
-{
+{ //add a new order item - write in a separate function to make the code easier to read
     int amount, price;
     IOrderItem newOrderItem = new IOrderItem();
     Console.WriteLine("Please enter the order item details:");
@@ -225,24 +231,25 @@ void ProductCRUD()
         int id, option, price, amountInStock, category;
         Console.WriteLine("Please enter a letter: \na- Adding an object to the list\nb- Object display by ID\r\nc- entity list view\nd- object update\ne- Deleting an object from the list");
         char choice = Console.ReadKey().KeyChar;
+        //Accepting the user's choice
         switch (choice)
         {
-            case 'a':
+            case 'a': //to add a new product
                 addNewProduct();
                 break;
-            case 'b':
+            case 'b': //to read a product by id
                 Console.WriteLine("Enter the ID number of the product you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
                 product = DalProduct.ReadProduct(id);
                 Console.WriteLine(product);
                 break;
-            case 'c':
+            case 'c': //to read all the exsiting products
                 IProduct[] allProduct = DalProduct.ReadProduct();
                 foreach (IProduct oneProduct in allProduct)
                     Console.WriteLine(oneProduct);
                 break;
-            case 'd':
+            case 'd': //to update an exsiting orders
                 Console.WriteLine("Please enter the ID number of the product you want to update: ");
                 if (!int.TryParse(Console.ReadLine(), out id))
                     throw new Exception("You entered a none valid number");
@@ -250,28 +257,30 @@ void ProductCRUD()
                 Console.WriteLine("What do you want to update: \n1- name\n2- price\n3- amount in stock\n4- category");
                 if (!(int.TryParse(Console.ReadLine(), out option)))
                     throw new Exception("You entered a none valid number");
+                //Accepting the user's choice
                 switch (option)
                 {
-                    case (int)eUpDateProduct.Name:
+                    case (int)eUpDateProduct.Name: //to update the name of the product
                         Console.WriteLine("Please enter the name to update: ");
                         product.Name = Console.ReadLine();
                         break;
-                    case (int)eUpDateProduct.Price:
+                    case (int)eUpDateProduct.Price: //to update the price of the product
                         Console.WriteLine("Please enter the price to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out price)))
                             throw new Exception("You entered a none valid number");
                         product.Price = price;
                         break;
-                    case (int)eUpDateProduct.InStock:
+                    case (int)eUpDateProduct.InStock: //to update the amount in stock of the product
                         Console.WriteLine("Please enter the amount in stock to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out amountInStock)))
                             throw new Exception("You entered a none valid number");
                         product.InStock = amountInStock;
                         break;
-                    case (int)eUpDateProduct.Category:
+                    case (int)eUpDateProduct.Category: //to update the category of the product
                         Console.WriteLine("Please enter the category to update: \n0- accessories\n1- women\n2- men\n3- children\n4- beauty");
                         if (!(int.TryParse(Console.ReadLine(), out category)))
                             throw new Exception("You entered a none valid number");
+                        //Accepting the user's choice
                         switch (category)
                         {
                             case (int)eCategories.accessories:
@@ -299,7 +308,7 @@ void ProductCRUD()
                 }
                 DalProduct.UpDateProduct(product);
                 break;
-            case 'e':
+            case 'e': //to dalete a product
                 Console.WriteLine("Please enter the ID number of the product you want to delete: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
@@ -316,7 +325,7 @@ void ProductCRUD()
 }
 
 void addNewProduct()
-{
+{ //add a new product - write in a separate function to make the code easier to read
     int amount, price, option;
     IProduct newProduct = new IProduct();
     Console.WriteLine("Please enter the product item details:");

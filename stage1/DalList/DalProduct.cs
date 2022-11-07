@@ -1,5 +1,8 @@
 /// <summary>
-/// 
+/// CRUD operations department:
+/// for adding a new product,
+/// reading the existing product,
+/// updating product and deletions.
 /// </summary>
 using Dal.DO;
 namespace DalList;
@@ -14,7 +17,7 @@ public struct DalProduct
 
     public static IProduct ReadProduct(int id)
     {
-        for (int i = 0; i < DataSource.Config.ProductIdx; i++)
+        for (int i = 0; i < DataSource.Config.productIdx; i++)
         {
             if (DataSource.productList[i].ID == id)
             {
@@ -45,7 +48,7 @@ public struct DalProduct
                 return;
             }
         }
-        if (DataSource.productList[DataSource.Config.productIdx] == id)
+        if (DataSource.productList[DataSource.Config.productIdx].ID == id)
         {
             DataSource.Config.productIdx--;
             return;
