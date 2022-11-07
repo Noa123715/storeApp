@@ -208,7 +208,6 @@ void addNewOrderItem()
     int amount, price;
     IOrderItem newOrderItem = new IOrderItem();
     Console.WriteLine("Please enter the order item details:");
-    //newOrderItem.OrderID איזה מזהה לשים פה של הפריטים או המוצרים?
     newOrderItem.OrderID = DataSource.Config.OrderId;
     newOrderItem.ProductID = DataSource.Config.OrderItemId;
     Console.WriteLine("Please enter the amount of the item: ");
