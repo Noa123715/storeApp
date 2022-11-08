@@ -6,8 +6,8 @@
 
 namespace Dal.DO;
 
-    public struct IOrder
-    {
+public struct IOrder
+{
     public int ID { get; set; }
     public string CustomerName { get; set; }
     public string CustomerEmail { get; set; }
@@ -22,5 +22,5 @@ namespace Dal.DO;
         CustomerAdress = {CustomerAdress}
         OrderDate = {OrderDate}
         ShipDate = {ShipDate}
-        DeliveryDate = {DeliveryDate}";  	
-    }
+        DeliveryDate = {DeliveryDate}";
+}
