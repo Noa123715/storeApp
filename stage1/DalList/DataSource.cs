@@ -7,13 +7,10 @@ namespace DalList;
 
 public static class DataSource
 {
-    // datasource members- arrays of limited size for productList, arrays.
-    const int numOfproducts = 50;
-    const int numOfOrders = 100;
-    const int numOfOrderItems = 200;
-    public static IProduct[] productList = new IProduct[numOfproducts];
-    public static IOrder[] orderList = new IOrder[numOfOrders];
-    public static IOrderItem[] orderItemList = new IOrderItem[numOfOrderItems];
+    // datasource members- lists of products,orders, and orderitems for random initialize.
+    public static List<IProduct> productList= new List<IProduct>();
+    public static List<IOrder> orderList= new List<IOrder>();
+    public static List<IOrderItem> orderItemList= new List<IOrderItem>();
 
     // ctor
     static DataSource() { s_Initialize(); }
@@ -30,10 +27,7 @@ public static class DataSource
     // Config- nested class, Holds the indexes from which the array is empty- for each array and the IDS
     public static class Config
     {
-        public static int productIdx = 0;
-        public static int orderItemIdx = 0;
-        public static int orderIdx = 0;
-
+    
         private static int orderItemId = 1;
         public static int OrderItemId { get { return orderItemId++; } }
         private static int orderId = 1;
@@ -65,10 +59,13 @@ public static class DataSource
                 exists = false;
 
                 barcode = rand.Next(100000, 10000000);
-                for (int j = 0; j < Config.productIdx; j++)
+                foreach (var prod in productList)
                 {
-                    if (productList[j].ID == barcode)
+                    if (prod.ID == barcode)
+                    {
                         exists = true;
+                        break;
+                    }
                 }
             } while (exists);
             product.ID = barcode;
@@ -86,7 +83,7 @@ public static class DataSource
                 instock = rand.Next(0, 1000);
                 product.InStock = instock;
             }
-            productList[Config.productIdx++] = product;
+            productList.Add(product);
         }
     }
 
@@ -140,7 +137,7 @@ public static class DataSource
                 order.DeliveryDate = DateTime.MinValue;
             }
 
-            orderList[Config.orderIdx++] = order;
+            orderList.Add(order);
         }
     }
 
@@ -149,11 +146,11 @@ public static class DataSource
 
     private static void initOrderItemData()
     {
-        for (int i = 0; i < Config.orderIdx; i++)
+        foreach(var order in orderList)
         {
-            int[] exists = new int[Config.productIdx];
-            int randomProduct;
             Random random = new Random();
+            int randomProduct;
+            int[] exists = new int[productList.Count];
             int itemsInOrder = random.Next(1, 5);
 
             for (int j = 0; j < itemsInOrder; j++)
@@ -165,19 +162,21 @@ public static class DataSource
                 // that it does not already exist in the order.
                 //Then, creating a flag that the product already exists on this order.
                 do
-                    randomProduct = random.Next(0, Config.productIdx);
+                    randomProduct = random.Next(0,productList.Count);
                 while (exists[randomProduct] != 0);
                 exists[randomProduct] = 1;
 
                 orderItem.ProductID = productList[randomProduct].ID;
                 int randomAmount = random.Next(1, productList[randomProduct].InStock + 1);
                 orderItem.Amount = randomAmount;
-                productList[randomProduct].InStock -= randomAmount;
+                IProduct product = productList[randomProduct];
+               product.InStock -= randomAmount;
                 orderItem.Price = productList[randomProduct].Price;
-                orderItem.OrderID = orderList[i].ID;
-                orderItemList[Config.orderItemIdx++] = orderItem;
+                orderItem.OrderID =order.ID;
+                orderItemList.Add(orderItem);
             }
         }
+   
     }
 }
 

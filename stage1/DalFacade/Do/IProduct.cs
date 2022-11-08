@@ -6,13 +6,13 @@
 
 namespace Dal.DO;
 
-    public struct IProduct
-    {
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public int InStock { get; set; }
-        public int ID { get; set; } 
-        public eCategories Category { get; set; }
+public struct IProduct
+{
+    public string Name { get; set; }
+    public double Price { get; set; }
+    public int InStock;
+    public int ID { get; set; } 
+    public eCategories Category { get; set; }
     public override string ToString() => $@"
         Name = {Name}
         Price = {Price}
