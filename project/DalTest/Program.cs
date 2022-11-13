@@ -7,7 +7,7 @@ try
     //A variable that checks the selection of the user: end the program (by 0) or not.
     bool exitCode = true;
     do
-    {
+    { 
         Console.WriteLine("Please enter a number: \r\n0- to exit\r\n1- to check the Order\r\n2- to check the Order Item\r\n3- to check the Product");
         //Accepting the user's choice
         int option = Convert.ToInt32(Console.ReadLine());
