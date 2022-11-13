@@ -4,6 +4,8 @@ using Dal.DO;
 
 try
 {
+    DataSource.s_Initialize();
+
     //A variable that checks the selection of the user: end the program (by 0) or not.
     bool exitCode = true;
     do
@@ -328,7 +330,7 @@ void addNewProduct()
     int amount, price, option;
     IProduct newProduct = new IProduct();
     Console.WriteLine("Please enter the product item details:");
-    //newProduct.ID = DataSource.Config.productIdx;æä àîåø ìäéåú îñôø îæää øõ åìà îñôø àéðã÷ñ
+    //newProduct.ID = DataSource.Config.productIdx;Ã¦Ã¤ Ã Ã®Ã¥Ã¸ Ã¬Ã¤Ã©Ã¥Ãº Ã®Ã±Ã´Ã¸ Ã®Ã¦Ã¤Ã¤ Ã¸Ãµ Ã¥Ã¬Ã  Ã®Ã±Ã´Ã¸ Ã Ã©Ã°Ã£Ã·Ã±
     Console.WriteLine("Please enter the name of the product: ");
     newProduct.Name = Console.ReadLine();
     Console.WriteLine("Please enter the amount in stock of the product: ");
