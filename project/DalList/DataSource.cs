@@ -20,7 +20,7 @@ public static class DataSource
 
     //Main initialization function,
     //call to initialization functions of each data set individually
-    private static void s_Initialize()
+    public static void s_Initialize()
     {
         initProductData();
         initOrdersData();
@@ -151,7 +151,7 @@ public static class DataSource
     {
         for (int i = 0; i < Config.orderIdx; i++)
         {
-            int[] exists = new int[Config.productIdx];
+            bool[] exists = new bool[Config.productIdx];
             int randomProduct;
             Random random = new Random();
             int itemsInOrder = random.Next(1, 5);
@@ -166,11 +166,12 @@ public static class DataSource
                 //Then, creating a flag that the product already exists on this order.
                 do
                     randomProduct = random.Next(0, Config.productIdx);
-                while (exists[randomProduct] != 0);
-                exists[randomProduct] = 1;
+                while (exists[randomProduct] != false);
+                exists[randomProduct] = true;
 
                 orderItem.ProductID = productList[randomProduct].ID;
-                int randomAmount = random.Next(1, productList[randomProduct].InStock + 1);
+                
+                int randomAmount = productList[randomProduct].InStock? random.Next(1, productList[randomProduct].InStock + 1):0;
                 orderItem.Amount = randomAmount;
                 productList[randomProduct].InStock -= randomAmount;
                 orderItem.Price = productList[randomProduct].Price;
