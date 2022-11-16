@@ -9,13 +9,13 @@ namespace DalList;
 
 public struct DalProduct
 {
-    public static int CreateProduct(IProduct newProduct)
+    public static int CreateProduct(Product newProduct)
     {
         DataSource.productList[DataSource.Config.productIdx++] = newProduct;
         return newProduct.ID;
     }
 
-    public static IProduct ReadProduct(int id)
+    public static Product ReadProduct(int id)
     {
         for (int i = 0; i < DataSource.Config.productIdx; i++)
         {
@@ -27,9 +27,9 @@ public struct DalProduct
         throw new System.Exception("The product was not found in the list");
     }
 
-    public static IProduct[] ReadProduct()
+    public static Product[] ReadProduct()
     {
-        IProduct[] newProductList = new IProduct[DataSource.Config.productIdx];
+        Product[] newProductList = new Product[DataSource.Config.productIdx];
         for (int i = 0; i < DataSource.Config.productIdx; i++)
         {
             newProductList[i] = DataSource.productList[i];
@@ -56,7 +56,7 @@ public struct DalProduct
         throw new System.Exception("The product was not found in the list");
     }
 
-    public static void UpDateProduct(IProduct UpProduct)
+    public static void UpDateProduct(Product UpProduct)
     {
         for (int i = 0; i < DataSource.Config.productIdx; i++)
         {

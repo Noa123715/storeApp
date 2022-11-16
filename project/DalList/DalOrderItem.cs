@@ -9,13 +9,13 @@ namespace DalList;
 
 public struct DalOrderItem
 {
-    public static int CreateOrderItem(IOrderItem newOrderItem)
+    public static int CreateOrderItem(OrderItem newOrderItem)
     {
         DataSource.orderItemList[DataSource.Config.orderItemIdx++] = newOrderItem;
         return newOrderItem.OrderID;
     }
 
-    public static IOrderItem ReadOrderItem(int orderID)
+    public static OrderItem ReadOrderItem(int orderID)
     {
         for (int i = 0; i < DataSource.Config.orderItemIdx; i++)
         {
@@ -27,9 +27,9 @@ public struct DalOrderItem
         throw new System.Exception("The orderItem was not found in the list");
     }
 
-    public static IOrderItem[] ReadOrderItem()
+    public static OrderItem[] ReadOrderItem()
     {
-        IOrderItem[] newOrderItemList = new IOrderItem[DataSource.Config.orderItemIdx];
+        OrderItem[] newOrderItemList = new OrderItem[DataSource.Config.orderItemIdx];
         for (int i = 0; i < DataSource.Config.orderItemIdx; i++)
         {
             newOrderItemList[i] = DataSource.orderItemList[i];
@@ -56,7 +56,7 @@ public struct DalOrderItem
         throw new System.Exception("The orderItem was not found in the list");
     }
 
-    public static void UpDateOrderItem(IOrderItem UpOrderItem)
+    public static void UpDateOrderItem(OrderItem UpOrderItem)
     {
         for (int i = 0; i < DataSource.Config.orderItemIdx; i++)
         {

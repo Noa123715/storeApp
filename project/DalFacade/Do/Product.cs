@@ -6,7 +6,7 @@
 
 namespace Dal.DO;
 
-public struct IProduct
+public struct Product
 {
     public string Name { get; set; }
     public double Price { get; set; }

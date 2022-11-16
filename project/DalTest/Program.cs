@@ -41,7 +41,7 @@ void OrderCRUD()
 {
     try
     {
-        IOrder order = new IOrder();
+        Order order = new Order();
         int id, option;
         Console.WriteLine("Please enter a letter: \r\na- Adding an object to the list\r\nb- Object display by ID\r\nc- entity list view\r\nd- object update\r\ne- Deleting an object from the list");
         //Accepting the user's choice
@@ -59,8 +59,8 @@ void OrderCRUD()
                 Console.WriteLine(order);
                 break;
             case 'c': //to read all the exsiting orders
-                IOrder[] allOrders =  DalOrder.ReadOrder();
-                foreach(IOrder oneOrder in allOrders)
+                Order[] allOrders =  DalOrder.ReadOrder();
+                foreach(Order oneOrder in allOrders)
                     Console.WriteLine(oneOrder);
                 break;
             case 'd': //to update an exsiting orders
@@ -112,7 +112,7 @@ void addNewOrder()
 { //add a new order list - write in a separate function to make the code easier to read
     try
     {
-        IOrder newOrder = new IOrder();
+        Order newOrder = new Order();
         Console.WriteLine("Please enter the order details:");
         newOrder.ID = DataSource.Config.OrderId;
         Console.WriteLine("Please enter your name: ");
@@ -140,7 +140,7 @@ void OrderItemCRUD()
 {
     try
     {
-        IOrderItem orderItem = new IOrderItem();
+        OrderItem orderItem = new OrderItem();
         int id, option, amount, price;
         Console.WriteLine("Please enter a letter: \r\na- Adding an object to the list\r\nb- Object display by ID\r\nc- entity list view\r\nd- object update\r\ne- Deleting an object from the list");
         char choice = Console.ReadKey().KeyChar;
@@ -158,8 +158,8 @@ void OrderItemCRUD()
                 Console.WriteLine(orderItem);
                 break;
             case 'c': //to read all the exsiting orders item
-                IOrderItem[] allOrderItems = DalOrderItem.ReadOrderItem();
-                foreach (IOrderItem item in allOrderItems)
+                OrderItem[] allOrderItems = DalOrderItem.ReadOrderItem();
+                foreach (OrderItem item in allOrderItems)
                     Console.WriteLine(item);
                 break;
             case 'd': //to update an exsiting orders item
@@ -208,7 +208,7 @@ void OrderItemCRUD()
 void addNewOrderItem()
 { //add a new order item - write in a separate function to make the code easier to read
     int amount, price;
-    IOrderItem newOrderItem = new IOrderItem();
+    OrderItem newOrderItem = new OrderItem();
     Console.WriteLine("Please enter the order item details:");
     newOrderItem.OrderID = DataSource.Config.OrderId;
     newOrderItem.ProductID = DataSource.Config.OrderItemId;
@@ -228,7 +228,7 @@ void ProductCRUD()
 {
     try
     {
-        IProduct product = new IProduct();
+        Product product = new Product();
         int id, option, price, amountInStock, category;
         Console.WriteLine("Please enter a letter: \na- Adding an object to the list\nb- Object display by ID\r\nc- entity list view\nd- object update\ne- Deleting an object from the list");
         char choice = Console.ReadKey().KeyChar;
@@ -246,8 +246,8 @@ void ProductCRUD()
                 Console.WriteLine(product);
                 break;
             case 'c': //to read all the exsiting products
-                IProduct[] allProduct = DalProduct.ReadProduct();
-                foreach (IProduct oneProduct in allProduct)
+                Product[] allProduct = DalProduct.ReadProduct();
+                foreach (Product oneProduct in allProduct)
                     Console.WriteLine(oneProduct);
                 break;
             case 'd': //to update an exsiting orders
@@ -328,7 +328,7 @@ void ProductCRUD()
 void addNewProduct()
 { //add a new product - write in a separate function to make the code easier to read
     int amount, price, option;
-    IProduct newProduct = new IProduct();
+    Product newProduct = new Product();
     Console.WriteLine("Please enter the product item details:");
     //newProduct.ID = DataSource.Config.productIdx;æä àîåø ìäéåú îñôø îæää øõ åìà îñôø àéðã÷ñ
     Console.WriteLine("Please enter the name of the product: ");

@@ -6,7 +6,7 @@
 
 namespace Dal.DO;
 
-    public struct IOrder
+    public struct Order
     {
     public int ID { get; set; }
     public string CustomerName { get; set; }

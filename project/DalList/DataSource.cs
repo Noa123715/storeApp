@@ -9,9 +9,9 @@ public static class DataSource
 {
     // datasource members- arrays of limited size for productList, arrays.
    
-    public static List<IProduct> productList = new List<IProduct>();
-    public static List<IOrder> orderList = new List<IOrder>();
-    public static List<IOrderItem> orderItemList = new List<IOrderItem>();
+    public static List<Product> productList = new List<Product>();
+    public static List<Order> orderList = new List<Order>();
+    public static List<OrderItem> orderItemList = new List<OrderItem>();
 
     // ctor
     static DataSource() { s_Initialize(); }
@@ -54,7 +54,7 @@ public static class DataSource
 
         for (int i = 0; i < 10; i++)
         {
-            IProduct product = new IProduct();
+            Product product = new Product();
             do
             // Generates a random barcode and makes sure it doesn't already exist.
             {
@@ -105,7 +105,7 @@ public static class DataSource
 
         for (int i = 0; i < 20; i++)
         {
-            IOrder order = new IOrder();
+            Order order = new Order();
             order.ID = Config.OrderId;
             order.CustomerName = customerNames[i];
             order.CustomerEmail = customerEmails[i];
@@ -159,7 +159,7 @@ public static class DataSource
 
             for (int j = 0; j < itemsInOrder; j++)
             {
-                IOrderItem orderItem = new IOrderItem();
+                OrderItem orderItem = new OrderItem();
                 orderItem.OrderID = Config.OrderItemId;
 
                 // Random product according to its index in the product list and verification
