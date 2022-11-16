@@ -1,5 +1,4 @@
 /// <summary>
-/// <see cref="DataSource"/>
 ///  Static class for randomly initializing datasets 
 /// </summary>
 using Dal.DO;
