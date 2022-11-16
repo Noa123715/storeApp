@@ -9,9 +9,9 @@ public static class DataSource
 {
     // datasource members- arrays of limited size for productList, arrays.
    
-    public static List<IProduct> productList = new List<IProduct>;
-    public static List<IOrder> orderList = new List<IOrder>;
-    public static List<IOrderItem> orderItemList = new List<IOrderItem>;
+    public static List<IProduct> productList = new List<IProduct>();
+    public static List<IOrder> orderList = new List<IOrder>();
+    public static List<IOrderItem> orderItemList = new List<IOrderItem>();
 
     // ctor
     static DataSource() { s_Initialize(); }
@@ -61,7 +61,7 @@ public static class DataSource
                 exists = false;
 
                 barcode = rand.Next(100000, 10000000);
-                foreach(prod in productList)
+                foreach(var prod in productList)
                 {
                     if(prod.ID== barcode) 
                     { 
@@ -150,7 +150,7 @@ public static class DataSource
 
     private static void initOrderItemData()
     {
-        foreach(order in orderList)
+        foreach(var order in orderList)
         {
             bool[] exists = new bool[productList.Count];
             int randomProduct;
