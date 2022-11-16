@@ -174,7 +174,9 @@ public static class DataSource
                 
                 int randomAmount = (productList[randomProduct].InStock != 0)? random.Next(1, productList[randomProduct].InStock + 1):0;
                 orderItem.Amount = randomAmount;
-                productList[randomProduct].InStock -= randomAmount;
+                Product prod = productList[randomProduct];
+                prod.InStock -= randomAmount;
+                productList[randomProduct] = prod;
                 orderItem.Price = productList[randomProduct].Price;
                 orderItem.OrderID = order.ID;
                 orderItemList.Add(orderItem);
