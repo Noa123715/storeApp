@@ -8,12 +8,10 @@ namespace DalList;
 public static class DataSource
 {
     // datasource members- arrays of limited size for productList, arrays.
-    const int numOfproducts = 50;
-    const int numOfOrders = 100;
-    const int numOfOrderItems = 200;
-    public static IProduct[] productList = new IProduct[numOfproducts];
-    public static IOrder[] orderList = new IOrder[numOfOrders];
-    public static IOrderItem[] orderItemList = new IOrderItem[numOfOrderItems];
+   
+    public static List<IProduct> productList = new List<IProduct>;
+    public static List<IOrder> orderList = new List<IOrder>;
+    public static List<IOrderItem> orderItemList = new List<IOrderItem>;
 
     // ctor
     static DataSource() { s_Initialize(); }
@@ -30,9 +28,7 @@ public static class DataSource
     // Config- nested class, Holds the indexes from which the array is empty- for each array and the IDS
     public static class Config
     {
-        public static int productIdx = 0;
-        public static int orderItemIdx = 0;
-        public static int orderIdx = 0;
+        
 
         private static int orderItemId = 1;
         public static int OrderItemId { get { return orderItemId++; } }
@@ -65,11 +61,16 @@ public static class DataSource
                 exists = false;
 
                 barcode = rand.Next(100000, 10000000);
-                for (int j = 0; j < Config.productIdx; j++)
+                foreach(prod in productList)
                 {
-                    if (productList[j].ID == barcode)
-                        exists = true;
+                    if(prod.ID== barcode) 
+                    { 
+                        exists=true;
+                        break;
+                    }
                 }
+
+              
             } while (exists);
             product.ID = barcode;
 
@@ -86,7 +87,7 @@ public static class DataSource
                 instock = rand.Next(0, 1000);
                 product.InStock = instock;
             }
-            productList[Config.productIdx++] = product;
+            productList.Add(product);
         }
     }
 
@@ -111,7 +112,7 @@ public static class DataSource
             order.CustomerAdress = customerAddresses[i];
 
             //Random date between the opening of the store (1/1/2022) and now.
-            DateTime startDate = new DateTime(2022, 1, 1);
+            DateTime startDate = new DateTime(2020, 1, 1);
             int range = (DateTime.Today - startDate).Days;
             order.OrderDate = startDate.AddDays(random.Next(range));
 
@@ -140,7 +141,7 @@ public static class DataSource
                 order.DeliveryDate = DateTime.MinValue;
             }
 
-            orderList[Config.orderIdx++] = order;
+            orderList.Add(order);
         }
     }
 
@@ -149,9 +150,9 @@ public static class DataSource
 
     private static void initOrderItemData()
     {
-        for (int i = 0; i < Config.orderIdx; i++)
+        foreach(order in orderList)
         {
-            bool[] exists = new bool[Config.productIdx];
+            bool[] exists = new bool[productList.Count];
             int randomProduct;
             Random random = new Random();
             int itemsInOrder = random.Next(1, 5);
@@ -165,7 +166,7 @@ public static class DataSource
                 // that it does not already exist in the order.
                 //Then, creating a flag that the product already exists on this order.
                 do
-                    randomProduct = random.Next(0, Config.productIdx);
+                    randomProduct = random.Next(0,productList.Count);
                 while (exists[randomProduct] != false);
                 exists[randomProduct] = true;
 
@@ -175,8 +176,8 @@ public static class DataSource
                 orderItem.Amount = randomAmount;
                 productList[randomProduct].InStock -= randomAmount;
                 orderItem.Price = productList[randomProduct].Price;
-                orderItem.OrderID = orderList[i].ID;
-                orderItemList[Config.orderItemIdx++] = orderItem;
+                orderItem.OrderID = order.ID;
+                orderItemList.Add(orderItem);
             }
         }
     }
