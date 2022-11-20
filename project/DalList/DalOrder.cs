@@ -7,7 +7,8 @@
 
 
 using Dal.DO;
-namespace DalList;
+using DalApi;
+namespace Dal;
 
 public struct DalOrder
 {

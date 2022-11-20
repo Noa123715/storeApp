@@ -6,7 +6,7 @@
 /// </summary>
 
 using Dal.DO;
-namespace DalList;
+namespace Dal;
 
 public struct DalProduct
 {
