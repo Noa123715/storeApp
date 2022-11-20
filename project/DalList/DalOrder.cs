@@ -5,6 +5,7 @@
 /// updating order lists and deletions.
 /// </summary>
 
+
 using Dal.DO;
 namespace DalList;
 
@@ -18,60 +19,38 @@ public struct DalOrder
 
     public static Order ReadOrder(int id)
     {
-        DataSource.orderList.ForEach()
+        foreach (Order item in DataSource.orderList)
         {
-
-        }
-        for (int i = 0; i < DataSource.orderList; i++)
-        {
-            if (DataSource.orderList[i].ID == id)
+            if (item.ID == id)
             {
-                return DataSource.orderList[i];
+                return item;
             }
         }
         throw new Exception("The order was not found in the list");
     }
 
-    public static Order[] ReadOrder()
+    public static List<Order> ReadOrder()
     {
-        Order[] newOrderList = new Order[DataSource.Config.orderIdx];
-        for (int i = 0; i < DataSource.Config.orderIdx; i++)
-        {
-            newOrderList[i] = DataSource.orderList[i];
-        }
+        List<Order> newOrderList = new List<Order>();
+        newOrderList.AddRange(DataSource.orderList);
         return newOrderList;
     }
 
     public static void DeleteOrder(int id)
     {
-        for (int i = 0; i < DataSource.Config.orderIdx - 1; i++)
-        {
-            if (DataSource.orderList[i].ID == id)
-            {
-                DataSource.orderList[i] = DataSource.orderList[DataSource.Config.orderIdx];
-                DataSource.Config.orderIdx--;
-                return;
-            }
-        }
-        if (DataSource.orderList[DataSource.Config.orderIdx].ID == id)
-        {
-            DataSource.Config.orderIdx--;
-            return;
-        }
-        throw new Exception("The order was not found in the list");
+        DataSource.orderList.RemoveAll(item => item.ID == id);
+        //throw new Exception("The order was not found in the list");
     }
 
     public static void UpDateOrder(Order UpOrder)
+
     {
-        for (int i = 0; i < DataSource.Config.orderIdx; i++)
+        int index = DataSource.orderList.FindIndex(item => item.ID == UpOrder.ID);
+        if (index == -1)
         {
-            if (DataSource.orderList[i].ID == UpOrder.ID)
-            {
-                DataSource.orderList[i] = UpOrder;
-                return;
-            }
+            throw new Exception("The order was not found in the list");
         }
-        throw new Exception("The order was not found in the list");
+        DataSource.orderList.RemoveAt(index);
     }
-}
+} 
 

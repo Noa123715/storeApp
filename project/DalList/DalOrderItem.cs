@@ -1,72 +1,50 @@
-/// <summary>
+/// < summary >
 /// CRUD operations department:
 /// for adding a new order item list,
 /// reading the existing order item,
 /// updating order item and deletions.
-/// </summary>
+/// </ summary >
+
 using Dal.DO;
 namespace DalList;
 
 public struct DalOrderItem
 {
-    //public static int CreateOrderItem(OrderItem newOrderItem)
-    //{
-    //    DataSource.orderItemList[DataSource.Config.orderItemIdx++] = newOrderItem;
-    //    return newOrderItem.OrderID;
-    //}
+    public static int CreateOrderItem(OrderItem newOrderItem)
+    {
+        DataSource.orderItemList.Add(newOrderItem);
+        return newOrderItem.OrderID;
+    }
 
-    //public static OrderItem ReadOrderItem(int orderID)
-    //{
-    //    for (int i = 0; i < DataSource.Config.orderItemIdx; i++)
-    //    {
-    //        if (DataSource.orderItemList[i].OrderID == orderID)
-    //        {
-    //            return DataSource.orderItemList[i];
-    //        }
-    //    }
-    //    throw new System.Exception("The orderItem was not found in the list");
-    //}
+    public static OrderItem ReadOrderItem(int orderID)
+    {
+        foreach (OrderItem item in DataSource.orderItemList)
+        {
+            //לפי מה קוראים?
+        }
+        throw new Exception("The orderItem was not found in the list");
+    }
 
-    //public static OrderItem[] ReadOrderItem()
-    //{
-    //    OrderItem[] newOrderItemList = new OrderItem[DataSource.Config.orderItemIdx];
-    //    for (int i = 0; i < DataSource.Config.orderItemIdx; i++)
-    //    {
-    //        newOrderItemList[i] = DataSource.orderItemList[i];
-    //    }
-    //    return newOrderItemList;
-    //}
+    public static List<OrderItem> ReadOrderItem()
+    {
+        List<OrderItem>newOrderItemList = new List<OrderItem>();
+        newOrderItemList.AddRange(DataSource.orderItemList);
+        return newOrderItemList;
+    }
 
-    //public static void DeleteOrderItem(int orderId)
-    //{
-    //    for (int i = 0; i < DataSource.Config.orderItemIdx - 1; i++)
-    //    {
-    //        if (DataSource.orderItemList[i].OrderID == orderId)
-    //        {
-    //            DataSource.orderItemList[i] = DataSource.orderItemList[DataSource.Config.orderItemIdx];
-    //            DataSource.Config.orderItemIdx--;
-    //            return;
-    //        }
-    //    }
-    //    if (DataSource.orderItemList[DataSource.Config.orderItemIdx].OrderID == orderId)
-    //    {
-    //        DataSource.Config.orderItemIdx--;
-    //        return;
-    //    }
-    //    throw new System.Exception("The orderItem was not found in the list");
-    //}
+    public static void DeleteOrderItem(int orderId)
+    {
+        DataSource.orderItemList.RemoveAll(item => item.OrderID == orderId);
+        //throw new Exception("The orderItem was not found in the list");
+    }
 
-    //public static void UpDateOrderItem(OrderItem UpOrderItem)
-    //{
-    //    for (int i = 0; i < DataSource.Config.orderItemIdx; i++)
-    //    {
-    //        if (DataSource.orderItemList[i].OrderID == UpOrderItem.OrderID)
-    //        {
-    //            DataSource.orderItemList[i] = UpOrderItem;
-    //            return;
-    //        }
-    //    }
-    //    throw new System.Exception("The orderitem was not found in the list");
-    //}
+    public static void UpDateOrderItem(OrderItem UpOrderItem)
+    {
+        int index = DataSource.orderItemList.FindIndex(item => item.OrderID == UpOrderItem.OrderID);
+        if (index == -1)
+        {
+            throw new Exception("The orderitem was not found in the list");
+        }        
+    }
 }
 
