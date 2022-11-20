@@ -1,6 +1,5 @@
 ﻿
 namespace DalApi;
-//hfkggggggg
 public interface ICrud<T>
 {
     public T Create(T item);

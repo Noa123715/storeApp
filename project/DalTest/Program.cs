@@ -9,7 +9,7 @@ try
     //A variable that checks the selection of the user: end the program (by 0) or not.
     bool exitCode = true;
     do
-    { 
+    {
         Console.WriteLine("Please enter a number: \r\n0- to exit\r\n1- to check the Order\r\n2- to check the Order Item\r\n3- to check the Product");
         //Accepting the user's choice
         int option = Convert.ToInt32(Console.ReadLine());
@@ -59,8 +59,8 @@ void OrderCRUD()
                 Console.WriteLine(order);
                 break;
             case 'c': //to read all the exsiting orders
-                Order[] allOrders =  DalOrder.ReadOrder();
-                foreach(Order oneOrder in allOrders)
+                Order[] allOrders = DalOrder.ReadOrder();
+                foreach (Order oneOrder in allOrders)
                     Console.WriteLine(oneOrder);
                 break;
             case 'd': //to update an exsiting orders
@@ -72,7 +72,7 @@ void OrderCRUD()
                 if (!(int.TryParse(Console.ReadLine(), out option)))
                     throw new Exception("You entered a none valid number");
                 //Accepting the user's choice
-                switch (option) 
+                switch (option)
                 {
                     case (int)eUpDateOrder.Name: //update the name of the order's owner
                         Console.WriteLine("Please enter the name to update: ");
@@ -124,7 +124,7 @@ void addNewOrder()
         Console.WriteLine("Please enter the order's date: (in formate dd/mm/yy)");
         DateTime orderDate;
         if (!DateTime.TryParse(Console.ReadLine(), out orderDate))
-           throw new Exception("The date format does not match the value");
+            throw new Exception("The date format does not match the value");
         newOrder.OrderDate = orderDate;
         int id = DalOrder.CreateOrder(newOrder);
         Console.WriteLine($@"The new id is: {id}");
@@ -171,7 +171,7 @@ void OrderItemCRUD()
                 if (!(int.TryParse(Console.ReadLine(), out option)))
                     throw new Exception("You entered a none valid number");
                 //Accepting the user's choice
-                switch (option) 
+                switch (option)
                 {
                     case (int)eUpDateOrderItem.Amount: //update the amount of the order item
                         Console.WriteLine("Please enter the new amount to update: ");
@@ -216,7 +216,7 @@ void addNewOrderItem()
     if (!(int.TryParse(Console.ReadLine(), out amount)))
         throw new Exception("You entered a none valid number");
     newOrderItem.Amount = amount;
-    Console.WriteLine("Please enter the item price: "); 
+    Console.WriteLine("Please enter the item price: ");
     if (!(int.TryParse(Console.ReadLine(), out price)))
         throw new Exception("You entered a none valid number");
     newOrderItem.Price = price;
