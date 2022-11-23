@@ -1,6 +1,6 @@
 // See https://aka.ms/new-console-template for more information
-using DalList;
-using Dal.DO;
+using Dal;
+using DO;
 
 try
 {
@@ -59,7 +59,7 @@ void OrderCRUD()
                 Console.WriteLine(order);
                 break;
             case 'c': //to read all the exsiting orders
-                Order[] allOrders = DalOrder.ReadOrder();
+                List<Order> allOrders = DalOrder.ReadOrder();
                 foreach (Order oneOrder in allOrders)
                     Console.WriteLine(oneOrder);
                 break;
@@ -158,7 +158,7 @@ void OrderItemCRUD()
                 Console.WriteLine(orderItem);
                 break;
             case 'c': //to read all the exsiting orders item
-                OrderItem[] allOrderItems = DalOrderItem.ReadOrderItem();
+                List<OrderItem> allOrderItems = DalOrderItem.ReadOrderItem();
                 foreach (OrderItem item in allOrderItems)
                     Console.WriteLine(item);
                 break;
@@ -246,7 +246,7 @@ void ProductCRUD()
                 Console.WriteLine(product);
                 break;
             case 'c': //to read all the exsiting products
-                Product[] allProduct = DalProduct.ReadProduct();
+                List<Product> allProduct = DalProduct.ReadProduct();
                 foreach (Product oneProduct in allProduct)
                     Console.WriteLine(oneProduct);
                 break;

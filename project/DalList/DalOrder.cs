@@ -5,20 +5,19 @@
 /// updating order lists and deletions.
 /// </summary>
 
-
-using Dal.DO;
+using DO;
 using DalApi;
 namespace Dal;
 
-public struct DalOrder
+internal class DalOrder : IOrder
 {
-    public static int CreateOrder(Order newOrder)
+    public int Create(Order newOrder)
     {
         DataSource.orderList.Add(newOrder);
         return newOrder.ID;
     }
 
-    public static Order ReadOrder(int id)
+    public Order Read(int id)
     {
         foreach (Order item in DataSource.orderList)
         {
@@ -30,20 +29,20 @@ public struct DalOrder
         throw new Exception("The order was not found in the list");
     }
 
-    public static List<Order> ReadOrder()
+    public IEnumerable<Order> ReadAll()
     {
         List<Order> newOrderList = new List<Order>();
         newOrderList.AddRange(DataSource.orderList);
         return newOrderList;
     }
 
-    public static void DeleteOrder(int id)
+    public void Delete(int id)
     {
         DataSource.orderList.RemoveAll(item => item.ID == id);
         //throw new Exception("The order was not found in the list");
     }
 
-    public static void UpDateOrder(Order UpOrder)
+    public void UpDate(Order UpOrder)
 
     {
         int index = DataSource.orderList.FindIndex(item => item.ID == UpOrder.ID);
@@ -54,4 +53,3 @@ public struct DalOrder
         DataSource.orderList.RemoveAt(index);
     }
 } 
-

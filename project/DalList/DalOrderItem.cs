@@ -5,7 +5,7 @@
 /// updating order item and deletions.
 /// </ summary >
 
-using Dal.DO;
+using DO;
 namespace Dal;
 
 public struct DalOrderItem

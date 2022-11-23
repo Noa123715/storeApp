@@ -1,7 +1,7 @@
 /// <summary>
 ///  Static class for randomly initializing datasets 
 /// </summary>
-using Dal.DO;
+using DO;
 namespace Dal;
 
 public static class DataSource

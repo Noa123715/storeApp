@@ -4,7 +4,7 @@
 /// and the details of the order
 /// </summary>
 
-namespace Dal.DO;
+namespace DO;
 
     public struct Order
     {
