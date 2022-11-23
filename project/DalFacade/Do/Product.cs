@@ -4,7 +4,7 @@
 /// category, price, quantity in stock.
 /// </summary>
 
-namespace Dal.DO;
+namespace DO;
 
 public struct Product
 {

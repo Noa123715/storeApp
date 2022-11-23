@@ -3,7 +3,7 @@
 /// and holds the item and order details
 /// </summary>
 
-namespace Dal.DO;
+namespace DO;
 
     public struct OrderItem
     {

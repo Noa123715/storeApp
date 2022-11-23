@@ -2,7 +2,7 @@
 /// structor for enum
 /// </summary>
 
-namespace Dal.DO;
+namespace DO;
 /// <summary>
 /// ENUM for defining the categories for an product class
 /// </summary>

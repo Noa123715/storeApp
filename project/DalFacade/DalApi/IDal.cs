@@ -2,10 +2,9 @@
 /// 
 /// </summary>
 namespace DalApi;
-using Dal.DO;
 public interface IDal
 {
-    public IOrder Order{ get; }
-    public IOrderItem OrderItem{ get; }
+    public IOrder Order { get; }
     public IProduct Product { get; }
+    public IOrderItem OrderItem { get; }
 }

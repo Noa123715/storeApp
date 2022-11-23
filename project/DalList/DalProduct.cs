@@ -5,18 +5,19 @@
 /// updating product and deletions.
 /// </summary>
 
-using Dal.DO;
+using DO;
+using DalApi;
 namespace Dal;
 
-public struct DalProduct
+public struct DalProduct : IProduct
 {
-    public static int CreateProduct(Product newProduct)
+    public int Create(Product newProduct)
     {
         DataSource.productList.Add(newProduct);
         return newProduct.ID;
     }
 
-    public static Product ReadProduct(int id)
+    public Product Read(int id)
     {
         foreach (Product item in DataSource.productList)
         {
@@ -28,20 +29,20 @@ public struct DalProduct
         throw new Exception("The product was not found in the list");
     }
 
-    public static List<Product> ReadProduct()
+    public IEnumerable<Product> ReadAll()
     {
         List<Product> newProductList = new List<Product>();
         newProductList.AddRange(DataSource.productList);
         return newProductList;
     }
 
-    public static void DeleteProduct(int id)
+    public void Delete(int id)
     {
         DataSource.productList.RemoveAll(item => item.ID == id);
         //throw new Exception("The product was not found in the list");
     }
 
-    public static void UpDateProduct(Product UpProduct)
+    public void UpDate(Product UpProduct)
     {
         int index = DataSource.productList.FindIndex(item => item.ID == UpProduct.ID);
         if (index == -1)
