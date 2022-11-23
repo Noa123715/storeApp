@@ -55,11 +55,11 @@ void OrderCRUD()
                 Console.WriteLine("Enter the ID number of the order you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
-                order = DalOrder.ReadOrder(id);
+                order = DalOrder.Read(id);
                 Console.WriteLine(order);
                 break;
             case 'c': //to read all the exsiting orders
-                List<Order> allOrders = DalOrder.ReadOrder();
+                List<Order> allOrders = DalOrder.Read();
                 foreach (Order oneOrder in allOrders)
                     Console.WriteLine(oneOrder);
                 break;
@@ -90,13 +90,13 @@ void OrderCRUD()
                         throw new Exception("Wrong number!");
 
                 }
-                DalOrder.UpDateOrder(order);
+                DalOrder.UpDate(order);
                 break;
             case 'e': //to dalete the order
                 Console.WriteLine("Please enter the ID number of the order you want to delete: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
-                DalOrder.DeleteOrder(id);
+                DalOrder.Delete(id);
                 break;
             default:
                 throw new Exception("Your choice is wrong");
@@ -126,7 +126,7 @@ void addNewOrder()
         if (!DateTime.TryParse(Console.ReadLine(), out orderDate))
             throw new Exception("The date format does not match the value");
         newOrder.OrderDate = orderDate;
-        int id = DalOrder.CreateOrder(newOrder);
+        int id = DalOrder.Create(newOrder);
         Console.WriteLine($@"The new id is: {id}");
     }
     catch (Exception error)
@@ -242,11 +242,11 @@ void ProductCRUD()
                 Console.WriteLine("Enter the ID number of the product you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
-                product = DalProduct.ReadProduct(id);
+                product = DalProduct.Read(id);
                 Console.WriteLine(product);
                 break;
             case 'c': //to read all the exsiting products
-                List<Product> allProduct = DalProduct.ReadProduct();
+                List<Product> allProduct = DalProduct.Read();
                 foreach (Product oneProduct in allProduct)
                     Console.WriteLine(oneProduct);
                 break;
@@ -254,7 +254,7 @@ void ProductCRUD()
                 Console.WriteLine("Please enter the ID number of the product you want to update: ");
                 if (!int.TryParse(Console.ReadLine(), out id))
                     throw new Exception("You entered a none valid number");
-                product = DalProduct.ReadProduct(id);
+                product = DalProduct.Read(id);
                 Console.WriteLine("What do you want to update: \n1- name\n2- price\n3- amount in stock\n4- category");
                 if (!(int.TryParse(Console.ReadLine(), out option)))
                     throw new Exception("You entered a none valid number");
@@ -307,13 +307,13 @@ void ProductCRUD()
                         throw new Exception("Wrong number!");
 
                 }
-                DalProduct.UpDateProduct(product);
+                DalProduct.UpDate(product);
                 break;
             case 'e': //to dalete a product
                 Console.WriteLine("Please enter the ID number of the product you want to delete: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
                     throw new Exception("You entered a none valid number");
-                DalProduct.DeleteProduct(id);
+                DalProduct.Delete(id);
                 break;
             default:
                 throw new Exception("Your choice is wrong");
@@ -364,6 +364,6 @@ void addNewProduct()
         default:
             throw new Exception("Worng number!");
     }
-    int id = DalProduct.CreateProduct(newProduct);
+    int id = DalProduct.Create(newProduct);
     Console.WriteLine($@"The new id is: {id}");
 }
