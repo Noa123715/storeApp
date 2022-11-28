@@ -5,15 +5,15 @@
 /// updating order item and deletions.
 /// </ summary >
 
-using Dal.DO;
+using DO;
 using DalApi;
 namespace Dal;
 
-public struct DalOrderItem
+internal struct DalOrderItem : IOrderItem
 {
 
     // create new order item.
-    public  int CreateOrderItem(OrderItem newOrderItem)
+    public  int Create(OrderItem newOrderItem)
     {
         DataSource.orderItemList.Add(newOrderItem);
         return newOrderItem.OrderID;
@@ -21,14 +21,16 @@ public struct DalOrderItem
 
     // Read orderItem methods
 
-
-    // 
-    public  OrderItem Read(int orderItemID)
+    public OrderItem Read(int orderItemID)
     {
-        foreach (OrderItem item in DataSource.orderItemList) { 
-            if(item.ID)
-
+        foreach (OrderItem item in DataSource.orderItemList)
+        {
+            if (item.ID == orderItemID)
+            {
+                return item;
+            }
         }
+        throw new Exception("תכתבי מה שצריך לכתוב כי אין לי מושג");
     }
     //ReadByOrderID method receives orderId and returns all order-Items in specific order.
     public  List<OrderItem> ReadByOrderID(int orderID)
@@ -38,7 +40,6 @@ public struct DalOrderItem
         {
             if (item.OrderID == orderID)
                 itemsInOrder.Add(item);
-
         }
         return itemsInOrder ?? throw new NotExistException();
 
@@ -47,31 +48,28 @@ public struct DalOrderItem
     //ReadOrderItem method 2- receives orderId and productID and returns specific orderItem according to these parameters.
     public  OrderItem ReadByProdAndOrder(int prodID, int orderID)
     {
-       
         foreach (OrderItem item in DataSource.orderItemList)
         {
             if (item.OrderID == orderID && item.ProductID == prodID)
                 return item;
-
         }
         throw new NotExistException();
 
     }
 
     //ReadOrderItem method 3- returns the current list of order items.
-    public  IEnumerable<OrderItem> ReadALL()
+    public  IEnumerable<OrderItem> ReadAll()
     {
         return DataSource.orderItemList;
-        
     }
 
-    public static void DeleteOrderItem(int orderId)
+    public void Delete(int orderId)
     {
         DataSource.orderItemList.RemoveAll(item => item.OrderID == orderId);
         //throw new Exception("The orderItem was not found in the list");
     }
 
-    public  void UpDateOrderItem(OrderItem UpOrderItem)
+    public  void UpDate(OrderItem UpOrderItem)
     {
         int index = DataSource.orderItemList.FindIndex(item => item.OrderID == UpOrderItem.OrderID);
         if (index == -1)
