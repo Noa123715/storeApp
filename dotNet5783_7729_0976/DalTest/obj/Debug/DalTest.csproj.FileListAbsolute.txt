@@ -3,3 +3,8 @@ C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.AssemblyInfoInputs.cache
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.AssemblyInfo.cs
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.csproj.CoreCompileInputs.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.csproj.AssemblyReference.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.AssemblyInfoInputs.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.AssemblyInfo.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalTest\obj\Debug\DalTest.csproj.CoreCompileInputs.cache

@@ -9,3 +9,15 @@ C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.dll
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5783_7729_0976\DalFacade\obj\Debug\ref\DalFacade.dll
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.pdb
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\bin\DalFacade.deps.json
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\bin\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\bin\ref\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\bin\DalFacade.pdb
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.csproj.AssemblyReference.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.AssemblyInfoInputs.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.AssemblyInfo.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.csproj.CoreCompileInputs.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\ref\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet\dotNet5783_7729_0976\DalFacade\obj\Debug\DalFacade.pdb
