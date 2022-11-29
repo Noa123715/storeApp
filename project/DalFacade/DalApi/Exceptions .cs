@@ -19,3 +19,8 @@ public class AlreadyExistException: Exception
     public override string Message =>
             "Error - ID already exists";
 }
+public class NonValidNumberException: Exception
+{
+    public override string Message =>
+            "You entered a none valid number";
+}

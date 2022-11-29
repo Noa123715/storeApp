@@ -15,12 +15,17 @@ internal struct DalOrderItem : IOrderItem
     // create new order item.
     public  int Create(OrderItem newOrderItem)
     {
+        int index = DataSource.orderItemList.FindIndex(item => item.ID == newOrderItem.ID);
+        if (index != -1)
+            throw new AlreadyExistException();
+        
         DataSource.orderItemList.Add(newOrderItem);
         return newOrderItem.OrderID;
     }
 
     // Read orderItem methods
 
+    // read method returns spesific orderItem by its ID.
     public OrderItem Read(int orderItemID)
     {
         foreach (OrderItem item in DataSource.orderItemList)
@@ -30,7 +35,7 @@ internal struct DalOrderItem : IOrderItem
                 return item;
             }
         }
-        throw new Exception("תכתבי מה שצריך לכתוב כי אין לי מושג");
+        throw new NotExistException();
     }
     //ReadByOrderID method receives orderId and returns all order-Items in specific order.
     public  List<OrderItem> ReadByOrderID(int orderID)
@@ -60,22 +65,31 @@ internal struct DalOrderItem : IOrderItem
     //ReadOrderItem method 3- returns the current list of order items.
     public  IEnumerable<OrderItem> ReadAll()
     {
-        return DataSource.orderItemList;
+        return DataSource.orderItemList?? throw new NotExistException();
     }
 
-    public void Delete(int orderId)
+    public void Delete(int orderItemId)
     {
-        DataSource.orderItemList.RemoveAll(item => item.OrderID == orderId);
-        //throw new Exception("The orderItem was not found in the list");
+        int index = DataSource.orderItemList.FindIndex(item => item.ID == orderItemId);
+        if (index == -1)
+        {
+            throw new NotExistException();
+        }
+        DataSource.orderItemList.RemoveAt(index);
+       
     }
 
     public  void UpDate(OrderItem UpOrderItem)
     {
-        int index = DataSource.orderItemList.FindIndex(item => item.OrderID == UpOrderItem.OrderID);
+        int index = DataSource.orderItemList.FindIndex(item => item.ID == UpOrderItem.ID);
         if (index == -1)
         {
-            throw new Exception("The orderitem was not found in the list");
-        }        
+            throw new NotExistException();
+        }
+        DataSource.orderItemList[index] = UpOrderItem;
+
+
+
     }
 }
 

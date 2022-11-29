@@ -13,6 +13,10 @@ public struct DalProduct : IProduct
 {
     public int Create(Product newProduct)
     {
+        int index = DataSource.orderList.FindIndex(item => item.ID == newProduct.ID);
+        if (index != -1)
+            throw new AlreadyExistException();
+        
         DataSource.productList.Add(newProduct);
         return newProduct.ID;
     }
@@ -26,7 +30,7 @@ public struct DalProduct : IProduct
                 return item;
             }
         }
-        throw new Exception("The product was not found in the list");
+        throw new NotExistException();
     }
 
     public IEnumerable<Product> ReadAll()
@@ -38,8 +42,13 @@ public struct DalProduct : IProduct
 
     public void Delete(int id)
     {
-        DataSource.productList.RemoveAll(item => item.ID == id);
-        //throw new Exception("The product was not found in the list");
+        int index = DataSource.productList.FindIndex(item => item.ID == id);
+        if (index == -1)
+        {
+            throw new NotExistException();
+        }
+        DataSource.productList.RemoveAt(index);
+        
     }
 
     public void UpDate(Product UpProduct)
@@ -47,8 +56,9 @@ public struct DalProduct : IProduct
         int index = DataSource.productList.FindIndex(item => item.ID == UpProduct.ID);
         if (index == -1)
         {
-            throw new Exception("The product was not found in the list");
+            throw new NotExistException();
         }
+        DataSource.productList[index] = UpProduct;
     }
 }
 

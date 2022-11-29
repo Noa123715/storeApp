@@ -13,6 +13,10 @@ internal class DalOrder : IOrder
 {
     public int Create(Order newOrder)
     {
+
+        int index = DataSource.orderList.FindIndex(item => item.ID == newOrder.ID);
+        if (index != -1)
+            throw new AlreadyExistException();
         DataSource.orderList.Add(newOrder);
         return newOrder.ID;
     }
@@ -26,7 +30,7 @@ internal class DalOrder : IOrder
                 return item;
             }
         }
-        throw new Exception("The order was not found in the list");
+        throw new NotExistException();
     }
 
     public IEnumerable<Order> ReadAll()
@@ -36,10 +40,15 @@ internal class DalOrder : IOrder
         return newOrderList;
     }
 
-    public void Delete(int id)
+    public void Delete(int orderID)
     {
-        DataSource.orderList.RemoveAll(item => item.ID == id);
-        //throw new Exception("The order was not found in the list");
+        int index = DataSource.orderList.FindIndex(item => item.ID == orderID);
+        if (index == -1)
+        {
+            throw new NotExistException();
+        }
+        DataSource.orderList.RemoveAt(index);
+        
     }
 
     public void UpDate(Order UpOrder)
@@ -48,7 +57,7 @@ internal class DalOrder : IOrder
         int index = DataSource.orderList.FindIndex(item => item.ID == UpOrder.ID);
         if (index == -1)
         {
-            throw new Exception("The order was not found in the list");
+            throw new NotExistException();
         }
         DataSource.orderList.RemoveAt(index);
     }

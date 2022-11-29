@@ -1,6 +1,7 @@
 // See https://aka.ms/new-console-template for more information
 using Dal;
 using DO;
+using DalApi;
 
 try
 {
@@ -28,7 +29,7 @@ try
                 ProductCRUD();
                 break;
             default:
-                throw new Exception("Wrong number!");
+                throw new NonValidNumberException();
         }
     } while (exitCode);
 }
@@ -54,7 +55,7 @@ void OrderCRUD()
             case 'b': //to read a order by id
                 Console.WriteLine("Enter the ID number of the order you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 order = DalOrder.Read(id);
                 Console.WriteLine(order);
                 break;
@@ -66,11 +67,11 @@ void OrderCRUD()
             case 'd': //to update an exsiting orders
                 Console.WriteLine("Please enter the ID number of the order you want to update: ");
                 if (!int.TryParse(Console.ReadLine(), out id))
-                    throw new Exception("You entered a none valid number");
-                order = DalOrder.ReadOrder(id);
+                    throw new NonValidNumberException();
+                order = DalOrder.Read(id);
                 Console.WriteLine("What do you want to update: \n1- name\n2- mail\n3- adress");
                 if (!(int.TryParse(Console.ReadLine(), out option)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 //Accepting the user's choice
                 switch (option)
                 {
@@ -87,7 +88,7 @@ void OrderCRUD()
                         order.CustomerAdress = Console.ReadLine();
                         break;
                     default:
-                        throw new Exception("Wrong number!");
+                        throw new NonValidNumberException();
 
                 }
                 DalOrder.UpDate(order);
@@ -99,12 +100,11 @@ void OrderCRUD()
                 DalOrder.Delete(id);
                 break;
             default:
-                throw new Exception("Your choice is wrong");
-        }
+                throw new NonValidNumberException();
     }
-    catch (Exception error)
+    catch (Exception e)
     {
-        throw new Exception($@"This is the error: {error}");
+        Console.WriteLine(e);
     }
 }
 
@@ -132,7 +132,7 @@ void addNewOrder()
     catch (Exception error)
     {
 
-        throw new Exception($@"This is the error: {error}");
+        Console.WriteLine(error);
     }
 }
 
@@ -153,7 +153,7 @@ void OrderItemCRUD()
             case 'b': //to read a order item by id
                 Console.WriteLine("Enter the ID number of the order item you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 orderItem = DalOrderItem.ReadOrderItem(id);
                 Console.WriteLine(orderItem);
                 break;
@@ -165,28 +165,28 @@ void OrderItemCRUD()
             case 'd': //to update an exsiting orders item
                 Console.WriteLine("Please enter the ID number of the order item you want to update: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 orderItem = DalOrderItem.ReadOrderItem(id);
                 Console.WriteLine("What do you want to update: \n1- amount\n2- price");
                 if (!(int.TryParse(Console.ReadLine(), out option)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 //Accepting the user's choice
                 switch (option)
                 {
                     case (int)eUpDateOrderItem.Amount: //update the amount of the order item
                         Console.WriteLine("Please enter the new amount to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out amount)))
-                            throw new Exception("You entered a none valid number");
+                            throw new NonValidNumberException();
                         orderItem.Amount = amount;
                         break;
                     case (int)eUpDateOrderItem.Price: //update the price of the order item
                         Console.WriteLine("Please enter the new amount to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out price)))
-                            throw new Exception("You entered a none valid number");
+                            throw new NonValidNumberException();
                         orderItem.Price = price;
                         break;
                     default:
-                        throw new Exception("Worng number!");
+                        throw new NonValidNumberException();
                 }
                 DalOrderItem.UpDateOrderItem(orderItem);
                 break;
@@ -194,14 +194,14 @@ void OrderItemCRUD()
                 Console.WriteLine("");
                 Console.WriteLine("Please enter the ID number of the order item you want to delete: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 DalOrderItem.DeleteOrderItem(id);
                 break;
         }
     }
     catch (Exception error)
     {
-        throw new Exception($@"This is the error: {error}");
+        Console.WriteLine(error);
     }
 }
 
@@ -214,11 +214,11 @@ void addNewOrderItem()
     newOrderItem.ProductID = DataSource.Config.OrderItemId;
     Console.WriteLine("Please enter the amount of the item: ");
     if (!(int.TryParse(Console.ReadLine(), out amount)))
-        throw new Exception("You entered a none valid number");
+        throw new NonValidNumberException();
     newOrderItem.Amount = amount;
     Console.WriteLine("Please enter the item price: ");
     if (!(int.TryParse(Console.ReadLine(), out price)))
-        throw new Exception("You entered a none valid number");
+        throw new NonValidNumberException();
     newOrderItem.Price = price;
     int id = DalOrderItem.CreateOrderItem(newOrderItem);
     Console.WriteLine($@"The new id is: {id}");
@@ -241,7 +241,7 @@ void ProductCRUD()
             case 'b': //to read a product by id
                 Console.WriteLine("Enter the ID number of the product you want to see: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 product = DalProduct.Read(id);
                 Console.WriteLine(product);
                 break;
@@ -253,11 +253,11 @@ void ProductCRUD()
             case 'd': //to update an exsiting orders
                 Console.WriteLine("Please enter the ID number of the product you want to update: ");
                 if (!int.TryParse(Console.ReadLine(), out id))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 product = DalProduct.Read(id);
                 Console.WriteLine("What do you want to update: \n1- name\n2- price\n3- amount in stock\n4- category");
                 if (!(int.TryParse(Console.ReadLine(), out option)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 //Accepting the user's choice
                 switch (option)
                 {
@@ -268,19 +268,19 @@ void ProductCRUD()
                     case (int)eUpDateProduct.Price: //to update the price of the product
                         Console.WriteLine("Please enter the price to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out price)))
-                            throw new Exception("You entered a none valid number");
+                            throw new NonValidNumberException();
                         product.Price = price;
                         break;
                     case (int)eUpDateProduct.InStock: //to update the amount in stock of the product
                         Console.WriteLine("Please enter the amount in stock to update: ");
                         if (!(int.TryParse(Console.ReadLine(), out amountInStock)))
-                            throw new Exception("You entered a none valid number");
+                            throw new NonValidNumberException();
                         product.InStock = amountInStock;
                         break;
                     case (int)eUpDateProduct.Category: //to update the category of the product
                         Console.WriteLine("Please enter the category to update: \n0- accessories\n1- women\n2- men\n3- children\n4- beauty");
                         if (!(int.TryParse(Console.ReadLine(), out category)))
-                            throw new Exception("You entered a none valid number");
+                            throw new NonValidNumberException();
                         //Accepting the user's choice
                         switch (category)
                         {
@@ -300,11 +300,11 @@ void ProductCRUD()
                                 product.Category = eCategories.beauty;
                                 break;
                             default:
-                                throw new Exception("Worng number!");
+                                throw new NonValidNumberException();
                         }
                         break;
                     default:
-                        throw new Exception("Wrong number!");
+                         throw new NonValidNumberException();
 
                 }
                 DalProduct.UpDate(product);
@@ -312,16 +312,16 @@ void ProductCRUD()
             case 'e': //to dalete a product
                 Console.WriteLine("Please enter the ID number of the product you want to delete: ");
                 if (!(int.TryParse(Console.ReadLine(), out id)))
-                    throw new Exception("You entered a none valid number");
+                    throw new NonValidNumberException();
                 DalProduct.Delete(id);
                 break;
             default:
-                throw new Exception("Your choice is wrong");
+                throw new NonValidNumberException();
         }
     }
     catch (Exception error)
     {
-        throw new Exception($@"This is the error: {error}");
+       Console.WriteLine(error);
     }
 }
 
@@ -335,15 +335,15 @@ void addNewProduct()
     newProduct.Name = Console.ReadLine();
     Console.WriteLine("Please enter the amount in stock of the product: ");
     if (!(int.TryParse(Console.ReadLine(), out amount)))
-        throw new Exception("You entered a none valid number");
+        throw new NonValidNumberException();
     newProduct.InStock = amount;
     Console.WriteLine("Please enter the product price: ");
     if (!(int.TryParse(Console.ReadLine(), out price)))
-        throw new Exception("You entered a none valid number");
+        t throw new NonValidNumberException();
     newProduct.Price = price;
     Console.WriteLine("Please enter the product's category: \n0- accessories\n1- women\n2- men\n3- children\n4- beauty");
     if (!(int.TryParse(Console.ReadLine(), out option)))
-        throw new Exception("You entered a none valid number");
+        throw new NonValidNumberException();
     switch (option)
     {
         case (int)eCategories.accessories:
@@ -362,7 +362,7 @@ void addNewProduct()
             newProduct.Category = eCategories.beauty;
             break;
         default:
-            throw new Exception("Worng number!");
+            throw new NonValidNumberException();
     }
     int id = DalProduct.Create(newProduct);
     Console.WriteLine($@"The new id is: {id}");
