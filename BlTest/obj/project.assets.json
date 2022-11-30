@@ -60,7 +60,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BL >= 1.0.0"
+      "BL >= 1.0.0",
+      "DalFacade >= 1.0.0",
+      "DalList >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -92,6 +94,12 @@
           "projectReferences": {
             "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
               "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+            },
+            "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
+            },
+            "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj"
             }
           }
         }
