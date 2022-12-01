@@ -1,11 +1,14 @@
 // See https://aka.ms/new-console-template for more information
-using Dal;
 using DO;
+using Dal;
 using DalApi;
 
-internal class Program
+internal static class Program
 {
-    void Main(string[] args)
+    private static DalOrder DalOrder { get; set; } = new();
+    private static DalOrderItem DalOrderItem { get; set; } = new();
+    private static DalProduct DalProduct { get; set; } = new();
+    public static void Main()
     {
         try
         {
@@ -43,7 +46,7 @@ internal class Program
         }
     }
 
-    void OrderCRUD()
+    static void OrderCRUD()
     {
         try
         {
@@ -65,7 +68,7 @@ internal class Program
                     Console.WriteLine(order);
                     break;
                 case 'c': //to read all the exsiting orders
-                    List<Order> allOrders = DalOrder.Read();
+                    var allOrders = DalOrder.ReadAll();
                     foreach (Order oneOrder in allOrders)
                         Console.WriteLine(oneOrder);
                     break;
@@ -90,7 +93,7 @@ internal class Program
                             break;
                         case (int)eUpDateOrder.Adress: //update the adress to send the order
                             Console.WriteLine("Please enter the adress to update: ");
-                            order.CustomerAdress = Console.ReadLine();
+                            order.CustomerAddress = Console.ReadLine();
                             break;
                         default:
                             throw new NonValidNumberException();
@@ -114,7 +117,7 @@ internal class Program
         }
     }
 
-    void addNewOrder()
+    static void addNewOrder()
     { //add a new order list - write in a separate function to make the code easier to read
         try
         {
@@ -126,7 +129,7 @@ internal class Program
             Console.WriteLine("Please enter your mail: ");
             newOrder.CustomerEmail = Console.ReadLine();
             Console.WriteLine("Please enter your adress: ");
-            newOrder.CustomerAdress = Console.ReadLine();
+            newOrder.CustomerAddress = Console.ReadLine();
             Console.WriteLine("Please enter the order's date: (in formate dd/mm/yy)");
             DateTime orderDate;
             if (!DateTime.TryParse(Console.ReadLine(), out orderDate))
@@ -142,7 +145,7 @@ internal class Program
         }
     }
 
-    void OrderItemCRUD()
+    static void OrderItemCRUD()
     {
         try
         {
@@ -164,7 +167,7 @@ internal class Program
                     Console.WriteLine(orderItem);
                     break;
                 case 'c': //to read all the exsiting orders item
-                    List<OrderItem> allOrderItems = DalOrderItem.ReadAll();
+                    var allOrderItems = DalOrderItem.ReadAll();
                     foreach (OrderItem item in allOrderItems)
                         Console.WriteLine(item);
                     break;
@@ -211,7 +214,7 @@ internal class Program
         }
     }
 
-    void addNewOrderItem()
+    static void addNewOrderItem()
     { //add a new order item - write in a separate function to make the code easier to read
         int amount, price;
         OrderItem newOrderItem = new OrderItem();
@@ -230,7 +233,7 @@ internal class Program
         Console.WriteLine($@"The new id is: {id}");
     }
 
-    void ProductCRUD()
+    static void ProductCRUD()
     {
         try
         {
@@ -252,7 +255,7 @@ internal class Program
                     Console.WriteLine(product);
                     break;
                 case 'c': //to read all the exsiting products
-                    List<Product> allProduct = DalProduct.Read();
+                    var allProduct = DalProduct.ReadAll();
                     foreach (Product oneProduct in allProduct)
                         Console.WriteLine(oneProduct);
                     break;
@@ -331,7 +334,7 @@ internal class Program
         }
     }
 
-    void addNewProduct()
+    static void addNewProduct()
     { //add a new product - write in a separate function to make the code easier to read
         int amount, price, option;
         Product newProduct = new Product();

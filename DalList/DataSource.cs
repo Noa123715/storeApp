@@ -108,7 +108,7 @@ public static class DataSource
             order.ID = Config.OrderId;
             order.CustomerName = customerNames[i];
             order.CustomerEmail = customerEmails[i];
-            order.CustomerAdress = customerAddresses[i];
+            order.CustomerAddress = customerAddresses[i];
 
             //Random date between the opening of the store (1/1/2022) and now.
             DateTime startDate = new DateTime(2020, 1, 1);
