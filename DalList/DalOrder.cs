@@ -9,7 +9,7 @@ using DO;
 using DalApi;
 namespace Dal;
 
-public class DalOrder : IOrder
+public struct DalOrder : IOrder
 {
     public int Create(Order newOrder)
     {
@@ -47,8 +47,7 @@ public class DalOrder : IOrder
         {
             throw new NotExistException();
         }
-        DataSource.orderList.RemoveAt(index);
-        
+        DataSource.orderList.RemoveAt(index);   
     }
 
     public void UpDate(Order UpOrder)

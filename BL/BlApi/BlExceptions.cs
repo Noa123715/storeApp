@@ -1,5 +1,5 @@
 ﻿namespace BlApi;
-internal class BlExceptions
+public class BlExceptions
 {
     //לא מבינה כלום באקספשיין
 }
