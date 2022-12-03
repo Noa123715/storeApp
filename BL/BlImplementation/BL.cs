@@ -1,10 +1,9 @@
-﻿//using BlApi;
-//using BO;
-//using DalApi;
+﻿using BlApi;
+namespace BlImplementation;
 
-//namespace BlImplementation;
-//{
-//    public ICart Cart => new BLCart();
-//    public IOrder Order => new BLOrder();
-//    public IProduct Product => new BLProduct();
-//}
+sealed public class BL : IBL
+{
+    public ICart Cart => new BLCart();
+    public IOrder Order => new BLOrder();
+    public IProduct Product => new BLProduct();
+}

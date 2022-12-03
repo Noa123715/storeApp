@@ -90,7 +90,7 @@ internal class Program
                             break;
                         case (int)eUpDateOrder.Adress: //update the adress to send the order
                             Console.WriteLine("Please enter the adress to update: ");
-                            order.CustomerAdress = Console.ReadLine();
+                            order.CustomerAddress = Console.ReadLine();
                             break;
                         default:
                             throw new NonValidNumberException();
@@ -126,7 +126,7 @@ internal class Program
             Console.WriteLine("Please enter your mail: ");
             newOrder.CustomerEmail = Console.ReadLine();
             Console.WriteLine("Please enter your adress: ");
-            newOrder.CustomerAdress = Console.ReadLine();
+            newOrder.CustomerAddress = Console.ReadLine();
             Console.WriteLine("Please enter the order's date: (in formate dd/mm/yy)");
             DateTime orderDate;
             if (!DateTime.TryParse(Console.ReadLine(), out orderDate))

@@ -6,9 +6,9 @@ namespace BlApi;
 public interface IProduct
 {
     public IEnumerable<ProductForList> ReadProductsList();
-    public ProductItem ReadProductProperties(int productId, Cart cart);
-    public Product ReadProductProperties(int productId);
-    public void AddProduct(Product prod);
-    public void DeleteProduct(int productId);
-    public void UpdateProduct(Product prod);
+    public ProductItem ReadProductProperties(int productID, Cart cart);
+    public Product ReadProductProperties(int productID);
+    public void AddProduct(Product product);
+    public void DeleteProduct(int productID);
+    public void UpdateProduct(Product product);
 }

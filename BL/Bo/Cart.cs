@@ -3,7 +3,7 @@
 public class Cart
 {
     public string? CustomerName { get; set; }
-    public string? CustomerEmail { get; set; }
+    public string? CustomerMail { get; set; }
     public string? CustomerAddress { get; set; }
     public List<OrderItem> Items = new List<OrderItem>();
     public double Price { get; set; }

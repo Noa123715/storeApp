@@ -1,23 +1,18 @@
-﻿using BlApi;
-using Dal;
-using BO;
-using DO;
+﻿using Dal;
+using BlApi;
 namespace BlImplementation;
 
 internal class BLProduct : IProduct
 {
-    private DalList dalList { get; set; } = new();
-    /// <summary>
-    /// this function reads the list of the products
-    /// </summary>
-    /// <returns>list of the products</returns>
-    public IEnumerable<ProductForList> ReadProductsList()
+    private DalList Dal { get; set; } = new();
+
+    public IEnumerable<BO.ProductForList> ReadProductsList()
     {
-        var dalProduct = dalList.Product.ReadAll();
-        List<ProductForList> products = new List<ProductForList>();
+        var dalProduct = Dal.Product.ReadAll();
+        List<BO.ProductForList> products = new List<BO.ProductForList>();
         foreach (var prod in dalProduct)
         {
-            ProductForList product = new ProductForList();
+            BO.ProductForList product = new BO.ProductForList();
             product.ID = prod.ID;
             product.Name = prod.Name;
             product.Price = prod.Price;
@@ -27,15 +22,6 @@ internal class BLProduct : IProduct
         return products;
     }
 
-
-    /// <summary>
-    /// this function reads the details of a specific product
-    /// </summary>
-    /// <param name="productId">the ID of the product wanted to be read</param>
-    /// <returns>the product with the specific ID</returns>
-    /// <exception cref="DalApi.EntityNotFoundException">a DL exception for an entity not found</exception>
-    /// <exception cref="BlEntityNotFoundException">a BL exception for an entity not found</exception>
-    /// <exception cref="Exception">default exception</exception>
     public BO.Product ReadProductProperties(int productId)
     {
         BO.Product product = new BO.Product();
@@ -43,7 +29,7 @@ internal class BLProduct : IProduct
         {
             //if (productId <= 0)
                 //throw new BlEntityNotFoundException();
-            var prod = dalList.Product.Read(productId);
+            var prod = Dal.Product.Read(productId);
             product.ID = prod.ID;
             product.Name = prod.Name;
             product.Price = prod.Price;
@@ -66,44 +52,34 @@ internal class BLProduct : IProduct
         return product;
     }
 
-    /// <summary>
-    /// this function returns how many of each item in the store are in the cart
-    /// </summary>
-    /// <param name="cart">the cart to be checked</param>
-    /// <returns>list of products in store and their amount in the specific cart</returns>
-    public ProductItem ReadProductProperties(int productId, Cart cart)
+    public BO.ProductItem ReadProductProperties(int productId, BO.Cart cart)
     {
-        var DOProduct = dalList.Product.Read(productId);
+        var dalProduct = Dal.Product.Read(productId);
 
-        ProductItem product = new ProductItem();
-        product.ID = DOProduct.ID;
-        product.Name = DOProduct.Name;
-        product.Price = DOProduct.Price;
-        product.Category = (eCategories)DOProduct.Category;
-        if (cart.Items.Find(oi => oi.ProductID == productId) == null)
+        BO.ProductItem product = new BO.ProductItem();
+        product.ID = dalProduct.ID;
+        product.Name = dalProduct.Name;
+        product.Price = dalProduct.Price;
+        product.Category = (BO.eCategories)dalProduct.Category;
+        if (cart.Items.Find(item => item.ProductID == productId) == null)
         {
             product.Amount = 0;
-            product.IsInStock = DOProduct.InStock > 0;
+            product.IsInStock = dalProduct.InStock > 0;
         }
         else
         {
-            product.Amount = cart.Items.Find(oi => oi.ProductID == productId).Amount;
-            product.IsInStock = DOProduct.InStock >= product.Amount;
+            var item = cart.Items.Find(item => item.ProductID == productId);
+            if (item is not null)
+            {
+                product.Amount = item.Amount;
+            }
+            //else throw 
+            product.IsInStock = dalProduct.InStock >= product.Amount;
         }
         return product;
     }
 
-
-
-    /// <summary>
-    /// this function adds an item to data base
-    /// </summary>
-    /// <param name="prod">the product to be added</param>
-    /// <exception cref="BlEntityNotFoundException">a BL exception for an entity not found</exception>
-    /// <exception cref="BlNullValueException">a BL exception for a null value</exception>
-    /// <exception cref="BlNegativeValueException">a BL exception for an invalid negative value</exception>
-    /// <exception cref="Exception">default exception</exception>
-    public void AddProduct(BO.Product prod)
+    public void AddProduct(BO.Product product)
     {
         //try
         //{
@@ -116,12 +92,12 @@ internal class BLProduct : IProduct
         //if (prod.InStock < 0)
         //    throw new BlNegativeValueException();
         DO.Product DOProduct = new DO.Product();
-        DOProduct.ID = prod.ID;
-        DOProduct.Name = prod.Name;
-        DOProduct.Price = prod.Price;
-        DOProduct.Category = (DO.eCategories)prod.Category;
-        DOProduct.InStock = prod.InStock;
-        dalList.Product.Create(DOProduct);
+        DOProduct.ID = product.ID;
+        DOProduct.Name = product.Name;
+        DOProduct.Price = product.Price;
+        DOProduct.Category = (DO.eCategories)product.Category;
+        DOProduct.InStock = product.InStock;
+        Dal.Product.Create(DOProduct);
         //}
         //catch (BlEntityNotFoundException)
         //{
@@ -141,32 +117,22 @@ internal class BLProduct : IProduct
         //}
     }
 
-    /// <summary>
-    /// this function deleted a product from the data base
-    /// </summary>
-    /// <param name="productId">the ID of the product to be deleted</param>
-    /// <exception cref="DalApi.EntityNotFoundException">a DL exception for an entity not found</exception>
-    /// <exception cref="BlEntityNotFoundException">a BL exception for an entity not found</exception>
-    /// <exception cref="BlUnsuccessfulDeleteException">a BL exception for an unsuccessful attempt to delete</exception>
-    /// <exception cref="Exception">default exception</exception>
     public void DeleteProduct(int productId)
     {
-        try
+        //try
+        //{
+        var orderitems = Dal.OrderItem.ReadAll();
+        foreach (var item in orderitems)
         {
-            var orderitems = dalList.OrderItem.Read();
-            foreach (var oi in orderitems)
-            {
-                if (oi.ProductId == productId && dalList.Order.Read(oi.OrderId).DeliveryDate > DateTime.MinValue)
-                    throw new BlUnsuccessfulDeleteException();
-            }
-            bool deleted = dalList.Product.Delete(productId);
-            if (!deleted)
-                throw new BlUnsuccessfulDeleteException();
+            if (item.ProductID == productId && Dal.Order.Read(item.OrderID).DeliveryDate > DateTime.MinValue) ;
+            //throw new BlUnsuccessfulDeleteException();
         }
-        catch (DalApi.EntityNotFoundException)
-        {
-            throw new BlEntityNotFoundException();
-        }
+        Dal.Product.Delete(productId);
+        //}
+        //catch (DalApi.EntityNotFoundException)
+        //{
+        //    throw new BlEntityNotFoundException();
+        //}
         //catch (BlEntityNotFoundException ex)
         //{
         //    throw new BlEntityNotFoundException(ex);
@@ -181,33 +147,25 @@ internal class BLProduct : IProduct
         //}
     }
 
-    /// <summary>
-    /// updates details of product
-    /// </summary>
-    /// <param name="prod">the product for updating</param>
-    /// <exception cref="BlNullValueException">a BL exception for a null value</exception>
-    /// <exception cref="BlEntityNotFoundException">a BL exception for an entity not found</exception>
-    /// <exception cref="BlNegativeValueException">a BL exception for an invalid negative number</exception>
-    /// <exception cref="Exception">default exception</exception>
-    public void UpdateProduct(BO.Product prod)
+    public void UpdateProduct(BO.Product product)
     {
         //try
         //{
-        if (prod.ID <= 0)
-            throw new BlEntityNotFoundException();
-        if (string.IsNullOrEmpty(prod.Name))
-            throw new BlNullValueException();
-        if (prod.Price <= 0)
-            throw new BlNegativeValueException();
-        if (prod.InStock < 0)
-            throw new BlNegativeValueException();
+        //if (prod.ID <= 0)
+        //    throw new BlEntityNotFoundException();
+        //if (string.IsNullOrEmpty(prod.Name))
+        //    throw new BlNullValueException();
+        //if (prod.Price <= 0)
+        //    throw new BlNegativeValueException();
+        //if (prod.InStock < 0)
+        //    throw new BlNegativeValueException();
         DO.Product DOProduct = new DO.Product();
-        DOProduct.ID = prod.ID;
-        DOProduct.Name = prod.Name;
-        DOProduct.Price = prod.Price;
-        DOProduct.Category = (DO.eCategories)prod.Category;
-        DOProduct.InStock = prod.InStock;
-        dalList.Product.Update(DOProduct);
+        DOProduct.ID = product.ID;
+        DOProduct.Name = product.Name;
+        DOProduct.Price = product.Price;
+        DOProduct.Category = (DO.eCategories)product.Category;
+        DOProduct.InStock = product.InStock;
+        Dal.Product.UpDate(DOProduct);
         //}
         //catch (BlEntityNotFoundException)
         //{
