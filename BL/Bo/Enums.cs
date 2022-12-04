@@ -12,9 +12,33 @@ public enum eOrderStatus
 
 public enum eCategories
 {
-    accessories,
-    women,
-    men,
-    children,
-    beauty
+    Accessories,
+    Women,
+    Men,
+    Children,
+    Beauty
+}
+
+public enum eOptions 
+{ 
+    Exit,
+    Order,
+    Cart,
+    Product
+}
+
+public enum eOrder
+{
+    OrderList,
+    OrderDetails,
+    UpDateSDate,
+    UpDateDDate,
+    Track
+}
+
+public enum eCart
+{
+    AddProduct,
+    UpDateAmount,
+    Confirm
 }

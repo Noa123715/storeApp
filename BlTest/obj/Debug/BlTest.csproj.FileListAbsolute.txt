@@ -1,0 +1,5 @@
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BlTest\obj\Debug\BlTest.csproj.AssemblyReference.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BlTest\obj\Debug\BlTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BlTest\obj\Debug\BlTest.AssemblyInfoInputs.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BlTest\obj\Debug\BlTest.AssemblyInfo.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BlTest\obj\Debug\BlTest.csproj.CoreCompileInputs.cache
