@@ -4,10 +4,10 @@ namespace BlImplementation;
 
 internal class BLOrder : IOrder
 {
-    private DalList Dal { get; set; } = new();
+    private DalList DalList { get; set; } = new();
     public IEnumerable<BO.OrderForList> ReadOrderList()
     {
-        var orders = Dal.Order.ReadAll();
+        var orders = DalList.Order.ReadAll();
         List<BO.OrderForList> orderList = new List<BO.OrderForList>();
         foreach (var order in orders)
         {
@@ -16,7 +16,7 @@ internal class BLOrder : IOrder
             orderForList.CustomerName = order.CustomerName;
             orderForList.TotalPrice = 0;
             orderForList.AmountOfItems = 0;
-            var orderItems = Dal.OrderItem.ReadAll();
+            var orderItems = DalList.OrderItem.ReadAll();
             //var orderItems = Dal.OrderItem.ReadByOrderID(order.ID);
             foreach (var orderItem in orderItems)
             {
@@ -41,8 +41,8 @@ internal class BLOrder : IOrder
         //{
         //if (orderID <= 0)
         //    throw new BlEntityNotFoundException();
-        DO.Order DoOrder = Dal.Order.Read(orderID);
-        var DoOrderItems = Dal.OrderItem.ReadAll();
+        DO.Order DoOrder = DalList.Order.Read(orderID);
+        var DoOrderItems = DalList.OrderItem.ReadAll();
         //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
         BoOrder.ID = orderID;
         BoOrder.CustomerName = DoOrder.CustomerName;
@@ -62,7 +62,7 @@ internal class BLOrder : IOrder
             BO.OrderItem orderItem = new BO.OrderItem();
             orderItem.ID = oi.ID;
             orderItem.ProductID = oi.ProductID;
-            orderItem.ProductName = Dal.Product.Read(oi.ProductID).Name;
+            orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
             orderItem.Amount = oi.Amount;
             orderItem.Price = oi.Price;
             orderItem.TotalPrice = oi.Amount * oi.Price;
@@ -90,13 +90,13 @@ internal class BLOrder : IOrder
     BO.Order BoOrder = new BO.Order();
         //try
         //{
-        DO.Order DoOrder = Dal.Order.Read(orderID);
+        DO.Order DoOrder = DalList.Order.Read(orderID);
         //if (DoOrder.ID == 0)
         //    throw new BlEntityNotFoundException();
         //if (DoOrder.ShipDate != DateTime.MinValue)
         //    throw new BlNoNeedToUpdateException();
         DoOrder.ShipDate = DateTime.Now;
-        Dal.Order.UpDate(DoOrder);
+        DalList.Order.UpDate(DoOrder);
         BoOrder.ID = DoOrder.ID;
         BoOrder.CustomerName = DoOrder.CustomerName;
         BoOrder.CustomerMail = DoOrder.CustomerEmail;
@@ -106,14 +106,14 @@ internal class BLOrder : IOrder
         BoOrder.ShipDate = DateTime.Now;
         BoOrder.DeliveryDate = DateTime.MinValue;
         BoOrder.TotalPrice = 0;
-        var DoOrderItems = Dal.OrderItem.ReadAll();
+        var DoOrderItems = DalList.OrderItem.ReadAll();
         //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
         foreach (var OrderItem in DoOrderItems)
         {
             BO.OrderItem orderItem = new BO.OrderItem();
             orderItem.ID = OrderItem.ID;
             orderItem.ProductID = OrderItem.ProductID;
-            orderItem.ProductName = Dal.Product.Read(OrderItem.ProductID).Name;
+            orderItem.ProductName = DalList.Product.Read(OrderItem.ProductID).Name;
             orderItem.Amount = OrderItem.Amount;
             orderItem.Price = OrderItem.Price;
             orderItem.TotalPrice = OrderItem.Amount * OrderItem.Price;
@@ -145,7 +145,7 @@ internal class BLOrder : IOrder
         BO.Order BoOrder = new BO.Order();
         //try
         //{
-        var DoOrder = Dal.Order.Read(orderID);
+        var DoOrder = DalList.Order.Read(orderID);
         //if (DoOrder.ID == 0)
         //    throw new BlEntityNotFoundException();
         //if (DoOrder.ShipDate == DateTime.MinValue)
@@ -162,14 +162,14 @@ internal class BLOrder : IOrder
         BoOrder.DeliveryDate = DateTime.Now;
         BoOrder.Status = (BO.eOrderStatus)2;
         BoOrder.TotalPrice = 0;
-        var DoOrderItems = Dal.OrderItem.ReadAll();
+        var DoOrderItems = DalList.OrderItem.ReadAll();
         //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
         foreach (var oi in DoOrderItems)
         {
             BO.OrderItem orderItem = new BO.OrderItem();
             orderItem.ID = oi.ID;
             orderItem.ProductID = oi.ProductID;
-            orderItem.ProductName = Dal.Product.Read(oi.ProductID).Name;
+            orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
             orderItem.Amount = oi.Amount;
             orderItem.Price = oi.Price;
             orderItem.TotalPrice = oi.Amount * oi.Price;
@@ -198,7 +198,7 @@ internal class BLOrder : IOrder
 
     public BO.OrderTracking TrackOrder(int orderID)
     {
-        var order = Dal.Order.Read(orderID);
+        var order = DalList.Order.Read(orderID);
         //if (order.ID == 0)
         //    throw new BlEntityNotFoundException();
         BO.OrderTracking BoOrderTracking = new BO.OrderTracking();
