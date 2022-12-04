@@ -7,8 +7,8 @@ internal class BLCart : ICart
     private DalList Dal { get; set; } = new();
     public BO.Cart AddProductToCart(BO.Cart cart, int productID)
     {
-        //try
-        //{
+        try
+        {
             DO.Product product = Dal.Product.Read(productID);
             int productInStock = product.InStock;
             double productPrice = product.Price;
@@ -50,37 +50,31 @@ internal class BLCart : ICart
                 }
                 return cart;
             }
-        return cart;//לא אמור להיות כאן
-            //else
-            //    throw new BlOutOfStockException();
-        //}
-        //catch (DalApi.EntityNotFoundException)
-        //{
-        //    throw new BlEntityNotFoundException();
-        //}
-        //catch (BlOutOfStockException ex)
-        //{
-        //    throw new BlOutOfStockException();
-        //}
-        //catch (Exception ex)
-        //{
-        //    throw new Exception();
-        //}
+
+            else
+                throw new BlOutOfStockException();
+        }
+        catch (DalApi.NotExistException notExistException)
+        {
+            throw new BLNotExistException(notExistException);
+        }
+      
+     
     }
 
     public BO.Cart UpdateProductAmount(BO.Cart cart, int productID, int newAmount)
     {
-        //try
-        //{
+        try
+        {
         int productInStock = Dal.Product.Read(productID).InStock;
         double productPrice = Dal.Product.Read(productID).Price;
         BO.OrderItem orderItem = new BO.OrderItem();
         var item = cart.Items.Find(item => item.ProductID == productID);
-        if (item != null)
-        {
-            orderItem = item;
-        }
-        //else throw
+            if (item != null)
+            {
+                orderItem = item;
+            }
+
         //if (orderItem == null)
         //    throw new BlEntityNotFoundException();
         if (newAmount > orderItem.Amount)
@@ -104,19 +98,13 @@ internal class BLCart : ICart
         }
 
         return cart;
-        //}
-        //catch (DalApi.EntityNotFoundException)
-        //{
-        //    throw new BlEntityNotFoundException();
-        //}
-        //catch (BlOutOfStockException)
-        //{
-        //    throw new BlOutOfStockException();
-        //}
-        //catch (Exception)
-        //{
-        //    throw new Exception();
-        //}
+        }
+        catch (DalApi.NotExistException notExist)
+        {
+           throw new BLNotExistException(notExist);
+        }
+       
+     
     }
 
     public void Confirmation(BO.Cart cart, string customerName, string customerMail, string customerAddress)

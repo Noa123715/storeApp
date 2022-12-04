@@ -1,5 +1,6 @@
 ﻿using BlApi;
 using Dal;
+using DalApi;
 namespace BlImplementation;
 
 internal class BLOrder : IOrder
@@ -37,10 +38,10 @@ internal class BLOrder : IOrder
     public BO.Order ReadOrderProperties(int orderID)
     {
         BO.Order BoOrder = new BO.Order();
-        //try
-        //{
-        //if (orderID <= 0)
-        //    throw new BlEntityNotFoundException();
+        try
+        {
+        if (orderID <= 0)
+            throw new BlNotExistException();
         DO.Order DoOrder = DalList.Order.Read(orderID);
         var DoOrderItems = DalList.OrderItem.ReadAll();
         //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
@@ -68,19 +69,14 @@ internal class BLOrder : IOrder
             orderItem.TotalPrice = oi.Amount * oi.Price;
             BoOrder.Items.Add(orderItem);
         }
-        //}
-        //catch (DalApi.EntityNotFoundException)
-        //{
-        //    throw new BlEntityNotFoundException();
-        //}
-        //catch (BlEntityNotFoundException)
-        //{
-        //    throw new BlEntityNotFoundException();
-        //}
-        //catch (Exception)
-        //{
-        //    throw new Exception();
-        //}
+       }
+        catch (NotExistException notExist)
+        {
+          throw new BlNotExistException(notExist);
+       }
+      
+        
+    
 
         return BoOrder;
     }
