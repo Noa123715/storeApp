@@ -47,7 +47,7 @@ internal class BLOrder : BlApi.IOrder
         //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
         BoOrder.ID = orderID;
         BoOrder.CustomerName = DoOrder.CustomerName;
-        BoOrder.CustomerEmail = DoOrder.CustomerEmail;
+        BoOrder.CustomerMail = DoOrder.CustomerEmail;
         BoOrder.CustomerAddress = DoOrder.CustomerAddress;
         BoOrder.OrderDate = DoOrder.OrderDate;
         BoOrder.ShipDate = DoOrder.ShipDate;
@@ -95,7 +95,7 @@ internal class BLOrder : BlApi.IOrder
         DalList.Order.UpDate(DoOrder);
         BoOrder.ID = DoOrder.ID;
         BoOrder.CustomerName = DoOrder.CustomerName;
-        BoOrder.CustomerEmail = DoOrder.CustomerEmail;
+        BoOrder.CustomerMail = DoOrder.CustomerEmail;
         BoOrder.CustomerAddress = DoOrder.CustomerAddress;
         BoOrder.Status = (BO.eOrderStatus)1;
         BoOrder.OrderDate = DoOrder.OrderDate;
@@ -140,7 +140,7 @@ internal class BLOrder : BlApi.IOrder
             DoOrder.DeliveryDate = DateTime.Now;
             BoOrder.ID = DoOrder.ID;
             BoOrder.CustomerName = DoOrder.CustomerName;
-            BoOrder.CustomerEmail = DoOrder.CustomerEmail;
+            BoOrder.CustomerMail = DoOrder.CustomerEmail;
             BoOrder.CustomerAddress = DoOrder.CustomerAddress;
             BoOrder.OrderDate = DoOrder.OrderDate;
             BoOrder.ShipDate = DoOrder.ShipDate;

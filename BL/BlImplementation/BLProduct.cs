@@ -86,11 +86,11 @@ internal class BLProduct : IProduct
         {
         if (product.ID <= 0)
             throw new BlNotExistException();
-        if (string.IsNullOrEmpty(prod.Name))
+        if (string.IsNullOrEmpty(product.Name))
             throw new BlNullValueException();
         if (product.Price <= 0)
            throw new BlInValidInputException();
-        if (prod.InStock < 0)
+        if (product.InStock < 0)
                 throw new BlInValidInputException();
         DO.Product DOProduct = new DO.Product();
         DOProduct.ID = product.ID;
