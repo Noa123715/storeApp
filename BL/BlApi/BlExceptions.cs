@@ -5,13 +5,13 @@
 namespace BlApi;
 
 /// <summary>
-///  BLNotExistException class- for Attempts to search, add or delete
+///  BlNotExistException class- for Attempts to search, add or delete
 /// an object that does not exist or with a missing identifier.
 /// </summary>
 
-public class BLNotExistException : Exception
+public class BlNotExistException : Exception
 {
-    public BLNotExistException(DalApi.NotExistException inner ) : base("", inner) { }
+    public BlNotExistException(DalApi.NotExistException? inner= null ) : base("", inner) { }
     public override string Message => $"{InnerException.Message}";
                    
 }
@@ -23,9 +23,9 @@ public class BLNotExistException : Exception
 /// </summary>
 
 
-public class BLAlreadyExistException : Exception
+public class BlAlreadyExistException : Exception
 {
-    public BLAlreadyExistException(DalApi.AlreadyExistException inner): base("", inner) { }
+    public BlAlreadyExistException(DalApi.AlreadyExistException ? inner= null): base("", inner) { }
     public override string Message => $"{InnerException.Message}";
            
 }
@@ -34,7 +34,7 @@ public class BLAlreadyExistException : Exception
 /// <summary>
 /// BLInValidInputException class for input errors.
 /// </summary>
-public class BLInValidInputException: Exception
+public class BlInValidInputException : Exception
 {
     public override string Message => "Invalid input";
 }
@@ -71,3 +71,12 @@ public class BlNullValueException : Exception
 }
 
 
+/// <summary>
+/// exception for updating dates in wrong order
+/// </summary>
+public class BlWrongDateSequenceException : Exception
+{
+    public override string Message =>
+                    "can't update dates in wrong sequence";
+
+}

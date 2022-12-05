@@ -3,6 +3,10 @@
 /// </summary>
 
 namespace BO;
+
+/// <summary>
+/// eOrderStatus enum for 3 statuses of order-status
+/// </summary>
 public enum eOrderStatus
 {
     Ordered,

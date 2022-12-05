@@ -3,7 +3,7 @@ using Dal;
 using DalApi;
 namespace BlImplementation;
 
-internal class BLOrder : IOrder
+internal class BLOrder : BlApi.IOrder
 {
     private DalList DalList { get; set; } = new();
     public IEnumerable<BO.OrderForList> ReadOrderList()
@@ -47,7 +47,7 @@ internal class BLOrder : IOrder
         //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
         BoOrder.ID = orderID;
         BoOrder.CustomerName = DoOrder.CustomerName;
-        BoOrder.CustomerMail = DoOrder.CustomerEmail;
+        BoOrder.CustomerEmail = DoOrder.CustomerEmail;
         BoOrder.CustomerAddress = DoOrder.CustomerAddress;
         BoOrder.OrderDate = DoOrder.OrderDate;
         BoOrder.ShipDate = DoOrder.ShipDate;
@@ -84,25 +84,25 @@ internal class BLOrder : IOrder
     public BO.Order UpdateOrderSent(int orderID)
     {
     BO.Order BoOrder = new BO.Order();
-        //try
-        //{
-        DO.Order DoOrder = DalList.Order.Read(orderID);
-        //if (DoOrder.ID == 0)
-        //    throw new BlEntityNotFoundException();
+        try
+        {
+            DO.Order DoOrder = DalList.Order.Read(orderID);
+        if (DoOrder.ID == 0)
+            throw new BlNotExistException();
         //if (DoOrder.ShipDate != DateTime.MinValue)
-        //    throw new BlNoNeedToUpdateException();
+        //   throw new BlNoNeedToUpdateException(); // לדעתי מיותר, האם אסור לעדכן תאריך שליחה?
         DoOrder.ShipDate = DateTime.Now;
         DalList.Order.UpDate(DoOrder);
         BoOrder.ID = DoOrder.ID;
         BoOrder.CustomerName = DoOrder.CustomerName;
-        BoOrder.CustomerMail = DoOrder.CustomerEmail;
+        BoOrder.CustomerEmail = DoOrder.CustomerEmail;
         BoOrder.CustomerAddress = DoOrder.CustomerAddress;
         BoOrder.Status = (BO.eOrderStatus)1;
         BoOrder.OrderDate = DoOrder.OrderDate;
         BoOrder.ShipDate = DateTime.Now;
         BoOrder.DeliveryDate = DateTime.MinValue;
         BoOrder.TotalPrice = 0;
-        var DoOrderItems = DalList.OrderItem.ReadAll();
+        var DoOrderItems = DalList.OrderItem.ReadAll();  // לעשות את זה var או Ienumerable?
         //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
         foreach (var OrderItem in DoOrderItems)
         {
@@ -116,102 +116,90 @@ internal class BLOrder : IOrder
             BoOrder.TotalPrice += orderItem.TotalPrice;
             BoOrder.Items.Add(orderItem);
         }
-    //}
-    //catch (DalApi.EntityNotFoundException ex)
-    //{
-    //    throw new BlEntityNotFoundException(ex);
-    //}
-    //catch (BlEntityNotFoundException)
-    //{
-    //    throw new BlEntityNotFoundException();
-    //}
-    //catch (BlNoNeedToUpdateException)
-    //{
-    //    throw new BlNoNeedToUpdateException();
-    //}
-    //catch (Exception)
-    //{
-    //    throw new Exception();
-    //}
-    return BoOrder;
+        }
+        catch (DalApi.NotExistException ex)
+        {
+            throw new BlNotExistException(ex);
+}
+       
+        return BoOrder;
 }
 
     public BO.Order UpdateOrderDelivery(int orderID)
     {
         BO.Order BoOrder = new BO.Order();
-        //try
-        //{
-        var DoOrder = DalList.Order.Read(orderID);
-        //if (DoOrder.ID == 0)
-        //    throw new BlEntityNotFoundException();
-        //if (DoOrder.ShipDate == DateTime.MinValue)
-        //    throw new BlDateSeqException();
-        //if (DoOrder.DeliveryDate != DateTime.MinValue)
-        //    throw new BlNoNeedToUpdateException();
-        DoOrder.DeliveryDate = DateTime.Now;
-        BoOrder.ID = DoOrder.ID;
-        BoOrder.CustomerName = DoOrder.CustomerName;
-        BoOrder.CustomerMail = DoOrder.CustomerEmail;
-        BoOrder.CustomerAddress = DoOrder.CustomerAddress;
-        BoOrder.OrderDate = DoOrder.OrderDate;
-        BoOrder.ShipDate = DoOrder.ShipDate;
-        BoOrder.DeliveryDate = DateTime.Now;
-        BoOrder.Status = (BO.eOrderStatus)2;
-        BoOrder.TotalPrice = 0;
-        var DoOrderItems = DalList.OrderItem.ReadAll();
-        //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
-        foreach (var oi in DoOrderItems)
+        try
         {
-            BO.OrderItem orderItem = new BO.OrderItem();
-            orderItem.ID = oi.ID;
-            orderItem.ProductID = oi.ProductID;
-            orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
-            orderItem.Amount = oi.Amount;
-            orderItem.Price = oi.Price;
-            orderItem.TotalPrice = oi.Amount * oi.Price;
-            BoOrder.TotalPrice += orderItem.TotalPrice;
-            BoOrder.Items.Add(orderItem);
+            var DoOrder = DalList.Order.Read(orderID);
+            //if (DoOrder.ID == 0)
+            //    throw new BlNotExistException();  //לדעתי הדאל אמור לזרוק את זה במקרה ולא נמצא
+            if (DoOrder.ShipDate == DateTime.MinValue)
+                throw new BlWrongDateSequenceException();
+            //if (DoOrder.DeliveryDate != DateTime.MinValue)
+            //    throw new BlNoNeedToUpdateException(); // לדעתי פעולה חוקית- עדכון תאריך שליחה.
+            DoOrder.DeliveryDate = DateTime.Now;
+            BoOrder.ID = DoOrder.ID;
+            BoOrder.CustomerName = DoOrder.CustomerName;
+            BoOrder.CustomerEmail = DoOrder.CustomerEmail;
+            BoOrder.CustomerAddress = DoOrder.CustomerAddress;
+            BoOrder.OrderDate = DoOrder.OrderDate;
+            BoOrder.ShipDate = DoOrder.ShipDate;
+            BoOrder.DeliveryDate = DateTime.Now;
+            BoOrder.Status = (BO.eOrderStatus)2;
+            BoOrder.TotalPrice = 0;
+            var DoOrderItems = DalList.OrderItem.ReadAll();
+            //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
+            foreach (var oi in DoOrderItems)
+            {
+                BO.OrderItem orderItem = new BO.OrderItem();
+                orderItem.ID = oi.ID;
+                orderItem.ProductID = oi.ProductID;
+                orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
+                orderItem.Amount = oi.Amount;
+                orderItem.Price = oi.Price;
+                orderItem.TotalPrice = oi.Amount * oi.Price;
+                BoOrder.TotalPrice += orderItem.TotalPrice;
+                BoOrder.Items.Add(orderItem);
+            }
         }
-        //}
-        //catch (BlEntityNotFoundException)
-        //{
-        //    throw new BlEntityNotFoundException();
-        //}
-        //catch (BlDateSeqException)
-        //{
-        //    throw new BlDateSeqException();
-        //}
-        //catch (BlNoNeedToUpdateException)
-        //{
-        //    throw new BlNoNeedToUpdateException();
-        //}
-        //catch (Exception)
-        //{
-        //    throw new Exception();
-        //}
+
+        catch (DalApi.NotExistException err)
+        {
+            throw new BlNotExistException(err);
+        }
+     
+       
         return BoOrder;
     }
 
     public BO.OrderTracking TrackOrder(int orderID)
     {
-        var order = DalList.Order.Read(orderID);
-        //if (order.ID == 0)
-        //    throw new BlEntityNotFoundException();
-        BO.OrderTracking BoOrderTracking = new BO.OrderTracking();
-        List<(DateTime, string)> list = new List<(DateTime, string)>();
-        list.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
-        BoOrderTracking.TrackList.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
-        BoOrderTracking.Status = BO.eOrderStatus.Ordered;
-        if (order.ShipDate > DateTime.MinValue)
+        try
         {
-            BoOrderTracking.TrackList.Add((order.ShipDate, BO.eOrderStatus.Shipped.ToString()));
-            BoOrderTracking.Status = BO.eOrderStatus.Shipped;
-            if (order.DeliveryDate > DateTime.MinValue)
+            var order = DalList.Order.Read(orderID);
+            //if (order.ID == 0)
+            //    throw new BlEntityNotFoundException(); //מיותר לדעתי, כנ"ל
+            BO.OrderTracking BoOrderTracking = new BO.OrderTracking();
+            List<(DateTime, string)> list = new List<(DateTime, string)>();
+            list.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
+            BoOrderTracking.TrackList.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
+            BoOrderTracking.Status = BO.eOrderStatus.Ordered;
+            if (order.ShipDate > DateTime.MinValue)
             {
-                BoOrderTracking.TrackList.Add((order.DeliveryDate, BO.eOrderStatus.Delivered.ToString()));
-                BoOrderTracking.Status = BO.eOrderStatus.Delivered;
+                BoOrderTracking.TrackList.Add((order.ShipDate, BO.eOrderStatus.Shipped.ToString()));
+                BoOrderTracking.Status = BO.eOrderStatus.Shipped;
+                if (order.DeliveryDate > DateTime.MinValue)
+                {
+                    BoOrderTracking.TrackList.Add((order.DeliveryDate, BO.eOrderStatus.Delivered.ToString()));
+                    BoOrderTracking.Status = BO.eOrderStatus.Delivered;
+                }
             }
+            return BoOrderTracking;
+        } 
+        catch (DalApi.NotExistException err)
+        {
+            throw new BlNotExistException(err);
         }
-        return BoOrderTracking;
+       
     }
 }

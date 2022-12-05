@@ -16,7 +16,7 @@ internal class BLCart : ICart
             if (!(cart.Items == null))
             {
                 var item = cart.Items.Find(item => item.ProductID == productID);
-                if (item is not null) 
+                if (item != null) 
                 { 
                     orderItem = item;
                 }     
@@ -75,12 +75,12 @@ internal class BLCart : ICart
                 orderItem = item;
             }
 
-        //if (orderItem == null)
-        //    throw new BlEntityNotFoundException();
+        if (orderItem == null)
+           throw new BLNotExistException(new DalApi.NotExistException() ); // האם זה צורה נכונה?
         if (newAmount > orderItem.Amount)
         {
-            //if (newAmount - orderItem.Amount > productInStock)
-            //    throw new BlOutOfStockException();
+            if (newAmount - orderItem.Amount > productInStock)
+                throw new BlOutOfStockException();
             cart.Price += (newAmount - orderItem.Amount) * productPrice;
             orderItem.TotalPrice += (newAmount - orderItem.Amount) * productPrice;
             orderItem.Amount = newAmount;
@@ -109,35 +109,35 @@ internal class BLCart : ICart
 
     public void Confirmation(BO.Cart cart, string customerName, string customerMail, string customerAddress)
     {
-        //try
-        //{
+        try
+        {
         var addr = new System.Net.Mail.MailAddress(customerMail);
         bool isValid = (addr.Address == customerMail);
-        //if (customerName == "" || customerAddress == "")
-        //{
-        //    throw new BlNullValueException();
-        //}
-        //if (!isValid)
-        //{
-        //    throw new BlInvalidEmailException();
-        //}
-        int productInStock;
+        if (customerName == "" || customerAddress == "")
+        {
+                throw new BlNullValueException();
+            }
+            if (!isValid)
+            {
+                throw new BlInvalidEmailException();
+            }
+            int productInStock;
         foreach (BO.OrderItem oi in cart.Items)
         {
             productInStock = Dal.Product.Read(oi.ProductID).InStock;
-            //if (oi.Amount < 0)
-            //{
-            //    throw new BlNegativeValueException();
-            //}
-            //if (productInStock < oi.Amount)
-            //{
-            //    throw new BlOutOfStockException();
-            //}
-            List<DO.Product> prodList = DataSource.productList;
+            if (oi.Amount < 0)
+            {
+             throw new BlInValidInputException();
+            }
+            if (productInStock < oi.Amount)
+            {
+                    throw new BlOutOfStockException();
+                }
+                List<DO.Product> prodList = DataSource.productList;
             bool idExists = (prodList.Find(p => p.ID == oi.ProductID)).ID != 0;
-            //if (!idExists)
-            //    throw new BlEntityNotFoundException();
-        }
+                if (!idExists)
+                    throw new BlNotExistException();
+            }
         //ותקבל בחזרה מספר הזמנה
         DO.Order DoOrder = new DO.Order();
         DoOrder.OrderDate = DateTime.Now;
@@ -162,30 +162,14 @@ internal class BLCart : ICart
             Dal.Product.UpDate(DoProduct);
         }
         Console.WriteLine("confirmed");
-        //}
-        //catch (BlNegativeValueException)
-        //{
-        //    throw new BlNegativeValueException();
-        //}
-        //catch (BlOutOfStockException)
-        //{
-        //    throw new BlOutOfStockException();
-        //}
-        //catch (BlNullValueException)
-        //{
-        //    throw new BlNullValueException();
-        //}
-        //catch (BlInvalidEmailException)
-        //{
-        //    throw new BlInvalidEmailException();
-        //}
-        //catch (BlEntityNotFoundException ex)
-        //{
-        //    throw new BlEntityNotFoundException(ex);
-        //}
-        //catch (Exception)
-        //{
-        //    throw new Exception();
-        //}
+        }
+      
+    
+     
+  
+       catch (DalApi.NotExistException err)
+        {
+            throw new BlNotExistException(err);
+        }
     }
 }
