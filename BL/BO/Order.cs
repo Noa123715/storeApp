@@ -24,7 +24,7 @@ public class Order
         string toString =
                 $@"order ID={ID}: 
                 customer mame: {CustomerName}, 
-                email {CustomerMail},
+                email {CustomerEmail},
                 address {CustomerAddress}.
                 order date: {OrderDate}, 
                 ship: {ShipDate}, 
