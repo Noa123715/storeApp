@@ -168,7 +168,7 @@ internal class BLProduct : IProduct
             throw new BlNotExistException(err);
         }
        
-    }
+   }
 
     /// <summary>
     /// UpdateProduct method updates a product property (for manager).

@@ -16,6 +16,7 @@ public enum eOrderStatus
 
 public enum eCategories
 {
+    Zero,
     Accessories,
     Women,
     Men,
@@ -33,6 +34,7 @@ public enum eOptions
 
 public enum eOrder
 {
+    Zero,
     OrderList,
     OrderDetails,
     UpDateSDate,
@@ -42,7 +44,18 @@ public enum eOrder
 
 public enum eCart
 {
+    Zero,
     AddProduct,
     UpDateAmount,
     Confirm
+}
+
+public enum eProduct
+{
+    Zero,
+    ReadAll,
+    ReadProperties,
+    Add,
+    Delete,
+    UpDate
 }
