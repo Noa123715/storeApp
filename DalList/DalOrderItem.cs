@@ -38,7 +38,7 @@ public struct DalOrderItem : IOrderItem
         throw new NotExistException();
     }
     //ReadByOrderID method receives orderId and returns all order-Items in specific order.
-    public  List<OrderItem> ReadByOrderID(int orderID)
+    public  IEnumerable<OrderItem> ReadByOrderID(int orderID)
     {
         List<OrderItem> itemsInOrder = new List<OrderItem>();
         foreach (OrderItem item in DataSource.orderItemList)

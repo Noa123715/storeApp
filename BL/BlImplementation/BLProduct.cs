@@ -1,14 +1,30 @@
 ﻿using Dal;
 using BlApi;
 namespace BlImplementation;
-
+/// <summary>
+/// BLProduct class- implements IProduct methods: 
+/// reading product list <see cref="ReadProductsList"/>
+/// Reading product properties <see cref="ReadProductProperties"/>
+/// adding a product <see cref="AddProduct"/>
+///  delete product <see cref="DeleteProduct"/>
+/// update product properties  <see cref="UpdateProduct"/>
+/// </summary>
 internal class BLProduct : IProduct
 {
+
+     /// <summary>
+    /// creating Idal instance for using its methods and members in BLOrder.
+    /// </summary>
+
     private DalList Dal { get; set; } = new();
 
+    /// <summary>
+    /// ReadProductsList method- recieves from dal layer the products list for manager.
+    /// </summary>
+    /// <returns> products list</returns>
     public IEnumerable<BO.ProductForList> ReadProductsList()
     {
-        var dalProduct = Dal.Product.ReadAll();
+        IEnumerable<DO.Product> dalProduct = Dal.Product.ReadAll();
         List<BO.ProductForList> products = new List<BO.ProductForList>();
         foreach (var prod in dalProduct)
         {
@@ -22,14 +38,22 @@ internal class BLProduct : IProduct
         return products;
     }
 
+    /// <summary>
+    /// ReadProductProperties method
+    /// </summary>
+    /// <param name="productId"></param>
+    /// <returns> all properties for specific product</returns>
+    /// <exception cref="BlNotExistException"></exception>
+    /// <exception cref="BlInValidInputException"></exception>
+
     public BO.Product ReadProductProperties(int productId)
     {
         BO.Product product = new BO.Product();
         try
         {
-            //if (productId <= 0)
-                //throw new BlEntityNotFoundException();
-            var prod = Dal.Product.Read(productId);
+            if (productId <= 0)
+                throw new BlInValidInputException();
+            DO.Product prod = Dal.Product.Read(productId);
             product.ID = prod.ID;
             product.Name = prod.Name;
             product.Price = prod.Price;
@@ -44,13 +68,19 @@ internal class BLProduct : IProduct
         
         return product;
     }
-
+    /// <summary>
+    /// Read product properties for specific product in specific cart.
+    /// </summary>
+    /// <param name="productId"></param>
+    /// <param name="cart"></param>
+    /// <returns> product-item properties for the require  </returns>
+    /// <exception cref="BlNotExistException"></exception>
     public BO.ProductItem ReadProductProperties(int productId, BO.Cart cart)
     {
 
         try
         {
-            var dalProduct = Dal.Product.Read(productId);
+            DO.Product dalProduct = Dal.Product.Read(productId);
 
             BO.ProductItem product = new BO.ProductItem();
             product.ID = dalProduct.ID;
@@ -64,7 +94,7 @@ internal class BLProduct : IProduct
             }
             else
             {
-                var item = cart.Items.Find(item => item.ProductID == productId);
+                BO.OrderItem? item = cart.Items.Find(item => item.ProductID == productId);
                 if (item is not null)
                 {
                     product.Amount = item.Amount;
@@ -80,17 +110,24 @@ internal class BLProduct : IProduct
         }
     }
 
+    /// <summary>
+    /// Add new product to catalog (for manager).
+    /// </summary>
+    /// <param name="product"> new product for adding</param>
+    /// <exception cref="BlNullValueException"></exception>
+    /// <exception cref="BlInValidInputException"></exception>
+    /// <exception cref="BlAlreadyExistException"></exception>
     public void AddProduct(BO.Product product)
     {
         try
         {
         if (product.ID <= 0)
-            throw new BlNotExistException();
-        if (string.IsNullOrEmpty(prod.Name))
+            throw new BlInValidInputException();
+        if (string.IsNullOrEmpty(product.Name))
             throw new BlNullValueException();
         if (product.Price <= 0)
            throw new BlInValidInputException();
-        if (prod.InStock < 0)
+        if (product.InStock < 0)
                 throw new BlInValidInputException();
         DO.Product DOProduct = new DO.Product();
         DOProduct.ID = product.ID;
@@ -107,16 +144,23 @@ internal class BLProduct : IProduct
         }
     }
 
+    /// <summary>
+    /// Delete product from catalog (for manager).
+    /// </summary>
+    /// <param name="productId"></param>
+    /// <exception cref="BlNotExistException"></exception>
     public void DeleteProduct(int productId)
     {
         try
         {
-        var orderitems = Dal.OrderItem.ReadAll();
-        //foreach (var item in orderitems) // מה קשורה כאן הדיקה הזו למען ה
-        //{
-        //    if (item.ProductID == productId && Dal.Order.Read(item.OrderID).DeliveryDate > DateTime.MinValue) ;
-        //    //throw new BlUnsuccessfulDeleteException();
-        //}
+         IEnumerable<DO.OrderItem> orderitems = Dal.OrderItem.ReadAll();
+         foreach (var item in orderitems)
+            {
+              if (item.ProductID == productId ) 
+                 throw new BlIllegalDeletionAttempt();          
+            }
+
+            
         Dal.Product.Delete(productId);
         }
         catch (DalApi.NotExistException err)
@@ -126,37 +170,36 @@ internal class BLProduct : IProduct
        
     }
 
+    /// <summary>
+    /// UpdateProduct method updates a product property (for manager).
+    /// </summary>
+    /// <param name="product"></param>
     public void UpdateProduct(BO.Product product)
     {
-        //try
-        //{
-        //if (prod.ID <= 0)
-        //    throw new BlEntityNotFoundException();
-        //if (string.IsNullOrEmpty(prod.Name))
-        //    throw new BlNullValueException();
-        //if (prod.Price <= 0)
-        //    throw new BlNegativeValueException();
-        //if (prod.InStock < 0)
-        //    throw new BlNegativeValueException();
-        DO.Product DOProduct = new DO.Product();
-        DOProduct.ID = product.ID;
+
+        try { 
+         DO.Product DOProduct= Dal.Product.Read(product.ID);
+           
+       
+        if (string.IsNullOrEmpty(prod.Name))
+            throw new BlNullValueException();
+          
+        if (prod.Price <= 0)
+            throw new BlInValidInputException();
+        if (prod.InStock < 0)
+           throw new BlInValidInputException();
+        
+
         DOProduct.Name = product.Name;
         DOProduct.Price = product.Price;
         DOProduct.Category = (DO.eCategories)product.Category;
         DOProduct.InStock = product.InStock;
         Dal.Product.UpDate(DOProduct);
-        //}
-        //catch (BlEntityNotFoundException)
-        //{
-        //    throw new BlEntityNotFoundException();
-        //}
-        //catch (BlNegativeValueException)
-        //{
-        //    throw new BlNegativeValueException();
-        //}
-        //catch (Exception)
-        //{
-        //    throw new Exception();
-        //}
+     
+     }
+        catch(DalApi.NotExistException err)
+        {
+            throw new BlNotExistException(err);
+        }
     }
 }

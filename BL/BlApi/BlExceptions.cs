@@ -80,3 +80,14 @@ public class BlWrongDateSequenceException : Exception
                     "can't update dates in wrong sequence";
 
 }
+
+
+/// <summary>
+/// exception for Illegal deletion attempt (for example: a product that has already been ordered ).
+/// </summary>
+public class BlIllegalDeletionAttempt: Exception
+{
+      public override string Message =>
+                    "Illegal deletion attempt-";
+
+}
