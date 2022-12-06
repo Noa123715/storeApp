@@ -12,8 +12,6 @@ internal static class Program
     static BL Bl = new BL();
     static void Main()
     {
-        try
-        {
             eOptions choice;
             do
             {
@@ -40,17 +38,10 @@ internal static class Program
                         throw new BlInValidInputException();
                 }
             } while (choice != 0);
-        }
-        catch(Exception err)
-        {
-            Console.WriteLine(err.Message);//תשימי כאן אקספשיין
-        }
     }
 
     public static void FuncOrder()
     {
-        try
-        {
             int id;
             Order order = new Order();
             OrderTracking orderTracking = new OrderTracking();
@@ -102,15 +93,11 @@ internal static class Program
                 default:
                     throw new Exception("גם כאן יש אקספשיין של בחירה לא נכונה");
             }
-        }
-        catch (Exception err) { Console.WriteLine(err.Message); }//את השורה הזאת צריך למחוק
-        //אמור להיות כאן פרוט של תפיסות אקספשיין לפי סוג שגיאה
+        
     }
 
     public static void FuncCart()
     {
-        try
-        {
             Cart cart = new Cart();
             Console.WriteLine("please enter your choice:\n" +
                 "1- to add a product to the cart\n" +
@@ -151,9 +138,9 @@ internal static class Program
                     throw new BlInValidInputException();
                     break;
             }
-        }
-        catch(Exception e) { Console.WriteLine(e.Message); }//את השורה הזאת צריך למחוק
-    }
+       }
+        
+   
 
     public static void FuncProduct()
     {
@@ -233,7 +220,7 @@ internal static class Program
                 Bl.Product.UpdateProduct(product);
                 break;
             default:
-                //throw
+                throw new BlInValidInputException();
                 break;
         }
     }
