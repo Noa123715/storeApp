@@ -11,6 +11,12 @@ namespace Dal;
 
 public struct DalOrder : IOrder
 {
+    /// <summary>
+    /// create a new order in orders list.
+    /// </summary>
+    /// <param name="newOrder"></param>
+    /// <returns>ID for the created order</returns>
+    /// <exception cref="AlreadyExistException"></exception>
     public int Create(Order newOrder)
     {
 
@@ -20,7 +26,12 @@ public struct DalOrder : IOrder
         DataSource.orderList.Add(newOrder);
         return newOrder.ID;
     }
-
+    /// <summary>
+    /// Read order's properties according to it's ID.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns>the required </returns>
+    /// <exception cref="NotExistException"></exception>
     public Order Read(int id)
     {
         foreach (Order item in DataSource.orderList)

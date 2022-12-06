@@ -26,25 +26,33 @@ internal static class Program
                 "2- to cart\n" +
                 "3- to product");
             choice = (eOptions)Convert.ToInt32(Console.ReadLine());
-            switch (choice)
+            try
             {
-                case eOptions.Exit:
-                    break; ;
-                case eOptions.Order:
-                    FuncOrder();
-                    break;
-                case eOptions.Cart:
-                    FuncCart();
-                    break;
-                case eOptions.Product:
-                    FuncProduct();
-                    break;
-                default:
-                    //if the input is not a number between 0 and 3
-                    throw new BlInValidInputException();
+                switch (choice)
+                {
+                    case eOptions.Exit:
+                        break; ;
+                    case eOptions.Order:
+                        FuncOrder();
+                        break;
+                    case eOptions.Cart:
+                        FuncCart();
+                        break;
+                    case eOptions.Product:
+                        FuncProduct();
+                        break;
+                    default:
+                        //if the input is not a number between 0 and 3
+                        throw new BlInValidInputException();
+                }
+            }
+            catch (BlInValidInputException err)
+            {
+                Console.WriteLine(err.Message);
             }
         } while (choice != 0);
     }
+
 
     /// <summary>
     /// A function to handle the ORDER
@@ -106,7 +114,6 @@ internal static class Program
                 //if the input is not a number between 1 and 5
                 throw new BlInValidInputException();
         }
-
     }
 
     /// <summary>

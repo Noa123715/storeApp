@@ -1,6 +1,7 @@
 ﻿using Dal;
 using BlApi;
 namespace BlImplementation;
+
 /// <summary>
 /// BLProduct class- implements IProduct methods: 
 /// reading product list <see cref="ReadProductsList"/>
@@ -9,6 +10,7 @@ namespace BlImplementation;
 ///  delete product <see cref="DeleteProduct"/>
 /// update product properties  <see cref="UpdateProduct"/>
 /// </summary>
+/// 
 internal class BLProduct : IProduct
 {
     /// <summary>

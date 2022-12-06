@@ -34,12 +34,6 @@
             "projectReferences": {
               "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
                 "projectPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
-              },
-              "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
-                "projectPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
-              },
-              "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj": {
-                "projectPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj"
               }
             }
           }
@@ -68,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -133,7 +127,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -191,7 +185,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -253,7 +247,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

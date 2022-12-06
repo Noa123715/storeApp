@@ -11,7 +11,6 @@ namespace Dal;
 
 public struct DalOrderItem : IOrderItem
 {
-
     // create new order item.
     public  int Create(OrderItem newOrderItem)
     {
@@ -24,7 +23,6 @@ public struct DalOrderItem : IOrderItem
     }
 
     // Read orderItem methods
-
     // read method returns spesific orderItem by its ID.
     public OrderItem Read(int orderItemID)
     {
@@ -68,6 +66,7 @@ public struct DalOrderItem : IOrderItem
         return DataSource.orderItemList?? throw new NotExistException();
     }
 
+    //
     public void Delete(int orderItemId)
     {
         int index = DataSource.orderItemList.FindIndex(item => item.ID == orderItemId);
@@ -92,4 +91,3 @@ public struct DalOrderItem : IOrderItem
 
     }
 }
-

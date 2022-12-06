@@ -64,16 +64,19 @@ internal class BLCart : ICart
 
 
             }
-            return cart;
-
-
-
-                throw new BlOutOfStockException();
+           
+                           
         }
         catch (DalApi.NotExistException notExistException)
         {
             throw new BlNotExistException(notExistException);
         }
+        catch(BlOutOfStockException err)
+        {
+            Console.WriteLine(err.Message);
+            
+        }
+        return cart;
     }
 
     /// <summary>
@@ -95,7 +98,7 @@ internal class BLCart : ICart
         orderItem = cart.Items.Find(item => item.ProductID == productID);
         if (orderItem == null)
            throw new BlNotExistException(); 
-           throw new BLNotExistException(new DalApi.NotExistException() ); // האם זה צורה נכונה?
+          
         if (newAmount > orderItem.Amount)
         {
             if (newAmount - orderItem.Amount > productInStock)
