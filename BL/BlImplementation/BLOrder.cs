@@ -1,8 +1,8 @@
-﻿
-using BlApi;
+﻿using BlApi;
 using Dal;
 using DalApi;
 namespace BlImplementation;
+
 /// <summary>
 /// BLorder class implements bl order methods:
 /// read order list <see cref="ReadOrderList"/> , 
@@ -10,6 +10,7 @@ namespace BlImplementation;
 /// update an order status <see cref="UpdateOrderSent" /> <see cref="UpdateOrderDelivery"/>, 
 /// and tracking order. <see cref="TrackOrder"/>
 /// </summary>
+/// 
 internal class BLOrder : BlApi.IOrder
 {
     /// <summary>
@@ -62,47 +63,42 @@ internal class BLOrder : BlApi.IOrder
         BO.Order BoOrder = new BO.Order();
         try
         {
-        if (orderID <= 0)
-            throw new BlInValidInputException();
-        DO.Order DoOrder = DalList.Order.Read(orderID);
-        var DoOrderItems = DalList.OrderItem.ReadAll();
-        //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
-        BoOrder.ID = orderID;
-        BoOrder.CustomerName = DoOrder.CustomerName;
-        BoOrder.CustomerMail = DoOrder.CustomerEmail;
-        BoOrder.CustomerAddress = DoOrder.CustomerAddress;
-        BoOrder.OrderDate = DoOrder.OrderDate;
-        BoOrder.ShipDate = DoOrder.ShipDate;
-        BoOrder.DeliveryDate = DoOrder.DeliveryDate;
-        if (DoOrder.DeliveryDate > DateTime.MinValue)
-            BoOrder.Status = BO.eOrderStatus.Delivered;
-        else if (DoOrder.ShipDate > DateTime.MinValue)
-            BoOrder.Status = BO.eOrderStatus.Shipped;
-        else
-            BoOrder.Status = 0;
-        foreach (var oi in DoOrderItems)
-        {
-            BO.OrderItem orderItem = new BO.OrderItem();
-            orderItem.ID = oi.ID;
-            orderItem.ProductID = oi.ProductID;
-            orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
-            orderItem.Amount = oi.Amount;
-            orderItem.Price = oi.Price;
-            orderItem.TotalPrice = oi.Amount * oi.Price;
-            BoOrder.Items.Add(orderItem);
+            if (orderID <= 0)
+                throw new BlInValidInputException();
+            DO.Order DoOrder = DalList.Order.Read(orderID);
+            var DoOrderItems = DalList.OrderItem.ReadAll();
+            //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
+            BoOrder.ID = orderID;
+            BoOrder.CustomerName = DoOrder.CustomerName;
+            BoOrder.CustomerEmail = DoOrder.CustomerEmail;
+            BoOrder.CustomerAddress = DoOrder.CustomerAddress;
+            BoOrder.OrderDate = DoOrder.OrderDate;
+            BoOrder.ShipDate = DoOrder.ShipDate;
+            BoOrder.DeliveryDate = DoOrder.DeliveryDate;
+            if (DoOrder.DeliveryDate > DateTime.MinValue)
+                BoOrder.Status = BO.eOrderStatus.Delivered;
+            else if (DoOrder.ShipDate > DateTime.MinValue)
+                BoOrder.Status = BO.eOrderStatus.Shipped;
+            else
+                BoOrder.Status = 0;
+            foreach (var oi in DoOrderItems)
+            {
+                BO.OrderItem orderItem = new BO.OrderItem();
+                orderItem.ID = oi.ID;
+                orderItem.ProductID = oi.ProductID;
+                orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
+                orderItem.Amount = oi.Amount;
+                orderItem.Price = oi.Price;
+                orderItem.TotalPrice = oi.Amount * oi.Price;
+                BoOrder.Items.Add(orderItem);
+            }
         }
-       }
         catch (NotExistException notExist)
         {
-          throw new BlNotExistException(notExist);
-       }
-      
-        
-    
-
+            throw new BlNotExistException(notExist);
+        }
         return BoOrder;
     }
-
 
     /// <summary>
     /// UpdateOrderSent method- updates orser's status to send - and the send-date.
@@ -110,48 +106,46 @@ internal class BLOrder : BlApi.IOrder
     /// <param name="orderID">to find the require order </param>
     /// <returns> the updates order</returns>
     /// <exception cref="BlNotExistException"></exception>
+    /// 
     public BO.Order UpdateOrderSent(int orderID)
     {
-    BO.Order BoOrder = new BO.Order();
+        BO.Order BoOrder = new BO.Order();
         try
         {
             DO.Order DoOrder = DalList.Order.Read(orderID);
-        if (DoOrder.ID == 0)
-            throw new BlNotExistException();
-       
-        DoOrder.ShipDate = DateTime.Now;
-        DalList.Order.UpDate(DoOrder);
-        BoOrder.ID = DoOrder.ID;
-        BoOrder.CustomerName = DoOrder.CustomerName;
-        BoOrder.CustomerMail = DoOrder.CustomerEmail;
-        BoOrder.CustomerAddress = DoOrder.CustomerAddress;
-        BoOrder.Status = (BO.eOrderStatus)1;
-        BoOrder.OrderDate = DoOrder.OrderDate;
-        BoOrder.ShipDate = DateTime.Now;
-        BoOrder.DeliveryDate = DateTime.MinValue;
-        BoOrder.TotalPrice = 0;
-        IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadByOrderID(orderID);
-  
-        foreach (var OrderItem in DoOrderItems)
-        {
-            BO.OrderItem orderItem = new BO.OrderItem();
-            orderItem.ID = OrderItem.ID;
-            orderItem.ProductID = OrderItem.ProductID;
-            orderItem.ProductName = DalList.Product.Read(OrderItem.ProductID).Name;
-            orderItem.Amount = OrderItem.Amount;
-            orderItem.Price = OrderItem.Price;
-            orderItem.TotalPrice = OrderItem.Amount * OrderItem.Price;
-            BoOrder.TotalPrice += orderItem.TotalPrice;
-            BoOrder.Items.Add(orderItem);
+            if (DoOrder.ID == 0)
+                throw new BlNotExistException();
+            DoOrder.ShipDate = DateTime.Now;
+            DalList.Order.UpDate(DoOrder);
+            BoOrder.ID = DoOrder.ID;
+            BoOrder.CustomerName = DoOrder.CustomerName;
+            BoOrder.CustomerEmail = DoOrder.CustomerEmail;
+            BoOrder.CustomerAddress = DoOrder.CustomerAddress;
+            BoOrder.Status = (BO.eOrderStatus)1;
+            BoOrder.OrderDate = DoOrder.OrderDate;
+            BoOrder.ShipDate = DateTime.Now;
+            BoOrder.DeliveryDate = DateTime.MinValue;
+            BoOrder.TotalPrice = 0;
+            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadByOrderID(orderID);
+            foreach (var OrderItem in DoOrderItems)
+            {
+                BO.OrderItem orderItem = new BO.OrderItem();
+                orderItem.ID = OrderItem.ID;
+                orderItem.ProductID = OrderItem.ProductID;
+                orderItem.ProductName = DalList.Product.Read(OrderItem.ProductID).Name;
+                orderItem.Amount = OrderItem.Amount;
+                orderItem.Price = OrderItem.Price;
+                orderItem.TotalPrice = OrderItem.Amount * OrderItem.Price;
+                BoOrder.TotalPrice += orderItem.TotalPrice;
+                BoOrder.Items.Add(orderItem);
+            }
         }
-        }
-        catch (DalApi.NotExistException ex)
+        catch (NotExistException ex)
         {
             throw new BlNotExistException(ex);
         }
-       
         return BoOrder;
-}
+    }
 
     /// <summary>
     /// UpdateOrderDelivery method- updates orser's status to delivery's  - and the delivery-date.
@@ -166,22 +160,21 @@ internal class BLOrder : BlApi.IOrder
         try
         {
             DO.Order DoOrder = DalList.Order.Read(orderID);
-          
+
             if (DoOrder.ShipDate == DateTime.MinValue)
                 throw new BlWrongDateSequenceException();
-            
+
             DoOrder.DeliveryDate = DateTime.Now;
             BoOrder.ID = DoOrder.ID;
             BoOrder.CustomerName = DoOrder.CustomerName;
-            BoOrder.CustomerMail = DoOrder.CustomerEmail;
+            BoOrder.CustomerEmail = DoOrder.CustomerEmail;
             BoOrder.CustomerAddress = DoOrder.CustomerAddress;
             BoOrder.OrderDate = DoOrder.OrderDate;
             BoOrder.ShipDate = DoOrder.ShipDate;
             BoOrder.DeliveryDate = DateTime.Now;
             BoOrder.Status = (BO.eOrderStatus)2;
             BoOrder.TotalPrice = 0;
-            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadByOrder(orderID);
-
+            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadByOrderID(orderID);
             foreach (var oi in DoOrderItems)
             {
                 BO.OrderItem orderItem = new BO.OrderItem();
@@ -195,13 +188,10 @@ internal class BLOrder : BlApi.IOrder
                 BoOrder.Items.Add(orderItem);
             }
         }
-
-        catch (DalApi.NotExistException err)
+        catch (NotExistException err)
         {
             throw new BlNotExistException(err);
         }
-     
-       
         return BoOrder;
     }
 
@@ -211,6 +201,7 @@ internal class BLOrder : BlApi.IOrder
     /// <param name="orderID">to find the require order</param>
     /// <returns> list off all stages in delivery with their dates. </returns>
     /// <exception cref="BlNotExistException"></exception>
+    /// 
     public BO.OrderTracking TrackOrder(int orderID)
     {
         try
@@ -233,10 +224,9 @@ internal class BLOrder : BlApi.IOrder
             }
             return BoOrderTracking;
         } 
-        catch (DalApi.NotExistException err)
+        catch (NotExistException err)
         {
             throw new BlNotExistException(err);
         }
-       
     }
 }

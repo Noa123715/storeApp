@@ -72,11 +72,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
+      "projectUniqueName": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
       "projectName": "BlTest",
-      "projectPath": "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
+      "projectPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
       "packagesPath": "C:\\Users\\אבקסיס נועה\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\BlTest\\obj\\",
+      "outputPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,14 +97,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+            "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
             },
-            "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
-              "projectPath": "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
+            "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
             },
-            "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj": {
-              "projectPath": "C:\\Users\\אבקסיס נועה\\source\\repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj"
+            "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה\\Source\\Repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj"
             }
           }
         }

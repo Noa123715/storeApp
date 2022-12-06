@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// A class that describes each product in the order or cart
 /// </summary>
 
 namespace BO
@@ -12,7 +12,6 @@ namespace BO
         public double Price { get; set; }
         public int Amount { get; set; }
         public double TotalPrice { get; set; }
-
 
         //overriding ToString method prints the orderItem properties.
         public override string ToString() =>
