@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\אבקסיס נועה\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\אבקסיס נועה\\.nuget\\packages",
+      "C:\\Users\\מורגנשטרן שושנה\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
       "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

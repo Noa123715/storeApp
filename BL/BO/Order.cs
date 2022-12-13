@@ -11,11 +11,11 @@ public class Order
     public string? CustomerName { get; set; }
     public string? CustomerEmail { get; set; }
     public string? CustomerAddress { get; set; }
-    public DateTime OrderDate { get; set; }
-    public eOrderStatus Status { get; set; }
-    public DateTime ShipDate { get; set; }
-    public DateTime DeliveryDate { get; set; }
-    public List<OrderItem> Items { get; set; } = new List<OrderItem>();
+    public DateTime? OrderDate { get; set; }
+    public eOrderStatus? Status { get; set; }
+    public DateTime? ShipDate { get; set; }
+    public DateTime? DeliveryDate { get; set; }
+    public List<OrderItem>? Items { get; set; } = new List<OrderItem>();
     public double TotalPrice { get; set; }
 
     //overriding the ToString function for printing the order's details
