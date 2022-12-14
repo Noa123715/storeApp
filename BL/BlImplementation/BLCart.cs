@@ -43,29 +43,20 @@ internal class BLCart : ICart
                 orderItem.Amount++;
                 orderItem.TotalPrice += productPrice;
                 cart.Price += productPrice;
-
             }
             else
             {
-
                 orderItem.ID = DataSource.Config.OrderItemId;
                 orderItem.ProductID = productID;
                 orderItem.ProductName = product.Name;
                 orderItem.Amount = 1;
                 orderItem.Price = productPrice;
                 orderItem.TotalPrice = productPrice;
-
-
                 List<BO.OrderItem> aOrderItem = cart.Items;
                 aOrderItem.Add(orderItem);
                 cart.Items = aOrderItem;
                 cart.Price += productPrice;
-
-
-
-            }
-           
-                           
+            }                
         }
         catch (DalApi.NotExistException notExistException)
         {
@@ -74,7 +65,6 @@ internal class BLCart : ICart
         catch(BlOutOfStockException err)
         {
             Console.WriteLine(err.Message);
-            
         }
         return cart;
     }

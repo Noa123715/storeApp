@@ -36,7 +36,7 @@ public struct DalOrderItem : IOrderItem
         throw new NotExistException();
     }
 
-    public OrderItem Read(Func<OrderItem, bool> condition)
+    public OrderItem ReadByCondition(Func<OrderItem, bool> condition)
     {
         return DataSource.orderItemList.Where(condition).ToList()[0];
 

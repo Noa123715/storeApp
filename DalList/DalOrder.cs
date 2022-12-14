@@ -49,23 +49,16 @@ public struct DalOrder : IOrder
     /// </summary>
     /// <param name="condition"> predicate with the condition</param>
     /// <returns></returns>
-    public Order Read(Func<Order, bool> condition)
+    public Order ReadByCondition(Func<Order, bool> condition)
     {
-
-       
-       return  DataSource.orderList.Where(condition).ToList()[0];
-     
-   
-
+        return DataSource.orderList.Where(condition).ToList()[0];
     }
+
     public IEnumerable<Order> ReadAll(Func<Order, bool>? condition = null)
     {
         if (condition is null)
             return DataSource.orderList ?? throw new NotExistException();
-
-     return DataSource.orderList.Where(condition).ToList()?? throw new NotExistException(); 
-
-
+        return DataSource.orderList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
     public void Delete(int orderID)
@@ -75,11 +68,10 @@ public struct DalOrder : IOrder
         {
             throw new NotExistException();
         }
-        DataSource.orderList.RemoveAt(index);   
+        DataSource.orderList.RemoveAt(index);
     }
 
     public void UpDate(Order UpOrder)
-
     {
         int index = DataSource.orderList.FindIndex(item => item.ID == UpOrder.ID);
         if (index == -1)
@@ -88,4 +80,4 @@ public struct DalOrder : IOrder
         }
         DataSource.orderList.RemoveAt(index);
     }
-} 
+}

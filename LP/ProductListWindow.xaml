@@ -19,7 +19,7 @@
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions >
-			<ComboBox x:Name="ProductSelector" SelectionChanged="ProductSelector_SelectionChanged" Grid.Column="1" Margin="133,52,205,35" RenderTransformOrigin="0.915,0.38" Grid.ColumnSpan="2" Background="{x:Null}"/>
+			<ComboBox x:Name="ProductSelector" SelectionChanged="SelectionChangedCategory" Grid.Column="1" Margin="133,52,205,35" RenderTransformOrigin="0.915,0.38" Grid.ColumnSpan="2" Background="{x:Null}"/>
 			<Label x:Name="ProductLabel" Grid.Column="1" Content="Choose a product" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="101" Foreground="#FFEC7989"/>
 			<Button x:Name="DeleteFilter" Grid.Column="2" Content="X" Click="FilterDelete" HorizontalAlignment="Left" Margin="94,52,0,0" VerticalAlignment="Top" Height="38" Width="40" BorderBrush="Black" Background="{x:Null}"/>
 		</Grid>

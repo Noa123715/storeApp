@@ -32,13 +32,10 @@ public struct DalProduct : IProduct
         throw new NotExistException();
     }
 
-    public Product Read(Func<Product, bool> condition)
+    public Product ReadByCondition(Func<Product, bool> condition)
     {
         return DataSource.productList.Where(condition).ToList()[0];
-
     }
-
-
 
     /// <summary>
     /// 
@@ -46,6 +43,7 @@ public struct DalProduct : IProduct
     /// <param name="condition"></param>
     /// <returns></returns>
     /// <exception cref="NotExistException"></exception>
+    /// 
     public IEnumerable<Product> ReadAll(Func<Product, bool>? condition = null)
     {
         if (condition is null)
@@ -62,7 +60,6 @@ public struct DalProduct : IProduct
             throw new NotExistException();
         }
         DataSource.productList.RemoveAt(index);
-        
     }
 
     public void UpDate(Product UpProduct)
