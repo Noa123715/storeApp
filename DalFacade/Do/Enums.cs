@@ -8,11 +8,11 @@ namespace DO;
 /// </summary>
 public enum eCategories
 {
-    accessories,
-    women,
-    men,
-    children,
-    beauty
+    Accessories=1,
+    Women,
+    Men,
+    Children,
+    Beauty
 }
 
 /// <summary>

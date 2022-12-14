@@ -35,6 +35,13 @@ public struct DalOrderItem : IOrderItem
         }
         throw new NotExistException();
     }
+
+    public OrderItem Read(Func<OrderItem, bool> condition)
+    {
+        return DataSource.orderItemList.Where(condition).ToList()[0];
+
+
+    }
     //ReadByOrderID method receives orderId and returns all order-Items in specific order.
     public  IEnumerable<OrderItem> ReadByOrderID(int orderID)
     {
@@ -61,12 +68,16 @@ public struct DalOrderItem : IOrderItem
     }
 
     //ReadOrderItem method 3- returns the current list of order items.
-    public  IEnumerable<OrderItem> ReadAll()
+    public  IEnumerable<OrderItem> ReadAll(Func< OrderItem, bool>? condition = null)
     {
-        return DataSource.orderItemList?? throw new NotExistException();
+       
+        if (condition is null)
+            return DataSource.orderItemList ?? throw new NotExistException();
+        return DataSource.orderItemList.Where(condition).ToList() ?? throw new NotExistException(); 
     }
 
     //
+
     public void Delete(int orderItemId)
     {
         int index = DataSource.orderItemList.FindIndex(item => item.ID == orderItemId);

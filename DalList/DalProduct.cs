@@ -16,7 +16,6 @@ public struct DalProduct : IProduct
         int index = DataSource.orderList.FindIndex(item => item.ID == newProduct.ID);
         if (index != -1)
             throw new AlreadyExistException();
-        
         DataSource.productList.Add(newProduct);
         return newProduct.ID;
     }
@@ -33,11 +32,26 @@ public struct DalProduct : IProduct
         throw new NotExistException();
     }
 
-    public IEnumerable<Product> ReadAll()
+    public Product Read(Func<Product, bool> condition)
     {
-        List<Product> newProductList = new List<Product>();
-        newProductList.AddRange(DataSource.productList);
-        return newProductList;
+        return DataSource.productList.Where(condition).ToList()[0];
+
+    }
+
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns></returns>
+    /// <exception cref="NotExistException"></exception>
+    public IEnumerable<Product> ReadAll(Func<Product, bool>? condition = null)
+    {
+        if (condition is null)
+            return DataSource.productList ?? throw new NotExistException();
+
+        return DataSource.productList.Where(condition).ToList()?? throw new NotExistException();
     }
 
     public void Delete(int id)
@@ -61,4 +75,3 @@ public struct DalProduct : IProduct
         DataSource.productList[index] = UpProduct;
     }
 }
-

@@ -23,10 +23,15 @@ internal class BLProduct : IProduct
     /// ReadProductsList method- recieves from dal layer the products list for manager.
     /// </summary>
     /// <returns> products list</returns>
-    public IEnumerable<BO.ProductForList> ReadProductsList()
+    public IEnumerable<BO.ProductForList> ReadProductsList(BO.eCategories? categories = null)
     {
-        IEnumerable<DO.Product> dalProduct = Dal.Product.ReadAll();
+        IEnumerable<DO.Product>? dalProduct;
+        if (categories is null)
+            dalProduct = Dal.Product.ReadAll();
+        else
+            dalProduct = Dal.Product.ReadAll(product => (BO.eCategories)product.Category == categories);
         List<BO.ProductForList> products = new List<BO.ProductForList>();
+        if (dalProduct is null) throw new BlNullValueException();
         foreach (var prod in dalProduct)
         {
             BO.ProductForList product = new BO.ProductForList();

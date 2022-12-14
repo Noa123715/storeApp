@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="ChooseProductBtnWindow" Content="Go To Product" Click="ChooseProductBtnWindow_Click" HorizontalAlignment="Left" Margin="324,103,0,0" VerticalAlignment="Top" Width="125" Height="43"/>
+        <Button x:Name="ChooseProductBtnWindow" Content="Go To Product" Click="ChooseProductBtnWindow_Click" HorizontalAlignment="Left" Margin="325,0,0,0" VerticalAlignment="Center" Width="125" Height="43" Background="#FF61EFE6" BorderBrush="#FF112FD2" Foreground="#FF112FD2"/>
+        <Label x:Name="HelloLabel" Content="Welcome to our store&#xD;&#xA;What do you want to do?" HorizontalAlignment="Left" Margin="164,60,0,0" VerticalAlignment="Top" Width="459" Height="84" Background="{x:Null}" Foreground="#FFEC7989" FontSize="22" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -44,11 +44,28 @@ public struct DalOrder : IOrder
         throw new NotExistException();
     }
 
-    public IEnumerable<Order> ReadAll()
+    /// <summary>
+    /// read specific order properties according to a certain condition
+    /// </summary>
+    /// <param name="condition"> predicate with the condition</param>
+    /// <returns></returns>
+    public Order Read(Func<Order, bool> condition)
     {
-        List<Order> newOrderList = new List<Order>();
-        newOrderList.AddRange(DataSource.orderList);
-        return newOrderList;
+
+       
+       return  DataSource.orderList.Where(condition).ToList()[0];
+     
+   
+
+    }
+    public IEnumerable<Order> ReadAll(Func<Order, bool>? condition = null)
+    {
+        if (condition is null)
+            return DataSource.orderList ?? throw new NotExistException();
+
+     return DataSource.orderList.Where(condition).ToList()?? throw new NotExistException(); 
+
+
     }
 
     public void Delete(int orderID)

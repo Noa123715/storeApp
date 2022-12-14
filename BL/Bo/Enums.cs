@@ -16,8 +16,8 @@ public enum eOrderStatus
 
 public enum eCategories
 {
-    Zero,
-    Accessories,
+   
+    Accessories=1,
     Women,
     Men,
     Children,

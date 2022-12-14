@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-
+using BlApi;
 namespace LP;
 
 /// <summary>
@@ -7,7 +7,7 @@ namespace LP;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private BlApi.IBL Bl { get; set; }
+    private IBL Bl { get; set; }
 
     public MainWindow()
     {
@@ -17,7 +17,7 @@ public partial class MainWindow : Window
 
     private void ChooseProductBtnWindow_Click(object sender, RoutedEventArgs e)
     {
-        ProductList productListWindow = new();
+        ProductListWindow productListWindow = new ProductListWindow(Bl);
         productListWindow.Show();
         this.Hide();
     }

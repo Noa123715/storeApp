@@ -293,20 +293,20 @@ internal static class Program
                             //Accepting the user's choice
                             switch (category)
                             {
-                                case (int)eCategories.accessories:
-                                    product.Category = eCategories.accessories;
+                                case (int)eCategories.Accessories:
+                                    product.Category = eCategories.Accessories;
                                     break;
-                                case (int)eCategories.women:
-                                    product.Category = eCategories.women;
+                                case (int)eCategories.Women:
+                                    product.Category = eCategories.Women;
                                     break;
-                                case (int)eCategories.men:
-                                    product.Category = eCategories.men;
+                                case (int)eCategories.Men:
+                                    product.Category = eCategories.Men;
                                     break;
-                                case (int)eCategories.children:
-                                    product.Category = eCategories.children;
+                                case (int)eCategories.Children:
+                                    product.Category = eCategories.Children;
                                     break;
-                                case (int)eCategories.beauty:
-                                    product.Category = eCategories.beauty;
+                                case (int)eCategories.Beauty:
+                                    product.Category = eCategories.Beauty;
                                     break;
                                 default:
                                     throw new NonValidNumberException();
@@ -355,20 +355,20 @@ internal static class Program
             throw new NonValidNumberException();
         switch (option)
         {
-            case (int)eCategories.accessories:
-                newProduct.Category = eCategories.accessories;
+            case (int)eCategories.Accessories:
+                newProduct.Category = eCategories.Accessories;
                 break;
-            case (int)eCategories.women:
-                newProduct.Category = eCategories.women;
+            case (int)eCategories.Women:
+                newProduct.Category = eCategories.Women;
                 break;
-            case (int)eCategories.men:
-                newProduct.Category = eCategories.men;
+            case (int)eCategories.Men:
+                newProduct.Category = eCategories.Men;
                 break;
-            case (int)eCategories.children:
-                newProduct.Category = eCategories.children;
+            case (int)eCategories.Children:
+                newProduct.Category = eCategories.Children;
                 break;
-            case (int)eCategories.beauty:
-                newProduct.Category = eCategories.beauty;
+            case (int)eCategories.Beauty:
+                newProduct.Category = eCategories.Beauty;
                 break;
             default:
                 throw new NonValidNumberException();

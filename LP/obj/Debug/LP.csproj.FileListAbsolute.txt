@@ -24,3 +24,55 @@ C:\Users\אבקסיס נועה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP
 C:\Users\אבקסיס נועה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.genruntimeconfig.cache
 C:\Users\אבקסיס נועה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\ProductList.g.cs
 C:\Users\אבקסיס נועה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\ProductList.baml
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.csproj.AssemblyReference.cache
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.g.cs
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\ProductList.g.cs
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\App.g.cs
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP_MarkupCompile.cache
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP_MarkupCompile.lref
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.baml
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\ProductList.baml
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.g.resources
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.GeneratedMSBuildEditorConfig.editorconfig
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.AssemblyInfoInputs.cache
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.AssemblyInfo.cs
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.csproj.CoreCompileInputs.cache
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\ref\LP.dll
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.pdb
+S:\-\מםש\dotNet5783_7729_0796\bin\LP.exe
+S:\-\מםש\dotNet5783_7729_0796\bin\LP.deps.json
+S:\-\מםש\dotNet5783_7729_0796\bin\LP.runtimeconfig.json
+S:\-\מםש\dotNet5783_7729_0796\bin\LP.dll
+S:\-\מםש\dotNet5783_7729_0796\bin\ref\LP.dll
+S:\-\מםש\dotNet5783_7729_0796\bin\LP.pdb
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.csproj.CopyComplete
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.dll
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\LP.genruntimeconfig.cache
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\Product.g.cs
+S:\-\מםש\dotNet5783_7729_0796\LP\obj\Debug\Product.baml
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\LP.exe
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\LP.deps.json
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\LP.runtimeconfig.json
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\LP.dll
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\ref\LP.dll
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\LP.pdb
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.csproj.AssemblyReference.cache
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.g.cs
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\ProductListWindow.g.cs
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\App.g.cs
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP_MarkupCompile.cache
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP_MarkupCompile.lref
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.baml
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\ProductListWindow.baml
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.g.resources
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.AssemblyInfoInputs.cache
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.AssemblyInfo.cs
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.csproj.CoreCompileInputs.cache
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.csproj.CopyComplete
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.dll
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\ref\LP.dll
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.pdb
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\LP.genruntimeconfig.cache
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\ProductWindow.g.cs
+C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\LP\obj\Debug\ProductWindow.baml

@@ -46,9 +46,9 @@ public static class DataSource
 
         // Name and category array
         (string, eCategories)[] productNames = new (string, eCategories)[10]
-           {("necklace", eCategories.accessories ), ("Classic dress - Fendi", eCategories.women), ("pink scarf - Hermes", eCategories.accessories),
-            ("elegant pants- ferragamo", eCategories.men), ("Three piece suit- Disel", eCategories.children), ("boots- Gucci", eCategories.women),
-            ("perfume- Chanel", eCategories.beauty), ("coat- Moncler", eCategories.women), ("elegant suit - Hermes", eCategories.women), ("bag Louis Vuitton", eCategories.accessories)};
+           {("necklace", eCategories.Accessories ), ("Classic dress - Fendi", eCategories.Women), ("pink scarf - Hermes", eCategories.Accessories),
+            ("elegant pants- ferragamo", eCategories.Men), ("Three piece suit- Disel", eCategories.Children), ("boots- Gucci", eCategories.Women),
+            ("perfume- Chanel", eCategories.Beauty), ("coat- Moncler", eCategories.Women), ("elegant suit - Hermes", eCategories.Women), ("bag Louis Vuitton", eCategories.Accessories)};
 
 
         for (int i = 0; i < 10; i++)

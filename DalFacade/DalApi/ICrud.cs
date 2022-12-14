@@ -15,7 +15,16 @@ public interface ICrud<T>
     /// <returns></returns>
     public int Create(T item);
     public T Read(int id);
-    public IEnumerable<T> ReadAll();
+
+
+    /// <summary>
+    /// read all IEnumerable of product, order, or orderItem According to a certain condition or the whole - by default
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns> the required Ienumerable </returns>
+    public IEnumerable<T> ReadAll(Func<T,bool>? condition= null);
+
+    public T Read(Func<T, bool> condition );
     public void UpDate(T item);
     public void Delete(int id);
 }
