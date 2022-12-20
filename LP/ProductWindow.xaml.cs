@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using BlApi;
 using BO;
 namespace LP;
 
@@ -9,7 +8,7 @@ namespace LP;
 /// </summary>
 public partial class ProductWindow : Window
 {
-    private IBL Bl { get; set; }
+    private BlApi.IBL Bl { get; set; }
     private int product_id; //variable for conversion and testing 
 
     /// <summary>
@@ -20,7 +19,7 @@ public partial class ProductWindow : Window
     /// </summary>
     /// <param name="ProductList_bl"></param>
     /// <param name="pList_id"></param>
-    public ProductWindow(IBL ProductList_bl, int? pList_id = null)
+    public ProductWindow(BlApi.IBL ProductList_bl, int? pList_id = null)
     {
         InitializeComponent();
         Bl = ProductList_bl;

@@ -1,7 +1,5 @@
-﻿using Dal;
-using BlApi;
+﻿using BlApi;
 namespace BlImplementation;
-
 /// <summary>
 /// BLCart class implements Icart methods- 
 /// adding product to cart, <see cref="AddProductToCart"/>
@@ -15,7 +13,8 @@ internal class BLCart : ICart
     /// <summary>
     /// creating Idal instance for using its methods and members in BLOrder.
     /// </summary>
-    private DalList Dal { get; set; } = new();
+    /// 
+    private static DalApi.IDal? dal =  DalApi.Factory.Get();
 
     /// <summary>
     /// AddProductToCart method- adding a product to cart
@@ -29,7 +28,7 @@ internal class BLCart : ICart
     {
         try
         {
-            DO.Product product = Dal.Product.Read(productID);
+            DO.Product product = dal.Product.Read(productID);
             int productInStock = product.InStock;
             double productPrice = product.Price;
             BO.OrderItem ?orderItem = new BO.OrderItem();
@@ -46,7 +45,7 @@ internal class BLCart : ICart
             }
             else
             {
-                orderItem.ID = DataSource.Config.OrderItemId;
+                orderItem.ID = Dal.DataSource.Config.OrderItemId;
                 orderItem.ProductID = productID;
                 orderItem.ProductName = product.Name;
                 orderItem.Amount = 1;
@@ -82,8 +81,8 @@ internal class BLCart : ICart
     {
         try
         {
-        int productInStock = Dal.Product.Read(productID).InStock;
-        double productPrice = Dal.Product.Read(productID).Price;
+        int productInStock = dal.Product.Read(productID).InStock;
+        double productPrice = dal.Product.Read(productID).Price;
         BO.OrderItem ?orderItem = new BO.OrderItem();
         orderItem = cart.Items.Find(item => item.ProductID == productID);
         if (orderItem == null)
@@ -151,11 +150,11 @@ internal class BLCart : ICart
             DoOrder.CustomerName = customerName;
             DoOrder.CustomerEmail = customerMail;
             DoOrder.CustomerAddress = customerAddress;
-            DoOrder.ID = DataSource.Config.OrderId;
-            Dal.Order.Create(DoOrder);
+            DoOrder.ID = Dal.DataSource.Config.OrderId;
+            dal.Order.Create(DoOrder);
             foreach (BO.OrderItem orderItem in cart.Items)
             {
-                productInStock = Dal.Product.Read(orderItem.ProductID).InStock;
+                productInStock = dal.Product.Read(orderItem.ProductID).InStock;
                 if (orderItem.Amount < 0)
                 {
                     throw new BlInValidInputException();
@@ -170,10 +169,10 @@ internal class BLCart : ICart
                 DoOrderItem.OrderID = DoOrder.ID;
                 DoOrderItem.Amount = orderItem.Amount;
                 DoOrderItem.Price = orderItem.TotalPrice;
-                Dal.OrderItem.Create(DoOrderItem);
-                DO.Product DoProduct = Dal.Product.Read(DoOrderItem.ProductID);
+                dal.OrderItem.Create(DoOrderItem);
+                DO.Product DoProduct = dal.Product.Read(DoOrderItem.ProductID);
                 DoProduct.InStock -= orderItem.Amount;
-                Dal.Product.UpDate(DoProduct);
+                dal.Product.UpDate(DoProduct);
             } 
         }
         catch (DalApi.NotExistException err)

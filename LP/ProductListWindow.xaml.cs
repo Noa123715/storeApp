@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using BlApi;
 using BO;
 
 namespace LP;
@@ -10,7 +9,7 @@ namespace LP;
 /// </summary>
 public partial class ProductListWindow : Window
 {
-    private IBL bl { get; set; }
+    private BlApi.IBL bl { get; set; }
     /// <summary>
     /// the constractor of the product list window
     /// the function initializes the array of product and initializes the categories

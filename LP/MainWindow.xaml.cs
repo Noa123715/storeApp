@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using BlApi;
 namespace LP;
 
 /// <summary>
@@ -8,14 +7,14 @@ namespace LP;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private IBL Bl { get; set; }
+    private static BlApi.IBL? Bl { get; set; }
     /// <summary>
     /// constractor of the main window
     /// </summary>
     public MainWindow()
     {
         InitializeComponent();
-        Bl = new BlImplementation.BL();
+        Bl = BlApi.Factory.Get();
     }
 
     /// <summary>
