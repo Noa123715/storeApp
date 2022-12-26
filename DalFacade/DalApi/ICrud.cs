@@ -1,11 +1,11 @@
-﻿
-namespace DalApi;
+﻿namespace DalApi;
 /// <summary>
 /// Icrud- interface for crud methods:
 /// create <see cref="Create"/>
 /// read <see cref="Read"/>
 /// </summary>
 /// <typeparam name="T"></typeparam>
+
 public interface ICrud<T>
 {
     /// <summary>

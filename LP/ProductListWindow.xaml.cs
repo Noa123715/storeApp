@@ -15,7 +15,7 @@ public partial class ProductListWindow : Window
     /// the function initializes the array of product and initializes the categories
     /// </summary>
     /// <param name="mainWindow_bl"></param>
-    public ProductListWindow(IBL mainWindow_bl)
+    public ProductListWindow(BlApi.IBL mainWindow_bl)
     {
         InitializeComponent();
         bl = mainWindow_bl;
