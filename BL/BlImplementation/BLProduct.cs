@@ -17,7 +17,7 @@ internal class BLProduct : IProduct
     /// creating Idal instance for using its methods and members in BLOrder.
     /// </summary>
 
-    private DalList Dal { get; set; } = new();
+    private DalList Dal { get; set; } = DalApi.Factory.Get();
 
     /// <summary>
     /// ReadProductsList method- recieves from dal layer the products list for manager.

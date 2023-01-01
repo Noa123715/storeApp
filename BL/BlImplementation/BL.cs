@@ -1,6 +1,7 @@
 ﻿using BlApi;
 namespace BlImplementation;
 
+
 /// <summary>
 /// BL class for contect between the interfaces to their implementations.
 /// </summary>

@@ -16,7 +16,7 @@ internal class BLOrder : BlApi.IOrder
     /// <summary>
     /// creating Idal instance for using its methods and members in BLOrder.
     /// </summary>
-    private IDal DalList { get; set; } = new DalList();
+    private IDal DalList { get; set; } = DalApi.Factory.Get();
 
     /// <summary>
     /// ReadOrderList method require from Dal-layer all orders in the OrderList.

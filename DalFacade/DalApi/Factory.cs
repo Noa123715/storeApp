@@ -1,7 +1,9 @@
 ﻿namespace DalApi;
 using System.Reflection;
 using static DalApi.DalConfig;
-
+/// <summary>
+/// factory class for dal layer.
+/// </summary>
 public static class Factory
 {
     public static IDal? Get()
