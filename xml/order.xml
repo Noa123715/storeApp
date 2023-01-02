@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Order>
+	<ID>1</ID>
+	<CustomerName>Donald Trump</CustomerName>
+	<CustomerEmail>donald@gmail.com</CustomerEmail>
+	<CustomerAddress>white house</CustomerAddress>
+	<OrderDate>1/1/2022</OrderDate>
+	<ShipDate>3/4/2023</ShipDate>
+	<DeliveryDate></DeliveryDate>
+</Order>
