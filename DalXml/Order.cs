@@ -22,9 +22,9 @@ internal class Order : IOrder
             newOrder.CustomerName = xmlOrder?.Element("CustomerName")?.Value ;
             newOrder.CustomerEmail = xmlOrder?.Element("CustomerEmail")?.Value;
             newOrder.CustomerAddress = xmlOrder?.Element("CustomerAddress")?.Value;
-            newOrder.OrderDate = Convert.ToDateTime(xmlOrder.Element("OrderDate")?.Value);
-            newOrder.ShipDate = Convert.ToDateTime(xmlOrder.Element("ShipDate")?.Value);
-            newOrder.DeliveryDate = Convert.ToDateTime(xmlOrder.Element("DeliveryDate")?.Value);
+            newOrder.OrderDate = Convert.ToDateTime(xmlOrder?.Element("OrderDate")?.Value);
+            newOrder.ShipDate = Convert.ToDateTime(xmlOrder?.Element("ShipDate")?.Value);
+            newOrder.DeliveryDate = Convert.ToDateTime(xmlOrder?.Element("DeliveryDate")?.Value);
             orderList.Add(newOrder);
         }
 
@@ -50,42 +50,7 @@ internal class Order : IOrder
                         new XElement("OrderDate", newOrder.OrderDate),
                         new XElement("ShipDate", newOrder.ShipDate),
                         new XElement("DeliveryDate", newOrder.DeliveryDate));
-        
-
-
-
-
     }
-    //public int Create(DO.Order order)
-    //{
-
-    //}
-
-    //public Order Read(int id)
-    //{
-
-    //}
-
-    //public IEnumerable<Order> ReadAll(Func<Order, bool>? condition = null)
-    //{
-
-    //}
-
-    //public Order ReadByCondition(Func<Order,bool> condition)
-    //{
-
-    //}
-
-    //public void UpDate(Order order)
-    //{
-
-    //}
-
-    //public void Delete(int id)
-    //{
-
-    //}
-
 
     public void Delete(int id)
     {
@@ -108,6 +73,11 @@ internal class Order : IOrder
     }
 
     public void UpDate(DO.Order item)
+    {
+        throw new NotImplementedException();
+    }
+
+    int ICrud<DO.Order>.Create(DO.Order item)
     {
         throw new NotImplementedException();
     }
