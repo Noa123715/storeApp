@@ -1,6 +1,5 @@
 ﻿namespace Dal;
 using DalApi;
-using DO;
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
@@ -34,7 +33,7 @@ internal class Order : IOrder
     {
         XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
 
-        XElement ?id = rootConfig?.Element("orderID");
+        XElement? id = rootConfig?.Element("orderID");
         int orderId = Convert.ToInt32(id?.Value);
         orderId++;
         id.Value= orderId.ToString();

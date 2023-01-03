@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProductList>
+	<Product>
+		<ID>542068</ID>
+		<Name>necklace - kate spade</Name>
+		<Price>3000</Price>
+		<InStock>3</InStock>
+		<Category>Accessories</Category>
+	</Product>
+	<Product>
+		<ID>234535</ID>
+		<Name>Classic dress - Fendi</Name>
+		<Price>4500</Price>
+		<InStock>10</InStock>
+		<Category>Women</Category>
+	</Product>
+	<Product>
+		<ID>156613</ID>
+		<Name>Pink scarf - Hermes</Name>
+		<Price>970</Price>
+		<InStock>25</InStock>
+		<Category>Accessories</Category>
+	</Product>
+	<Product>
+		<ID>925483</ID>
+		<Name>Elegant pants- ferragamo</Name>
+		<Price>2500</Price>
+		<InStock>15</InStock>
+		<Category>Men</Category>
+	</Product>
+	<Product>
+		<ID>926358</ID>
+		<Name>Three piece suit- Disel</Name>
+		<Price>1500</Price>
+		<InStock>7</InStock>
+		<Category>Children</Category>
+	</Product>
+	<Product>
+		<ID>374806</ID>
+		<Name>boots- Gucci</Name>
+		<Price>5000</Price>
+		<InStock>3</InStock>
+		<Category>Women</Category>
+	</Product>
+	<Product>
+		<ID>804942</ID>
+		<Name>perfume- Chanel</Name>
+		<Price>1000</Price>
+		<InStock>30</InStock>
+		<Category>Women</Category>
+	</Product>
+	<Product>
+		<ID>123456</ID>
+		<Name>coat - Moncler</Name>
+		<Price>970</Price>
+		<InStock>100</InStock>
+		<Category>Women</Category>
+	</Product>
+	<Product>
+		<ID>587654</ID>
+		<Name>Elegant suit - Hermes</Name>
+		<Price>4500</Price>
+		<InStock>42</InStock>
+		<Category>Women</Category>
+	</Product>
+	<Product>
+		<ID>328605</ID>
+		<Name>Bag - Louis Vuitton</Name>
+		<Price>1500</Price>
+		<InStock>13</InStock>
+		<Category>Accessories</Category>
+	</Product>
+</ProductList>
