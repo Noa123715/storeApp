@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "slai6VmNW3No6PFVmgmY7Ppej5lp6JmNTD3vrh7v3X3xw8XTFMDf2tdVzPpG6Ia6QB1ddPpbrW18tM1kPdDMGw==",
+=======
+  "dgSpecHash": "tVbgeMKpWYk7AynucpITvvuzobskeU2H0ck4mbUT/FBFYsODK+EWJWc4iLp8dYSZL715d14xyx2vqs0QORW9rA==",
+>>>>>>> 43bef0da1db2c0e6a338fddf6fa81eb98f1ec6c6
   "success": true,
-  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
+  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
