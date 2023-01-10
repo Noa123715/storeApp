@@ -9,9 +9,12 @@ internal class OrderItem : IOrderItem
 
     public OrderItem() 
     {
+
         XElement? oiRoot = XDocument.Load(@"../../xml/orderItem.xml")?.Root;
         DO.OrderItem newOrderItem= new();
         orderItemList = new List<DO.OrderItem>();
+
+
 
         foreach (var xmlOrderItem in oiRoot?.Elements("OrderItem"))
         {

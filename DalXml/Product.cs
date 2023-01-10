@@ -52,13 +52,11 @@ internal class Product : IProduct
         StreamReader reader = new("../../xml/product.xml");
         XmlSerializer ser = new(typeof(List<DO.Product>));
        
-     
-       
-        productList = (List<Product>)ser.Deserialize(reader);
+        productList = (List<DO.Product>)ser.Deserialize(reader);
     
         reader.Close();
         int index= productList.FindIndex(p=>p.ID==id);
-        if(index==-1) throw new NotExistException();
+        if(index==-1 ) throw new NotExistException();
         return productList[index];
     }
 
