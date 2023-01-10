@@ -13,11 +13,7 @@ internal class OrderItem : IOrderItem
 
     private List<DO.OrderItem> orderItemList { get; set; }
 
-
-
-
-
-    public OrderItem()
+     public OrderItem()
     {
         XElement? root = XDocument.Load(@"../../xml/Order.xml")?.Root;
         DO.OrderItem orderItem = new DO.OrderItem();
@@ -41,7 +37,7 @@ internal class OrderItem : IOrderItem
                                 new XElement("ProductID", newOrderItem.ProductID.ToString()),
                                 new XElement("OrderID", newOrderItem.OrderID.ToString()),
                                 new XElement("Amount", newOrderItem.Amount),
-                                new XElement("Price", newOrderItem.Price),
+                                new XElement("Price", newOrderItem.Price)
                                );
         XElement? root = XDocument.Load(@"../../xml/orderItem.xml").Root;
         root?.Add(xmlOrderItem);
