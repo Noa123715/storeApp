@@ -1,21 +1,21 @@
 ﻿namespace Dal;
 using DalApi;
-<<<<<<< HEAD
+
 using DO;
-=======
+
 using System;
 using System.Collections.Generic;
->>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
+
 using System.Xml.Linq;
 
 internal class OrderItem : IOrderItem
 {
-<<<<<<< HEAD
+
     private List<DO.OrderItem> orderItemList { get; set; }
 
-    public OrderItem() 
-=======
-    private List<DO.OrderItem> orderItemsList { get; set; }
+
+
+
 
     public OrderItem()
     {
@@ -23,29 +23,7 @@ internal class OrderItem : IOrderItem
         DO.OrderItem orderItem = new DO.OrderItem();
     } 
 
-    public int Create(OrderItem orderItem)
->>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
-    {
 
-        XElement? oiRoot = XDocument.Load(@"../../xml/orderItem.xml")?.Root;
-        DO.OrderItem newOrderItem= new();
-        orderItemList = new List<DO.OrderItem>();
-
-
-
-        foreach (var xmlOrderItem in oiRoot?.Elements("OrderItem"))
-        {
-            newOrderItem.ID = Convert.ToInt32(xmlOrderItem.Element("ID")?.Value);
-            newOrderItem.ProductID = Convert.ToInt32(xmlOrderItem?.Element("ProductID")?.Value);
-            newOrderItem.OrderID = Convert.ToInt32(xmlOrderItem?.Element("OrderID")?.Value);
-            newOrderItem.Amount = Convert.ToInt32(xmlOrderItem?.Element("Amount")?.Value);
-            newOrderItem.Price = Convert.ToInt32(xmlOrderItem?.Element("Price")?.Value);
-            
-            orderItemList.Add(newOrderItem);
-        }
-
-
-    }  
     public int Create(DO.OrderItem newOrderItem)
     {
         XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
@@ -92,11 +70,8 @@ internal class OrderItem : IOrderItem
         return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
-<<<<<<< HEAD
     public DO.OrderItem ReadByCondition(Func<DO.OrderItem, bool> condition)
-=======
-    public OrderItem ReadByCondition(Func<OrderItem, bool> condition)
->>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
+
     {
         return orderItemList.Where(condition).ToList()[0];
     }
