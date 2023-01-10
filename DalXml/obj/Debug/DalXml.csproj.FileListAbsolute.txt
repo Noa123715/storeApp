@@ -1,0 +1,5 @@
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.csproj.AssemblyReference.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.AssemblyInfoInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.AssemblyInfo.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.csproj.CoreCompileInputs.cache
