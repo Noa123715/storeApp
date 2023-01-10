@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4YtUEmMaQ6X/eOpl3eM9/W25auO5rnB/SpADtxhHNqGY1Z9wZdiBeGm83c2xPx6mTtbNjDV38vlmUrP0NV2cFw==",
+  "dgSpecHash": "SkqtQ1nC6FFuqf+sWKaUczlj1jUGObY700CxirA+bDbKJnQLYLMTSdBWX6q16yFAIaVgQrNdujgC9WVu57OQTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
+  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

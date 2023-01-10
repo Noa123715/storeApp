@@ -15,7 +15,7 @@ internal class OrderItem : IOrderItem
 
      public OrderItem()
     {
-        XElement? root = XDocument.Load(@"../../xml/Order.xml")?.Root;
+        XElement? root = XDocument.Load(@"../../xml/orderItem.xml")?.Root;
         DO.OrderItem orderItem = new DO.OrderItem();
     } 
 
@@ -46,18 +46,7 @@ internal class OrderItem : IOrderItem
 
     }
 
-    public DO.OrderItem Read(int id)
-    {
-        foreach (DO.OrderItem orderItem in orderItemList)
-        {
-            if (orderItem.ID == id)
-            {
-                return orderItem;
-            }
-        }
-        throw new NotExistException();
-
-    }
+ 
 
     public IEnumerable<DO.OrderItem> ReadAll(Func<DO.OrderItem, bool>? condition = null)
     {
@@ -66,7 +55,7 @@ internal class OrderItem : IOrderItem
         return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
-    public DO.OrderItem ReadByCondition(Func<DO.OrderItem, bool> condition)
+    public DO.OrderItem Read(Func<DO.OrderItem, bool> condition)
 
     {
         return orderItemList.Where(condition).ToList()[0];
@@ -75,13 +64,14 @@ internal class OrderItem : IOrderItem
     public void UpDate(DO.OrderItem upOrderItem)
     {
 
-        XElement? oiRoot = XDocument.Load(@"../../xml/order.xml").Root;
-        XElement? XMLorderItem = oiRoot?.Elements("Order").Where(o => o.Element("ID")?.Value == upOrderItem.ID.ToString()).FirstOrDefault();
+        XElement? oiRoot = XDocument.Load(@"../../xml/orderItem.xml").Root;
+        XElement? XMLorderItem = oiRoot?.Elements("OrderItem").Where(o => o.Element("ID")?.Value == upOrderItem.ID.ToString()).FirstOrDefault();
         if (XMLorderItem is null) { throw new NotExistException(); }
         XMLorderItem.Element("ProductID").Value = upOrderItem.ProductID.ToString();
         XMLorderItem.Element("OrderID").Value = upOrderItem.OrderID.ToString();
         XMLorderItem.Element("Amount").Value = upOrderItem.Amount.ToString();
         XMLorderItem.Element("Price").Value = upOrderItem.Price.ToString();
+        oiRoot?.Save(@"../../xml/orderItem.xml");
         int index = orderItemList.FindIndex(item => item.ID == upOrderItem.ID);
         orderItemList[index] = upOrderItem;
     }
@@ -89,11 +79,13 @@ internal class OrderItem : IOrderItem
     public void Delete(int orderItemId)
     {
 
-        XElement ? oiRoot= XDocument.Load(@"../../xml/order.xml").Root;
-        XElement? XMLorderItem = oiRoot?.Elements("Order").Where(o => o.Element("ID")?.Value == orderItemId.ToString()).FirstOrDefault();
+        XElement ? oiRoot= XDocument.Load(@"../../xml/orderItem.xml").Root;
+        XElement? XMLorderItem = oiRoot?.Elements("OrderItem").Where(o => o.Element("ID")?.Value == orderItemId.ToString()).FirstOrDefault();
         if (XMLorderItem is null) { throw new NotExistException(); }
         XMLorderItem.Remove();
+        oiRoot?.Save(@"../../xml/orderItem.xml");
         int index = orderItemList.FindIndex(item => item.ID == orderItemId);
         orderItemList.RemoveAt(index);
        }
+   
 }

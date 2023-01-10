@@ -1,4 +1,4 @@
-﻿using Dal;
+﻿
 using BlApi;
 namespace BlImplementation;
 
@@ -17,7 +17,7 @@ internal class BLProduct : IProduct
     /// creating Idal instance for using its methods and members in BLOrder.
     /// </summary>
 
-    private Idal Dal { get; set; } = DalApi.Factory.Get();
+    private DalApi.IDal Dal { get; set; } = DalApi.Factory.Get();
 
     /// <summary>
     /// ReadProductsList method- recieves from dal layer the products list for manager.
@@ -59,7 +59,7 @@ internal class BLProduct : IProduct
         {
             if (productId <= 0)
                 throw new BlInValidInputException();
-            DO.Product prod = Dal.Product.Read(productId);
+            DO.Product prod = Dal.Product.Read(p=>p.ID== productId);
             product.ID = prod.ID;
             product.Name = prod.Name;
             product.Price = prod.Price;
@@ -83,7 +83,7 @@ internal class BLProduct : IProduct
     {
         try
         {
-            DO.Product dalProduct = Dal.Product.Read(productId);
+            DO.Product dalProduct = Dal.Product.Read(p=> p.ID == productId);
             BO.ProductItem product = new BO.ProductItem();
             product.ID = dalProduct.ID;
             product.Name = dalProduct.Name;
@@ -176,7 +176,7 @@ internal class BLProduct : IProduct
     {
         try
         {
-            DO.Product DOProduct = Dal.Product.Read(product.ID);
+            DO.Product DOProduct = Dal.Product.Read(p=>p.ID==product.ID);
             if (string.IsNullOrEmpty(product.Name))
                 throw new BlNullValueException();
             if (product.Price <= 0)

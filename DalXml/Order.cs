@@ -69,17 +69,7 @@ internal class Order : IOrder
 
     }
 
-    public DO.Order Read(int id)
-    {
-        foreach (DO.Order order in orderList)
-        {
-            if (order.ID == id)
-            {
-                return order;
-            }
-        }
-        throw new NotExistException();
-    }
+  
 
     public IEnumerable<DO.Order> ReadAll(Func<DO.Order, bool>? condition = null)
     {
@@ -88,10 +78,8 @@ internal class Order : IOrder
         return orderList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
-    public DO.Order ReadByCondition(Func<DO.Order, bool> condition)
-    {
-              
-       
+    public DO.Order Read(Func<DO.Order, bool> condition)
+    {   
        
         return orderList.Where(condition).ToList()[0];
     }

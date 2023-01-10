@@ -28,7 +28,7 @@ internal class BLCart : ICart
     {
         try
         {
-            DO.Product product = dal.Product.Read(productID);
+            DO.Product product = dal.Product.Read(p=> p.ID==productID);
             int productInStock = product.InStock;
             double productPrice = product.Price;
             BO.OrderItem ?orderItem = new BO.OrderItem();
@@ -45,7 +45,7 @@ internal class BLCart : ICart
             }
             else
             {
-                orderItem.ID = Dal.DataSource.Config.OrderItemId;
+                orderItem.ID = 0;
                 orderItem.ProductID = productID;
                 orderItem.ProductName = product.Name;
                 orderItem.Amount = 1;
@@ -81,8 +81,8 @@ internal class BLCart : ICart
     {
         try
         {
-        int productInStock = dal.Product.Read(productID).InStock;
-        double productPrice = dal.Product.Read(productID).Price;
+        int productInStock = dal.Product.Read(p => p.ID == productID).InStock;
+        double productPrice = dal.Product.Read(p => p.ID == productID).Price;
         BO.OrderItem ?orderItem = new BO.OrderItem();
         orderItem = cart.Items.Find(item => item.ProductID == productID);
         if (orderItem == null)
@@ -150,11 +150,11 @@ internal class BLCart : ICart
             DoOrder.CustomerName = customerName;
             DoOrder.CustomerEmail = customerMail;
             DoOrder.CustomerAddress = customerAddress;
-            DoOrder.ID = Dal.DataSource.Config.OrderId;
+            DoOrder.ID =0;
             dal.Order.Create(DoOrder);
             foreach (BO.OrderItem orderItem in cart.Items)
             {
-                productInStock = dal.Product.Read(orderItem.ProductID).InStock;
+                productInStock = dal.Product.Read(p => p.ID == orderItem.ProductID).InStock;
                 if (orderItem.Amount < 0)
                 {
                     throw new BlInValidInputException();
@@ -170,7 +170,7 @@ internal class BLCart : ICart
                 DoOrderItem.Amount = orderItem.Amount;
                 DoOrderItem.Price = orderItem.TotalPrice;
                 dal.OrderItem.Create(DoOrderItem);
-                DO.Product DoProduct = dal.Product.Read(DoOrderItem.ProductID);
+                DO.Product DoProduct = dal.Product.Read(p => p.ID == DoOrderItem.ProductID);
                 DoProduct.InStock -= orderItem.Amount;
                 dal.Product.UpDate(DoProduct);
             } 

@@ -5,5 +5,4 @@ namespace DalApi;
 /// </summary>
 public interface IOrderItem : ICrud <OrderItem>
 {
-    public IEnumerable<OrderItem> ReadByOrderID(int orderID);
 };

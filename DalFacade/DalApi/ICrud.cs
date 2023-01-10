@@ -14,7 +14,7 @@ public interface ICrud<T>
     /// <param name="item"></param>
     /// <returns></returns>
     public int Create(T item);
-    public T Read(int id);
+   
 
 
     /// <summary>
@@ -24,7 +24,7 @@ public interface ICrud<T>
     /// <returns> the required Ienumerable </returns>
     public IEnumerable<T> ReadAll(Func<T,bool>? condition= null);
 
-    public T ReadByCondition(Func<T, bool> condition);
+    public T Read(Func<T, bool> condition);
     public void UpDate(T item);
     public void Delete(int id);
 }

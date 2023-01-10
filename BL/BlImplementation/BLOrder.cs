@@ -33,7 +33,7 @@ internal class BLOrder : BlApi.IOrder
             orderForList.CustomerName = order.CustomerName;
             orderForList.TotalPrice = 0;
             orderForList.AmountOfItems = 0;
-            IEnumerable<DO.OrderItem> orderItems = DalList.OrderItem.ReadByOrderID(order.ID);
+            IEnumerable<DO.OrderItem> orderItems = DalList.OrderItem.ReadAll(oi=> oi.OrderID==order.ID);
             foreach (var orderItem in orderItems)
             {
                 orderForList.TotalPrice += orderItem.Price * orderItem.Amount;
@@ -65,7 +65,7 @@ internal class BLOrder : BlApi.IOrder
         {
             if (orderID <= 0)
                 throw new BlInValidInputException();
-            DO.Order DoOrder = DalList.Order.Read(orderID);
+            DO.Order DoOrder = DalList.Order.Read(o=> o.ID==orderID);
             var DoOrderItems = DalList.OrderItem.ReadAll();
             //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
             BoOrder.ID = orderID;
@@ -86,7 +86,7 @@ internal class BLOrder : BlApi.IOrder
                 BO.OrderItem orderItem = new BO.OrderItem();
                 orderItem.ID = oi.ID;
                 orderItem.ProductID = oi.ProductID;
-                orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
+                orderItem.ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name;
                 orderItem.Amount = oi.Amount;
                 orderItem.Price = oi.Price;
                 orderItem.TotalPrice = oi.Amount * oi.Price;
@@ -112,7 +112,7 @@ internal class BLOrder : BlApi.IOrder
         BO.Order BoOrder = new BO.Order();
         try
         {
-            DO.Order DoOrder = DalList.Order.Read(orderID);
+            DO.Order DoOrder = DalList.Order.Read(o=>o.ID==orderID);
             if (DoOrder.ID == 0)
                 throw new BlNotExistException();
             DoOrder.ShipDate = DateTime.Now;
@@ -126,13 +126,13 @@ internal class BLOrder : BlApi.IOrder
             BoOrder.ShipDate = DateTime.Now;
             BoOrder.DeliveryDate = DateTime.MinValue;
             BoOrder.TotalPrice = 0;
-            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadByOrderID(orderID);
+            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi=> oi.OrderID== orderID);
             foreach (var OrderItem in DoOrderItems)
             {
                 BO.OrderItem orderItem = new BO.OrderItem();
                 orderItem.ID = OrderItem.ID;
                 orderItem.ProductID = OrderItem.ProductID;
-                orderItem.ProductName = DalList.Product.Read(OrderItem.ProductID).Name;
+                orderItem.ProductName = DalList.Product.Read(p => p.ID == OrderItem.ProductID).Name;
                 orderItem.Amount = OrderItem.Amount;
                 orderItem.Price = OrderItem.Price;
                 orderItem.TotalPrice = OrderItem.Amount * OrderItem.Price;
@@ -159,7 +159,7 @@ internal class BLOrder : BlApi.IOrder
         BO.Order BoOrder = new BO.Order();
         try
         {
-            DO.Order DoOrder = DalList.Order.Read(orderID);
+            DO.Order DoOrder = DalList.Order.Read(o=>o.ID==  orderID);
 
             if (DoOrder.ShipDate == DateTime.MinValue)
                 throw new BlWrongDateSequenceException();
@@ -174,13 +174,13 @@ internal class BLOrder : BlApi.IOrder
             BoOrder.DeliveryDate = DateTime.Now;
             BoOrder.Status = (BO.eOrderStatus)2;
             BoOrder.TotalPrice = 0;
-            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadByOrderID(orderID);
+            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == orderID);
             foreach (var oi in DoOrderItems)
             {
                 BO.OrderItem orderItem = new BO.OrderItem();
                 orderItem.ID = oi.ID;
                 orderItem.ProductID = oi.ProductID;
-                orderItem.ProductName = DalList.Product.Read(oi.ProductID).Name;
+                orderItem.ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name;
                 orderItem.Amount = oi.Amount;
                 orderItem.Price = oi.Price;
                 orderItem.TotalPrice = oi.Amount * oi.Price;
@@ -206,7 +206,7 @@ internal class BLOrder : BlApi.IOrder
     {
         try
         {
-           DO.Order order = DalList.Order.Read(orderID);
+           DO.Order order = DalList.Order.Read(o=>o.ID==orderID);
             BO.OrderTracking BoOrderTracking = new BO.OrderTracking();
             List<(DateTime, string)> list = new List<(DateTime, string)>();
             list.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));

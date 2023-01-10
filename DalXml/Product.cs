@@ -46,19 +46,7 @@ internal class Product : IProduct
         
     }
 
-    public DO.Product Read(int id)
-    {
-        List<DO.Product> productList = new List<DO.Product>();
-        StreamReader reader = new("../../xml/product.xml");
-        XmlSerializer ser = new(typeof(List<DO.Product>));
-       
-        productList = (List<DO.Product>)ser.Deserialize(reader);
-    
-        reader.Close();
-        int index= productList.FindIndex(p=>p.ID==id);
-        if(index==-1 ) throw new NotExistException();
-        return productList[index];
-    }
+  
 
     public IEnumerable<DO.Product> ReadAll(Func<DO.Product, bool>? condition = null)
     {
@@ -72,7 +60,7 @@ internal class Product : IProduct
     
 }
 
-    public DO.Product ReadByCondition(Func<DO.Product, bool> condition)
+    public DO.Product Read(Func<DO.Product, bool> condition)
     {
         return ReadAll(condition).First();
     }
