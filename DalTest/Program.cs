@@ -5,6 +5,7 @@ using DalApi;
 
 internal static class Program
 {
+    private static dalxml
     private static DalOrder DalOrder { get; set; } = new();
     private static DalOrderItem DalOrderItem { get; set; } = new();
     private static DalProduct DalProduct { get; set; } = new();

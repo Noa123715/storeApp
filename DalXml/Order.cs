@@ -11,7 +11,7 @@ internal class Order : IOrder
     private List<DO.Order> orderList { get; set; }
     public Order()
     {
-        XElement? root = XDocument.Load(@"../../xml/Order.xml")?.Root;
+        XElement? root = XDocument.Load(@"../../xml/order.xml")?.Root;
         DO.Order newOrder = new ();
         orderList = new List<DO.Order>();
 
@@ -29,7 +29,7 @@ internal class Order : IOrder
 
     }
 
-    public void Create(DO.Order newOrder)
+    public int Create(DO.Order newOrder)
     {
         XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
 
@@ -40,44 +40,79 @@ internal class Order : IOrder
         rootConfig?.Save(@"../../xml/config.xml");
         newOrder.ID= orderId;
         orderList.Add(newOrder);
-       
-        XElement orderXML = new("Order",
-                        new XElement("ID", newOrder.ID),
-                        new XElement("CustomerName", newOrder.CustomerName),
-                        new XElement("CustomerEmail", newOrder.CustomerEmail),
-                        new XElement("CustomerAddress", newOrder.CustomerAddress),
-                        new XElement("OrderDate", newOrder.OrderDate),
-                        new XElement("ShipDate", newOrder.ShipDate),
-                        new XElement("DeliveryDate", newOrder.DeliveryDate));
+
+        XElement xmlOrder = new("Order",
+                                new XElement("ID", newOrder.ID),
+                                new XElement("CustomerName", newOrder.CustomerName),
+                                new XElement("CustomerEmail", newOrder.CustomerEmail),
+                                new XElement("CustomerAddress", newOrder.CustomerAddress),
+                                new XElement("OrderDate", newOrder.OrderDate),
+                                new XElement("ShipDate", newOrder.ShipDate),
+                                new XElement("DeliveryDate", newOrder.DeliveryDate));
+        XElement ?root = XDocument.Load(@"../../xml/order.xml").Root;
+        root?.Add(xmlOrder);
+        root?.Save(@"../../xml/order.xml");
+        return newOrder.ID;
     }
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        XElement ?root = XDocument.Load(@"../../xml/order.xml").Root;
+        XElement? order = root?.Elements("Order").Where(o => o.Element("ID")?.Value == id.ToString()).FirstOrDefault();
+        if(order is null)
+        {
+            throw new NotExistException();
+        }
+        order.Remove();
+        orderList.Remove(orderList.Find(o=> o.ID==id));
+        root?.Save(@"../../xml/order.xml");
+
     }
 
     public DO.Order Read(int id)
     {
-        throw new NotImplementedException();
+        foreach (DO.Order order in orderList)
+        {
+            if (order.ID == id)
+            {
+                return order;
+            }
+        }
+        throw new NotExistException();
     }
 
     public IEnumerable<DO.Order> ReadAll(Func<DO.Order, bool>? condition = null)
     {
-        throw new NotImplementedException();
+        if (condition is null)
+            return orderList ?? throw new NotExistException();
+        return orderList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
     public DO.Order ReadByCondition(Func<DO.Order, bool> condition)
     {
-        throw new NotImplementedException();
+              
+       
+       
+        return orderList.Where(condition).ToList()[0];
     }
 
-    public void UpDate(DO.Order item)
+    public void UpDate(DO.Order upOrder)
     {
-        throw new NotImplementedException();
+        XElement? root = XDocument.Load(@"../../xml/order.xml").Root;
+        XElement? XMLorder = root?.Elements("Order").Where(o => o.Element("ID")?.Value == upOrder.ID.ToString()).FirstOrDefault();
+        if (XMLorder is null)   { throw new NotExistException();}
+        XMLorder.Element("CustomerName").Value= upOrder.CustomerName ;
+        XMLorder.Element("CustomerEmail").Value = upOrder.CustomerEmail;
+        XMLorder.Element("CustomerAddress").Value = upOrder.CustomerAddress;
+        XMLorder.Element("OrderDate").Value = upOrder.OrderDate.ToString();
+        XMLorder.Element("ShipDate").Value = upOrder.ShipDate.ToString();
+        XMLorder.Element("DeliveryDate").Value = upOrder.DeliveryDate.ToString();
+        upOrder.ID = Convert.ToInt32(XMLorder?.Element("ID")?.Value);
+        int index = orderList.FindIndex(item => item.ID == upOrder.ID);
+        orderList[index] = upOrder;
+        
+
     }
 
-    int ICrud<DO.Order>.Create(DO.Order item)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

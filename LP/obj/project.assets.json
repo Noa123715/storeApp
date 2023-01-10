@@ -64,23 +64,55 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\גלוסקינוס תמר\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\": {},
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
+>>>>>>> cf5cebe27a4376d446cac5133c1e3f7156f45815
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
       "projectName": "PL",
       "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
       "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\LP\\obj\\",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "projectName": "PL",
+      "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "packagesPath": "C:\\Users\\גלוסקינוס תמר\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\LP\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "projectName": "PL",
+      "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\LP\\obj\\",
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
+>>>>>>> cf5cebe27a4376d446cac5133c1e3f7156f45815
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\מורגנשטרן שושנה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\גלוסקינוס תמר\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\אבקסיס נועה1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
+>>>>>>> cf5cebe27a4376d446cac5133c1e3f7156f45815
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -95,8 +127,18 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
               "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+=======
+            "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
+>>>>>>> cf5cebe27a4376d446cac5133c1e3f7156f45815
             }
           }
         }
