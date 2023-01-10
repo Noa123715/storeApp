@@ -1,13 +1,30 @@
 ﻿namespace Dal;
 using DalApi;
+<<<<<<< HEAD
 using DO;
+=======
+using System;
+using System.Collections.Generic;
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
 using System.Xml.Linq;
 
 internal class OrderItem : IOrderItem
 {
+<<<<<<< HEAD
     private List<DO.OrderItem> orderItemList { get; set; }
 
     public OrderItem() 
+=======
+    private List<DO.OrderItem> orderItemsList { get; set; }
+
+    public OrderItem()
+    {
+        XElement? root = XDocument.Load(@"../../xml/Order.xml")?.Root;
+        DO.OrderItem orderItem = new DO.OrderItem();
+    } 
+
+    public int Create(OrderItem orderItem)
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
     {
 
         XElement? oiRoot = XDocument.Load(@"../../xml/orderItem.xml")?.Root;
@@ -75,7 +92,11 @@ internal class OrderItem : IOrderItem
         return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
+<<<<<<< HEAD
     public DO.OrderItem ReadByCondition(Func<DO.OrderItem, bool> condition)
+=======
+    public OrderItem ReadByCondition(Func<OrderItem, bool> condition)
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
     {
         return orderItemList.Where(condition).ToList()[0];
     }

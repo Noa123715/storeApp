@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "DeNsCoDzOFoCXvhtFc212Ux2NCWMFkSXV3UCXdV9fiaD3mC89NMTsnLt0fCWpp5dMbEG+itzQOYl1lZB9E5jVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj",
+=======
+  "dgSpecHash": "JTzNnXfxKs+57CKQA762LW/ZY6BJ+WS0jaR0zFqhyqgsn8tYYKRgj9Qc0XHTvGjgJRGXsfb+HDW3toELulw/UQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj",
+>>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
   "expectedPackageFiles": [],
   "logs": []
 }

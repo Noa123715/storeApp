@@ -4,7 +4,7 @@
 		<ID>542068</ID>
 		<Name>necklace - kate spade</Name>
 		<Price>3000</Price>
-		<InStock>3</InStock>
+		<InStock>30</InStock>
 		<Category>Accessories</Category>
 	</Product>
 	<Product>
@@ -39,7 +39,7 @@
 		<ID>374806</ID>
 		<Name>boots- Gucci</Name>
 		<Price>5000</Price>
-		<InStock>3</InStock>
+		<InStock>50</InStock>
 		<Category>Women</Category>
 	</Product>
 	<Product>
