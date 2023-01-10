@@ -1,20 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "/pULYxzjNhe3Ehx/rrqjRCtHfqqOBqwDjYEWHdjyeL1EqrO23t9WScO8wzWvMhzs6hxAbyBrdFVIzTgAAmBJSw==",
+  "dgSpecHash": "4YtUEmMaQ6X/eOpl3eM9/W25auO5rnB/SpADtxhHNqGY1Z9wZdiBeGm83c2xPx6mTtbNjDV38vlmUrP0NV2cFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
-=======
-<<<<<<< HEAD
-  "dgSpecHash": "DNCZI2wokgng8GUT+1C7zjl+xUtJOgKLhMVZQil1oMd8iMIdGkNEeu3nFo+2wR4TL6H4nKeR3wLoyYcI1RH1FQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
-=======
-  "dgSpecHash": "y+QMFqbcbwz7hemN0atCcAnfaqwc5WUSmYce/nVpF2abJZF9PWkEvEZ6IJD4gPGC0zjLhCmG+2iOyF6EJO+6Zw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
->>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
->>>>>>> cf5cebe27a4376d446cac5133c1e3f7156f45815
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

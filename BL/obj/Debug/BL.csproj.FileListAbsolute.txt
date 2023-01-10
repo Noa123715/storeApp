@@ -38,3 +38,4 @@ C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\BL\obj\Debug\B
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\BL\obj\Debug\ref\BL.dll
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\BL\obj\Debug\BL.pdb
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\refint\BL.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\refint\BL.dll

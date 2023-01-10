@@ -1,20 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "Ot51rF9m5FzQ28XWXG3mlWXY6+XG2q3Al4/4AfZrundf+Yj9kVBoABR5ZnPDtzB7wnzuVj+f52wDXVLflhmtFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalTest\\DalTest.csproj",
-=======
-<<<<<<< HEAD
-  "dgSpecHash": "PpCoAXM3lVYo28UcV/N+q+SQVs2O8TZL2gG8TVZ6R34ETLn8H+6i5qKwE1jUcENtswXgrCBIg9epxnCA6EdHZA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_0796\\DalTest\\DalTest.csproj",
-=======
-  "dgSpecHash": "vDr1yVW7qVBFDn36wiTm+qCIo1YzRlBdsjFijMF3q6fyTXAXdPj6U0ng8OLPeCy7VCiRNJM3D4FgE724cFm34A==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalTest\\DalTest.csproj",
->>>>>>> dc347d1761905b78fe39fcb1247326dd477f332f
->>>>>>> cf5cebe27a4376d446cac5133c1e3f7156f45815
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
