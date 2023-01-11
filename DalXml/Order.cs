@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 /// <summary>
-/// 
+/// CRUD operations department:
+/// for adding a new order list,
+/// reading the existing orders,
+/// updating order lists and deletions.
 /// </summary>
 internal class Order : IOrder
 {
@@ -28,7 +31,12 @@ internal class Order : IOrder
         }
 
     }
-
+    /// <summary>
+    /// create a new order.
+    /// </summary>
+    /// <param name="newOrder"></param>
+    /// <returns>ID for the created order</returns>
+    /// <exception cref="AlreadyExistException"></exception>
     public int Create(DO.Order newOrder)
     {
         XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
@@ -55,6 +63,7 @@ internal class Order : IOrder
         return newOrder.ID;
     }
 
+
     public void Delete(int id)
     {
         XElement ?root = XDocument.Load(@"../../xml/order.xml").Root;
@@ -78,18 +87,28 @@ internal class Order : IOrder
         return orderList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
+    /// <summary>
+    /// Read order's properties according to certain condition.
+    /// </summary>
+    /// <param name="condition"> predicate with the condition</param>
+    /// <returns>the required order</returns>
     public DO.Order Read(Func<DO.Order, bool> condition)
-    {   
-       
+    {
+
         return orderList.Where(condition).ToList()[0];
     }
 
+    /// <summary>
+    /// updates an order's properties.
+    /// </summary>
+    /// <param name="upOrder"></param>
+    /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Order upOrder)
     {
         XElement? root = XDocument.Load(@"../../xml/order.xml").Root;
         XElement? XMLorder = root?.Elements("Order").Where(o => o.Element("ID")?.Value == upOrder.ID.ToString()).FirstOrDefault();
-        if (XMLorder is null)   { throw new NotExistException();}
-        XMLorder.Element("CustomerName").Value= upOrder.CustomerName ;
+        if (XMLorder is null) { throw new NotExistException(); }
+        XMLorder.Element("CustomerName").Value = upOrder.CustomerName;
         XMLorder.Element("CustomerEmail").Value = upOrder.CustomerEmail;
         XMLorder.Element("CustomerAddress").Value = upOrder.CustomerAddress;
         XMLorder.Element("OrderDate").Value = upOrder.OrderDate.ToString();
@@ -98,9 +117,13 @@ internal class Order : IOrder
         upOrder.ID = Convert.ToInt32(XMLorder?.Element("ID")?.Value);
         int index = orderList.FindIndex(item => item.ID == upOrder.ID);
         orderList[index] = upOrder;
-        
+
 
     }
 
-    
 }
+
+
+
+
+    

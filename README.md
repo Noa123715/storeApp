@@ -1,2 +1,2 @@
 # dotNet5783_7729_0796
-הרצת הPL נתקעת, כדי להריץ כמו שצריך יש למחוק את הRESOURCE מהMAINWINDOW יש שגיאת זמן ריצה גם בFACTORY בהצלחה!
+stage 4- includes the bonus. (thread safe and lazy initialization)

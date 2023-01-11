@@ -3,9 +3,19 @@ using DalApi;
 using DO;
 using System;
 using System.Xml.Serialization;
-
+/// <summary>
+/// CRUD operations department:
+/// for adding a new product,
+/// reading the existing product,
+/// updating product and deletions.
+/// </summary>
 internal class Product : IProduct
 {
+    /// <summary>
+    /// creates new product.
+    /// </summary>
+    /// <param name="product"></param>
+    /// <returns></returns>
     public int Create(DO.Product product)
     {
         List<DO.Product> productList = ReadAll().ToList();
@@ -33,6 +43,11 @@ internal class Product : IProduct
 
     }
 
+    /// <summary>
+    /// deletes product according to it's ID.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <exception cref="NotExistException"></exception>
     public void Delete(int id)
     {
         List<DO.Product> productList = ReadAll().ToList();
@@ -47,7 +62,12 @@ internal class Product : IProduct
     }
 
   
-
+    /// <summary>
+    /// read all products by default or according to certain condition.
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns></returns>
+    /// <exception cref="NotExistException"></exception>
     public IEnumerable<DO.Product> ReadAll(Func<DO.Product, bool>? condition = null)
     {
         List<DO.Product> ? productList = new List<DO.Product>();
@@ -60,11 +80,21 @@ internal class Product : IProduct
     
 }
 
+    /// <summary>
+    /// read specific product that implement certain condition.
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns></returns>
     public DO.Product Read(Func<DO.Product, bool> condition)
     {
         return ReadAll(condition).First();
     }
 
+    /// <summary>
+    /// updates product property
+    /// </summary>
+    /// <param name="product"></param>
+    /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Product product)
     {
         List<DO.Product> productList = ReadAll().ToList();

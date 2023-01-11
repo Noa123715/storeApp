@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\
+=======
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\
+>>>>>>> ae9962db64a9d1ad23ca8b1e5bc81ebbfb4f2e56
 PL
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\App.xaml
 5-62895605
 
 7377821727
 197-183970292
 FollowOrderWindow.xaml;MainWindow.xaml;NewOrderWindow.xaml;ProductListWindow.xaml;ProductWindow.xaml;
+=======
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\App.xaml
+3-1727129800
 
-False
+5-1213844533
+197-1266023841
+MainWindow.xaml;ProductListWindow.xaml;ProductWindow.xaml;
+>>>>>>> ae9962db64a9d1ad23ca8b1e5bc81ebbfb4f2e56
+
+True
 
