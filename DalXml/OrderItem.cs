@@ -1,25 +1,28 @@
 ﻿namespace Dal;
 using DalApi;
-
-using DO;
-
 using System;
 using System.Collections.Generic;
-
 using System.Xml.Linq;
-
+/// < summary >
+/// CRUD operations class:
+/// for adding a new order item list,
+/// reading the existing order item,
+/// updating order item and deletions.
+/// </ summary >
 internal class OrderItem : IOrderItem
 {
-
+    
     private List<DO.OrderItem> orderItemList { get; set; }
-
+    /// <summary>
+    /// orderitem ctor- getting data from xml to list.
+    /// </summary>
      public OrderItem()
     {
         XElement? root = XDocument.Load(@"../../xml/orderItem.xml")?.Root;
         DO.OrderItem orderItem = new DO.OrderItem();
     } 
 
-
+    // creates new order item
     public int Create(DO.OrderItem newOrderItem)
     {
         XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
@@ -47,7 +50,7 @@ internal class OrderItem : IOrderItem
     }
 
  
-
+    // read all orderitems -according to specific condition or all.
     public IEnumerable<DO.OrderItem> ReadAll(Func<DO.OrderItem, bool>? condition = null)
     {
         if (condition is null)
@@ -55,12 +58,22 @@ internal class OrderItem : IOrderItem
         return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
+    /// <summary>
+    /// read specific order item according to specific condition. e.g, certain id.
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns></returns>
     public DO.OrderItem Read(Func<DO.OrderItem, bool> condition)
 
     {
         return orderItemList.Where(condition).ToList()[0];
     }
 
+    /// <summary>
+    /// updates orderItem's data. 
+    /// </summary>
+    /// <param name="upOrderItem"></param>
+    /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.OrderItem upOrderItem)
     {
 
@@ -76,6 +89,11 @@ internal class OrderItem : IOrderItem
         orderItemList[index] = upOrderItem;
     }
 
+    /// <summary>
+    ///deletes orderItem according to its ID
+    /// </summary>
+    /// <param name="orderItemId"></param>
+    /// <exception cref="NotExistException"></exception>
     public void Delete(int orderItemId)
     {
 
