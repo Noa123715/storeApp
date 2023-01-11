@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using BlApi;
-namespace LP;
+namespace PL;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml
@@ -24,10 +24,24 @@ public partial class MainWindow : Window
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ChooseProductBtnWindow_Click(object sender, RoutedEventArgs e)
+    private void LogInAdmin_Click(object sender, RoutedEventArgs e)
     {
         ProductListWindow productListWindow = new ProductListWindow(Bl);
         productListWindow.Show();
+        this.Hide();
+    }
+
+    private void newOrder_Click(object sender, RoutedEventArgs e)
+    {
+        NewOrderWindow newOrderWindow = new NewOrderWindow();
+        newOrderWindow.Show();
+        this.Hide();
+    }
+
+    private void FollowOrder_Click(object sender, RoutedEventArgs e)
+    {
+        FollowOrderWindow followOrderWindow = new FollowOrderWindow();
+        followOrderWindow.Show();
         this.Hide();
     }
 }

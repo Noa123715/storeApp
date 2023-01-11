@@ -7,7 +7,7 @@ namespace BlImplementation;
 /// BLorder class implements bl order methods:
 /// read order list <see cref="ReadOrderList"/> , 
 /// Read specific Order Properties. <see cref="ReadOrderProperties"/> 
-/// update an order status <see cref="UpdateOrderSent" /> <see cref="UpdateOrderDelivery"/>, 
+/// update an order status <see cref="UpdateOrderSent" /> <see cref="UpdateOrderDelivery"/>
 /// and tracking order. <see cref="TrackOrder"/>
 /// </summary>
 /// 
@@ -65,7 +65,7 @@ internal class BLOrder : BlApi.IOrder
         {
             if (orderID <= 0)
                 throw new BlInValidInputException();
-            DO.Order DoOrder = DalList.Order.Read(o=> o.ID==orderID);
+            DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
             var DoOrderItems = DalList.OrderItem.ReadAll();
             //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
             BoOrder.ID = orderID;
@@ -126,7 +126,7 @@ internal class BLOrder : BlApi.IOrder
             BoOrder.ShipDate = DateTime.Now;
             BoOrder.DeliveryDate = DateTime.MinValue;
             BoOrder.TotalPrice = 0;
-            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi=> oi.OrderID== orderID);
+            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == orderID);
             foreach (var OrderItem in DoOrderItems)
             {
                 BO.OrderItem orderItem = new BO.OrderItem();
@@ -201,7 +201,7 @@ internal class BLOrder : BlApi.IOrder
     /// <param name="orderID">to find the require order</param>
     /// <returns> list off all stages in delivery with their dates. </returns>
     /// <exception cref="BlNotExistException"></exception>
-    /// 
+    
     public BO.OrderTracking TrackOrder(int orderID)
     {
         try

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using BO;
-namespace LP;
+namespace PL;
 
 /// <summary>
 /// Interaction logic for ProductWindow.xaml

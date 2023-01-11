@@ -26,7 +26,6 @@ C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\BL\obj\
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\BL.pdb
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\BL.deps.json
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\BL.dll
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\ref\BL.dll
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\BL.pdb
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\BL\obj\Debug\BL.csproj.AssemblyReference.cache
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\BL\obj\Debug\BL.GeneratedMSBuildEditorConfig.editorconfig
