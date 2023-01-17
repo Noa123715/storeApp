@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using BlApi;
 namespace PL;
 
@@ -33,7 +34,10 @@ public partial class MainWindow : Window
 
     private void newOrder_Click(object sender, RoutedEventArgs e)
     {
-        NewOrderWindow newOrderWindow = new NewOrderWindow();
+        int id = Convert.ToInt32(NewOrderText.Text);
+        if (id <= 0)
+            throw new BlApi.BlInValidInputException();
+        NewOrderWindow newOrderWindow = new NewOrderWindow(Bl, id, this);
         newOrderWindow.Show();
         this.Hide();
     }

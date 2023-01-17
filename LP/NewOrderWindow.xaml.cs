@@ -6,8 +6,8 @@ namespace PL;
 /// </summary>
 public partial class NewOrderWindow : Window
 {
-    public NewOrderWindow()
+    public NewOrderWindow(BlApi.IBL? bl, int id = 0, MainWindow? nWindow = null)
     {
         InitializeComponent();
     }
-}
+}//

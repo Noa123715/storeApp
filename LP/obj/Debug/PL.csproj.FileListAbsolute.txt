@@ -61,3 +61,11 @@ C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\F
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\NewOrderWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\FollowOrderWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\NewOrderWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\CartWindow.g.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\FollowOrderWindow.g.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\NewOrderWindow.g.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\OrderWindow.g.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\CartWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\FollowOrderWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\NewOrderWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\OrderWindow.baml
