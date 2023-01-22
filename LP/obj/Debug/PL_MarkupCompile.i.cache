@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_07961\LP\App.xaml
-71808311632
+61843856941
 
-11-2058846241
-1978030149
-CartWindow.xaml;FollowOrderWindow.xaml;MainWindow.xaml;NewOrderWindow.xaml;OrderWindow.xaml;ProductListWindow.xaml;ProductWindow.xaml;
+10450607069
+19761092325
+CartWindow.xaml;MainWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
 
-False
+True
 

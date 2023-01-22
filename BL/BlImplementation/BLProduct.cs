@@ -45,7 +45,7 @@ internal class BLProduct : IProduct
     }
 
     /// <summary>
-    /// ReadProductProperties method
+    /// ReadProductProperties method for  admin's window.
     /// </summary>
     /// <param name="productId"></param>
     /// <returns> all properties for specific product</returns>
@@ -73,7 +73,7 @@ internal class BLProduct : IProduct
         return product;
     }
     /// <summary>
-    /// Read product properties for specific product in specific cart.
+    /// Read product properties for specific product in specific cart for customer screen.
     /// </summary>
     /// <param name="productId"></param>
     /// <param name="cart"></param>
@@ -83,6 +83,7 @@ internal class BLProduct : IProduct
     {
         try
         {
+            if (productId <= 0) throw new BlNegativeInputException();
             DO.Product dalProduct = Dal.Product.Read(p=> p.ID == productId);
             BO.ProductItem product = new BO.ProductItem();
             product.ID = dalProduct.ID;
@@ -124,13 +125,13 @@ internal class BLProduct : IProduct
         try
         {
             if (product.ID <= 0)
-                throw new BlInValidInputException();
+                throw new BlNegativeInputException();
             if (string.IsNullOrEmpty(product.Name))
                 throw new BlNullValueException();
             if (product.Price <= 0)
-                throw new BlInValidInputException();
+                throw new BlNegativeInputException();
             if (product.InStock < 0)
-                throw new BlInValidInputException();
+                throw new BlNegativeInputException();
             DO.Product DOProduct = new DO.Product();
             DOProduct.ID = product.ID;
             DOProduct.Name = product.Name;

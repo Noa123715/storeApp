@@ -56,7 +56,7 @@
       "projectName": "DalTest",
       "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_07961\\DalTest\\DalTest.csproj",
       "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_07961\\DalTest\\obj\\",
+      "outputPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_07961\\DalTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -101,8 +101,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -111,7 +110,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

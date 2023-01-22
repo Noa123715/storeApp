@@ -6,21 +6,19 @@
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         Title="MainWindow" Height="464" Width="801">
-    <Window.Resources>
+    <!--<Window.Resources>
         <Style x:Key="myBtnStyle" TargetType="Button">
-            <Setter Property="BorderBrush" Value="#FFEC7989"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Foreground" Value="#FFEC7989"/>
+           
         </Style>
-    </Window.Resources>
+    </Window.Resources>-->
     <Grid>
 
-        <Button x:Name="LogInAdministrator" Content="Log in as Administrator" Click="LogInAdmin_Click" HorizontalAlignment="Left" Margin="54,149,0,0" VerticalAlignment="Top" Width="126" Height="43" Style="{StaticResource myBtnStyle}"/>
+        <Button x:Name="LogInAdministrator" Content="Log in as Administrator" Click="LogInAdmin_Click" Margin="54,149,0,0" Width="248" Height="43" Style="{StaticResource classicBtn}"/>
 
         <Label x:Name="HelloLabel" Content="Welcome to our store&#xD;&#xA;What do you want to do?" HorizontalAlignment="Left" Margin="147,60,0,0" VerticalAlignment="Top" Width="459" Height="84" Background="{x:Null}" Foreground="#FF698AED" FontSize="22" FontWeight="Bold"/>
-        <Label x:Name="NewOrderLabel" Content="Enter Order Nuber:" Margin="224,236,453,164"  Foreground="#FF698AED" BorderBrush="#FF698AED" RenderTransformOrigin="0.522,2.53"/>
-        <TextBox x:Name="NewOrderText" Text="0000" Margin="376,235,301,164" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF698AED" BorderBrush="#FF698AED"/>
-        <Button Content="new order" Click="newOrder_Click" HorizontalAlignment="Left" Margin="544,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.133,-4.808" Height="48" Width="124" Style="{StaticResource myBtnStyle}"/>
-        <Button Content="Follow Your Order" Click="FollowOrder_Click" HorizontalAlignment="Left" Margin="544,238,0,0" VerticalAlignment="Top" Width="124" Height="43" Style="{StaticResource myBtnStyle}"/>
+        <Label x:Name="NewOrderLabel" Content="Enter Order Nuber below: 👇:"  Style="{StaticResource classicLbl}" Margin="535,206,0,0" Width="329"/>
+        <TextBox x:Name="NewOrderText" Text="0000" Margin="576,246,101,153" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF698AED" BorderBrush="#FF698AED"/>
+        <Button Content="new order" Click="newOrder_Click" Margin="366,149,0,0" RenderTransformOrigin="2.133,-4.808" Height="43" Width="124" Style="{StaticResource classicBtn}"/>
+        <Button Content="Follow Your Order" Click="FollowOrder_Click" Margin="511,149,0,0" Width="251" Height="43" Style="{StaticResource classicBtn}"/>
     </Grid>
 </Window>

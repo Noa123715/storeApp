@@ -38,6 +38,10 @@ public class BlInValidInputException : Exception
 {
     public override string Message => "Invalid input";
 }
+public class BlNegativeInputException : Exception
+{
+    public override string Message => "Negative value. enter only positive number.";
+}
 
 
 /// <summary>
@@ -87,7 +91,7 @@ public class BlWrongDateSequenceException : Exception
 /// </summary>
 public class BlIllegalDeletionAttempt: Exception
 {
-      public override string Message =>
-                    "Illegal deletion attempt-";
+    public override string Message =>
+                  "Illegal deletion attempt - the item exists in a confirmed order or does not exist at all.";
 
 }

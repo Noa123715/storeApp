@@ -64,10 +64,10 @@ internal class BLOrder : BlApi.IOrder
         try
         {
             if (orderID <= 0)
-                throw new BlInValidInputException();
+                throw new BlNegativeInputException();
             DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
             var DoOrderItems = DalList.OrderItem.ReadAll();
-            //var DoOrderItems = Dal.OrderItem.ReadByOrder(orderID);
+           
             BoOrder.ID = orderID;
             BoOrder.CustomerName = DoOrder.CustomerName;
             BoOrder.CustomerEmail = DoOrder.CustomerEmail;
@@ -112,9 +112,9 @@ internal class BLOrder : BlApi.IOrder
         BO.Order BoOrder = new BO.Order();
         try
         {
+            if(orderID <= 0) throw new BlNegativeInputException();
             DO.Order DoOrder = DalList.Order.Read(o=>o.ID==orderID);
-            if (DoOrder.ID == 0)
-                throw new BlNotExistException();
+            
             DoOrder.ShipDate = DateTime.Now;
             DalList.Order.UpDate(DoOrder);
             BoOrder.ID = DoOrder.ID;
@@ -140,7 +140,7 @@ internal class BLOrder : BlApi.IOrder
                 BoOrder.Items.Add(orderItem);
             }
         }
-        catch (NotExistException ex)
+        catch (DalApi.NotExistException ex)
         {
             throw new BlNotExistException(ex);
         }
@@ -208,8 +208,7 @@ internal class BLOrder : BlApi.IOrder
         {
            DO.Order order = DalList.Order.Read(o=>o.ID==orderID);
             BO.OrderTracking BoOrderTracking = new BO.OrderTracking();
-            List<(DateTime, string)> list = new List<(DateTime, string)>();
-            list.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
+           
             BoOrderTracking.TrackList.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
             BoOrderTracking.Status = BO.eOrderStatus.Ordered;
             if (order.ShipDate > DateTime.MinValue)
@@ -229,4 +228,8 @@ internal class BLOrder : BlApi.IOrder
             throw new BlNotExistException(err);
         }
     }
+
+
 }
+
+

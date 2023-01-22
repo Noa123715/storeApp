@@ -151,7 +151,7 @@ internal class BLCart : ICart
             DoOrder.CustomerEmail = customerMail;
             DoOrder.CustomerAddress = customerAddress;
             DoOrder.ID =0;
-            dal.Order.Create(DoOrder);
+            dal?.Order.Create(DoOrder);
             foreach (BO.OrderItem orderItem in cart.Items)
             {
                 productInStock = dal.Product.Read(p => p.ID == orderItem.ProductID).InStock;
