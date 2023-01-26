@@ -1,71 +1,92 @@
-﻿
-
-using System.Windows;
-
+﻿using System.Windows;
 using BO;
-
 namespace PL;
 
 /// <summary>
-/// Interaction logic for ProductListWindow.xaml
-/// a display window that shows the entire list of product
+/// Interaction logic for ProductWindow.xaml
+/// a window for adding a new product or updating an existing one
 /// </summary>
-public partial class ProductListWindow : Window
+public partial class ProductWindow : Window
 {
-    private BlApi.IBL bl { get; set; }
+    private BlApi.IBL Bl { get; set; }
+    private int product_id; //variable for conversion and testing 
+
     /// <summary>
-    /// the constractor of the product list window
-    /// the function initializes the array of product and initializes the categories
+    /// constractor of the product window
+    /// the function checks if it received a certain ID:
+    /// if so, she sends for an update
+    /// if not, she sends to add a new product
     /// </summary>
-    /// <param name="mainWindow_bl"></param>
-    public ProductListWindow(BlApi.IBL mainWindow_bl)
+    /// <param name="ProductList_bl"></param>
+    /// <param name="pList_id"></param>
+    public ProductWindow(BlApi.IBL ProductList_bl, int? pList_id = null)
     {
         InitializeComponent();
-        bl = mainWindow_bl;
-        ProductListView.ItemsSource = bl.Product.ReadProductsList();
-        ProductSelector.ItemsSource = eCategories.GetValues(typeof(eCategories));
+        Bl = ProductList_bl;
+        CategoryComboBox.ItemsSource = eCategories.GetValues(typeof(eCategories));
+        if (pList_id is null)
+        {
+            //putting the correct values in the fields of the window
+            product_id = 0;
+            TitleLabel.Content = "Add Product";
+            AddOrUpdateBtn.Content = "Add a Product";
+        }
+        else
+        {
+            //putting the values of the product to be updated in the fields of the window
+            TitleLabel.Content = "UpDate The Product";
+            AddOrUpdateBtn.Content = "Update";
+            product_id = (int)pList_id;
+            Product product = Bl.Product.ReadProductProperties(product_id);
+            IdTextBox.Text = product.ID.ToString();
+            NameTextBox.Text = product.Name;
+            PriceTextBox.Text = product.Price.ToString();
+            CategoryComboBox.SelectedItem = product.Category;
+            AmountTextBox.Text = product.InStock.ToString();
+        }
     }
     /// <summary>
-    /// when the user choose a category to search
-    /// the function search and send all product in this category
+    /// when the button:"Go Back" is press the function is activated
+    /// the window os the product list apears and this window disapears 
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void SelectionChangedCategory(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+    private void BackBtn_Click(object sender, RoutedEventArgs e)
     {
-        ProductListView.ItemsSource = bl.Product.ReadProductsList((eCategories)ProductSelector.SelectedItem);
-    }
-    /// <summary>
-    /// when the button:"add a product" is press the function is activated
-    /// the window for adding a product apears and this window disapears 
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void AddItemBtn_Click(object sender, RoutedEventArgs e)
-    {
-        ProductWindow p = new ProductWindow(bl);
-        p.Show();
+        ProductListWindow GoBack = new ProductListWindow(Bl);
+        GoBack.Show();
         this.Hide();
     }
     /// <summary>
-    /// when the button:"X" is press the functionis activated
-    /// when the user when to return all product list
+    /// when the button:"add a product"/button:"update the product" is press the function is activated
+    /// the function checks the inherited ID:
+    /// if it null, then the function adds a new product
+    /// if it has a full ID, the function sends the product for update
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void FilterDelete(object sender, RoutedEventArgs e)
+    private void AddOrUpdateBtn_Click(object sender, RoutedEventArgs e)
     {
-        ProductListView.ItemsSource = bl.Product.ReadProductsList();
-    }
-    /// <summary>
-    /// when a product is press the function is activated
-    /// the product update window appears and this window disapears 
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void UpdateProduct(object sender, System.Windows.Input.MouseButtonEventArgs e)
-    {
-        new ProductWindow(bl, ((ProductForList)ProductListView.SelectedItem).ID).Show();
-        Close();
+        Product product = new Product()
+        {
+            ID = int.Parse(IdTextBox.Text),
+            Name = NameTextBox.Text,
+            InStock = int.Parse(AmountTextBox.Text),
+            Category = (eCategories)CategoryComboBox.SelectedItem,
+            Price = int.Parse(PriceTextBox.Text)
+        };
+        if (product_id == 0)
+        {
+            Bl.Product.AddProduct(product);
+        }
+        else
+        {
+            Bl.Product.UpdateProduct(product);
+        }
+        // if the process ends successfully, return to the previous window
+        MessageBox.Show("Successfull :)");
+        ProductListWindow GoBack = new ProductListWindow(Bl);
+        GoBack.Show();
+        this.Hide();
     }
 }
