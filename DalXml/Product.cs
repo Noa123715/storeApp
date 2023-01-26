@@ -35,7 +35,7 @@ internal class Product : IProduct
         
         productList.Add(product);
         XmlSerializer ser = new XmlSerializer(typeof(List<Product>));
-        StreamWriter w = new StreamWriter("../../xml/product.xml");
+        StreamWriter w = new StreamWriter(@"..\xml\product.xml");
         ser.Serialize(w, productList);
         w.Close();
         return product.ID;
@@ -71,8 +71,8 @@ internal class Product : IProduct
     public IEnumerable<DO.Product> ReadAll(Func<DO.Product, bool>? condition = null)
     {
         List<DO.Product> ? productList = new List<DO.Product>();
-        StreamReader r = new("../../xml/Product.xml");
-        XmlSerializer ser = new(typeof(List<Product>));
+        StreamReader r = new(@"..\xml\Product.xml");
+        XmlSerializer ser = new(typeof(List<DO.Product>));
         productList = (List<DO.Product>)ser?.Deserialize(r);
         r.Close();
         return condition == null ? productList : (productList.Where(condition).ToList() ?? throw new NotExistException());

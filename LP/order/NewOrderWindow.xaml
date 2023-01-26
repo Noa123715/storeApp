@@ -3,10 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL"
+        xmlns:local="clr-namespace:LP"
         mc:Ignorable="d"
-        Title="NewOrder" Height="450" Width="800">
-    <Grid>
-        
+        Title="NewOrderWindow" Height="640" Width="800">
+    <Grid x:Name="GridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Name="GridUp" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0"
+                VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions >
+            <ComboBox x:Name="SelectorProduct" SelectionChanged="CategorySelectionChanged" Grid.Column="1" Margin="133,52,205,35" RenderTransformOrigin="0.915,0.38" Grid.ColumnSpan="2" Background="{x:Null}"/>
+            <Label x:Name="LabelProduct" Grid.Column="1" Content="Choose a product" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="101" Foreground="#FFEC7989"/>
+            <Button x:Name="FilterDelete" Grid.Column="2" Content="X" Click="FilterDelete_Click" HorizontalAlignment="Left" Margin="94,52,0,0" VerticalAlignment="Top" Height="38" Width="40" BorderBrush="Black" Background="{x:Null}"/>
+        </Grid>
+        <ListView x:Name="NewOrderView" Grid.Row="1" FontSize="18" >
+            <ListView.View>
+                <GridView AllowsColumnReorder="true" >
+                    <GridViewColumn x:Name="IdProduct" DisplayMemberBinding="{Binding Path=ID}" Header="ID" Width="120"/>
+                    <GridViewColumn x:Name="NameProduct" DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="255"/>
+                    <GridViewColumn x:Name="PriceProduct" DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="150"/>
+                    <GridViewColumn x:Name="CategoryProduct" DisplayMemberBinding="{Binding Path=Category}" Header="Category" Width="150"/>
+                    <!--<GridViewColumn x:Name="AddProduct" Header="Add" Width="120"/>-->
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

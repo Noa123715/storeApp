@@ -1,9 +1,5 @@
-﻿
-
-using System.Windows;
-
+﻿using System.Windows;
 using BO;
-
 namespace PL;
 
 /// <summary>
@@ -26,7 +22,7 @@ public partial class ProductListWindow : Window
         ProductSelector.ItemsSource = eCategories.GetValues(typeof(eCategories));
     }
     /// <summary>
-    /// when the user choose a category to search
+    /// when the adminstrator choose a category to search
     /// the function search and send all product in this category
     /// </summary>
     /// <param name="sender"></param>
@@ -49,11 +45,11 @@ public partial class ProductListWindow : Window
     }
     /// <summary>
     /// when the button:"X" is press the functionis activated
-    /// when the user when to return all product list
+    /// when the user want to return all product list
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void FilterDelete(object sender, RoutedEventArgs e)
+    private void DeleteFilter_Click(object sender, RoutedEventArgs e)
     {
         ProductListView.ItemsSource = bl.Product.ReadProductsList();
     }

@@ -51,3 +51,11 @@ C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\bin\BL
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\bin\BL.pdb
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\BL\obj\Debug\ref\BL.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\bin\BL.deps.json
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\bin\BL.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\bin\BL.pdb
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\BL.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\refint\BL.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\BL.pdb
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\BL\obj\Debug\ref\BL.dll

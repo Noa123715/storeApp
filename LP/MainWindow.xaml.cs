@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
 using BlApi;
+using PL.order;
+
 namespace PL;
 
 /// <summary>
@@ -37,15 +39,15 @@ public partial class MainWindow : Window
         int id = Convert.ToInt32(NewOrderText.Text);
         if (id <= 0)
             throw new BlApi.BlInValidInputException();
-        NewOrderWindow newOrderWindow = new NewOrderWindow(Bl, id, this);
+        NewOrderWindow newOrderWindow = new NewOrderWindow(Bl);
         newOrderWindow.Show();
         this.Hide();
     }
 
     private void FollowOrder_Click(object sender, RoutedEventArgs e)
     {
-        FollowOrderWindow followOrderWindow = new FollowOrderWindow();
-        followOrderWindow.Show();
+        OrderTrackingWindow orderTrackingWindow= new OrderTrackingWindow();
+        orderTrackingWindow.Show();
         this.Hide();
     }
 }
