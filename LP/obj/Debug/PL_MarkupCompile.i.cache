@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_07961\LP\obj\Debug\
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07963\LP\obj\Debug\
 PL
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_07961\LP\App.xaml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07963\LP\App.xaml
 61843856941
 
 10450607069
-19761092325
+197344180167
 CartWindow.xaml;MainWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
 
-False
+True
 
