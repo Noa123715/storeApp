@@ -60,8 +60,6 @@ internal class Product : IProduct
         write.Close();
         
     }
-
-  
     /// <summary>
     /// read all products by default or according to certain condition.
     /// </summary>
@@ -70,10 +68,12 @@ internal class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public IEnumerable<DO.Product> ReadAll(Func<DO.Product, bool>? condition = null)
     {
-        List<DO.Product> ? productList = new List<DO.Product>();
+        XmlRootAttribute xmlRoot = new XmlRootAttribute();
+        xmlRoot.ElementName = "ProductList";
+        xmlRoot.IsNullable = true;
         StreamReader r = new(@"..\xml\Product.xml");
-        XmlSerializer ser = new(typeof(List<DO.Product>));
-        productList = (List<DO.Product>)ser?.Deserialize(r);
+        XmlSerializer ser = new(typeof(List<DO.Product>), xmlRoot);
+        List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(r);        
         r.Close();
         return condition == null ? productList : (productList.Where(condition).ToList() ?? throw new NotExistException());
 

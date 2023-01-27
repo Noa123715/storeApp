@@ -15,4 +15,3 @@ public class Product
     //overriding ToString method enables printing the Product properties.
     public override string ToString() => $@"Product ID: {ID}, Name: {Name},Price: {Price}, Category: {Category},  Instock: {InStock}";
 }
-

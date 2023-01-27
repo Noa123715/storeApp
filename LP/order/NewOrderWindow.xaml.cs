@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using BlImplementation;
 using BO;
 namespace PL;
 
@@ -43,4 +42,17 @@ public partial class NewOrderWindow : Window
     {
         NewOrderView.ItemsSource = Bl.Product.ReadProductsList((eCategories)SelectorProduct.SelectedItem);
     }
-}//
+
+    private void GoToCart_Click(object sender, RoutedEventArgs e)
+    {
+        UserCartWindow cart = new UserCartWindow(Bl);
+        cart.Show();
+        this.Hide();
+    }
+
+    private void GoToProductProperties(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+        new ProductWindow(Bl, ((Product)NewOrderView.SelectedItem).ID).Show();
+        Hide();
+    }
+}

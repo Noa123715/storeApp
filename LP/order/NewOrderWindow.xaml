@@ -20,19 +20,20 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions >
             <ComboBox x:Name="SelectorProduct" SelectionChanged="CategorySelectionChanged" Grid.Column="1" Margin="133,52,205,35" RenderTransformOrigin="0.915,0.38" Grid.ColumnSpan="2" Background="{x:Null}"/>
-            <Label x:Name="LabelProduct" Grid.Column="1" Content="Choose a product" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="101" Foreground="#FFEC7989"/>
-            <Button x:Name="FilterDelete" Grid.Column="2" Content="X" Click="FilterDelete_Click" HorizontalAlignment="Left" Margin="94,52,0,0" VerticalAlignment="Top" Height="38" Width="40" BorderBrush="Black" Background="{x:Null}"/>
+            <Label x:Name="LabelProduct" Grid.Column="1" Content="Choose a product 🔎" HorizontalAlignment="Left" Margin="0,58,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFEC7989"/>
+            <Button x:Name="FilterDelete" Grid.Column="2" Content="❎" Click="FilterDelete_Click" HorizontalAlignment="Left" Margin="77,60,0,0" VerticalAlignment="Top" Height="22" Width="28" BorderBrush="White" Background="{x:Null}"/>
         </Grid>
-        <ListView x:Name="NewOrderView" Grid.Row="1" FontSize="18" >
+        <ListView x:Name="NewOrderView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="18" MouseDoubleClick="GoToProductProperties">
             <ListView.View>
                 <GridView AllowsColumnReorder="true" >
-                    <GridViewColumn x:Name="IdProduct" DisplayMemberBinding="{Binding Path=ID}" Header="ID" Width="120"/>
-                    <GridViewColumn x:Name="NameProduct" DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="255"/>
-                    <GridViewColumn x:Name="PriceProduct" DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="150"/>
-                    <GridViewColumn x:Name="CategoryProduct" DisplayMemberBinding="{Binding Path=Category}" Header="Category" Width="150"/>
-                    <!--<GridViewColumn x:Name="AddProduct" Header="Add" Width="120"/>-->
+                    <!--<GridViewColumn x:Name="IdProduct" DisplayMemberBinding="{Binding Path=ID}" Header="ID 🔢" Width="120"/>-->
+                    <GridViewColumn x:Name="NameProduct" DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="400"/>
+                    <GridViewColumn x:Name="PriceProduct" DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="400"/>
+                    <!--<GridViewColumn x:Name="CategoryProduct" DisplayMemberBinding="{Binding Path=Category}" Header="Category" Width="150"/>-->
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Go To Cart 🛒" Margin="646,0,0,0" Grid.Row="2" Style="{StaticResource classicBtn}" Click="GoToCart_Click" VerticalAlignment="Center" Width="144" Height="40"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,374,0,0" Grid.Row="1" Text="To add to cart, double click on an item" VerticalAlignment="Top" Width="336" Grid.RowSpan="2" Height="35" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" />
     </Grid>
 </Window>
