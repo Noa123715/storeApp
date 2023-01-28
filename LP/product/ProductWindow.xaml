@@ -22,11 +22,12 @@
         <Label x:Name="AmountLabel" Content="Amount" HorizontalAlignment="Left" Margin="182,300,0,0" VerticalAlignment="Top" Height="31" Width="109" RenderTransformOrigin="0.485,0.021" Background="#FFF5EC83"/>
         <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Margin="314,300,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="120" Height="31" Background="#FFF5EC83" TextAlignment="Center"/>
         <Label x:Name="TitleLabel" HorizontalAlignment="Left" Height="35" Margin="314,10,0,0" VerticalAlignment="Top" Width="202" Background="{x:Null}" FontWeight="Bold" FontSize="20" Foreground="#FFEC7989"/>
-        <Button x:Name="AddOrUpdateBtn" Click="AddOrUpdateBtn_Click" HorizontalAlignment="Left" Margin="345,358,0,0" VerticalAlignment="Top" Width="138" Height="44" Background="{x:Null}" Foreground="#FFEC7989" BorderBrush="{x:Null}"/>
+        <Button x:Name="AddOrUpdateBtn" Click="AddOrUpdateBtn_Click" Margin="345,358,0,0" Width="171" Height="44" Style="{StaticResource classicBtn}"/>
         <Button x:Name="BackBtn" Content="Go Back ->" Click="BackBtn_Click" HorizontalAlignment="Left" Margin="663,358,0,0" VerticalAlignment="Top" Width="111" Height="42" RenderTransformOrigin="0.821,0.976" Background="#FFBDBABA"/>
         <Label x:Name="IdLabel" Content="ID" HorizontalAlignment="Left" Margin="182,60,0,0" VerticalAlignment="Top" Width="109" Height="35" Background="#FFF7C9FB"/>
         <Label x:Name="NameLabel" Content="Name" HorizontalAlignment="Left" Margin="182,114,0,0" VerticalAlignment="Top" Width="109" Height="31" Background="#FFA895ED"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Margin="314,114,0,0" TextWrapping="Wrap" Text="AAAA" VerticalAlignment="Top" Width="120" Height="31" Background="#FFA895ED" TextAlignment="Center"/>
+        <Button x:Name="delBtn" Content="delete this product" Margin="74,358,0,0" Width="217" Height="44" Style="{StaticResource classicBtn}" Click="deleteProduct_Click"/>
 
     </Grid>
 </Window>

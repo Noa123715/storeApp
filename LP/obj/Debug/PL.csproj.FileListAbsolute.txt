@@ -68,3 +68,7 @@ C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\c
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\UserCartWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\UserCartWindow.g.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\UserCartWindow.baml
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml

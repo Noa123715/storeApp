@@ -19,7 +19,6 @@ sealed internal class DalXml : IDal
                 return instance.Value;
             }
         }
-       
     
     public IOrder Order => new Order();
     public IProduct Product => new Product();

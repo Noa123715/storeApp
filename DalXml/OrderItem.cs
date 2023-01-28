@@ -18,7 +18,7 @@ internal class OrderItem : IOrderItem
     /// </summary>
      public OrderItem()
     {
-        XElement? root = XDocument.Load(@"../../xml/orderItem.xml")?.Root;
+        XElement? root = XDocument.Load(@"..\xml\orderItem.xml")?.Root;
         DO.OrderItem orderItem = new DO.OrderItem();
     } 
 

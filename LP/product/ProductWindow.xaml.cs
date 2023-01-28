@@ -1,5 +1,8 @@
 ﻿using System.Windows;
+using System.Windows.Automation;
 using BO;
+using DalApi;
+
 namespace PL;
 
 /// <summary>
@@ -30,6 +33,7 @@ public partial class ProductWindow : Window
             product_id = 0;
             TitleLabel.Content = "Add Product";
             AddOrUpdateBtn.Content = "Add a Product";
+            delBtn.Visibility= Visibility.Hidden;
         }
         else
         {
@@ -43,6 +47,7 @@ public partial class ProductWindow : Window
             PriceTextBox.Text = product.Price.ToString();
             CategoryComboBox.SelectedItem = product.Category;
             AmountTextBox.Text = product.InStock.ToString();
+            delBtn.Visibility = Visibility.Visible;
         }
     }
     /// <summary>
@@ -77,14 +82,36 @@ public partial class ProductWindow : Window
         };
         if (product_id == 0)
         {
+            //the add is successfull but after it the main window have a runtime error about the root attributte of the product xml
             Bl.Product.AddProduct(product);
+            MessageBox.Show("Add Successfull 👍");
         }
         else
         {
             Bl.Product.UpdateProduct(product);
+            MessageBox.Show("UpDate Successfull 👍");
         }
+        //if the process ends successfully, return to the previous window
+        ProductListWindow GoBack = new ProductListWindow(Bl);
+        GoBack.Show();
+        this.Hide();
+    }
+    /// <summary>
+    /// error-order item
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void deleteProduct_Click(object sender, RoutedEventArgs e)
+    {
+        //why is orderItemList is null when this code is run?
+        // if (condition is null)orderitem readall function
+        //return orderItemList ?? throw new NotExistException();
+        //return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
+
+        int id = int.Parse(IdTextBox.Text);
+        Bl.Product.DeleteProduct(id);
         // if the process ends successfully, return to the previous window
-        MessageBox.Show("Successfull :)");
+        MessageBox.Show("Delete Successfull 👍");
         ProductListWindow GoBack = new ProductListWindow(Bl);
         GoBack.Show();
         this.Hide();

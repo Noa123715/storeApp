@@ -1,7 +1,7 @@
 ﻿namespace Dal;
 using DalApi;
-using DO;
 using System;
+using System.Xml;
 using System.Xml.Serialization;
 /// <summary>
 /// CRUD operations department:
@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 /// reading the existing product,
 /// updating product and deletions.
 /// </summary>
-internal class Product : IProduct
+public class Product : IProduct
 {
     /// <summary>
     /// creates new product.
@@ -34,7 +34,7 @@ internal class Product : IProduct
         product.ID = barcode;
         
         productList.Add(product);
-        XmlSerializer ser = new XmlSerializer(typeof(List<Product>));
+        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>));
         StreamWriter w = new StreamWriter(@"..\xml\product.xml");
         ser.Serialize(w, productList);
         w.Close();
@@ -75,9 +75,7 @@ internal class Product : IProduct
         XmlSerializer ser = new(typeof(List<DO.Product>), xmlRoot);
         List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(r);        
         r.Close();
-        return condition == null ? productList : (productList.Where(condition).ToList() ?? throw new NotExistException());
-
-    
+        return condition == null ? productList : (productList.Where(condition).ToList() ?? throw new NotExistException());    
 }
 
     /// <summary>
@@ -97,20 +95,32 @@ internal class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Product product)
     {
-        List<DO.Product> productList = ReadAll().ToList();
-        productList[productList.FindIndex(p => p.ID == product.ID)] = product;
-        int idx = productList.FindIndex(p => p.ID == product.ID);
-        if (idx <0)
+        //List<DO.Product> productList = ReadAll().ToList();
+        //productList[productList.FindIndex(p => p.ID == product.ID)] = product;
+        //int idx = productList.FindIndex(p => p.ID == product.ID);
+        //if (idx <0)
+        //    throw new NotExistException();
+        //product.Name = product.Name == null ? productList[idx].Name : product.Name;
+        //product.InStock = product.InStock == null ? productList[idx].InStock : product.InStock;
+        //product.Price = product.Price == null ? productList[idx].Price : product.Price;
+        //product.Category = product.Category == null ? productList[idx].Category : product.Category;
+        //productList[idx] = product;
+        XmlRootAttribute xmlRoot = new XmlRootAttribute();
+        xmlRoot.ElementName = "ProductList";
+        xmlRoot.IsNullable = true;
+        StreamReader productReader = new StreamReader(@"..\xml\Product.xml");
+        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>), xmlRoot);
+        List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(productReader);
+        productReader.Close();
+        DO.Product product1 = productList.Where(productItem => productItem.ID == product.ID).FirstOrDefault();
+        if(product1.Equals(default(DO.Product)))
+        { 
             throw new NotExistException();
-        product.Name = product.Name == null ? productList[idx].Name : product.Name;
-        product.InStock = product.InStock == null ? productList[idx].InStock : product.InStock;
-        product.Price = product.Price == null ? productList[idx].Price : product.Price;
-        product.Category = product.Category == null ? productList[idx].Category : product.Category;
-        productList[idx] = product;
-        XmlSerializer ser = new XmlSerializer(typeof(List<Product>));
-        StreamWriter w = new StreamWriter("../../xml/Product.xml");
-        ser.Serialize(w, productList);
-        w.Close();
-       
+        }
+        productList.Remove(product1);
+        productList.Add(product);
+        StreamWriter pWrite = new StreamWriter(@"..\xml\Product.xml");
+        ser.Serialize(pWrite, productList);
+        pWrite.Close();
     }
 }

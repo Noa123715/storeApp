@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProductList>
 	<Product>
+		<!--to try the delete btn-->
+		<ID>45600</ID>
+		<Name>Boots - Louis Vuitton</Name>
+		<Price>500</Price>
+		<InStock>0</InStock>
+		<Category>Women</Category>
+	</Product>
+	<Product>
 		<ID>542068</ID>
 		<Name>necklace - kate spade</Name>
 		<Price>3000</Price>
