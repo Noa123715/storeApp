@@ -95,6 +95,7 @@ public class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Product product)
     {
+        //this code have a runtime error i don't know why
         //List<DO.Product> productList = ReadAll().ToList();
         //productList[productList.FindIndex(p => p.ID == product.ID)] = product;
         //int idx = productList.FindIndex(p => p.ID == product.ID);
