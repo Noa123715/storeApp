@@ -19,4 +19,11 @@ public partial class UserCartWindow : Window
         completeOrder.Show();
         this.Hide();
     }
+
+    private void GoBack_Click(object sender, RoutedEventArgs e)
+    {
+        NewOrderWindow newOrder = new NewOrderWindow(Bl);
+        newOrder.Show();
+        this.Hide();
+    }
 }
