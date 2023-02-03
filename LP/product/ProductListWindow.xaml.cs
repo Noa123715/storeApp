@@ -39,7 +39,7 @@ public partial class ProductListWindow : Window
     /// <param name="e"></param>
     private void AddItemBtn_Click(object sender, RoutedEventArgs e)
     {
-        ProductWindow p = new ProductWindow(bl);
+        ProductWindow p = new ProductWindow(bl, true);
         p.Show();
         this.Hide();
     }
@@ -61,7 +61,7 @@ public partial class ProductListWindow : Window
     /// <param name="e"></param>
     private void UpdateProduct(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
-        new ProductWindow(bl, ((ProductForList)ProductListView.SelectedItem).ID).Show();
+        new ProductWindow(bl, true, ((ProductForList)ProductListView.SelectedItem).ID).Show();
         Close();
     }
 }

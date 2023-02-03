@@ -53,7 +53,8 @@ public partial class NewOrderWindow : Window
     private void GoToProductProperties(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
         //not covert a item from producyForList to Product
-        new ProductWindow(Bl, ((Product)NewOrderView.SelectedItem).ID).Show();
+        new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID).Show();
         Hide();
     }
+
 }

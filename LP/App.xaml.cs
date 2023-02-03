@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace LP;
+namespace PL;
 
 /// <summary>
 /// Interaction logic for App.xaml

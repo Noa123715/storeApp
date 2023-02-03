@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows;
-using BlApi;
-using PL.order;
+﻿using System.Windows;
 
 namespace PL;
 
@@ -12,12 +9,14 @@ namespace PL;
 public partial class MainWindow : Window
 {
     private static BlApi.IBL? Bl { get; set; }
+    
     /// <summary>
     /// constractor of the main window
     /// </summary>
     public MainWindow()
     {
         InitializeComponent();
+        //if (Bl is null)
         Bl = BlApi.Factory.Get();
     }
 

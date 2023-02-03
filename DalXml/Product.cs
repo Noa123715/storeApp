@@ -1,7 +1,6 @@
 ﻿namespace Dal;
 using DalApi;
 using System;
-using System.Xml;
 using System.Xml.Serialization;
 /// <summary>
 /// CRUD operations department:

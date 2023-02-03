@@ -6,11 +6,6 @@
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         Title="MainWindow" Height="464" Width="801">
-    <!--<Window.Resources>
-        <Style x:Key="myBtnStyle" TargetType="Button">
-           
-        </Style>
-    </Window.Resources>-->
     <Grid>
 
         <Button x:Name="LogInAdministrator" Content="Log in as Administrator" Click="LogInAdmin_Click" Margin="54,149,0,0" Width="248" Height="43" Style="{StaticResource classicBtn}"/>

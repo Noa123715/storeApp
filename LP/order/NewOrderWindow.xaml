@@ -23,7 +23,7 @@
             <Label x:Name="LabelProduct" Grid.Column="1" Content="Choose a product 🔎" HorizontalAlignment="Left" Margin="0,58,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFEC7989"/>
             <Button x:Name="FilterDelete" Grid.Column="2" Content="❎" Click="FilterDelete_Click" HorizontalAlignment="Left" Margin="77,60,0,0" VerticalAlignment="Top" Height="22" Width="28" BorderBrush="White" Background="{x:Null}"/>
         </Grid>
-        <ListView x:Name="NewOrderView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="18" MouseDoubleClick="GoToProductProperties">
+        <ListView x:Name="NewOrderView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="18" MouseDoubleClick="GoToProductProperties" >
             <ListView.View>
                 <GridView AllowsColumnReorder="true" >
                     <!--<GridViewColumn x:Name="IdProduct" DisplayMemberBinding="{Binding Path=ID}" Header="ID 🔢" Width="120"/>-->
