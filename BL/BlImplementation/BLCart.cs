@@ -67,6 +67,7 @@ internal class BLCart : ICart
         }
         return cart;
     }
+ 
 
     /// <summary>
     /// UpdateProductAmount method updates an product's amount in cart.
