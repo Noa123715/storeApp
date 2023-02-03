@@ -12,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PL.cart
+namespace PL;
+
+/// <summary>
+/// Interaction logic for CartWindow.xaml
+/// </summary>
+public partial class CartWindow : Window
 {
-    /// <summary>
-    /// Interaction logic for CartWindow.xaml
-    /// </summary>
-    public partial class CartWindow : Window
+    public CartWindow()
     {
-        public CartWindow()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
