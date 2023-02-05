@@ -36,7 +36,7 @@ namespace PL.PO;
             get { return (string)GetValue(customerAddressProperty); }
             set { SetValue(customerAddressProperty, value); }
         }
-        public ObservableCollection<PO.OrderItem?> Items//a list of the items in the shopping cart 
+        public IEnumerable<PO.OrderItem?> Items//a list of the items in the shopping cart 
         {
             get { return (ObservableCollection<PO.OrderItem?>)GetValue(itemsProperty); }
             set { SetValue(itemsProperty, value); }
