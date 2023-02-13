@@ -11,22 +11,20 @@ using System.Xml.Linq;
 /// </ summary >
 internal class OrderItem : IOrderItem
 {
-    
     private List<DO.OrderItem> orderItemList { get; set; }
     /// <summary>
     /// orderitem ctor- getting data from xml to list.
     /// </summary>
-     public OrderItem()
+    public OrderItem()
     {
         XElement? root = XDocument.Load(@"..\xml\orderItem.xml")?.Root;
         DO.OrderItem orderItem = new DO.OrderItem();
-    } 
+    }
 
     // creates new order item
     public int Create(DO.OrderItem newOrderItem)
     {
         XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
-
         XElement? id = rootConfig?.Element("orderItemID");
         int orderItemID = Convert.ToInt32(id?.Value);
         orderItemID++;
@@ -53,6 +51,17 @@ internal class OrderItem : IOrderItem
     // read all orderitems -according to specific condition or all.
     public IEnumerable<DO.OrderItem> ReadAll(Func<DO.OrderItem, bool>? condition = null)
     {
+        XElement? orderItemXML = XDocument.Load(@"../../xml/orderItem.xml").Root;
+        IEnumerable<DO.OrderItem> orderItemE =
+            from oi in orderItemXML?.Element("OrderItem")
+            select new OrderItem
+            {
+                ID = Convert.ToInt32(oi.Elements("ID").Value),
+                Name = oi.Elements("Name").Value,
+                Price = Convert.ToDouble(oi.Elements("Price").Value),
+                Category = (eCategories)Enum.Parse(typeof(eCategories)).oi.Elements("Category").Value,
+                InStock = Convert.ToUInt32(oi.Elements("InStock").Value)
+            };
         if (condition is null)
             return orderItemList ?? throw new NotExistException();
         return orderItemList.Where(condition).ToList() ?? throw new NotExistException();

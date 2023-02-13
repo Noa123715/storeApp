@@ -11,6 +11,7 @@ public partial class ProductWindow : Window
     private BlApi.IBL Bl { get; set; }
     private int product_id; //variable for conversion and testing 
     private bool IsAdmin;
+    private ProductItem product;
     /// <summary>
     /// constractor of the product window
     /// the function checks if it received a certain ID:
@@ -19,21 +20,24 @@ public partial class ProductWindow : Window
     /// </summary>
     /// <param name="ProductList_bl"></param>
     /// <param name="pList_id"></param>
+    
     public ProductWindow(BlApi.IBL ProductList_bl, bool isAdmin, int? pList_id = null)
     {
         InitializeComponent();
         Bl = ProductList_bl;
         IsAdmin = isAdmin;
         CategoryComboBox.ItemsSource = eCategories.GetValues(typeof(eCategories));
+        product = new ProductItem();
         if (isAdmin)
         {
             if (pList_id is null)
             {
                 //putting the correct values in the fields of the window
-                pList_id = 0;
+                //pList_id = 0;
                 TitleLabel.Content = "Add Product";
                 AddOrUpdateBtn.Content = "Add a Product";
                 delBtn.Visibility = Visibility.Hidden;
+                CategoryTextBox.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -47,6 +51,7 @@ public partial class ProductWindow : Window
                 PriceTextBox.Text = product.Price.ToString();
                 CategoryComboBox.SelectedItem = product.Category;
                 AmountTextBox.Text = product.InStock.ToString();
+                CategoryTextBox.Visibility = Visibility.Hidden;
                 delBtn.Visibility = Visibility.Visible;
             }
         }
@@ -56,12 +61,18 @@ public partial class ProductWindow : Window
             AddOrUpdateBtn.Content = "Add to Cart";
             Cart cart = new Cart();
             product_id = (int)pList_id;
-            ProductItem product = Bl.Product.ReadProductProperties(product_id, cart);
+            product = Bl.Product.ReadProductProperties(product_id, cart);
             IdTextBox.Text = product.ID.ToString();
+            IdTextBox.IsReadOnly = true;
             NameTextBox.Text = product.Name;
+            NameTextBox.IsReadOnly = true;
             PriceTextBox.Text = product.Price.ToString();
-            CategoryComboBox.SelectedItem = product.Category;
-            //להוסיף את הכמות בשביל ההזמנה
+            PriceTextBox.IsReadOnly = true;
+            CategoryComboBox.Visibility = Visibility.Hidden;
+            CategoryTextBox.Text = product.Category.ToString();
+            CategoryTextBox.IsReadOnly = true;
+            AmountTextBox.Text = product.Amount.ToString();
+            AmountTextBox.IsReadOnly = true;
             delBtn.Visibility = Visibility.Hidden;
         }
     }
@@ -73,9 +84,16 @@ public partial class ProductWindow : Window
     /// <param name="e"></param>
     private void BackBtn_Click(object sender, RoutedEventArgs e)
     {
-        ProductListWindow GoBack = new ProductListWindow(Bl);
-        GoBack.Show();
-        this.Hide();
+        if (IsAdmin)
+        {
+            new ProductListWindow(Bl).Show();
+            Hide();
+        }
+        else
+        {
+            new NewOrderWindow(Bl).Show();
+            Hide();
+        }       
     }
     /// <summary>
     /// when the button:"add a product"/button:"update the product" is press the function is activated
@@ -133,6 +151,21 @@ public partial class ProductWindow : Window
         ProductListWindow GoBack = new ProductListWindow(Bl);
         GoBack.Show();
         this.Hide();
+    }
+
+    private void add_Click(object sender, RoutedEventArgs e)
+    {
+        product.Amount++;
+        AmountTextBox.Text = product.Amount.ToString();
+    }
+
+    private void minus_Click(object sender, RoutedEventArgs e)
+    {
+        if (product.Amount > 0)
+        {
+            product.Amount--;
+            AmountTextBox.Text = product.Amount.ToString();
+        }
     }
 }
 
