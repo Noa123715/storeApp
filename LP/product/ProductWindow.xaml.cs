@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using BO;
-
 namespace PL;
 
 /// <summary>
@@ -136,9 +135,6 @@ public partial class ProductWindow : Window
         this.Hide();
     }
 }
-
-
-
 
 //explenation of product:
 //Product - for admin - with int inStock - ReadProductsProperities(int id)

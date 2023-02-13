@@ -1,9 +1,5 @@
-﻿
-using BlApi;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Windows;
-
 
 namespace PL;
 
@@ -11,13 +7,13 @@ namespace PL;
 /// Interaction logic for CartWindow.xaml
 /// </summary>
 
-
 public partial class CartWindow : Window
 {
 
   private  BlApi.IBL bl;
    private BO.Cart cart;
     private PO.Cart p { get; set; }
+
     public CartWindow(BlApi.IBL _bl, BO.Cart _cart)
     {
         InitializeComponent();
@@ -26,6 +22,7 @@ public partial class CartWindow : Window
         this.p = ConvertToPoCart(this.cart);
         this.DataContext = this.p;
     }
+
     private PO.Cart ConvertToPoCart(BO.Cart BoCart)
     {
       
@@ -40,6 +37,7 @@ public partial class CartWindow : Window
         };
         return item;
     }
+
     private IEnumerable<PO.OrderItem> convertItemsToPoItems(List<BO.OrderItem> oil)
     {
         List<PO.OrderItem> returnlist = new();
@@ -60,8 +58,6 @@ public partial class CartWindow : Window
         });
         return returnlist;
     }
-    
-
 
     /* private List<PO.OrderItem> convertList()
      {
@@ -74,53 +70,46 @@ public partial class CartWindow : Window
          return List_p;
      }*/
 
-
-
-    public void BackToList(object sender, RoutedEventArgs e)
+    public void GoBack_Click(object sender, RoutedEventArgs e)
     {
-        Window w = new CustomerProductList(bl, this.c);
-        w.Show();
-        this.Close();
+        ProductListWindow productList = new ProductListWindow(bl);
+        productList.ShowDialog();
+        this.Hide();
     }
 
-    private void decreaseProductBtn_Click(object sender, RoutedEventArgs e)
+    public void CompleteOrder_Click(object sender, RoutedEventArgs e)
     {
-
+        MessageBox.Show("fg");
     }
 
-    private void addProductBtn_Click(object sender, RoutedEventArgs e)
-    {
-        try
-        {
-            bl.cart.Update(this.c, ((PO.OrderItem)(sender as Button).DataContext).ProductID, ((PO.OrderItem)(sender as Button).DataContext).Amount + 1);
-            p = ConvertToPoCart(this.c);
-            DataContext = p;
-        }
-        catch (BlOutOfStockException ex)
-        {
-            MessageBox.Show(ex.Message);
-        }
-    }
+    //private void decreaseProductBtn_Click(object sender, RoutedEventArgs e)
+    //{
 
-    private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
+    //}
 
-    }
+    //private void addProductBtn_Click(object sender, RoutedEventArgs e)
+    //{
+    //    try
+    //    {
+    //        bl.cart.Update(this.c, ((PO.OrderItem)(sender as Button).DataContext).ProductID, ((PO.OrderItem)(sender as Button).DataContext).Amount + 1);
+    //        p = ConvertToPoCart(this.c);
+    //        DataContext = p;
+    //    }
+    //    catch (BlOutOfStockException ex)
+    //    {
+    //        MessageBox.Show(ex.Message);
+    //    }
+    //}
 
-    private void cartConfirmation(object sender, RoutedEventArgs e)
-    {
+    //private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    //{
 
-        new customer.ConfirmCart(bl, c).Show();
-        this.Close();
-    }
-}
+    //}
 
+    //private void cartConfirmation(object sender, RoutedEventArgs e)
+    //{
 
-public partial class CartWindow : Window
-{
-    public CartWindow()
-    {
-        InitializeComponent();
-    }
-
+    //    new customer.ConfirmCart(bl, c).Show();
+    //    this.Close();
+    //}
 }

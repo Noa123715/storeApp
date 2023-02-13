@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj": {}
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
+        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
         "projectName": "DalFacade",
-        "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
+        "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
         "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\obj\\",
         "projectStyle": "PackageReference",
@@ -49,7 +49,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,16 +59,16 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj": {
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj",
+        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj",
         "projectName": "DalXmlTest",
-        "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj",
+        "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj",
         "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\obj\\",
         "projectStyle": "PackageReference",
@@ -90,8 +91,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj": {
-                "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj"
+              "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj": {
+                "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj"
               }
             }
           }
@@ -111,7 +112,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -120,16 +122,16 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj": {
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
+        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
         "projectName": "DalXml",
-        "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
+        "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
         "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\obj\\",
         "projectStyle": "PackageReference",
@@ -152,8 +154,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
-                "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
+              "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
+                "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
               }
             }
           }
@@ -173,7 +175,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -182,7 +185,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bKkoLTqVjPWWzUJ8zZoMv1xH1EFXs/Kd3qlT9LtL8li9ulomXQJ/Pr6hXIRyBIC3VsQjWhQuDSIhQ3QhmZe+vQ==",
+  "dgSpecHash": "F3Nb5R2qx1/b6WCnkxvEP4ao03hEoOvWL6JlaxhvDJSTE3jYabPqxPliTq6uipled7CwtRFRkVQjEIxz36BQ5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
+  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

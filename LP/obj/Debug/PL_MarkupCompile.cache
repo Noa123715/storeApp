@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\App.xaml
-81963092975
+71093390734
 
-10-1869079797
-197-545599654
-CartWindow.xaml;cart\UserCartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
+11206383476
+19799277038
+cart\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
 
 False
 

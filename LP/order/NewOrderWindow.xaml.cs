@@ -45,9 +45,9 @@ public partial class NewOrderWindow : Window
 
     private void GoToCart_Click(object sender, RoutedEventArgs e)
     {
-        UserCartWindow cart = new UserCartWindow(Bl);
-        cart.Show();
-        this.Hide();
+        Cart cart = new Cart();
+        new CartWindow(Bl, cart).Show();
+        Hide();
     }
 
     private void GoToProductProperties(object sender, System.Windows.Input.MouseButtonEventArgs e)

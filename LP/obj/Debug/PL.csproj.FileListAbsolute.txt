@@ -41,13 +41,11 @@ C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\bin\PL.deps.js
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\bin\PL.runtimeconfig.json
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\bin\PL.dll
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\bin\PL.pdb
-C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\CartWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\NewOrderWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\OrderTrackingWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\product\ProductListWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\product\ProductWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\App.baml
-C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\CartWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\NewOrderWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\OrderTrackingWindow.baml
@@ -64,11 +62,11 @@ C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\r
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.pdb
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.genruntimeconfig.cache
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\ref\PL.dll
-C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\UserCartWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
-C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\UserCartWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\UserCartWindow.g.cs
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\UserCartWindow.baml
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
+C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\CartWindow.g.cs
+C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\CartWindow.baml
