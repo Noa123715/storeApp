@@ -54,7 +54,7 @@ public class Product : IProduct
         if (!deleted)
             throw new NotExistException();
         XmlSerializer ser = new XmlSerializer(typeof(List<Product>));
-        StreamWriter write = new StreamWriter("../../xml/product.xml");
+        StreamWriter write = new StreamWriter(@"..\xml\Product.xml");
         ser.Serialize(write, productList);
         write.Close();
         

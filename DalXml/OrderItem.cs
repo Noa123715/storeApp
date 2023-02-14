@@ -32,11 +32,10 @@ internal class OrderItem : IOrderItem
         rootConfig?.Save(@"../../xml/config.xml");
         newOrderItem.ID = orderItemID;
         orderItemList.Add(newOrderItem);
-
         XElement xmlOrderItem = new("OrderItem",
-                                new XElement("ID", newOrderItem.ID.ToString()),
-                                new XElement("ProductID", newOrderItem.ProductID.ToString()),
-                                new XElement("OrderID", newOrderItem.OrderID.ToString()),
+                                new XElement("ID", newOrderItem.ID),
+                                new XElement("ProductID", newOrderItem.ProductID),
+                                new XElement("OrderID", newOrderItem.OrderID),
                                 new XElement("Amount", newOrderItem.Amount),
                                 new XElement("Price", newOrderItem.Price)
                                );
@@ -44,24 +43,22 @@ internal class OrderItem : IOrderItem
         root?.Add(xmlOrderItem);
         root?.Save(@"../../xml/orderItem.xml");
         return newOrderItem.ID;
-
     }
 
  
     // read all orderitems -according to specific condition or all.
     public IEnumerable<DO.OrderItem> ReadAll(Func<DO.OrderItem, bool>? condition = null)
     {
-        XElement? orderItemXML = XDocument.Load(@"../../xml/orderItem.xml").Root;
-        IEnumerable<DO.OrderItem> orderItemE =
-            from oi in orderItemXML?.Element("OrderItem")
-            select new OrderItem
-            {
-                ID = Convert.ToInt32(oi.Elements("ID").Value),
-                Name = oi.Elements("Name").Value,
-                Price = Convert.ToDouble(oi.Elements("Price").Value),
-                Category = (eCategories)Enum.Parse(typeof(eCategories)).oi.Elements("Category").Value,
-                InStock = Convert.ToUInt32(oi.Elements("InStock").Value)
-            };
+        XElement? root = XDocument.Load(@"..\xml\orderItem.xml").Root;
+        orderItemList = (from item in root?.Elements("OrderItem")
+                         select new DO.OrderItem
+                         {
+                             ID = Convert.ToInt32(item.Element("ID")?.Value),
+                             ProductID = Convert.ToInt32(item.Element("ProductID")?.Value),
+                             OrderID = Convert.ToInt32(item.Element("OrderID")?.Value),
+                             Amount = Convert.ToInt32(item.Element("Amount")?.Value),
+                             Price = Convert.ToDouble(item.Element("Price")?.Value)
+                         }).ToList();
         if (condition is null)
             return orderItemList ?? throw new NotExistException();
         return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
