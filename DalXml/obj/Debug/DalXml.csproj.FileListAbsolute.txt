@@ -42,3 +42,11 @@ C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debu
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\refint\DalXml.dll
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.pdb
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\DalXml\obj\Debug\ref\DalXml.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\bin\DalXml.deps.json
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\bin\DalXml.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\bin\DalXml.pdb
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.csproj.CopyComplete
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\DalXml\obj\Debug\refint\DalXml.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\DalXml\obj\Debug\DalXml.pdb
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\DalXml\obj\Debug\ref\DalXml.dll

@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="cart\CartWindow.xaml.cs">
+    <Compile Update="customer\CartWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="order\CompleteOrderWindow.xaml.cs">
@@ -24,7 +24,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="cart\CartWindow.xaml">
+    <Page Update="customer\CartWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
