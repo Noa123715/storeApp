@@ -53,11 +53,10 @@ public class Product : IProduct
         bool deleted = productList.Remove(productList.Find(p => p.ID == id));
         if (!deleted)
             throw new NotExistException();
-        XmlSerializer ser = new XmlSerializer(typeof(List<Product>));
+        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>));
         StreamWriter write = new StreamWriter(@"..\xml\Product.xml");
         ser.Serialize(write, productList);
         write.Close();
-        
     }
     /// <summary>
     /// read all products by default or according to certain condition.

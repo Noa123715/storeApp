@@ -139,18 +139,24 @@ public partial class ProductWindow : Window
     /// <param name="e"></param>
     private void deleteProduct_Click(object sender, RoutedEventArgs e)
     {
-        //why is orderItemList is null when this code is run?
-        // if (condition is null)orderitem readall function
-        //return orderItemList ?? throw new NotExistException();
-        //return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
-
         int id = int.Parse(IdTextBox.Text);
-        Bl.Product.DeleteProduct(id);
-        // if the process ends successfully, return to the previous window
-        MessageBox.Show("Delete Successfull 👍");
-        ProductListWindow GoBack = new ProductListWindow(Bl);
-        GoBack.Show();
-        this.Hide();
+        MessageBoxResult result = MessageBox.Show(
+                      "Are you sure you want to delete this product?",
+                      "Delete Product",  
+                      MessageBoxButton.YesNo,
+                      MessageBoxImage.Question);
+        if (result == MessageBoxResult.Yes)
+        {
+            Bl.Product.DeleteProduct(id);
+            // if the process ends successfully, return to the previous window
+            MessageBox.Show("Delete Successfull 👍", "Delete Product");
+            new ProductListWindow(Bl).Show();
+            Hide();
+        }
+        else
+        {
+            MessageBox.Show("The deletion did not occur", "Delete Product");
+        }
     }
 
     private void add_Click(object sender, RoutedEventArgs e)
