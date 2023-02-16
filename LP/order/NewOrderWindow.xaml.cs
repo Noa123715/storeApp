@@ -19,7 +19,7 @@ public partial class NewOrderWindow : Window
     /// and initializes the categories
     /// </summary>
     /// <param name="bl"></param>
-    public NewOrderWindow(BlApi.IBL? bl   , PO.Cart c = null, Window sourcW = null)
+    public NewOrderWindow(BlApi.IBL? bl   , PO.Cart c , Window sourcW = null)
     {
       
         InitializeComponent();
