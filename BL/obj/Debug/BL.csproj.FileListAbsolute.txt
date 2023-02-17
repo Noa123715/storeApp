@@ -63,3 +63,16 @@ C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\bin\BL.
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\bin\BL.dll
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\bin\BL.pdb
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\BL\obj\Debug\BL.csproj.CopyComplete
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\BL.deps.json
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\BL.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\BL.pdb
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.csproj.AssemblyReference.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.GeneratedMSBuildEditorConfig.editorconfig
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.AssemblyInfoInputs.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.AssemblyInfo.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.csproj.CopyComplete
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\refint\BL.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.pdb
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\ref\BL.dll

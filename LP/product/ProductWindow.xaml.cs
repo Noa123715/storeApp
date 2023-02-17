@@ -131,6 +131,8 @@ public partial class ProductWindow : Window
             GoBack.Show();
             this.Hide();
         }
+        else
+        { }
     }
     /// <summary>
     /// error-order item

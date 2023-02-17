@@ -15,18 +15,18 @@
             <ColumnDefinition Width="197*"/>
             <ColumnDefinition Width="273*"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.ColumnSpan="4" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="68,52,57,168" SelectionChanged="ListView_SelectionChanged">
-            <ListView.View x:Name="ProductListView" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Items}">
+        <ListView  x:Name="ProductListView" Grid.ColumnSpan="4" d:ItemsSource="{d:SampleData ItemCount=5}"  FontSize="18"   ItemsSource="{Binding Items}"  Margin="34,51,22,169" SelectionChanged="ListView_SelectionChanged">
+            <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{ Binding Id,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="ID" Width="80" />
                     <GridViewColumn DisplayMemberBinding="{Binding ProductId,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Product Id" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Name,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Header="Name" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Price,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Price" Width="70"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Amount,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Amount" Width="100"/>
-                    <GridViewColumn Width="30">
-                        <GridViewColumn.CellTemplate  Binding="{Amount}">
+                    <GridViewColumn DisplayMemberBinding="{Binding Amount,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Amount" Width="70"/>
+                    <GridViewColumn Width="30" >
+                        <GridViewColumn.CellTemplate  >
                             <DataTemplate>
-                                <Button Content="+"   Click="btnPlus_Click" />
+                                <Button Content="+"   Click="IncreaseBtn_Click"  Tag="{Binding ProductID}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -37,7 +37,7 @@
                                     Tag="{Binding ProductID}"
                        Content="-"
                        VerticalAlignment="Center"
-                       Click="btnMinus_Click" />
+                       Click="DecreaseBtn_Click" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -50,7 +50,7 @@
                                     Tag="{Binding ProductID}"
                        Content="delete"
                        VerticalAlignment="Center"
-                       Click="btnDelete_Click" />
+                       Click="DeleteBtn_Click" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -58,7 +58,7 @@
             </ListView.View>
         </ListView>
 
-        <Button Content="To Complete the order" Margin="180,363,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" Click="CompleteOrder_Click" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button Content="Complete the order" Margin="180,363,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" Click="CompleteOrder_Click" Grid.Column="2" Grid.ColumnSpan="2"/>
         <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Grid.ColumnSpan="2" Margin="51,363,0,0" Width="105" Height="40"/>
        
     </Grid>

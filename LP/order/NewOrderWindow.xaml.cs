@@ -12,14 +12,14 @@ namespace PL;
 public partial class NewOrderWindow : Window
 {
     private BlApi.IBL? Bl { get; set; }
-   private PO.Cart currentCart  { get; set; }
+   private PO.Cart? currentCart  { get; set; }
     /// <summary>
     /// the constractor of the new order window
     /// the function initializes the array of product
     /// and initializes the categories
     /// </summary>
     /// <param name="bl"></param>
-    public NewOrderWindow(BlApi.IBL? bl   , PO.Cart c , Window sourcW = null)
+    public NewOrderWindow(BlApi.IBL? bl   , PO.Cart c= null , Window sourcW = null)
     {
       
         InitializeComponent();

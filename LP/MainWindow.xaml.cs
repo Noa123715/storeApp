@@ -35,6 +35,7 @@ public partial class MainWindow : Window
 
     private void newOrder_Click(object sender, RoutedEventArgs e)
     {
+
         NewOrderWindow newOrderWindow = new NewOrderWindow(Bl);
         newOrderWindow.Show();
         this.Hide();
