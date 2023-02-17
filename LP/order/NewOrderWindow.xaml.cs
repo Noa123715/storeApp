@@ -1,5 +1,8 @@
 ﻿using System.Windows;
+using BlApi;
 using BO;
+using PL.PO;
+
 namespace PL;
 
 /// <summary>
@@ -9,15 +12,18 @@ namespace PL;
 public partial class NewOrderWindow : Window
 {
     private BlApi.IBL? Bl { get; set; }
+   private PO.Cart? currentCart  { get; set; }
     /// <summary>
     /// the constractor of the new order window
     /// the function initializes the array of product
     /// and initializes the categories
     /// </summary>
     /// <param name="bl"></param>
-    public NewOrderWindow(BlApi.IBL? bl)
+    public NewOrderWindow(BlApi.IBL? bl   , PO.Cart c= null , Window sourcW = null)
     {
+      
         InitializeComponent();
+        currentCart = c ?? new PO.Cart();
         Bl = bl;
         NewOrderView.ItemsSource = Bl.Product.ReadProductsList();
         SelectorProduct.ItemsSource = eCategories.GetValues(typeof(eCategories));
@@ -45,8 +51,8 @@ public partial class NewOrderWindow : Window
 
     private void GoToCart_Click(object sender, RoutedEventArgs e)
     {
-        Cart cart = new Cart();
-        new CartWindow(Bl, cart).Show();
+      
+        new CartWindow(Bl, currentCart).Show();
         Hide();
     }
 

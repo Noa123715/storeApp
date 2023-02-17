@@ -70,3 +70,51 @@ C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\ca
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\CartWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\CartWindow.baml
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\PL.csproj.AssemblyReference.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.g.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\order\NewOrderWindow.g.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\order\OrderTrackingWindow.g.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\product\ProductListWindow.g.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\product\ProductWindow.g.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\App.g.cs
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\PL_MarkupCompile.cache
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\PL_MarkupCompile.lref
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\PL.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\refint\PL.dll
+C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\PL.pdb
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.csproj.AssemblyReference.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\order\NewOrderWindow.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\order\OrderTrackingWindow.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\product\ProductListWindow.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\product\ProductWindow.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\App.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL_MarkupCompile.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL_MarkupCompile.lref
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\refint\PL.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.pdb
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\customer\CartWindow.g.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\PL.exe
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\PL.deps.json
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\PL.runtimeconfig.json
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\PL.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\PL.pdb
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\App.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\customer\CartWindow.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\order\NewOrderWindow.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\order\OrderTrackingWindow.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\product\ProductListWindow.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\product\ProductWindow.baml
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.g.resources
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.GeneratedMSBuildEditorConfig.editorconfig
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.AssemblyInfoInputs.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.AssemblyInfo.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.csproj.CoreCompileInputs.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.csproj.CopyComplete
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\PL.genruntimeconfig.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\ref\PL.dll

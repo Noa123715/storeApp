@@ -13,8 +13,9 @@ namespace PL.PO;
     /// <summary>
     /// A PO entity of shopping cart
     /// for the shopping cart management screen and order confirmation
+    /// implement singleton pattern.
     /// </summary>
-    public class Cart : DependencyObject
+   sealed public class Cart : DependencyObject
     {
         public static readonly DependencyProperty customerNameProperty = DependencyProperty.Register("CustomerName", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
         public static readonly DependencyProperty customerEmailProperty = DependencyProperty.Register("CustomerEmail", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
@@ -47,7 +48,12 @@ namespace PL.PO;
             set { SetValue(totalPriceProperty, value); }
         }
 
-        public override string ToString() => $@"
+    static readonly Cart cart = new Cart();
+ 
+    public static Cart SingletonCart { get { return cart; } }
+    static Cart() { }
+
+    public override string ToString() => $@"
         customerName: {CustomerName},
         customerEmail: {CustomerEmail},
         customerAddress: {CustomerAddress},

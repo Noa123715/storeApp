@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "P4jvWP78/Sv2fBSSIW+/Q2i8nTav016s6rtaOccK5g5BaXSmjul/NY3hXvlKV6xwkICnYJ6xwc5zgG8ugp/ekg==",
+  "success": true,
+  "projectFilePath": "H:\\מיני פרויקט\\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
+=======
   "dgSpecHash": "DEILRzmJhQLFQNuofo55ACAIEU4QwQ7NwEeC/ACp1R8YBp95wNjmEYc1dWkyZutyINc77FNbyAoRCeH+cEwi7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
+>>>>>>> f40776d30abd830e9fd0c1d19b9db54166666cf4
   "expectedPackageFiles": [],
   "logs": []
 }

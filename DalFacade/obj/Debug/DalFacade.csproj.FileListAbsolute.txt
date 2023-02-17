@@ -81,3 +81,15 @@ C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\DalFac
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\DalFacade\obj\Debug\refint\DalFacade.dll
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\DalFacade\obj\Debug\DalFacade.pdb
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07961\DalFacade\obj\Debug\ref\DalFacade.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\DalFacade.deps.json
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\DalFacade.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\bin\DalFacade.pdb
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.csproj.AssemblyReference.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.GeneratedMSBuildEditorConfig.editorconfig
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.AssemblyInfoInputs.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.AssemblyInfo.cs
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.csproj.CoreCompileInputs.cache
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\refint\DalFacade.dll
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.pdb
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\ref\DalFacade.dll

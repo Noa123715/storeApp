@@ -142,6 +142,8 @@ public partial class ProductWindow : Window
             Bl.Cart.AddProductToCart(cart, product.ID);
             MessageBox.Show("dfghj");
         }
+        else
+        { }
     }
     /// <summary>
     /// error-order item

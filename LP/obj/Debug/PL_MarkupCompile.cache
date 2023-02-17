@@ -4,17 +4,23 @@
 winexe
 C#
 .cs
-C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\obj\Debug\
 PL
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\App.xaml
-71093390734
+H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\LP\App.xaml
+7-1529094840
 
+<<<<<<< HEAD
+112104634287
+197-1378492623
+customer\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
+=======
 11206383476
 197306125668
 cart\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
+>>>>>>> f40776d30abd830e9fd0c1d19b9db54166666cf4
 
 False
 
