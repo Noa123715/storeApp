@@ -64,23 +64,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\": {},
+    "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "H:\\מיני פרויקט\\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\\dotNet5783_7729_0796\\LP\\PL.csproj",
       "projectName": "PL",
       "projectPath": "H:\\מיני פרויקט\\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\\dotNet5783_7729_0796\\LP\\PL.csproj",
       "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
       "outputPath": "H:\\מיני פרויקט\\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\\dotNet5783_7729_0796\\LP\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "projectName": "PL",
+      "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\LP\\obj\\",
+>>>>>>> f40776d30abd830e9fd0c1d19b9db54166666cf4
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\מורגנשטרן שושנה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\אבקסיס נועה1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -96,8 +104,13 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+<<<<<<< HEAD
             "H:\\מיני פרויקט\\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\\dotNet5783_7729_0796\\BL\\BL.csproj": {
               "projectPath": "H:\\מיני פרויקט\\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\\dotNet5783_7729_0796\\BL\\BL.csproj"
+=======
+            "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+>>>>>>> f40776d30abd830e9fd0c1d19b9db54166666cf4
             }
           }
         }

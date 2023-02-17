@@ -19,7 +19,7 @@
         </ComboBox>
         <Label x:Name="PriceLabel" Content="Price" HorizontalAlignment="Left" Margin="182,235,0,0" VerticalAlignment="Top" Width="109" Height="31" RenderTransformOrigin="1.264,2.883" Background="#FF7DED98"/>
         <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Margin="314,235,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.062,0" Height="31" Background="#FF7DED98" TextAlignment="Center"/>
-        <Label x:Name="AmountLabel" Content="Amount" HorizontalAlignment="Left" Margin="182,300,0,0" VerticalAlignment="Top" Height="31" Width="109" RenderTransformOrigin="0.485,0.021" Background="#FFF5EC83"/>
+        <Label x:Name="AmountLabel" Content="In Stock" HorizontalAlignment="Left" Margin="182,300,0,0" VerticalAlignment="Top" Height="31" Width="109" RenderTransformOrigin="0.485,0.021" Background="#FFF5EC83"/>
         <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Margin="314,300,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="120" Height="31" Background="#FFF5EC83" TextAlignment="Center"/>
         <Label x:Name="TitleLabel" HorizontalAlignment="Left" Height="35" Margin="314,10,0,0" VerticalAlignment="Top" Width="202" Background="{x:Null}" FontWeight="Bold" FontSize="20" Foreground="#FFEC7989"/>
         <Button x:Name="AddOrUpdateBtn" Click="AddOrUpdateBtn_Click" Margin="345,358,0,0" Width="171" Height="44" Style="{StaticResource classicBtn}"/>
