@@ -64,23 +64,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\": {},
+    "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\שינויים יום שלישי כג\\repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
       "projectName": "PL",
-      "projectPath": "H:\\שינויים יום שלישי כג\\repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
-      "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-      "outputPath": "H:\\שינויים יום שלישי כג\\repos\\dotNet5783_7729_0796\\LP\\obj\\",
+      "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\LP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\מורגנשטרן שושנה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\אבקסיס נועה1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -89,14 +89,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "H:\\שינויים יום שלישי כג\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
-              "projectPath": "H:\\שינויים יום שלישי כג\\repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+            "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
             }
           }
         }
@@ -129,7 +130,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

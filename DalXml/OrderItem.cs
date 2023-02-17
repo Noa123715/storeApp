@@ -103,7 +103,7 @@ internal class OrderItem : IOrderItem
     public void Delete(int orderItemId)
     {
 
-        XElement ? oiRoot= XDocument.Load(@"../../xml/orderItem.xml").Root;
+        XElement? oiRoot= XDocument.Load(@"../../xml/orderItem.xml").Root;
         XElement? XMLorderItem = oiRoot?.Elements("OrderItem").Where(o => o.Element("ID")?.Value == orderItemId.ToString()).FirstOrDefault();
         if (XMLorderItem is null) { throw new NotExistException(); }
         XMLorderItem.Remove();

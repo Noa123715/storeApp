@@ -49,14 +49,20 @@ public class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public void Delete(int id)
     {
-        List<DO.Product> productList = ReadAll().ToList();
-        bool deleted = productList.Remove(productList.Find(p => p.ID == id));
-        if (!deleted)
+        XmlRootAttribute xRoot = new XmlRootAttribute();
+        xRoot.ElementName = "ProductList";
+        xRoot.IsNullable = true;
+        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>), xRoot);
+        StreamReader reader = new StreamReader(@"..\xml\Product.xml");
+        List<DO.Product> products = (List<DO.Product>)ser.Deserialize(reader);
+        reader.Close();
+        StreamWriter writer = new StreamWriter(@"..\xml\Product.xml");
+        DO.Product product = products.Where(p => p.ID == id).FirstOrDefault();
+        if(product.ID == 0)
             throw new NotExistException();
-        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>));
-        StreamWriter write = new StreamWriter(@"..\xml\Product.xml");
-        ser.Serialize(write, productList);
-        write.Close();
+        products.Remove(product);
+        ser.Serialize(writer, products);
+        writer.Close();
     }
     /// <summary>
     /// read all products by default or according to certain condition.
