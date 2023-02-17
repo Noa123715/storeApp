@@ -21,21 +21,30 @@ public class Product : IProduct
         bool idExists;
         int barcode;
         Random rand = new Random();
-       
+
         do
         {
             idExists = true;
             barcode = (int)rand.NextInt64(100000, 1000000);
-           foreach(var p in productList)
+            foreach (var p in productList)
                 if (p.ID == barcode)
                     idExists = false;
         } while (!idExists);
         product.ID = barcode;
-        
-        productList.Add(product);
-        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>));
+
+        XmlRootAttribute xRoot = new XmlRootAttribute();
+        xRoot.ElementName = "ProductList";
+        xRoot.IsNullable = true;
+        StreamReader reader = new StreamReader(@"..\xml\Product.xml");
+        XmlSerializer ser = new(typeof(List<DO.Product>), xRoot);
+        List<DO.Product>? products = (List<DO.Product>?)ser.Deserialize(reader);
+        reader.Close();
+        DO.Product prod = products.Where(p => p.ID == product.ID).FirstOrDefault();
+        if(!prod.Equals(default(DO.Product)))
+            throw new AlreadyExistException();
+        products.Add(product);
         StreamWriter w = new StreamWriter(@"..\xml\product.xml");
-        ser.Serialize(w, productList);
+        ser.Serialize(w, products);
         w.Close();
         return product.ID;
        
@@ -54,7 +63,7 @@ public class Product : IProduct
         xRoot.IsNullable = true;
         XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>), xRoot);
         StreamReader reader = new StreamReader(@"..\xml\Product.xml");
-        List<DO.Product> products = (List<DO.Product>)ser.Deserialize(reader);
+        List<DO.Product>? products = (List<DO.Product>?)ser.Deserialize(reader);
         reader.Close();
         StreamWriter writer = new StreamWriter(@"..\xml\Product.xml");
         DO.Product product = products.Where(p => p.ID == id).FirstOrDefault();
@@ -99,17 +108,6 @@ public class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Product product)
     {
-        //this code have a runtime error i don't know why
-        //List<DO.Product> productList = ReadAll().ToList();
-        //productList[productList.FindIndex(p => p.ID == product.ID)] = product;
-        //int idx = productList.FindIndex(p => p.ID == product.ID);
-        //if (idx <0)
-        //    throw new NotExistException();
-        //product.Name = product.Name == null ? productList[idx].Name : product.Name;
-        //product.InStock = product.InStock == null ? productList[idx].InStock : product.InStock;
-        //product.Price = product.Price == null ? productList[idx].Price : product.Price;
-        //product.Category = product.Category == null ? productList[idx].Category : product.Category;
-        //productList[idx] = product;
         XmlRootAttribute xmlRoot = new XmlRootAttribute();
         xmlRoot.ElementName = "ProductList";
         xmlRoot.IsNullable = true;
