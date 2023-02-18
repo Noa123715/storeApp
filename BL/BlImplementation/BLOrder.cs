@@ -228,8 +228,6 @@ internal class BLOrder : BlApi.IOrder
             throw new BlNotExistException(err);
         }
     }
-
-
 }
 
 

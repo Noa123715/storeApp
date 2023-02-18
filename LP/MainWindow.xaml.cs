@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using BlApi;
+using BO;
+using System;
+using System.Windows;
 
 namespace PL;
 
@@ -43,8 +46,29 @@ public partial class MainWindow : Window
 
     private void FollowOrder_Click(object sender, RoutedEventArgs e)
     {
-        OrderTrackingWindow orderTrackingWindow= new OrderTrackingWindow();
-        orderTrackingWindow.Show();
-        this.Hide();
+        try
+        {
+            int idOrderTrack = Convert.ToInt32(TrackOrderText.Text);
+            OrderTracking orderTrack = Bl.Order.TrackOrder(idOrderTrack);
+            new OrderTrackingWindow(orderTrack).Show();
+            Hide();
+        }
+        catch(BlNotExistException ex)
+        {
+            MessageBox.Show(
+                ex.Message,
+                "order tracking error",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
+        }
+    }
+
+    private void NumberOrderTrack(object sender, System.Windows.Input.KeyEventArgs e)
+    {
+        int idOrderTrack = Convert.ToInt32(TrackOrderText.Text);
+        if (idOrderTrack > 0)
+        {
+            followBtn.IsEnabled = true;
+        }
     }
 }

@@ -14,7 +14,7 @@ internal class Order : IOrder
     private List<DO.Order> orderList { get; set; }
     public Order()
     {
-        XElement? root = XDocument.Load(@"../../xml/order.xml")?.Root;
+        XElement? root = XDocument.Load(@"..\xml\order.xml")?.Root;
         DO.Order newOrder = new ();
         orderList = new List<DO.Order>();
 
@@ -94,7 +94,6 @@ internal class Order : IOrder
     /// <returns>the required order</returns>
     public DO.Order Read(Func<DO.Order, bool> condition)
     {
-
         return orderList.Where(condition).ToList()[0];
     }
 

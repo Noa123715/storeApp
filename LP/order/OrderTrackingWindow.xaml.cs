@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-
+using BO;
 namespace PL;
 
 /// <summary>
@@ -7,7 +7,7 @@ namespace PL;
 /// </summary>
 public partial class OrderTrackingWindow : Window
 {
-    public OrderTrackingWindow()
+    public OrderTrackingWindow(OrderTracking orderTrack)
     {
         InitializeComponent();
     }

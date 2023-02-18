@@ -15,7 +15,7 @@ public partial class CartWindow : Window
 
     private BlApi.IBL bl;
     private BO.Cart ? BOCart;
-    private PO.Cart ?POCart { get; set; }
+    private PO.Cart ? POCart { get; set; }
 
     public CartWindow(BlApi.IBL _bl, PO.Cart  _cart, int productID = 0)
     {
@@ -139,9 +139,8 @@ public partial class CartWindow : Window
 
     public void GoBack_Click(object sender, RoutedEventArgs e)
     {
-        ProductListWindow productList = new ProductListWindow(bl);
-        productList.ShowDialog();
-        this.Hide();
+        new NewOrderWindow(bl, POCart).Show();
+        Hide();
     }
 
     public void CompleteOrder_Click(object sender, RoutedEventArgs e)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProductList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <InStock>0</InStock>
-    <Name>Boots - Louis Vuitton</Name>
-    <Price>500</Price>
-    <ID>45600</ID>
-    <Category>Women</Category>
+    <InStock>30</InStock>
+    <Name>necklace - kate spade</Name>
+    <Price>3000</Price>
+    <ID>542068</ID>
+    <Category>Accessories</Category>
   </Product>
   <Product>
     <InStock>10</InStock>
@@ -71,10 +71,10 @@
     <Category>Accessories</Category>
   </Product>
   <Product>
-    <InStock>34</InStock>
-    <Name>necklace - kate spade</Name>
-    <Price>3000</Price>
-    <ID>542068</ID>
+    <InStock>40</InStock>
+    <Name>eyeliner - clinic</Name>
+    <Price>250</Price>
+    <ID>696722</ID>
     <Category>Accessories</Category>
   </Product>
 </ProductList>

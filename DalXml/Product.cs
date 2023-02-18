@@ -122,7 +122,7 @@ public class Product : IProduct
         }
         productList.Remove(product1);
         productList.Add(product);
-        StreamWriter pWrite = new StreamWriter(@"..\xml\Product.xml");
+        StreamWriter pWrite = new StreamWriter(@"..\xml\product.xml");
         ser.Serialize(pWrite, productList);
         pWrite.Close();
     }

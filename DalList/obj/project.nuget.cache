@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "cY4ENZ5GSB3ewk9pFq9NA/8XQ9/8My511RiSZckS2Z3ZBMxh2mtLcPjth7OVYv9vQN8F0DTkNDZrXVhONeEJbg==",
+  "dgSpecHash": "AyLR9lDW0XtBZsgg4x/Bf5h/ZbnJk72ZOw0fM9ZYYgF8kfeNm8KZWcXv9vv2UvDCufJU9chBVmrggV/ZTBy9tA==",
   "success": true,
-  "projectFilePath": "H:\\מיני פרויקט\\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\\dotNet5783_7729_0796\\DalList\\DalList.csproj",
-=======
-  "dgSpecHash": "CEWlYufcjOFN8WlHSTPO0SOB4IQ7Mq5xuFPuCAmWZ5JDwAJHA5UFdHIHBJgAnUS+DWd0HDVRuaZdNdx314ELvw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj",
->>>>>>> f40776d30abd830e9fd0c1d19b9db54166666cf4
+  "projectFilePath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_0796\\DalList\\DalList.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

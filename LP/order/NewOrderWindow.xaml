@@ -34,6 +34,6 @@
             </ListView.View>
         </ListView>
         <Button Content="Go To Cart 🛒" Margin="618,0,0,0" Grid.Row="2" Style="{StaticResource classicBtn}" Click="GoToCart_Click" VerticalAlignment="Center" Width="144" Height="40" RenderTransformOrigin="0.278,0.535"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0,374,0,0" Grid.Row="1" Text="To view the ditale, double click on an item" VerticalAlignment="Top" Width="336" Grid.RowSpan="2" Height="35" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" />
+        <TextBlock HorizontalAlignment="Left" Margin="0,374,0,0" Grid.Row="1" Text="To see the product details, double click on the product." VerticalAlignment="Top" Width="494" Grid.RowSpan="2" Height="35" TextWrapping="Wrap" TextAlignment="Center" FontSize="18" />
     </Grid>
 </Window>

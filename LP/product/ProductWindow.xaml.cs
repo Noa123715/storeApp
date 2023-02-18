@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using BO;
 namespace PL;
 
@@ -76,6 +77,7 @@ public partial class ProductWindow : Window
             PriceTextBox.Text = product.Price.ToString();
             PriceTextBox.IsReadOnly = true;
             CategoryComboBox.Visibility = Visibility.Hidden;
+            CategoryComboBox.SelectedItem = product.Category;
             CategoryTextBox.Text = product.Category.ToString();
             CategoryTextBox.IsReadOnly = true;
             AmountTextBox.Text = product.Amount.ToString();
@@ -126,12 +128,20 @@ public partial class ProductWindow : Window
             {
                 //the add is successfull but after it the main window have a runtime error about the root attributte of the product xml
                 Bl.Product.AddProduct(product);
-                MessageBox.Show("Add Successfull 👍");
+                MessageBox.Show(
+                    "Add Successfull 👍",
+                    "Add Product",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
             }
             else
             {
                 Bl.Product.UpdateProduct(product);
-                MessageBox.Show("UpDate Successfull 👍");
+                MessageBox.Show(
+                    "UpDate Successfull 👍",
+                    "UpDate Product",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
             }
             //if the process ends successfully, return to the previous window
             new ProductListWindow(Bl).Show();
@@ -142,8 +152,6 @@ public partial class ProductWindow : Window
             Bl.Cart.AddProductToCart(cart, product.ID);
             MessageBox.Show("dfghj");
         }
-        else
-        { }
     }
     /// <summary>
     /// error-order item
@@ -162,7 +170,11 @@ public partial class ProductWindow : Window
         {
             Bl.Product.DeleteProduct(id);
             // if the process ends successfully, return to the previous window
-            MessageBox.Show("Delete Successfull 👍", "Delete Product");
+            MessageBox.Show(
+                "Delete Successfull 👍",
+                "Delete Product",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
             new ProductListWindow(Bl).Show();
             Hide();
         }
@@ -187,11 +199,3 @@ public partial class ProductWindow : Window
         }
     }
 }
-
-//explenation of product:
-//Product - for admin - with int inStock - ReadProductsProperities(int id)
-//  int ID,string? Name,double Price,eCategories Category,int InStock
-//ProductForList - for show - without inStock - ReadProductList(optional categories)
-//  int ID,string? Name,double Price,eCategories Category
-//ProductItem - for user - with bool isInStock - ReadProductsProperities(int id, cart)
-//  int ID,string? Name,double Price,eCategories Category,bool IsInStock,int Amount
