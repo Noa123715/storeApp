@@ -15,6 +15,9 @@ internal class BLCart : ICart
     /// </summary>
     /// 
     private static DalApi.IDal? dal =  DalApi.Factory.Get();
+    private static int maxCartOrderItemID=1;
+    public static int MaxCartOrderItemID { get { return maxCartOrderItemID++; } }
+
 
     /// <summary>
     /// AddProductToCart method- adding a product to cart
@@ -34,10 +37,10 @@ internal class BLCart : ICart
             BO.OrderItem ?orderItem = new BO.OrderItem();
             if (productInStock <= 0)
                 throw new BlOutOfStockException();
-            if (cart.Items != null)
+            if (cart.Items.Count != 0)
                 orderItem = cart.Items.Find(item => item.ProductID == productID) ;
 
-            if (orderItem != null)
+            if (orderItem.ID != 0)
             {
                 orderItem.Amount++;
                 orderItem.TotalPrice += productPrice;
@@ -45,14 +48,14 @@ internal class BLCart : ICart
             }
             else
             {
-                orderItem.ID = 0;
+                orderItem.ID = MaxCartOrderItemID;
                 orderItem.ProductID = productID;
                 orderItem.ProductName = product.Name;
                 orderItem.Amount = 1;
                 orderItem.Price = productPrice;
                 orderItem.TotalPrice = productPrice;
                 List<BO.OrderItem> aOrderItem = cart.Items;
-                aOrderItem.Add(orderItem);
+                aOrderItem?.Add(orderItem);
                 cart.Items = aOrderItem;
                 cart.Price += productPrice;
             }                

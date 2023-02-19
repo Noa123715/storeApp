@@ -151,3 +151,25 @@ H:\19-02-2023\LP\obj\Debug\refint\PL.dll
 H:\19-02-2023\LP\obj\Debug\PL.pdb
 H:\19-02-2023\LP\obj\Debug\PL.genruntimeconfig.cache
 H:\19-02-2023\LP\obj\Debug\ref\PL.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\bin\PL.exe
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\bin\PL.deps.json
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\bin\PL.runtimeconfig.json
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\bin\PL.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\bin\PL.pdb
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\customer\CartWindow.g.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\App.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\customer\CartWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\MainWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\NewOrderWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\OrderTrackingWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\product\ProductListWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\product\ProductWindow.baml
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.g.resources
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.AssemblyInfoInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.AssemblyInfo.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.csproj.CoreCompileInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.csproj.CopyComplete
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\PL.genruntimeconfig.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\ref\PL.dll

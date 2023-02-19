@@ -12,18 +12,18 @@ namespace PL;
 public partial class NewOrderWindow : Window
 {
     private BlApi.IBL? Bl { get; set; }
-   private PO.Cart? currentCart  { get; set; }
+   private BO.Cart? currentCart  { get; set; }
     /// <summary>
     /// the constractor of the new order window
     /// the function initializes the array of product
     /// and initializes the categories
     /// </summary>
     /// <param name="bl"></param>
-    public NewOrderWindow(BlApi.IBL? bl   , PO.Cart c= null , Window sourcW = null)
+    public NewOrderWindow(BlApi.IBL? bl   , BO.Cart c= null , Window sourcW = null)
     {
       
         InitializeComponent();
-        currentCart = c ?? new PO.Cart();
+        currentCart = c ?? new BO.Cart();
         Bl = bl;
         NewOrderView.ItemsSource = Bl.Product.ReadProductsList();
         SelectorProduct.ItemsSource = eCategories.GetValues(typeof(eCategories));

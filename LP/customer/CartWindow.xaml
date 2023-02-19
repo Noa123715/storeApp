@@ -8,7 +8,7 @@
         Title="UserCartWindow" Height="450" Width="800">
     <Grid>
 
-   
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="330*"/>
@@ -22,7 +22,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding ProductId,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Product Id" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Name,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Header="Name" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Price,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Price" Width="70"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Amount,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Amount" Width="70"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Amount, Mode=TwoWay }" Header="Amount" Width="70"/>
                     <GridViewColumn Width="30" >
                         <GridViewColumn.CellTemplate  >
                             <DataTemplate>
@@ -41,7 +41,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-               
+
                     <GridViewColumn DisplayMemberBinding="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="TotalPrice" />
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
@@ -58,8 +58,23 @@
             </ListView.View>
         </ListView>
 
-        <Button Content="Complete the order" Margin="180,363,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" Click="CompleteOrder_Click" Grid.Column="2" Grid.ColumnSpan="2"/>
-        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Grid.ColumnSpan="2" Margin="51,363,0,0" Width="105" Height="40"/>
-       
+        <Button Content="Complete the order" Margin="238,385,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" Click="CompleteOrder_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <Label Name="TotalPricecontentLbl" Content="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" />
+        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Grid.ColumnSpan="2" Margin="46,385,0,0" Width="105" Height="40"/>
+        <Label   Content="TotalPrice:" Style="{StaticResource classicLbl}" FontWeight="Bold" Height="38" Margin="264,13,0,0" Width="103" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Name="TotalPriceLbl" Content="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Style="{StaticResource classicLbl}" Height="38" Margin="34,13,0,0" Width="64" Grid.Column="2" RenderTransformOrigin="-0.009,0.857"/>
+        <Button Grid.Column="3" Content="Empty cart" Click="EmptyCart_Click"  Margin="2,385,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" RenderTransformOrigin="0.609,0.176"/>
+
+
+
+        <Label Content="first name: " Grid.ColumnSpan="2" Height="29" Margin="238,274,0,0" Width="86"  Style="{StaticResource classicLbl}"/>
+        <Label Content="last name: " Grid.ColumnSpan="2" Height="28" Margin="238,303,0,0" Width="86" Style="{StaticResource classicLbl}"/>
+        <Label Content="address: " Grid.ColumnSpan="2" Height="37" Margin="238,331,0,0" Width="74" Style="{StaticResource classicLbl}"/>
+        <TextBox Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED"HorizontalAlignment="Left" Height="29" Margin="20,288,0,0"  Text="enter your first name here" VerticalAlignment="Top" Width="147"/>
+        <TextBox Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="28" Margin="20,322,0,0" TextWrapping="Wrap" Text="enter your last name here" VerticalAlignment="Top" Width="147"/>
+        <TextBox Grid.Column="2"   Foreground="#FF698AED" BorderBrush="#FF698AED"HorizontalAlignment="Left" Height="25" Margin="20,355,0,0" TextWrapping="Wrap" Text="enter your full address here" VerticalAlignment="Top" Width="147"/>
+
+
     </Grid>
 </Window>

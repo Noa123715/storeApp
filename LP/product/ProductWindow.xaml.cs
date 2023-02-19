@@ -16,13 +16,13 @@ public partial class ProductWindow : Window
     private ProductItem product;
     /// <summary>
     /// constractor of the product window
-    /// the function checks if it received a certain ID:
-    /// if so, she sends for an update
-    /// if not, she sends to add a new product
+    /// the constractor checks if it received a certain ID:
+    /// if so,  it sends for an update
+    /// if not, it sends to add a new product
     /// </summary>
     /// <param name="ProductList_bl"></param>
     /// <param name="pList_id"></param>
-    
+
     public ProductWindow(BlApi.IBL ProductList_bl, bool isAdmin, int? pList_id = null, Cart? _cart = null)
     {
         InitializeComponent();
@@ -100,7 +100,7 @@ public partial class ProductWindow : Window
         }
         else
         {
-            new NewOrderWindow(Bl).Show();
+            new NewOrderWindow(Bl, cart).Show();
             Hide();
         }       
     }
@@ -147,10 +147,14 @@ public partial class ProductWindow : Window
             new ProductListWindow(Bl).Show();
             Hide();
         }
-        else
+        else  // customer- add product to cart.
         {
-            Bl.Cart.AddProductToCart(cart, product.ID);
-            MessageBox.Show("dfghj");
+           cart= Bl.Cart.AddProductToCart(cart, product.ID);
+
+          
+            MessageBox.Show("The product has been successfully added", "Adding a product");
+           new NewOrderWindow(Bl, cart).Show();
+            Hide();
         }
     }
     /// <summary>
