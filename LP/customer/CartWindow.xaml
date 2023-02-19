@@ -71,9 +71,9 @@
         <Label Content="first name: " Grid.ColumnSpan="2" Height="29" Margin="238,274,0,0" Width="86"  Style="{StaticResource classicLbl}"/>
         <Label Content="last name: " Grid.ColumnSpan="2" Height="28" Margin="238,303,0,0" Width="86" Style="{StaticResource classicLbl}"/>
         <Label Content="address: " Grid.ColumnSpan="2" Height="37" Margin="238,331,0,0" Width="74" Style="{StaticResource classicLbl}"/>
-        <TextBox Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED"HorizontalAlignment="Left" Height="29" Margin="20,288,0,0"  Text="enter your first name here" VerticalAlignment="Top" Width="147"/>
+        <TextBox Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="29" Margin="20,288,0,0"  Text="enter your first name here" VerticalAlignment="Top" Width="147"/>
         <TextBox Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="28" Margin="20,322,0,0" TextWrapping="Wrap" Text="enter your last name here" VerticalAlignment="Top" Width="147"/>
-        <TextBox Grid.Column="2"   Foreground="#FF698AED" BorderBrush="#FF698AED"HorizontalAlignment="Left" Height="25" Margin="20,355,0,0" TextWrapping="Wrap" Text="enter your full address here" VerticalAlignment="Top" Width="147"/>
+        <TextBox Grid.Column="2"   Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="25" Margin="20,355,0,0" TextWrapping="Wrap" Text="enter your full address here" VerticalAlignment="Top" Width="147"/>
 
 
     </Grid>
