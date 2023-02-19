@@ -76,3 +76,16 @@ H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאי�
 H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\refint\BL.dll
 H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\BL.pdb
 H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\BL\obj\Debug\ref\BL.dll
+H:\19-02-2023\bin\BL.deps.json
+H:\19-02-2023\bin\BL.dll
+H:\19-02-2023\bin\BL.pdb
+H:\19-02-2023\BL\obj\Debug\BL.csproj.AssemblyReference.cache
+H:\19-02-2023\BL\obj\Debug\BL.GeneratedMSBuildEditorConfig.editorconfig
+H:\19-02-2023\BL\obj\Debug\BL.AssemblyInfoInputs.cache
+H:\19-02-2023\BL\obj\Debug\BL.AssemblyInfo.cs
+H:\19-02-2023\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+H:\19-02-2023\BL\obj\Debug\BL.csproj.CopyComplete
+H:\19-02-2023\BL\obj\Debug\BL.dll
+H:\19-02-2023\BL\obj\Debug\refint\BL.dll
+H:\19-02-2023\BL\obj\Debug\BL.pdb
+H:\19-02-2023\BL\obj\Debug\ref\BL.dll

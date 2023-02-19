@@ -35,7 +35,7 @@ public class Product : IProduct
         XmlRootAttribute xRoot = new XmlRootAttribute();
         xRoot.ElementName = "ProductList";
         xRoot.IsNullable = true;
-        StreamReader reader = new StreamReader(@"..\xml\Product.xml");
+        StreamReader reader = new StreamReader(@"..\xml\product.xml");
         XmlSerializer ser = new(typeof(List<DO.Product>), xRoot);
         List<DO.Product>? products = (List<DO.Product>?)ser.Deserialize(reader);
         reader.Close();
@@ -62,10 +62,10 @@ public class Product : IProduct
         xRoot.ElementName = "ProductList";
         xRoot.IsNullable = true;
         XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>), xRoot);
-        StreamReader reader = new StreamReader(@"..\xml\Product.xml");
+        StreamReader reader = new StreamReader(@"..\xml\product.xml");
         List<DO.Product>? products = (List<DO.Product>?)ser.Deserialize(reader);
         reader.Close();
-        StreamWriter writer = new StreamWriter(@"..\xml\Product.xml");
+        StreamWriter writer = new StreamWriter(@"..\xml\product.xml");
         DO.Product product = products.Where(p => p.ID == id).FirstOrDefault();
         if(product.ID == 0)
             throw new NotExistException();
@@ -84,7 +84,7 @@ public class Product : IProduct
         XmlRootAttribute xmlRoot = new XmlRootAttribute();
         xmlRoot.ElementName = "ProductList";
         xmlRoot.IsNullable = true;
-        StreamReader r = new(@"..\xml\Product.xml");
+        StreamReader r = new(@"..\xml\product.xml");
         XmlSerializer ser = new(typeof(List<DO.Product>), xmlRoot);
         List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(r);        
         r.Close();
@@ -111,7 +111,7 @@ public class Product : IProduct
         XmlRootAttribute xmlRoot = new XmlRootAttribute();
         xmlRoot.ElementName = "ProductList";
         xmlRoot.IsNullable = true;
-        StreamReader productReader = new StreamReader(@"..\xml\Product.xml");
+        StreamReader productReader = new StreamReader(@"..\xml\product.xml");
         XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>), xmlRoot);
         List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(productReader);
         productReader.Close();

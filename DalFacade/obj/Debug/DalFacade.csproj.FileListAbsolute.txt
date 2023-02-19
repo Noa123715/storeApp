@@ -93,3 +93,15 @@ H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאי�
 H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\refint\DalFacade.dll
 H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\DalFacade.pdb
 H:\מיני פרויקט\פרויקט- יום חמישי כי הפילו תאינטרנטטטטטטטט\dotNet5783_7729_0796\DalFacade\obj\Debug\ref\DalFacade.dll
+H:\19-02-2023\bin\DalFacade.deps.json
+H:\19-02-2023\bin\DalFacade.dll
+H:\19-02-2023\bin\DalFacade.pdb
+H:\19-02-2023\DalFacade\obj\Debug\DalFacade.csproj.AssemblyReference.cache
+H:\19-02-2023\DalFacade\obj\Debug\DalFacade.GeneratedMSBuildEditorConfig.editorconfig
+H:\19-02-2023\DalFacade\obj\Debug\DalFacade.AssemblyInfoInputs.cache
+H:\19-02-2023\DalFacade\obj\Debug\DalFacade.AssemblyInfo.cs
+H:\19-02-2023\DalFacade\obj\Debug\DalFacade.csproj.CoreCompileInputs.cache
+H:\19-02-2023\DalFacade\obj\Debug\DalFacade.dll
+H:\19-02-2023\DalFacade\obj\Debug\refint\DalFacade.dll
+H:\19-02-2023\DalFacade\obj\Debug\DalFacade.pdb
+H:\19-02-2023\DalFacade\obj\Debug\ref\DalFacade.dll

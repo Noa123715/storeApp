@@ -3,6 +3,7 @@ using DalApi;
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 /// <summary>
 /// CRUD operations department:
 /// for adding a new order list,
@@ -11,26 +12,26 @@ using System.Xml.Linq;
 /// </summary>
 internal class Order : IOrder
 {
-    private List<DO.Order> orderList { get; set; }
-    public Order()
+    private List<DO.Order>? OrderList { get; set; }
+    /*public Order()
     {
         XElement? root = XDocument.Load(@"..\xml\order.xml")?.Root;
-        DO.Order newOrder = new ();
-        orderList = new List<DO.Order>();
+        DO.Order newOrder = new();
+        OrderList = new List<DO.Order>();
 
         foreach (var xmlOrder in root?.Elements("Order"))
         {
             newOrder.ID = Convert.ToInt32(xmlOrder.Element("ID")?.Value);
-            newOrder.CustomerName = xmlOrder?.Element("CustomerName")?.Value ;
+            newOrder.CustomerName = xmlOrder?.Element("CustomerName")?.Value;
             newOrder.CustomerEmail = xmlOrder?.Element("CustomerEmail")?.Value;
             newOrder.CustomerAddress = xmlOrder?.Element("CustomerAddress")?.Value;
             newOrder.OrderDate = Convert.ToDateTime(xmlOrder?.Element("OrderDate")?.Value);
             newOrder.ShipDate = Convert.ToDateTime(xmlOrder?.Element("ShipDate")?.Value);
             newOrder.DeliveryDate = Convert.ToDateTime(xmlOrder?.Element("DeliveryDate")?.Value);
-            orderList.Add(newOrder);
+            OrderList.Add(newOrder);
         }
+    }*/
 
-    }
     /// <summary>
     /// create a new order.
     /// </summary>
@@ -39,52 +40,76 @@ internal class Order : IOrder
     /// <exception cref="AlreadyExistException"></exception>
     public int Create(DO.Order newOrder)
     {
-        XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
-
+        XElement? rootConfig = XDocument.Load(@"..\xml\config.xml").Root;
         XElement? id = rootConfig?.Element("orderID");
         int orderId = Convert.ToInt32(id?.Value);
-        orderId++;
-        id.Value= orderId.ToString();
-        rootConfig?.Save(@"../../xml/config.xml");
-        newOrder.ID= orderId;
-        orderList.Add(newOrder);
+        newOrder.ID = ++orderId;
+        //id.Value = orderId.ToString();
+        id?.SetValue(orderId.ToString());
+        rootConfig?.Save(@"..\xml\config.xml");
 
-        XElement xmlOrder = new("Order",
-                                new XElement("ID", newOrder.ID),
-                                new XElement("CustomerName", newOrder.CustomerName),
-                                new XElement("CustomerEmail", newOrder.CustomerEmail),
-                                new XElement("CustomerAddress", newOrder.CustomerAddress),
-                                new XElement("OrderDate", newOrder.OrderDate),
-                                new XElement("ShipDate", newOrder.ShipDate),
-                                new XElement("DeliveryDate", newOrder.DeliveryDate));
-        XElement ?root = XDocument.Load(@"../../xml/order.xml").Root;
-        root?.Add(xmlOrder);
-        root?.Save(@"../../xml/order.xml");
+        StreamReader reader = new(@"..\xml\order.xml");
+        XmlRootAttribute xRoot = new();
+        xRoot.ElementName = "OrdersList";
+        xRoot.IsNullable = true;
+        XmlSerializer ser = new(typeof(List<DO.Order>), xRoot);
+        OrderList = (List<DO.Order>?)ser.Deserialize(reader);
+        reader.Close();
+        StreamWriter write = new(@"..\xml\OrdersList.xml");
+        OrderList?.Add(newOrder);
+        ser.Serialize(write, OrderList);
+        write.Close();
+        //XElement xmlOrder = new("Order",
+        //                        new XElement("ID", newOrder.ID),
+        //                        new XElement("CustomerName", newOrder.CustomerName),
+        //                        new XElement("CustomerEmail", newOrder.CustomerEmail),
+        //                        new XElement("CustomerAddress", newOrder.CustomerAddress),
+        //                        new XElement("OrderDate", newOrder.OrderDate),
+        //                        new XElement("ShipDate", newOrder.ShipDate),
+        //                        new XElement("DeliveryDate", newOrder.DeliveryDate));
+        //XElement? root = XDocument.Load(@"..\xml\order.xml").Root;
+        //root?.Add(xmlOrder);
+        //root?.Save(@"..\xml\order.xml");
         return newOrder.ID;
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="id"></param>
+    /// <exception cref="NotExistException"></exception>
     public void Delete(int id)
     {
-        XElement ?root = XDocument.Load(@"../../xml/order.xml").Root;
+        XElement? root = XDocument.Load(@"..\xml\order.xml").Root;
         XElement? order = root?.Elements("Order").Where(o => o.Element("ID")?.Value == id.ToString()).FirstOrDefault();
-        if(order is null)
+        if (order is null)
         {
             throw new NotExistException();
         }
         order.Remove();
-        orderList.Remove(orderList.Find(o=> o.ID==id));
-        root?.Save(@"../../xml/order.xml");
+        OrderList?.Remove(OrderList.Find(o => o.ID == id));
+        root?.Save(@"..\xml\order.xml");
 
     }
 
-  
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns></returns>
+    /// <exception cref="NotExistException"></exception>
     public IEnumerable<DO.Order> ReadAll(Func<DO.Order, bool>? condition = null)
     {
+        XmlRootAttribute xRoot = new();
+        xRoot.ElementName = "OrdersList";
+        xRoot.IsNullable = true;
+        XmlSerializer ser = new(typeof(List<DO.Order>), xRoot);
+        StreamReader reader = new(@"..\xml\order.xml");
+        OrderList = (List<DO.Order>?)ser.Deserialize(reader);
+        reader.Close();
         if (condition is null)
-            return orderList ?? throw new NotExistException();
-        return orderList.Where(condition).ToList() ?? throw new NotExistException();
+            return OrderList ?? throw new NotExistException();
+        return OrderList?.Where(condition).ToList() ?? throw new NotExistException();
     }
 
     /// <summary>
@@ -94,7 +119,8 @@ internal class Order : IOrder
     /// <returns>the required order</returns>
     public DO.Order Read(Func<DO.Order, bool> condition)
     {
-        return orderList.Where(condition).ToList()[0];
+        OrderList = ReadAll(condition).ToList();
+        return OrderList.FirstOrDefault();
     }
 
     /// <summary>
@@ -104,7 +130,7 @@ internal class Order : IOrder
     /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Order upOrder)
     {
-        XElement? root = XDocument.Load(@"../../xml/order.xml").Root;
+        XElement? root = XDocument.Load(@"..\xml\order.xml").Root;
         XElement? XMLorder = root?.Elements("Order").Where(o => o.Element("ID")?.Value == upOrder.ID.ToString()).FirstOrDefault();
         if (XMLorder is null) { throw new NotExistException(); }
         XMLorder.Element("CustomerName").Value = upOrder.CustomerName;
@@ -114,15 +140,7 @@ internal class Order : IOrder
         XMLorder.Element("ShipDate").Value = upOrder.ShipDate.ToString();
         XMLorder.Element("DeliveryDate").Value = upOrder.DeliveryDate.ToString();
         upOrder.ID = Convert.ToInt32(XMLorder?.Element("ID")?.Value);
-        int index = orderList.FindIndex(item => item.ID == upOrder.ID);
-        orderList[index] = upOrder;
-
-
+        int index = OrderList.FindIndex(item => item.ID == upOrder.ID);
+        OrderList[index] = upOrder;
     }
-
 }
-
-
-
-
-    
