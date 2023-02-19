@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using BlApi;
 using BO;
 namespace PL;
 
@@ -114,47 +115,65 @@ public partial class ProductWindow : Window
     /// <param name="e"></param>
     private void AddOrUpdateBtn_Click(object sender, RoutedEventArgs e)
     {
-        Product product = new()
+        try
         {
-            ID = int.Parse(IdTextBox.Text),
-            Name = NameTextBox.Text,
-            InStock = int.Parse(AmountTextBox.Text),
-            Category = (eCategories)CategoryComboBox.SelectedItem,
-            Price = int.Parse(PriceTextBox.Text)
-        };
-        if (IsAdmin)
-        {
-            if (product_id == 0)
+            Product product = new()
             {
-                //the add is successfull but after it the main window have a runtime error about the root attributte of the product xml
-                Bl.Product.AddProduct(product);
-                MessageBox.Show(
-                    "Add Successfull 👍",
-                    "Add Product",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-            }
-            else
+                ID = int.Parse(IdTextBox.Text),
+                Name = NameTextBox.Text,
+                InStock = int.Parse(AmountTextBox.Text),
+                Category = (eCategories)CategoryComboBox.SelectedItem,
+                Price = int.Parse(PriceTextBox.Text)
+            };
+            if (IsAdmin)
             {
-                Bl.Product.UpdateProduct(product);
-                MessageBox.Show(
-                    "UpDate Successfull 👍",
-                    "UpDate Product",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                if (product_id == 0)
+                {
+                    //the add is successfull but after it the main window have a runtime error about the root attributte of the product xml
+                    Bl.Product.AddProduct(product);
+                    MessageBox.Show(
+                        "Add Successfull 👍",
+                        "Add Product",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+                else
+                {
+                    Bl.Product.UpdateProduct(product);
+                    MessageBox.Show(
+                        "UpDate Successfull 👍",
+                        "UpDate Product",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+                //if the process ends successfully, return to the previous window
+                new ProductListWindow(Bl).Show();
+                Hide();
             }
-            //if the process ends successfully, return to the previous window
-            new ProductListWindow(Bl).Show();
-            Hide();
-        }
-        else  // customer- add product to cart.
-        {
-           cart= Bl.Cart.AddProductToCart(cart, product.ID);
+            else  // customer- add product to cart.
+            {
+                cart = Bl.Cart.AddProductToCart(cart, product.ID);
 
-          
-            MessageBox.Show("The product has been successfully added", "Adding a product");
-           new NewOrderWindow(Bl, cart).Show();
-            Hide();
+                MessageBox.Show("The product has been successfully added", "Adding a product");
+                new NewOrderWindow(Bl, cart).Show();
+                Hide();
+            }
+        }
+        catch (BlAlreadyExistException)
+        {
+            MessageBox.Show("A product with this ID already exists, try again.", "already exist", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch (BlNotExistException)
+        {
+            MessageBox.Show("No product was found with this ID. try again.", "Error- not found", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch (BlOutOfStockException err)
+        {
+            MessageBox.Show(err.Message, "error- out of stock", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch(Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
         }
     }
     /// <summary>

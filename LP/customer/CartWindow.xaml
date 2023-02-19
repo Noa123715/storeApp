@@ -15,7 +15,7 @@
             <ColumnDefinition Width="197*"/>
             <ColumnDefinition Width="273*"/>
         </Grid.ColumnDefinitions>
-        <ListView  x:Name="ProductListView" Grid.ColumnSpan="4" d:ItemsSource="{d:SampleData ItemCount=5}"  FontSize="18"   ItemsSource="{Binding Items}"  Margin="34,51,22,169" SelectionChanged="ListView_SelectionChanged">
+        <ListView  x:Name="ProductListView" Grid.ColumnSpan="4" d:ItemsSource="{d:SampleData ItemCount=5}"  FontSize="18"   ItemsSource="{Binding Items}"  Margin="34,42,22,178" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{ Binding Id,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="ID" Width="80" />
@@ -58,22 +58,19 @@
             </ListView.View>
         </ListView>
 
-        <Button Content="Complete the order" Margin="238,385,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" Click="CompleteOrder_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Content="Complete the order" Margin="238,376,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" Click="CompleteOrder_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <Label Name="TotalPricecontentLbl" Content="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" />
-        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Grid.ColumnSpan="2" Margin="46,385,0,0" Width="105" Height="40"/>
+        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Grid.ColumnSpan="2" Margin="60,376,0,0" Width="105" Height="40"/>
         <Label   Content="TotalPrice:" Style="{StaticResource classicLbl}" FontWeight="Bold" Height="38" Margin="264,13,0,0" Width="103" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Label Name="TotalPriceLbl" Content="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Style="{StaticResource classicLbl}" Height="38" Margin="34,13,0,0" Width="64" Grid.Column="2" RenderTransformOrigin="-0.009,0.857"/>
-        <Button Grid.Column="3" Content="Empty cart" Click="EmptyCart_Click"  Margin="2,385,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" RenderTransformOrigin="0.609,0.176"/>
-
-
-
-        <Label Content="first name: " Grid.ColumnSpan="2" Height="29" Margin="238,274,0,0" Width="86"  Style="{StaticResource classicLbl}"/>
-        <Label Content="last name: " Grid.ColumnSpan="2" Height="28" Margin="238,303,0,0" Width="86" Style="{StaticResource classicLbl}"/>
+        <Label Name="TotalPriceLbl" Content="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Style="{StaticResource classicLbl}" Height="28" Margin="30,13,0,0" Width="64" Grid.Column="2" RenderTransformOrigin="-0.009,0.857"/>
+        <Button Grid.Column="3" Content="Empty cart" Click="EmptyCart_Click"  Margin="2,376,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" RenderTransformOrigin="0.609,0.176"/>
+        <Label Content="name: " Grid.ColumnSpan="2" Height="29" Margin="238,274,0,0" Width="86"  Style="{StaticResource classicLbl}"/>
+        <Label Content="email: " Grid.ColumnSpan="2" Height="28" Margin="238,303,0,0" Width="86" Style="{StaticResource classicLbl}"/>
         <Label Content="address: " Grid.ColumnSpan="2" Height="37" Margin="238,331,0,0" Width="74" Style="{StaticResource classicLbl}"/>
-        <TextBox Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="29" Margin="20,288,0,0"  Text="enter your first name here" VerticalAlignment="Top" Width="147"/>
-        <TextBox Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="28" Margin="20,322,0,0" TextWrapping="Wrap" Text="enter your last name here" VerticalAlignment="Top" Width="147"/>
-        <TextBox Grid.Column="2"   Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="25" Margin="20,355,0,0" TextWrapping="Wrap" Text="enter your full address here" VerticalAlignment="Top" Width="147"/>
+        <TextBox  Name="NameTxt" Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="29" Margin="10,274,0,0"  Text="enter your full name here" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2"/>
+        <TextBox  Name="EmailTxt" Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="28" Margin="10,308,0,0" TextWrapping="Wrap" Text="enter your email address here" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2"/>
+        <TextBox Name="AddressTxt" Grid.Column="2"   Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="25" Margin="10,341,0,0" TextWrapping="Wrap" Text="enter your full address here" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2"/>
 
 
     </Grid>

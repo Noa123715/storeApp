@@ -132,8 +132,43 @@ public partial class CartWindow : Window
 
     public void CompleteOrder_Click(object sender, RoutedEventArgs e)
     {
-        MessageBox.Show("fg");
+        try
+        {
+            if (NameTxt.Text == "")
+                throw new PlNullValueException("customer name");
+            if (EmailTxt.Text == "")
+                throw new PlNullValueException("customer email");
+            System.Net.Mail.MailAddress addr = new(EmailTxt.Text);
+            bool isValidEmail = (addr.Address == EmailTxt.Text);
+            if (!(isValidEmail))
+                throw new PlInvalidEmailException();
+            if (AddressTxt.Text == "")
+                throw new PlNullValueException("customer address");
+
+            BO.Cart confirmCart = convertPoCartToBoCart(POCart);
+            bl.Cart.Confirmation(confirmCart);
+            MessageBox.Show("the order was confirmed");
+            POCart = new ();
+            BOCart = new();
+            new NewOrderWindow(bl, BOCart).Show();
+          
+            
+        }
+        catch (PlNullValueException ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        catch (PlInvalidEmailException ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
     }
+   
+    
 
     private void EmptyCart_Click(object sender, RoutedEventArgs e)
     {

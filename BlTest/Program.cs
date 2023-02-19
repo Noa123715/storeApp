@@ -158,7 +158,7 @@ internal static class Program
                 customerMail = Console.ReadLine() ?? throw new BlNullValueException();
                 Console.WriteLine("please enter the customer's address:");
                 customerAddress = Console.ReadLine() ?? throw new BlNullValueException();
-                Bl.Cart.Confirmation(cart, customerName, customerMail, customerAddress);
+                Bl.Cart.Confirmation(cart);
                 break;
             default:
                 //if the input is not a number between 1 and 3

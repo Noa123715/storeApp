@@ -132,13 +132,13 @@ internal class BLCart : ICart
     /// <exception cref="BlInValidInputException"></exception>
     /// <exception cref="BlOutOfStockException"></exception>
     /// <exception cref="BlNotExistException"></exception>
-    public void Confirmation(BO.Cart cart, string customerName, string customerMail, string customerAddress)
+    public void Confirmation(BO.Cart cart)
     {
         try
         {
-            var addr = new System.Net.Mail.MailAddress(customerMail);
-            bool isValid = (addr.Address == customerMail);
-            if (customerName == "" || customerAddress == "")
+            var addr = new System.Net.Mail.MailAddress(cart.CustomerEmail);
+            bool isValid = (addr.Address == cart.CustomerEmail);
+            if (cart.CustomerName == "" || cart.CustomerAddress == "")
             {
                 throw new BlNullValueException();
             }
@@ -151,9 +151,9 @@ internal class BLCart : ICart
             DoOrder.OrderDate = DateTime.Now;
             DoOrder.ShipDate = DateTime.MinValue;
             DoOrder.DeliveryDate = DateTime.MinValue;
-            DoOrder.CustomerName = customerName;
-            DoOrder.CustomerEmail = customerMail;
-            DoOrder.CustomerAddress = customerAddress;
+            DoOrder.CustomerName = cart.CustomerName;
+            DoOrder.CustomerEmail = cart.CustomerEmail;
+            DoOrder.CustomerAddress = cart.CustomerAddress;
             DoOrder.ID =0;
             dal?.Order.Create(DoOrder);
             foreach (BO.OrderItem orderItem in cart.Items)
