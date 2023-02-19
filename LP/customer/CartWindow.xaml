@@ -68,7 +68,7 @@
         <Label Content="name: " Grid.ColumnSpan="2" Height="29" Margin="238,274,0,0" Width="86"  Style="{StaticResource classicLbl}"/>
         <Label Content="email: " Grid.ColumnSpan="2" Height="28" Margin="238,303,0,0" Width="86" Style="{StaticResource classicLbl}"/>
         <Label Content="address: " Grid.ColumnSpan="2" Height="37" Margin="238,331,0,0" Width="74" Style="{StaticResource classicLbl}"/>
-        <TextBox  Name="NameTxt" Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="29" Margin="10,274,0,0"  Text="enter your full name here" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2"/>
+        <TextBox  Name="NameTxt" Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="29" Margin="10,274,0,0"  Text="enter your full name here" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2" />
         <TextBox  Name="EmailTxt" Grid.Column="2"  Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="28" Margin="10,308,0,0" TextWrapping="Wrap" Text="enter your email address here" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2"/>
         <TextBox Name="AddressTxt" Grid.Column="2"   Foreground="#FF698AED" BorderBrush="#FF698AED" HorizontalAlignment="Left" Height="25" Margin="10,341,0,0" TextWrapping="Wrap" Text="enter your full address here" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2"/>
 
