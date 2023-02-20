@@ -70,9 +70,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
+      "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
       "projectName": "BlTest",
-      "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
+      "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
       "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\obj\\",
       "projectStyle": "PackageReference",
@@ -95,8 +95,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj"
+            "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj"
             }
           }
         }
