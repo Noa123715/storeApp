@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalTest\\DalTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj",
+        "projectName": "DalFacade",
+        "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj",
+        "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\obj\\",
+=======
     "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalTest\\DalTest.csproj": {}
   },
   "projects": {
@@ -12,6 +25,7 @@
         "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalFacade\\DalFacade.csproj",
         "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalFacade\\obj\\",
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,6 +77,16 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalList\\DalList.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalList\\DalList.csproj",
+        "projectName": "DalList",
+        "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalList\\DalList.csproj",
+        "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\DalList\\obj\\",
+=======
     "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalList\\DalList.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -71,6 +95,7 @@
         "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalList\\DalList.csproj",
         "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalList\\obj\\",
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -91,8 +116,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
+                "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj"
+=======
               "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalFacade\\DalFacade.csproj": {
                 "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalFacade\\DalFacade.csproj"
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
               }
             }
           }
@@ -126,6 +156,16 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalTest\\DalTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalTest\\DalTest.csproj",
+        "projectName": "DalTest",
+        "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalTest\\DalTest.csproj",
+        "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\DalTest\\obj\\",
+=======
     "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalTest\\DalTest.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -134,6 +174,7 @@
         "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalTest\\DalTest.csproj",
         "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalTest\\obj\\",
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -154,11 +195,19 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
+                "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj"
+              },
+              "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalList\\DalList.csproj": {
+                "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalList\\DalList.csproj"
+=======
               "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalFacade\\DalFacade.csproj": {
                 "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalFacade\\DalFacade.csproj"
               },
               "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalList\\DalList.csproj": {
                 "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalList\\DalList.csproj"
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
               }
             }
           }

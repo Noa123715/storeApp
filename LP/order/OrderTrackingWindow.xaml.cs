@@ -10,5 +10,6 @@ public partial class OrderTrackingWindow : Window
     public OrderTrackingWindow(OrderTracking orderTrack)
     {
         InitializeComponent();
+        IdOrderText.Text = orderTrack.ID.ToString();
     }
 }

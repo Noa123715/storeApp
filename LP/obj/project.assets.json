@@ -70,11 +70,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\LP\\PL.csproj",
+      "projectName": "PL",
+      "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\LP\\PL.csproj",
+      "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\LP\\obj\\",
+=======
       "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\LP\\PL.csproj",
       "projectName": "PL",
       "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\LP\\PL.csproj",
       "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\LP\\obj\\",
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -95,8 +103,13 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+<<<<<<< HEAD
+            "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj"
+=======
             "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\BL\\BL.csproj": {
               "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\BL\\BL.csproj"
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
             }
           }
         }

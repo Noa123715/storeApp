@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "7lG6eM6OGAGit6Px0/gAbohshqNXDo0sskHYfaxf+aIJAl2/VMAhInCksqrxVDtrMFnOwzYGQ2SYzI+55VW0tw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
+=======
   "dgSpecHash": "DoAs1/zIgR2YxTpxbm0zVdYHzcYXtaj8WCe6SSoy1QKB7WRlwZjpFgpdlb8uLBRG/qRreENekYAdtOhz/84D+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\BlTest\\BlTest.csproj",
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
   "expectedPackageFiles": [],
   "logs": [
     {
