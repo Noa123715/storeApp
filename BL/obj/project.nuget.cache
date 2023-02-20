@@ -1,8 +1,21 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "SQHxCLBXFZ6anLGXbb6KTXRExH0oHF9NtvyhvqnmkLBV+BUTPmjXB/acDqbE9yZt4GBV0qEbtOsl/a0CgYwvQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj",
+=======
+  "dgSpecHash": "ZbAz544P2jLF7tzfjK+WCI3Ezw2DROD1ZxO5nDKLbYKt/QNkst4K++iIAwxlVWrM1WCGGn//ttH/KBqPplrJ1Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\BL\\BL.csproj",
+>>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\BL\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

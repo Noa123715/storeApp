@@ -127,7 +127,7 @@ public partial class CartWindow : Window
     public void GoBack_Click(object sender, RoutedEventArgs e)
     {
         new NewOrderWindow(bl, BOCart).Show();
-        Hide();
+        this.Close();
     }
 
     public void CompleteOrder_Click(object sender, RoutedEventArgs e)
@@ -144,6 +144,9 @@ public partial class CartWindow : Window
                 throw new PlInvalidEmailException();
             if (AddressTxt.Text == "")
                 throw new PlNullValueException("customer address");
+            //POCart.CustomerName = NameTxt.Text;
+            //POCart.CustomerEmail = EmailTxt.Text;
+            //POCart.CustomerAddress = AddressTxt.Text;
 
             BO.Cart confirmCart = convertPoCartToBoCart(POCart);
             bl.Cart.Confirmation(confirmCart);
@@ -164,7 +167,7 @@ public partial class CartWindow : Window
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message);
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "Error");
         }
     }
    
