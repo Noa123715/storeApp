@@ -24,13 +24,14 @@ internal class OrderItem : IOrderItem
     // creates new order item
     public int Create(DO.OrderItem newOrderItem)
     {
-        XElement? rootConfig = XDocument.Load(@"../../xml/config.xml").Root;
+        XElement? rootConfig = XDocument.Load(@"..\xml\config.xml").Root;
         XElement? id = rootConfig?.Element("orderItemID");
         int orderItemID = Convert.ToInt32(id?.Value);
         orderItemID++;
         id.Value = orderItemID.ToString();
-        rootConfig?.Save(@"../../xml/config.xml");
+        rootConfig?.Save(@"..\xml\config.xml");
         newOrderItem.ID = orderItemID;
+        OrderItemList= new();
         OrderItemList.Add(newOrderItem);
         XElement xmlOrderItem = new("OrderItem",
                                 new XElement("ID", newOrderItem.ID),
@@ -39,9 +40,9 @@ internal class OrderItem : IOrderItem
                                 new XElement("Amount", newOrderItem.Amount),
                                 new XElement("Price", newOrderItem.Price)
                                );
-        XElement? root = XDocument.Load(@"../../xml/orderItem.xml").Root;
+        XElement? root = XDocument.Load(@"..\xml\orderItem.xml").Root;
         root?.Add(xmlOrderItem);
-        root?.Save(@"../../xml/orderItem.xml");
+        root?.Save(@"..\xml\orderItem.xml");
         return newOrderItem.ID;
     }
      

@@ -15,32 +15,32 @@ public partial class CartWindow : Window
 {
 
     private BlApi.IBL bl;
-    private BO.Cart ? BOCart;
-    private PO.Cart ? POCart { get; set; }
+    private BO.Cart? BOCart;
+    private PO.Cart? POCart { get; set; }
 
-    public CartWindow(BlApi.IBL _bl, BO.Cart  _cart, int productID = 0)
+    public CartWindow(BlApi.IBL _bl, BO.Cart _cart, int productID = 0)
     {
         InitializeComponent();
         this.bl = _bl;
         this.BOCart = _cart;
         POCart = ConvertBoToPoCart(BOCart);
-        this.DataContext = this.POCart;        
+        this.DataContext = this.POCart;
     }
 
     private PO.Cart ConvertBoToPoCart(BO.Cart BoCart)
     {
-      
+
         PO.Cart item = new()
         {
             CustomerAddress = BoCart.CustomerAddress,
             CustomerEmail = BoCart.CustomerEmail,
             CustomerName = BoCart.CustomerName,
             Items = convertItemsToPoItems(BoCart.Items),
-           TotalPrice = BoCart.Price,
+            TotalPrice = BoCart.Price,
         };
         return item;
     }
-  
+
     private BO.Cart convertPoCartToBoCart(PO.Cart poToConvert)
     {
         BO.Cart bCrt = new()
@@ -51,8 +51,6 @@ public partial class CartWindow : Window
             Price = poToConvert.TotalPrice
         };
         bCrt.Items = new();
-   
-        
         if (poToConvert.Items.Count() != 0)
             poToConvert.Items.Select(itm =>
             {
@@ -71,17 +69,16 @@ public partial class CartWindow : Window
         return bCrt;
 
     }
-        private ObservableCollection<PO.OrderItem> convertItemsToPoItems(List<BO.OrderItem> oil)
+    private ObservableCollection<PO.OrderItem> convertItemsToPoItems(List<BO.OrderItem> oil)
     {
         ObservableCollection<PO.OrderItem> returnlist = new();
-        
-        oil.ForEach (item =>
+        oil.ForEach(item =>
         {
             PO.OrderItem item2 = new()
             {
                 Id = item.ID,
                 Amount = item.Amount,
-            
+
                 Price = item.Price,
                 ProductId = item.ProductID,
                 Name = item.ProductName,
@@ -105,7 +102,6 @@ public partial class CartWindow : Window
     /// </summary>
     private void IncreaseBtn_Click(object sender, RoutedEventArgs e)
     {
-
         PO.OrderItem currentOI = (PO.OrderItem)((Button)sender).DataContext;
         UpdateAmount(currentOI.ProductId, currentOI.Amount + 1);
     }
@@ -144,19 +140,15 @@ public partial class CartWindow : Window
                 throw new PlInvalidEmailException();
             if (AddressTxt.Text == "")
                 throw new PlNullValueException("customer address");
-            //POCart.CustomerName = NameTxt.Text;
-            //POCart.CustomerEmail = EmailTxt.Text;
-            //POCart.CustomerAddress = AddressTxt.Text;
-
             BO.Cart confirmCart = convertPoCartToBoCart(POCart);
             bl.Cart.Confirmation(confirmCart);
             MessageBox.Show("the order was confirmed");
-            POCart = new ();
+            POCart = new();
             BOCart = new();
             new NewOrderWindow(bl, BOCart).Show();
-          
-            
+            Close();
         }
+
         catch (PlNullValueException ex)
         {
             MessageBox.Show(ex.Message);
@@ -170,12 +162,11 @@ public partial class CartWindow : Window
             MessageBox.Show(new PlGenericException(ex.Message).Message, "Error");
         }
     }
-   
-    
+
+
 
     private void EmptyCart_Click(object sender, RoutedEventArgs e)
     {
-       
         POCart = new();
         BOCart = new();
         DataContext = POCart;

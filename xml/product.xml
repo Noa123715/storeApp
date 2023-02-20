@@ -8,13 +8,6 @@
     <Category>Accessories</Category>
   </Product>
   <Product>
-    <InStock>10</InStock>
-    <Name>Classic dress - Fendi</Name>
-    <Price>4500</Price>
-    <ID>234535</ID>
-    <Category>Women</Category>
-  </Product>
-  <Product>
     <InStock>25</InStock>
     <Name>Pink scarf - Hermes</Name>
     <Price>970</Price>
@@ -76,5 +69,12 @@
     <Price>250</Price>
     <ID>696722</ID>
     <Category>Accessories</Category>
+  </Product>
+  <Product>
+    <InStock>9</InStock>
+    <Name>Classic dress - Fendi</Name>
+    <Price>4500</Price>
+    <ID>234535</ID>
+    <Category>Women</Category>
   </Product>
 </ProductList>
