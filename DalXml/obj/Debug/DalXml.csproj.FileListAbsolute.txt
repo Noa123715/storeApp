@@ -76,3 +76,16 @@ H:\19-02-2023\DalXml\obj\Debug\DalXml.dll
 H:\19-02-2023\DalXml\obj\Debug\refint\DalXml.dll
 H:\19-02-2023\DalXml\obj\Debug\DalXml.pdb
 H:\19-02-2023\DalXml\obj\Debug\ref\DalXml.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\bin\DalXml.deps.json
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\bin\DalXml.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\bin\DalXml.pdb
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.csproj.AssemblyReference.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.AssemblyInfoInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.AssemblyInfo.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.csproj.CoreCompileInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.csproj.CopyComplete
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\refint\DalXml.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\DalXml.pdb
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\DalXml\obj\Debug\ref\DalXml.dll

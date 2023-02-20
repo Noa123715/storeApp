@@ -89,3 +89,16 @@ H:\19-02-2023\BL\obj\Debug\BL.dll
 H:\19-02-2023\BL\obj\Debug\refint\BL.dll
 H:\19-02-2023\BL\obj\Debug\BL.pdb
 H:\19-02-2023\BL\obj\Debug\ref\BL.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\bin\BL.deps.json
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\bin\BL.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\bin\BL.pdb
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.csproj.AssemblyReference.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.AssemblyInfoInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.AssemblyInfo.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\refint\BL.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\BL.pdb
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_079611\BL\obj\Debug\ref\BL.dll

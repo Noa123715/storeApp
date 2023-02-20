@@ -2,7 +2,7 @@
 using BlApi;
 using BO;
 using PL.PO;
-
+using System;
 namespace PL;
 
 /// <summary>
@@ -59,8 +59,16 @@ public partial class NewOrderWindow : Window
     private void GoToProductProperties(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
         //not covert a item from producyForList to Product
-        new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID).Show();
-        Hide();
+        try
+        {
+
+            new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID).Show();
+            Hide();
+        }
+        catch(Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
 
 }
