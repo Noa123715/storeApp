@@ -19,7 +19,7 @@ public partial class NewOrderWindow : Window
     /// and initializes the categories
     /// </summary>
     /// <param name="bl"></param>
-    public NewOrderWindow(BlApi.IBL? bl   , BO.Cart c= null , Window sourcW = null)
+    public NewOrderWindow(BlApi.IBL? bl   , BO.Cart? c = null , Window? sourcW = null)
     {
       
         InitializeComponent();
@@ -36,7 +36,7 @@ public partial class NewOrderWindow : Window
     /// <param name="e"></param>
     private void FilterDelete_Click(object sender, RoutedEventArgs e)
     {
-        NewOrderView.ItemsSource = Bl.Product.ReadProductsList();
+        NewOrderView.ItemsSource = Bl?.Product.ReadProductsList();
     }
     /// <summary>
     /// when the user choose a category to search
@@ -46,7 +46,7 @@ public partial class NewOrderWindow : Window
     /// <param name="e"></param>
     private void CategorySelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
-        NewOrderView.ItemsSource = Bl.Product.ReadProductsList((eCategories)SelectorProduct.SelectedItem);
+        NewOrderView.ItemsSource = Bl?.Product.ReadProductsList((eCategories)SelectorProduct.SelectedItem);
     }
 
     private void GoToCart_Click(object sender, RoutedEventArgs e)
@@ -62,7 +62,7 @@ public partial class NewOrderWindow : Window
         try
         {
 
-            new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID).Show();
+            new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID, currentCart).Show();
             Hide();
         }
         catch(Exception err)

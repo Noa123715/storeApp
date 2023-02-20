@@ -34,17 +34,18 @@ internal class BLCart : ICart
             DO.Product product = dal.Product.Read(p=> p.ID==productID);
             int productInStock = product.InStock;
             double productPrice = product.Price;
+            int index=-1;
             BO.OrderItem ?orderItem = new BO.OrderItem();
             if (productInStock <= 0)
                 throw new BlOutOfStockException();
             if (cart.Items.Count != 0)
-                orderItem = cart.Items.Find(item => item.ProductID == productID) ;
-
-            if (orderItem.ID != 0)
+                index = cart.Items.FindIndex(item => item.ProductID == productID);
+            if (index !=-1)
             {
-                orderItem.Amount++;
-                orderItem.TotalPrice += productPrice;
-                cart.Price += productPrice;
+                cart.Items[index].Amount++;
+                cart.Items[index].TotalPrice += productPrice;
+                cart.Items[index].Price += productPrice;
+                
             }
             else
             {

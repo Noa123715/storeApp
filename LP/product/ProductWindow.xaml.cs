@@ -13,7 +13,7 @@ public partial class ProductWindow : Window
     private BlApi.IBL Bl { get; set; }
     private int product_id; //variable for conversion and testing 
     private bool IsAdmin;
-    private Cart? cart;
+    private BO.Cart? cart;
     private ProductItem product;
     /// <summary>
     /// constractor of the product window
@@ -24,7 +24,7 @@ public partial class ProductWindow : Window
     /// <param name="ProductList_bl"></param>
     /// <param name="pList_id"></param>
 
-    public ProductWindow(BlApi.IBL ProductList_bl, bool isAdmin, int? pList_id = null, Cart? _cart = null)
+    public ProductWindow(BlApi.IBL ProductList_bl, bool isAdmin, int? pList_id = null, BO.Cart? _cart = null)
     {
         InitializeComponent();
         Bl = ProductList_bl;

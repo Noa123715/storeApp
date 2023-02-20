@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
-	<orderID>
-		20
-	</orderID>
-	<orderItemID>
+  <orderID>21</orderID>
+  <orderItemID>
 		40
 	</orderItemID>
 </config>
