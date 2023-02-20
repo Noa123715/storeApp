@@ -11,15 +11,15 @@ using System.Xml.Linq;
 /// </ summary >
 internal class OrderItem : IOrderItem
 {
-    private List<DO.OrderItem> orderItemList { get; set; }
+    private List<DO.OrderItem> OrderItemList { get; set; }
     /// <summary>
     /// orderitem ctor- getting data from xml to list.
     /// </summary>
-    public OrderItem()
-    {
-        XElement? root = XDocument.Load(@"..\xml\orderItem.xml")?.Root;
-        DO.OrderItem orderItem = new DO.OrderItem();
-    }
+    //public OrderItem()
+    //{
+    //    XElement? root = XDocument.Load(@"..\xml\orderItem.xml")?.Root;
+    //    DO.OrderItem orderItem = new();
+    //}
 
     // creates new order item
     public int Create(DO.OrderItem newOrderItem)
@@ -31,7 +31,7 @@ internal class OrderItem : IOrderItem
         id.Value = orderItemID.ToString();
         rootConfig?.Save(@"../../xml/config.xml");
         newOrderItem.ID = orderItemID;
-        orderItemList.Add(newOrderItem);
+        OrderItemList.Add(newOrderItem);
         XElement xmlOrderItem = new("OrderItem",
                                 new XElement("ID", newOrderItem.ID),
                                 new XElement("ProductID", newOrderItem.ProductID),
@@ -44,13 +44,12 @@ internal class OrderItem : IOrderItem
         root?.Save(@"../../xml/orderItem.xml");
         return newOrderItem.ID;
     }
-
- 
+     
     // read all orderitems -according to specific condition or all.
     public IEnumerable<DO.OrderItem> ReadAll(Func<DO.OrderItem, bool>? condition = null)
     {
         XElement? root = XDocument.Load(@"..\xml\orderItem.xml").Root;
-        orderItemList = (from item in root?.Elements("OrderItem")
+        OrderItemList = (from item in root?.Elements("OrderItem")
                          select new DO.OrderItem
                          {
                              ID = Convert.ToInt32(item.Element("ID")?.Value),
@@ -60,8 +59,8 @@ internal class OrderItem : IOrderItem
                              Price = Convert.ToDouble(item.Element("Price")?.Value)
                          }).ToList();
         if (condition is null)
-            return orderItemList ?? throw new NotExistException();
-        return orderItemList.Where(condition).ToList() ?? throw new NotExistException();
+            return OrderItemList ?? throw new NotExistException();
+        return OrderItemList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
     /// <summary>
@@ -70,9 +69,8 @@ internal class OrderItem : IOrderItem
     /// <param name="condition"></param>
     /// <returns></returns>
     public DO.OrderItem Read(Func<DO.OrderItem, bool> condition)
-
     {
-        return orderItemList.Where(condition).ToList()[0];
+        return OrderItemList.Where(condition).ToList()[0];
     }
 
     /// <summary>
@@ -82,7 +80,6 @@ internal class OrderItem : IOrderItem
     /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.OrderItem upOrderItem)
     {
-
         XElement? oiRoot = XDocument.Load(@"../../xml/orderItem.xml").Root;
         XElement? XMLorderItem = oiRoot?.Elements("OrderItem").Where(o => o.Element("ID")?.Value == upOrderItem.ID.ToString()).FirstOrDefault();
         if (XMLorderItem is null) { throw new NotExistException(); }
@@ -91,8 +88,8 @@ internal class OrderItem : IOrderItem
         XMLorderItem.Element("Amount").Value = upOrderItem.Amount.ToString();
         XMLorderItem.Element("Price").Value = upOrderItem.Price.ToString();
         oiRoot?.Save(@"../../xml/orderItem.xml");
-        int index = orderItemList.FindIndex(item => item.ID == upOrderItem.ID);
-        orderItemList[index] = upOrderItem;
+        int index = OrderItemList.FindIndex(item => item.ID == upOrderItem.ID);
+        OrderItemList[index] = upOrderItem;
     }
 
     /// <summary>
@@ -102,14 +99,12 @@ internal class OrderItem : IOrderItem
     /// <exception cref="NotExistException"></exception>
     public void Delete(int orderItemId)
     {
-
-        XElement? oiRoot= XDocument.Load(@"../../xml/orderItem.xml").Root;
+        XElement? oiRoot = XDocument.Load(@"../../xml/orderItem.xml").Root;
         XElement? XMLorderItem = oiRoot?.Elements("OrderItem").Where(o => o.Element("ID")?.Value == orderItemId.ToString()).FirstOrDefault();
         if (XMLorderItem is null) { throw new NotExistException(); }
         XMLorderItem.Remove();
         oiRoot?.Save(@"../../xml/orderItem.xml");
-        int index = orderItemList.FindIndex(item => item.ID == orderItemId);
-        orderItemList.RemoveAt(index);
-       }
-   
+        int index = OrderItemList.FindIndex(item => item.ID == orderItemId);
+        OrderItemList.RemoveAt(index);
+    }
 }

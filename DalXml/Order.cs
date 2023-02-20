@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+
 /// <summary>
 /// CRUD operations department:
 /// for adding a new order list,
@@ -47,11 +48,12 @@ internal class Order : IOrder
         //id.Value = orderId.ToString();
         id?.SetValue(orderId.ToString());
         rootConfig?.Save(@"..\xml\config.xml");
-
         StreamReader reader = new(@"..\xml\order.xml");
-        XmlRootAttribute xRoot = new();
-        xRoot.ElementName = "OrdersList";
-        xRoot.IsNullable = true;
+        XmlRootAttribute xRoot = new()
+        {
+            ElementName = "OrdersList",
+            IsNullable = true
+        };        
         XmlSerializer ser = new(typeof(List<DO.Order>), xRoot);
         OrderList = (List<DO.Order>?)ser.Deserialize(reader);
         reader.Close();
@@ -59,17 +61,6 @@ internal class Order : IOrder
         OrderList?.Add(newOrder);
         ser.Serialize(write, OrderList);
         write.Close();
-        //XElement xmlOrder = new("Order",
-        //                        new XElement("ID", newOrder.ID),
-        //                        new XElement("CustomerName", newOrder.CustomerName),
-        //                        new XElement("CustomerEmail", newOrder.CustomerEmail),
-        //                        new XElement("CustomerAddress", newOrder.CustomerAddress),
-        //                        new XElement("OrderDate", newOrder.OrderDate),
-        //                        new XElement("ShipDate", newOrder.ShipDate),
-        //                        new XElement("DeliveryDate", newOrder.DeliveryDate));
-        //XElement? root = XDocument.Load(@"..\xml\order.xml").Root;
-        //root?.Add(xmlOrder);
-        //root?.Save(@"..\xml\order.xml");
         return newOrder.ID;
     }
 
@@ -89,7 +80,6 @@ internal class Order : IOrder
         order.Remove();
         OrderList?.Remove(OrderList.Find(o => o.ID == id));
         root?.Save(@"..\xml\order.xml");
-
     }
 
     /// <summary>
@@ -100,9 +90,11 @@ internal class Order : IOrder
     /// <exception cref="NotExistException"></exception>
     public IEnumerable<DO.Order> ReadAll(Func<DO.Order, bool>? condition = null)
     {
-        XmlRootAttribute xRoot = new();
-        xRoot.ElementName = "OrdersList";
-        xRoot.IsNullable = true;
+        XmlRootAttribute xRoot = new()
+        {
+            ElementName = "OrdersList",
+            IsNullable = true
+        };       
         XmlSerializer ser = new(typeof(List<DO.Order>), xRoot);
         StreamReader reader = new(@"..\xml\order.xml");
         OrderList = (List<DO.Order>?)ser.Deserialize(reader);
@@ -120,7 +112,9 @@ internal class Order : IOrder
     public DO.Order Read(Func<DO.Order, bool> condition)
     {
         OrderList = ReadAll(condition).ToList();
-        return OrderList.FirstOrDefault();
+        if (OrderList.Count == 0) throw new NotExistException();
+        DO.Order order = OrderList.FirstOrDefault();
+        return order;
     }
 
     /// <summary>

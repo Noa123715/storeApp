@@ -87,7 +87,7 @@ namespace PL {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.0.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -103,7 +103,7 @@ namespace PL {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.0.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
@@ -138,7 +138,7 @@ namespace PL {
             case 5:
             
             #line 14 "..\..\MainWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.newOrder_Click);
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.NewOrder_Click);
             
             #line default
             #line hidden

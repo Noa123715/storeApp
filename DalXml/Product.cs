@@ -58,14 +58,16 @@ public class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public void Delete(int id)
     {
-        XmlRootAttribute xRoot = new XmlRootAttribute();
-        xRoot.ElementName = "ProductList";
-        xRoot.IsNullable = true;
-        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>), xRoot);
-        StreamReader reader = new StreamReader(@"..\xml\product.xml");
+        XmlRootAttribute xRoot = new()
+        {
+            ElementName = "ProductList",
+            IsNullable = true
+        };       
+        XmlSerializer ser = new(typeof(List<DO.Product>), xRoot);
+        StreamReader reader = new(@"..\xml\product.xml");
         List<DO.Product>? products = (List<DO.Product>?)ser.Deserialize(reader);
         reader.Close();
-        StreamWriter writer = new StreamWriter(@"..\xml\product.xml");
+        StreamWriter writer = new(@"..\xml\product.xml");
         DO.Product product = products.Where(p => p.ID == id).FirstOrDefault();
         if(product.ID == 0)
             throw new NotExistException();
@@ -81,9 +83,11 @@ public class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public IEnumerable<DO.Product> ReadAll(Func<DO.Product, bool>? condition = null)
     {
-        XmlRootAttribute xmlRoot = new XmlRootAttribute();
-        xmlRoot.ElementName = "ProductList";
-        xmlRoot.IsNullable = true;
+        XmlRootAttribute xmlRoot = new()
+        {
+            ElementName = "ProductList",
+            IsNullable = true
+        };        
         StreamReader r = new(@"..\xml\product.xml");
         XmlSerializer ser = new(typeof(List<DO.Product>), xmlRoot);
         List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(r);        
@@ -108,11 +112,13 @@ public class Product : IProduct
     /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Product product)
     {
-        XmlRootAttribute xmlRoot = new XmlRootAttribute();
-        xmlRoot.ElementName = "ProductList";
-        xmlRoot.IsNullable = true;
-        StreamReader productReader = new StreamReader(@"..\xml\product.xml");
-        XmlSerializer ser = new XmlSerializer(typeof(List<DO.Product>), xmlRoot);
+        XmlRootAttribute xmlRoot = new()
+        {
+            ElementName = "ProductList",
+            IsNullable = true
+        };        
+        StreamReader productReader = new(@"..\xml\product.xml");
+        XmlSerializer ser = new(typeof(List<DO.Product>), xmlRoot);
         List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(productReader);
         productReader.Close();
         DO.Product product1 = productList.Where(productItem => productItem.ID == product.ID).FirstOrDefault();
@@ -122,7 +128,7 @@ public class Product : IProduct
         }
         productList.Remove(product1);
         productList.Add(product);
-        StreamWriter pWrite = new StreamWriter(@"..\xml\product.xml");
+        StreamWriter pWrite = new(@"..\xml\product.xml");
         ser.Serialize(pWrite, productList);
         pWrite.Close();
     }
