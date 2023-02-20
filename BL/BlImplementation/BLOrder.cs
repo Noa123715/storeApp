@@ -25,10 +25,10 @@ internal class BLOrder : BlApi.IOrder
     public IEnumerable<BO.OrderForList> ReadOrderList()
     {
         IEnumerable<DO.Order> orders = DalList.Order.ReadAll();
-        List<BO.OrderForList> orderList = new List<BO.OrderForList>();
+        List<BO.OrderForList> orderList = new();
         foreach (var order in orders)
         {
-            BO.OrderForList orderForList = new BO.OrderForList();
+            BO.OrderForList orderForList = new();
             orderForList.ID = order.ID;
             orderForList.CustomerName = order.CustomerName;
             orderForList.TotalPrice = 0;
@@ -60,7 +60,7 @@ internal class BLOrder : BlApi.IOrder
 
     public BO.Order ReadOrderProperties(int orderID)
     {
-        BO.Order BoOrder = new BO.Order();
+        BO.Order BoOrder = new();
         try
         {
             if (orderID <= 0)
@@ -83,13 +83,15 @@ internal class BLOrder : BlApi.IOrder
                 BoOrder.Status = 0;
             foreach (var oi in DoOrderItems)
             {
-                BO.OrderItem orderItem = new BO.OrderItem();
-                orderItem.ID = oi.ID;
-                orderItem.ProductID = oi.ProductID;
-                orderItem.ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name;
-                orderItem.Amount = oi.Amount;
-                orderItem.Price = oi.Price;
-                orderItem.TotalPrice = oi.Amount * oi.Price;
+                BO.OrderItem orderItem = new()
+                {
+                    ID = oi.ID,
+                    ProductID = oi.ProductID,
+                    ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name,
+                    Amount = oi.Amount,
+                    Price = oi.Price,
+                    TotalPrice = oi.Amount * oi.Price,
+                };
                 BoOrder.Items.Add(orderItem);
             }
         }
@@ -177,13 +179,15 @@ internal class BLOrder : BlApi.IOrder
             IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == orderID);
             foreach (var oi in DoOrderItems)
             {
-                BO.OrderItem orderItem = new BO.OrderItem();
-                orderItem.ID = oi.ID;
-                orderItem.ProductID = oi.ProductID;
-                orderItem.ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name;
-                orderItem.Amount = oi.Amount;
-                orderItem.Price = oi.Price;
-                orderItem.TotalPrice = oi.Amount * oi.Price;
+                BO.OrderItem orderItem = new()
+                {
+                    ID = oi.ID,
+                    ProductID = oi.ProductID,
+                    ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name,
+                    Amount = oi.Amount,
+                    Price = oi.Price,
+                    TotalPrice = oi.Amount * oi.Price,
+                };               
                 BoOrder.TotalPrice += orderItem.TotalPrice;
                 BoOrder.Items.Add(orderItem);
             }
@@ -207,7 +211,7 @@ internal class BLOrder : BlApi.IOrder
         try
         {
            DO.Order order = DalList.Order.Read(o=>o.ID==orderID);
-            BO.OrderTracking BoOrderTracking = new BO.OrderTracking();
+            BO.OrderTracking BoOrderTracking = new();
            
             BoOrderTracking.TrackList.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
             BoOrderTracking.Status = BO.eOrderStatus.Ordered;

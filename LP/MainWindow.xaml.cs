@@ -31,17 +31,15 @@ public partial class MainWindow : Window
     /// <param name="e"></param>
     private void LogInAdmin_Click(object sender, RoutedEventArgs e)
     {
-        ProductListWindow productListWindow = new ProductListWindow(Bl);
-        productListWindow.Show();
-        this.Hide();
+        new ProductListWindow(Bl).Show();
+        Hide();
     }
 
-    private void newOrder_Click(object sender, RoutedEventArgs e)
+    private void NewOrder_Click(object sender, RoutedEventArgs e)
     {
 
-        NewOrderWindow newOrderWindow = new NewOrderWindow(Bl);
-        newOrderWindow.Show();
-        this.Hide();
+        new NewOrderWindow(Bl).Show();
+        Hide();
     }
 
     private void FollowOrder_Click(object sender, RoutedEventArgs e)

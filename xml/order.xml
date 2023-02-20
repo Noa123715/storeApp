@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<OrdersList>
+<OrdersList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Order>
 		<ID>1</ID>
 		<CustomerName>Donald Trump</CustomerName>
@@ -7,6 +7,6 @@
 		<CustomerAddress>white house</CustomerAddress>
 		<OrderDate>2022-12-09T15:26:18</OrderDate>
 		<ShipDate>2022-12-11T15:26:18</ShipDate>
-		<DeliveryDate></DeliveryDate>
+		<DeliveryDate xsi:nil="true"></DeliveryDate>
 	</Order>
 </OrdersList>
