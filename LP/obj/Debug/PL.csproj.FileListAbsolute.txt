@@ -243,6 +243,10 @@ C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\PL.pdb
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\PL.genruntimeconfig.cache
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\ref\PL.dll
+<<<<<<< HEAD
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\admin\AdminWindow.g.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\admin\OrderListWindow.g.cs
+=======
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\bin\PL.exe
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\bin\PL.deps.json
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\bin\PL.runtimeconfig.json
@@ -278,5 +282,9 @@ C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\r
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\PL.pdb
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\PL.genruntimeconfig.cache
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\ref\PL.dll
+<<<<<<< HEAD
 C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\LP\obj\Debug\order\OrderWindow.g.cs
 C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\LP\obj\Debug\order\OrderWindow.baml
+=======
+>>>>>>> 2ffae5dc2618f0991f535215d30c0ae60e5f64d3
+>>>>>>> cc587250051d9440fee1839fb36ae178df76ecc4

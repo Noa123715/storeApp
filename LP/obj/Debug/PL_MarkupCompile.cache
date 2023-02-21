@@ -12,9 +12,26 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\LP\App.xaml
 8-628103533
 
+<<<<<<< HEAD
 13-1246014117
 197-340473732
 customer\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;order\OrderWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
+=======
+121371647964
+197520837822
+=======
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\App.xaml
+91478796692
 
-False
+142001192626
+197-117825415
+<<<<<<< HEAD
+admin\AdminWindow.xaml;admin\OrderListWindow.xaml;customer\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
+=======
+>>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+customer\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
+>>>>>>> 2ffae5dc2618f0991f535215d30c0ae60e5f64d3
+>>>>>>> cc587250051d9440fee1839fb36ae178df76ecc4
+
+True
 

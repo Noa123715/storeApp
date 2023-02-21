@@ -1,0 +1,14 @@
+﻿<Window x:Class="PL.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.admin"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Ooders management" Click="Orders_Click" Margin="94,0,0,0" RenderTransformOrigin="2.133,-4.808" Height="126" Width="223" Style="{StaticResource classicBtn}" VerticalAlignment="Center"/>
+        <Button Content="products management" Click="Products_Click" Margin="477,0,0,0" RenderTransformOrigin="2.133,-4.808" Height="126" Width="226" Style="{StaticResource classicBtn}" VerticalAlignment="Center"/>
+
+    </Grid>
+</Window>

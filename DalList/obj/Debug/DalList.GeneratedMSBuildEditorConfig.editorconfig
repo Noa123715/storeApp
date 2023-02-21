@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Dal
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\DalList\
+=======
+build_property.ProjectDir = C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\DalList\
+>>>>>>> cc587250051d9440fee1839fb36ae178df76ecc4
