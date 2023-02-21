@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProductList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <InStock>25</InStock>
-    <Name>Pink scarf - Hermes</Name>
-    <Price>970</Price>
-    <ID>156613</ID>
-    <Category>Accessories</Category>
-  </Product>
-  <Product>
-    <InStock>15</InStock>
-    <Name>Elegant pants- ferragamo</Name>
-    <Price>2500</Price>
-    <ID>925483</ID>
-    <Category>Men</Category>
-  </Product>
-  <Product>
-    <InStock>7</InStock>
-    <Name>Three piece suit- Disel</Name>
-    <Price>1500</Price>
-    <ID>926358</ID>
-    <Category>Children</Category>
-  </Product>
-  <Product>
-    <InStock>50</InStock>
-    <Name>boots- Gucci</Name>
-    <Price>5000</Price>
-    <ID>374806</ID>
-    <Category>Women</Category>
-  </Product>
-  <Product>
     <InStock>30</InStock>
     <Name>perfume- Chanel</Name>
     <Price>1000</Price>
@@ -76,5 +48,40 @@
     <Price>3000</Price>
     <ID>542068</ID>
     <Category>Accessories</Category>
+  </Product>
+  <Product>
+    <InStock>50</InStock>
+    <Name>AAAA</Name>
+    <Price>56</Price>
+    <ID>721329</ID>
+    <Category>Accessories</Category>
+  </Product>
+  <Product>
+    <InStock>14</InStock>
+    <Name>Elegant pants- ferragamo</Name>
+    <Price>2500</Price>
+    <ID>925483</ID>
+    <Category>Men</Category>
+  </Product>
+  <Product>
+    <InStock>24</InStock>
+    <Name>Pink scarf - Hermes</Name>
+    <Price>970</Price>
+    <ID>156613</ID>
+    <Category>Accessories</Category>
+  </Product>
+  <Product>
+    <InStock>6</InStock>
+    <Name>Three piece suit- Disel</Name>
+    <Price>1500</Price>
+    <ID>926358</ID>
+    <Category>Children</Category>
+  </Product>
+  <Product>
+    <InStock>49</InStock>
+    <Name>boots- Gucci</Name>
+    <Price>5000</Price>
+    <ID>374806</ID>
+    <Category>Women</Category>
   </Product>
 </ProductList>

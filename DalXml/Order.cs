@@ -1,7 +1,10 @@
 ﻿namespace Dal;
 using DalApi;
+using DO;
 using System;
 using System.Collections.Generic;
+using System.Reflection.PortableExecutable;
+using System.Runtime.ConstrainedExecution;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
@@ -14,24 +17,7 @@ using System.Xml.Serialization;
 internal class Order : IOrder
 {
     private List<DO.Order>? OrderList { get; set; }
-    /*public Order()
-    {
-        XElement? root = XDocument.Load(@"..\xml\order.xml")?.Root;
-        DO.Order newOrder = new();
-        OrderList = new List<DO.Order>();
-
-        foreach (var xmlOrder in root?.Elements("Order"))
-        {
-            newOrder.ID = Convert.ToInt32(xmlOrder.Element("ID")?.Value);
-            newOrder.CustomerName = xmlOrder?.Element("CustomerName")?.Value;
-            newOrder.CustomerEmail = xmlOrder?.Element("CustomerEmail")?.Value;
-            newOrder.CustomerAddress = xmlOrder?.Element("CustomerAddress")?.Value;
-            newOrder.OrderDate = Convert.ToDateTime(xmlOrder?.Element("OrderDate")?.Value);
-            newOrder.ShipDate = Convert.ToDateTime(xmlOrder?.Element("ShipDate")?.Value);
-            newOrder.DeliveryDate = Convert.ToDateTime(xmlOrder?.Element("DeliveryDate")?.Value);
-            OrderList.Add(newOrder);
-        }
-    }*/
+   
 
     /// <summary>
     /// create a new order.
@@ -41,29 +27,30 @@ internal class Order : IOrder
     /// <exception cref="AlreadyExistException"></exception>
     public int Create(DO.Order newOrder)
     {
+        List<DO.Order> orderList = ReadAll().ToList();
         XElement? rootConfig = XDocument.Load(@"..\xml\config.xml").Root;
         XElement? id = rootConfig?.Element("orderID");
         int orderId = Convert.ToInt32(id?.Value);
         newOrder.ID = ++orderId;
-        //id.Value = orderId.ToString();
+        
         id?.SetValue(orderId.ToString());
         rootConfig?.Save(@"..\xml\config.xml");
+        XmlRootAttribute xRoot = new ();
+        xRoot.ElementName = "OrdersList";
+        xRoot.IsNullable = true;
         StreamReader reader = new(@"..\xml\order.xml");
-        XmlRootAttribute xRoot = new()
-        {
-            ElementName = "OrdersList",
-            IsNullable = true
-        };        
         XmlSerializer ser = new(typeof(List<DO.Order>), xRoot);
-        OrderList = (List<DO.Order>?)ser.Deserialize(reader);
+        List<DO.Order>? orders = (List<DO.Order>?)ser.Deserialize(reader);
         reader.Close();
-        StreamWriter write = new(@"..\xml\OrdersList.xml");
-        OrderList?.Add(newOrder);
-        ser.Serialize(write, OrderList);
+        orders?.Add(newOrder);
+        StreamWriter write = new(@"..\xml\order.xml");
+        ser.Serialize(write, orders);
         write.Close();
         return newOrder.ID;
     }
 
+    
+    
     /// <summary>
     /// 
     /// </summary>
