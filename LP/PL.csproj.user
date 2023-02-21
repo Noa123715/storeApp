@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="admin\AdminWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="admin\OrderListWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="customer\CartWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +30,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="admin\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="admin\OrderListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="customer\CartWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

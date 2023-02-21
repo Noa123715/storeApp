@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="CompleteOrderWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Orders management" Click="Orders_Click" Margin="53,0,0,0" RenderTransformOrigin="2.133,-4.808" Height="116" Width="284" Style="{StaticResource classicBtn}" VerticalAlignment="Center"/>
+        <Button Content="Products management" Click="Products_click" Margin="450,0,0,0" RenderTransformOrigin="2.133,-4.808" Height="116" Width="284" Style="{StaticResource classicBtn}" VerticalAlignment="Center"/>
     </Grid>
 </Window>

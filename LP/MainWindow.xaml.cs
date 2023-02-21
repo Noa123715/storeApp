@@ -36,7 +36,7 @@ public partial class MainWindow : Window
     /// <param name="e"></param>
     private void LogInAdmin_Click(object sender, RoutedEventArgs e)
     {
-        new ProductListWindow(Bl).Show();
+        new AdminWindow(Bl).Show();
         Close();
     }
 
