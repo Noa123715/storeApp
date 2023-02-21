@@ -16,11 +16,15 @@ public partial class MainWindow : Window
     /// <summary>
     /// constractor of the main window
     /// </summary>
+    public MainWindow()
+    {
+        InitializeComponent();
+        Bl = BlApi.Factory.Get();
+    }
     public MainWindow(BO.Cart ?_currentCart= null)
     {
-        CurrentCart= _currentCart;
         InitializeComponent();
-        //if (Bl is null)
+        CurrentCart = _currentCart?? new();
         Bl = BlApi.Factory.Get();
     }
 

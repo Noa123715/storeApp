@@ -71,7 +71,7 @@ public partial class NewOrderWindow : Window
     }
     public void GoBack_Click(object sender, RoutedEventArgs e)
     {
-        new MainWindow().Show();
+        new MainWindow(CurrentCart).Show();
         this.Close();
     }
 }
