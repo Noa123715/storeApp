@@ -6,22 +6,18 @@
         mc:Ignorable="d"
         Title="OrderTrackingWindow" Height="450" Width="800">
     <Grid>
-        <Label Style="{StaticResource classicLbl}" HorizontalAlignment="Left" Margin="123,115,0,0" Content="Customer Name" VerticalAlignment="Top" Width="143" Height="27"/>
-        <TextBox x:Name="NameCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="283,115,0,0" TextWrapping="Wrap" Text="AAAA" VerticalAlignment="Top" Width="129" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" HorizontalAlignment="Left" Margin="123,158,0,0" Content="Customer Email" VerticalAlignment="Top" Width="143" Height="27"/>
-        <TextBox x:Name="EmailCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="283,158,0,0" TextWrapping="Wrap" Text="A@A" VerticalAlignment="Top" Width="129" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" Margin="123,0,0,0" Content="Customer Address" VerticalAlignment="Center" Width="155" Height="27"/>
-        <TextBox x:Name="AddressCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="283,0,0,0" TextWrapping="Wrap" Text="AAAA" VerticalAlignment="Center" Width="129" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" Content="Customer Details" Margin="135,46,0,0" Width="211" Height="45" Foreground="#FFA895ED" FontSize="22"/>
-        <Label Style="{StaticResource classicLbl}" Content="Order Details" Margin="463,46,0,0" Height="45" Width="177" Foreground="#FFA895ED" FontSize="22"/>
-        <Label Style="{StaticResource classicLbl}" Margin="432,115,0,0" Content="Order Number" Width="120" Height="31"/>
-        <TextBox x:Name="IdOrderText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="580,115,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="120" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" HorizontalAlignment="Left" Margin="432,158,0,0" Content="Order Date" VerticalAlignment="Top" Width="120" Height="27"/>
-        <TextBox x:Name="OrderDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="580,158,0,0" TextWrapping="Wrap" Text="01/01/0001" VerticalAlignment="Top" Width="120" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" Margin="432,0,0,0" Content="Ship Date" Width="120" Height="31" VerticalAlignment="Center"/>
-        <TextBox x:Name="ShipDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="580,0,0,0" TextWrapping="Wrap" Text="01/01/0001" VerticalAlignment="Center" Width="120" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" Margin="432,243,0,0" Content="Delivry Date" Width="120" Height="31"/>
-        <TextBox x:Name="DeliveryDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="580,247,0,0" TextWrapping="Wrap" Text="01/01/0001" VerticalAlignment="Top" Width="120" Height="27"/>
-        <Button x:Name="OrderDetails" Style="{StaticResource classicBtn}" Click="OrderDetails_Click" Content="Order Details" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" Width="144" Height="42"/>
+        <Label x:Name="IdOrderLabel" Style="{StaticResource classicLbl}" Margin="85,33,0,0" Content="Order Number" Width="180" Height="31"/>
+        <Label x:Name="StatusLabel" Style="{StaticResource classicLbl}" Margin="387,33,0,0" Content="Status" Width="74" Height="31"/>
+        <TextBox x:Name="StatusText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="484,33,0,0" TextWrapping="Wrap" Text="AAAA" VerticalAlignment="Top" Width="120" Height="31"/>
+        <Label Style="{StaticResource classicLbl}" Content="Track List" Margin="97,122,0,0" Width="91" Height="36"/>
+        <ListView x:Name="TrackList" d:ItemsSource="{d:SampleData ItemCount=3}" Margin="220,122,235,162">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="DateCol" DisplayMemberBinding="{Binding Path=Item1}" Header="Date" Width="167"/>
+                    <GridViewColumn x:Name="StatusCol" DisplayMemberBinding="{Binding Path=Item2}" Header="Status" Width="165"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Style="{StaticResource classicBtn}" Content="Order Details" Click="OrderDetails_Click" Margin="306,337,0,0" Width="174" Height="37"/>
     </Grid>
 </Window>

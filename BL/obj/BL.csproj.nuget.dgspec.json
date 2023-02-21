@@ -1,31 +1,17 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {}
+    "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {
+    "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj",
+        "projectUniqueName": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj",
         "projectName": "BL",
-        "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj",
+        "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj",
         "packagesPath": "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BL\\obj\\",
-=======
-    "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj",
-        "projectName": "BL",
-        "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj",
-        "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\obj\\",
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+        "outputPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\נועה אבקסיס\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,19 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
-              "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
-                "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj"
+              "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
+                "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj"
               },
-              "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj": {
-                "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj"
-=======
-              "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
-                "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
-              },
-              "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj": {
-                "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj"
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+              "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj": {
+                "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj"
               }
             }
           }
@@ -88,25 +66,14 @@
         }
       }
     },
-<<<<<<< HEAD
-    "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
+    "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj",
+        "projectUniqueName": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj",
         "projectName": "DalFacade",
-        "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj",
+        "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj",
         "packagesPath": "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\obj\\",
-=======
-    "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
-        "projectName": "DalFacade",
-        "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj",
-        "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\obj\\",
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+        "outputPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\נועה אבקסיס\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -154,25 +121,14 @@
         }
       }
     },
-<<<<<<< HEAD
-    "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj": {
+    "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj",
+        "projectUniqueName": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj",
         "projectName": "DalXml",
-        "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj",
+        "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj",
         "packagesPath": "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalXml\\obj\\",
-=======
-    "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
-        "projectName": "DalXml",
-        "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
-        "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\obj\\",
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+        "outputPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalXml\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\נועה אבקסיס\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -189,13 +145,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
-              "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
-                "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj"
-=======
-              "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj": {
-                "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalFacade\\DalFacade.csproj"
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+              "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj": {
+                "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\DalFacade\\DalFacade.csproj"
               }
             }
           }

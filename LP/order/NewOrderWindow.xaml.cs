@@ -14,14 +14,14 @@ namespace PL;
 public partial class NewOrderWindow : Window
 {
     private BlApi.IBL? Bl { get; set; }
-   private BO.Cart? CurrentCart  { get; set; }
+    private BO.Cart? CurrentCart { get; set; }
     /// <summary>
     /// the constractor of the new order window
     /// the function initializes the array of product
     /// and initializes the categories
     /// </summary>
     /// <param name="bl"></param>
-    public NewOrderWindow(BlApi.IBL? bl   , BO.Cart c= null , Window sourcW = null)
+    public NewOrderWindow(BlApi.IBL? bl, BO.Cart c = null, Window sourcW = null)
     {
         InitializeComponent();
         CurrentCart = c ?? new BO.Cart();
@@ -64,7 +64,7 @@ public partial class NewOrderWindow : Window
             new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID).Show();
             Hide();
         }
-        catch(Exception err)
+        catch (Exception err)
         {
             MessageBox.Show(new PlGenericException(err.Message).Message);
         }

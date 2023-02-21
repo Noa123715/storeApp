@@ -1,0 +1,13 @@
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\bin\DalXmlTest.deps.json
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\bin\DalXmlTest.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\bin\DalXmlTest.pdb
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.csproj.AssemblyReference.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.AssemblyInfoInputs.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.AssemblyInfo.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.csproj.CoreCompileInputs.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.csproj.CopyComplete
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\refint\DalXmlTest.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.pdb
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\ref\DalXmlTest.dll

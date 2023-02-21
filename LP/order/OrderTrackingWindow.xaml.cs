@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
+using BlImplementation;
 using BO;
+using PL.order;
+
 namespace PL;
 
 /// <summary>
@@ -7,26 +11,20 @@ namespace PL;
 /// </summary>
 public partial class OrderTrackingWindow : Window
 {
-<<<<<<< HEAD
-    public OrderTrackingWindow(Order orderTrack)
+    private BlApi.IBL? Bl { get; set; }
+    private Cart CurrentCart { get; set; }
+    public OrderTrackingWindow(BlApi.IBL? bl, OrderTracking orderTrack, Cart? _currentCart = null)
     {
-=======
-    Cart currentCart { get; set; }
-    public OrderTrackingWindow(OrderTracking orderTrack, BO.Cart? _currentCart= null)    {
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
         InitializeComponent();
-        currentCart = _currentCart;
-        IdOrderText.Text = orderTrack.ID.ToString();
-        NameCustomerText.Text = orderTrack.CustomerName?.ToString();
-        EmailCustomerText.Text = orderTrack.CustomerEmail?.ToString();
-        AddressCustomerText.Text = orderTrack.CustomerAddress?.ToString();
-        OrderDateText.Text = orderTrack.OrderDate?.ToString();
-        ShipDateText.Text = orderTrack.ShipDate?.ToString();
-        DeliveryDateText.Text = orderTrack.DeliveryDate?.ToString();
+        Bl = bl;
+        IdOrderLabel.Content = $"Order Number {orderTrack.ID}:"; 
+        StatusText.Text = orderTrack.Status.ToString();
+        TrackList.ItemsSource = orderTrack.TrackList;
     }
 
     private void OrderDetails_Click(object sender, RoutedEventArgs e)
     {
-
+        new OrderWindow();
+        Hide();
     }
 }

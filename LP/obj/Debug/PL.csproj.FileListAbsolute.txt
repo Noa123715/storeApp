@@ -278,3 +278,5 @@ C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\r
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\PL.pdb
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\PL.genruntimeconfig.cache
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\ref\PL.dll
+C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\LP\obj\Debug\order\OrderWindow.g.cs
+C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\LP\obj\Debug\order\OrderWindow.baml

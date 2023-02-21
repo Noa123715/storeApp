@@ -69,19 +69,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
+      "projectUniqueName": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
       "projectName": "BlTest",
-      "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
+      "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BlTest\\BlTest.csproj",
       "packagesPath": "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
-      "projectName": "BlTest",
-      "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\BlTest.csproj",
-      "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\obj\\",
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\נועה אבקסיס\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,13 +90,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BL\\BL.csproj"
-=======
-            "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+            "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07961\\BL\\BL.csproj"
             }
           }
         }
@@ -137,17 +124,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-<<<<<<< HEAD
-      "message": "Problem reading the cache file C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07961\\BlTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\BlTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
-    }
-  ]
+  }
 }

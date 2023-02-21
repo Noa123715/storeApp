@@ -16,6 +16,9 @@
     <Compile Update="order\OrderTrackingWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="order\OrderWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="product\ProductListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="order\OrderTrackingWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="order\OrderWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="product\ProductListWindow.xaml">

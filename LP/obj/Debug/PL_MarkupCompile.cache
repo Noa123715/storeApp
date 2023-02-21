@@ -4,29 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\obj\Debug\
-=======
-C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
+C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\LP\obj\Debug\
 PL
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-<<<<<<< HEAD
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\LP\App.xaml
-7-1529094840
+C:\Users\נועה אבקסיס\source\repos\dotNet5783_7729_07961\LP\App.xaml
+8-628103533
 
-121371647964
-197520837822
-=======
-C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_0796\LP\App.xaml
-7-1529094840
-
-121371647964
-197-117825415
->>>>>>> d6862b8f831d961a8d4c8bba78d3600e758affd7
-customer\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
+13-1246014117
+197-340473732
+customer\CartWindow.xaml;MainWindow.xaml;order\CompleteOrderWindow.xaml;order\NewOrderWindow.xaml;order\OrderTrackingWindow.xaml;order\OrderWindow.xaml;product\ProductListWindow.xaml;product\ProductWindow.xaml;
 
 False
 
