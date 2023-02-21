@@ -1,21 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "4zfnXE+f8XCog8fFnizc3X8j8VM9mwt++LbkuTUKirDsXjV4t4FRIpD1i8BOk9cLzQuzDDsRsFxp4bcHFz/Ukw==",
+  "dgSpecHash": "nAaritnIYG+0QolASzftDcuENqBK+oABiuUeVEqJEyoPIY35nwVFohC63GG0P7Wt9ZGJKDIvrv1P2mNcJmC3kA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj",
-=======
-  "dgSpecHash": "6Vbsj5hn+O4WuV/3qPwKKzTicvIT4g57A/M/6HtdAGQ6QGAcpIbt43ePAmcuC9jYA1qp+w69RwaVoYL+ApT6YQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXml\\DalXml.csproj",
->>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
+  "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXml\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }

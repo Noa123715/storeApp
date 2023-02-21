@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProductList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <InStock>30</InStock>
-    <Name>necklace - kate spade</Name>
-    <Price>3000</Price>
-    <ID>542068</ID>
-    <Category>Accessories</Category>
-  </Product>
-  <Product>
     <InStock>25</InStock>
     <Name>Pink scarf - Hermes</Name>
     <Price>970</Price>
@@ -76,5 +69,12 @@
     <Price>4500</Price>
     <ID>234535</ID>
     <Category>Women</Category>
+  </Product>
+  <Product>
+    <InStock>29</InStock>
+    <Name>necklace - kate spade</Name>
+    <Price>3000</Price>
+    <ID>542068</ID>
+    <Category>Accessories</Category>
   </Product>
 </ProductList>

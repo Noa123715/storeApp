@@ -12,12 +12,13 @@ namespace PL;
 public partial class MainWindow : Window
 {
     private static BlApi.IBL? Bl { get; set; }
-    
+    private BO.Cart ?CurrentCart { get; set; }
     /// <summary>
     /// constractor of the main window
     /// </summary>
-    public MainWindow()
+    public MainWindow(BO.Cart ?_currentCart= null)
     {
+        CurrentCart= _currentCart;
         InitializeComponent();
         //if (Bl is null)
         Bl = BlApi.Factory.Get();
@@ -32,14 +33,14 @@ public partial class MainWindow : Window
     private void LogInAdmin_Click(object sender, RoutedEventArgs e)
     {
         new ProductListWindow(Bl).Show();
-        Hide();
+        Close();
     }
 
     private void NewOrder_Click(object sender, RoutedEventArgs e)
     {
 
-        new NewOrderWindow(Bl).Show();
-        Hide();
+        new NewOrderWindow(Bl, CurrentCart).Show();
+        Close();
     }
 
     private void FollowOrder_Click(object sender, RoutedEventArgs e)

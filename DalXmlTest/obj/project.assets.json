@@ -51,19 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalXmlTest\\DalXmlTest.csproj",
+      "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj",
       "projectName": "DalXmlTest",
-      "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalXmlTest\\DalXmlTest.csproj",
-      "packagesPath": "C:\\Users\\אבקסיס נועה1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_07961\\DalXmlTest\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXmlTest\\DalXmlTest.csproj",
-      "projectName": "DalXmlTest",
-      "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXmlTest\\DalXmlTest.csproj",
+      "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\DalXmlTest.csproj",
       "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXmlTest\\obj\\",
->>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
+      "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -84,13 +76,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj": {
-              "projectPath": "C:\\Users\\אבקסיס נועה1\\source\\repos\\dotNet5783_7729_07961\\DalXml\\DalXml.csproj"
-=======
-            "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXml\\DalXml.csproj": {
-              "projectPath": "C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXml\\DalXml.csproj"
->>>>>>> 6f49f66f49dbcb839feeca9c1abcf572432e787b
+            "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj": {
+              "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj"
             }
           }
         }
@@ -129,7 +116,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\source\\repos\\dotNet5783_7729_079611\\DalXmlTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXmlTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }

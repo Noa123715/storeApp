@@ -3,6 +3,8 @@ using BlApi;
 using BO;
 using PL.PO;
 using System;
+using BlImplementation;
+
 namespace PL;
 
 /// <summary>
@@ -66,5 +68,10 @@ public partial class NewOrderWindow : Window
         {
             MessageBox.Show(new PlGenericException(err.Message).Message);
         }
+    }
+    public void GoBack_Click(object sender, RoutedEventArgs e)
+    {
+        new MainWindow().Show();
+        this.Close();
     }
 }
