@@ -287,4 +287,39 @@
     <Amount>1</Amount>
     <Price>4500</Price>
   </OrderItem>
+  <OrderItem>
+    <ID>44</ID>
+    <ProductID>542068</ProductID>
+    <OrderID>0</OrderID>
+    <Amount>1</Amount>
+    <Price>3000</Price>
+  </OrderItem>
+  <OrderItem>
+    <ID>45</ID>
+    <ProductID>925483</ProductID>
+    <OrderID>0</OrderID>
+    <Amount>1</Amount>
+    <Price>2500</Price>
+  </OrderItem>
+  <OrderItem>
+    <ID>46</ID>
+    <ProductID>156613</ProductID>
+    <OrderID>0</OrderID>
+    <Amount>1</Amount>
+    <Price>970</Price>
+  </OrderItem>
+  <OrderItem>
+    <ID>47</ID>
+    <ProductID>926358</ProductID>
+    <OrderID>0</OrderID>
+    <Amount>1</Amount>
+    <Price>1500</Price>
+  </OrderItem>
+  <OrderItem>
+    <ID>48</ID>
+    <ProductID>374806</ProductID>
+    <OrderID>0</OrderID>
+    <Amount>1</Amount>
+    <Price>5000</Price>
+  </OrderItem>
 </OrderItemsList>
