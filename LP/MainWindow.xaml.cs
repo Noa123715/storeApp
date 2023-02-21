@@ -52,7 +52,7 @@ public partial class MainWindow : Window
         try
         {
             int idOrderTrack = Convert.ToInt32(TrackOrderText.Text);
-            OrderTracking orderTrack = Bl.Order.TrackOrder(idOrderTrack);
+            Order orderTrack = Bl.Order.ReadOrderProperties(idOrderTrack);
             new OrderTrackingWindow(orderTrack).Show();
             Hide();
         }

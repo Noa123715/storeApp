@@ -8,7 +8,7 @@
         Title="MainWindow" Height="464" Width="801">
     <Grid>
         <Button x:Name="LogInAdministrator" Content="Administrator" Click="LogInAdmin_Click" Margin="108,149,0,0" Width="178" Height="43" Style="{StaticResource classicBtn}"/>
-        <Label x:Name="HelloLabel" Content="Welcome to our store&#xD;&#xA;What do you want to do?" HorizontalAlignment="Left" Margin="147,60,0,0" VerticalAlignment="Top" Width="459" Height="84" Background="{x:Null}" Foreground="#FF698AED" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="HelloLabel" Content="Welcome to our store&#xD;&#xA;What do you want to do?" HorizontalAlignment="Left" Margin="147,60,0,0" VerticalAlignment="Top" Width="459" Height="84" Style="{StaticResource classicLbl}" FontSize="22"/>
         <Label x:Name="TrackOrderLabel" Content="Enter Order Nuber below: 👇:"  Style="{StaticResource classicLbl}" Margin="535,206,0,0" Width="227"/>
         <TextBox x:Name="TrackOrderText" Text="0000" Margin="576,246,101,153" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF698AED" BorderBrush="#FF698AED" KeyUp="NumberOrderTrack"/>
         <Button Content="new order" Click="NewOrder_Click" Margin="0,149,0,0" RenderTransformOrigin="2.133,-4.808" Height="43" Width="124" Style="{StaticResource classicBtn}" HorizontalAlignment="Center"/>
