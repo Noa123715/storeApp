@@ -7,7 +7,7 @@ public class OrderTracking
 {
     public int ID { get; set; }
     public eOrderStatus Status { get; set; }
-    public List<(DateTime?, string)> TrackList { get; set; } = new List<(DateTime?, string)>();
+    public List<Tuple<DateTime?, string>> TrackList { get; set; } = new();
 
     //overriding the ToString function for printing the order-tracking's details
     public override string ToString()

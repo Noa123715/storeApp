@@ -1,4 +1,5 @@
 ﻿using BlApi;
+using BO;
 using Dal;
 using DalApi;
 namespace BlImplementation;
@@ -131,7 +132,7 @@ internal class BLOrder : BlApi.IOrder
             IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == orderID);
             foreach (var OrderItem in DoOrderItems)
             {
-                BO.OrderItem orderItem = new BO.OrderItem();
+                BO.OrderItem orderItem = new();
                 orderItem.ID = OrderItem.ID;
                 orderItem.ProductID = OrderItem.ProductID;
                 orderItem.ProductName = DalList.Product.Read(p => p.ID == OrderItem.ProductID).Name;
@@ -210,23 +211,23 @@ internal class BLOrder : BlApi.IOrder
     {
         try
         {
-           DO.Order order = DalList.Order.Read(o=>o.ID==orderID);
+            DO.Order order = DalList.Order.Read(o => o.ID == orderID);
             BO.OrderTracking BoOrderTracking = new();
-           
-            BoOrderTracking.TrackList.Add((order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
+            BoOrderTracking.ID = order.ID;
+            BoOrderTracking.TrackList.Add(new Tuple<DateTime?, string>(order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
             BoOrderTracking.Status = BO.eOrderStatus.Ordered;
             if (order.ShipDate > DateTime.MinValue)
             {
-                BoOrderTracking.TrackList.Add((order.ShipDate, BO.eOrderStatus.Shipped.ToString()));
+                BoOrderTracking.TrackList.Add(new Tuple<DateTime?, string>(order.ShipDate, BO.eOrderStatus.Shipped.ToString()));
                 BoOrderTracking.Status = BO.eOrderStatus.Shipped;
                 if (order.DeliveryDate > DateTime.MinValue)
                 {
-                    BoOrderTracking.TrackList.Add((order.DeliveryDate, BO.eOrderStatus.Delivered.ToString()));
+                    BoOrderTracking.TrackList.Add(new Tuple<DateTime?, string>(order.DeliveryDate, BO.eOrderStatus.Delivered.ToString()));
                     BoOrderTracking.Status = BO.eOrderStatus.Delivered;
                 }
             }
             return BoOrderTracking;
-        } 
+        }
         catch (NotExistException err)
         {
             throw new BlNotExistException(err);

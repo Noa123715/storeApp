@@ -177,7 +177,7 @@ public partial class ProductWindow : Window
         }
     }
     /// <summary>
-    /// error-Order item
+    /// error-MyOrder item
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

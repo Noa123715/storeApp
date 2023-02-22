@@ -19,8 +19,8 @@ public partial class OrderTrackingWindow : Window
         InitializeComponent();
         Bl = bl;
         Id = orderTrack.ID;
-        IdOrderLabel.Content = $"Order Number {orderTrack.ID}:";
-        StatusText.Text = orderTrack.Status.ToString();
+        IdOrderLabel.Content = $"MyOrder Number {orderTrack.ID}:";
+        this.DataContext = orderTrack;
         TrackList.ItemsSource = orderTrack.TrackList;
     }
 
