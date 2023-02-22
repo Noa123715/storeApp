@@ -24,8 +24,8 @@ public partial class MainWindow : Window
     public MainWindow(BO.Cart ?_currentCart= null)
     {
         InitializeComponent();
-        Bl = BlApi.Factory.Get();
         CurrentCart = _currentCart?? new();
+        Bl = BlApi.Factory.Get();
     }
 
     /// <summary>
@@ -53,7 +53,7 @@ public partial class MainWindow : Window
         {
             int idOrderTrack = Convert.ToInt32(TrackOrderText.Text);
             OrderTracking orderTrack = Bl.Order.TrackOrder(idOrderTrack);
-            new OrderTrackingWindow(Bl, orderTrack).Show();
+            new OrderTrackingWindow(Bl,orderTrack).Show();
             Hide();
         }
         catch(BlNotExistException ex)

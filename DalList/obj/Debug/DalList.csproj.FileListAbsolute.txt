@@ -71,11 +71,3 @@ C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalList\obj\De
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalList\obj\Debug\ref\DalList.dll
 C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalList\obj\Debug\DalList.pdb
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\DalList\obj\Debug\refint\DalList.dll
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\DalList.csproj.AssemblyReference.cache
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\DalList.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\DalList.AssemblyInfoInputs.cache
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\DalList.AssemblyInfo.cs
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\DalList.csproj.CoreCompileInputs.cache
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\DalList.dll
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\refint\DalList.dll
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalList\obj\Debug\DalList.pdb

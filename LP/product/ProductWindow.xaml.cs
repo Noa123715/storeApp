@@ -103,7 +103,7 @@ public partial class ProductWindow : Window
         {
             new NewOrderWindow(Bl, cart).Show();
             Hide();
-        }       
+        }
     }
     /// <summary>
     /// when the button:"add a product"/button:"update the product" is press the function is activated
@@ -171,13 +171,13 @@ public partial class ProductWindow : Window
         {
             MessageBox.Show(err.Message, "error- out of stock", MessageBoxButton.OK, MessageBoxImage.Error);
         }
-        catch(Exception err)
+        catch (Exception err)
         {
             MessageBox.Show(new PlGenericException(err.Message).Message);
         }
     }
     /// <summary>
-    /// error-order item
+    /// error-Order item
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -186,7 +186,7 @@ public partial class ProductWindow : Window
         int id = int.Parse(IdTextBox.Text);
         MessageBoxResult result = MessageBox.Show(
                       "Are you sure you want to delete this product?",
-                      "Delete Product",  
+                      "Delete Product",
                       MessageBoxButton.YesNo,
                       MessageBoxImage.Question);
         if (result == MessageBoxResult.Yes)
