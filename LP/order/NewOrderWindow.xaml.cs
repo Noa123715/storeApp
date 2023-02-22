@@ -16,7 +16,7 @@ public partial class NewOrderWindow : Window
     private BlApi.IBL? Bl { get; set; }
     private BO.Cart? CurrentCart { get; set; }
     /// <summary>
-    /// the constractor of the new Order window
+    /// the constractor of the new MyOrder window
     /// the function initializes the array of product
     /// and initializes the categories
     /// </summary>

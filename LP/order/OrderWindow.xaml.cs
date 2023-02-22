@@ -11,7 +11,7 @@ namespace PL;
 public partial class OrderWindow : Window
 {
     private BlApi.IBL? Bl { get; set; }
-    private BO.Order? Order { get; set; }
+    private BO.Order? MyOrder { get; set; }
     private bool IsAdmin { get; set; }
     public int? OrderId { get; set; }
     private ObservableCollection<BO.Order>? OrderForLists { get; set; }
@@ -20,9 +20,30 @@ public partial class OrderWindow : Window
         InitializeComponent();
         Bl = bl;
         IsAdmin = isAdmin;
-        BO.Order order = Bl.Order.ReadOrderProperties(id);
-        IdOrder.Content = $"Order Number {order.ID}";
-        this.DataContext = order;
-        OrderItemList.ItemsSource = order.Items;
+        MyOrder = Bl.Order.ReadOrderProperties(id);
+        IdOrder.Content = $"MyOrder Number {MyOrder.ID}";
+        this.DataContext = MyOrder;
+        OrderItemList.ItemsSource = MyOrder.Items;
+    }
+
+    private void GoBackBtn_Click(object sender, RoutedEventArgs e)
+    {
+        if(IsAdmin)
+        {
+            new OrderListWindow(Bl).Show();
+            Hide();
+        }
+        else
+        {
+            BO.OrderTracking order = new()
+            {
+                ID = MyOrder.ID,
+                Status = MyOrder.Status,
+                TrackList = new()
+            };
+            order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.OrderDate, "OrderDate"));
+            order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.DeliveryDate, "DeliveryDate"));
+            new OrderTrackingWindow(Bl, order).Show();
+        }
     }
 }
