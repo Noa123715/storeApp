@@ -7,15 +7,6 @@
         mc:Ignorable="d"
         Title="OrderListWindow" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="ProductListView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="UpdateProduct" FontSize="18" >
-            <ListView.View>
-                <GridView AllowsColumnReorder="true" >
-                    <GridViewColumn x:Name="ProductId" DisplayMemberBinding="{Binding Path=ID}" Header="ID" Width="100"/>
-                    <GridViewColumn x:Name="ProductName" DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="250"/>
-                    <GridViewColumn x:Name="ProductPrice" DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="100"/>
-                    <GridViewColumn x:Name="ProductCategory" DisplayMemberBinding="{Binding Path=Category}" Header="Category" Width="120"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        
     </Grid>
 </Window>

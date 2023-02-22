@@ -7,22 +7,61 @@
         mc:Ignorable="d"
         Title="OrderWindow" Height="450" Width="800">
     <Grid>
-        <Label Style="{StaticResource classicLbl}" Margin="40,128,0,0" Content="Customer Name" Width="142" Height="38"/>
-        <TextBox x:Name="NameCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="199,128,0,0" TextWrapping="Wrap" Text="AAAA" VerticalAlignment="Top" Width="129" Height="38"/>
-        <Label Style="{StaticResource classicLbl}" Margin="40,170,0,0" Content="Customer Email" Width="142" Height="34"/>
-        <TextBox x:Name="EmailCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="199,172,0,0" TextWrapping="Wrap" Text="A@A" VerticalAlignment="Top" Width="129" Height="32"/>
-        <Label Style="{StaticResource classicLbl}" Margin="40,217,0,0" Content="Customer Address" Width="158" Height="31"/>
-        <TextBox x:Name="AddressCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="199,217,0,0" TextWrapping="Wrap" Text="AAAA" VerticalAlignment="Top" Width="129" Height="31"/>
-        <Label Style="{StaticResource classicLbl}" Content="Customer Details" Margin="40,78,0,0" Width="212" Height="45" Foreground="#FFA895ED" FontSize="22"/>
-        <Label Style="{StaticResource classicLbl}" Content="Order Details" Margin="348,78,0,0" Height="45" Width="177" Foreground="#FFA895ED" FontSize="22"/>
-        <Label Style="{StaticResource classicLbl}" Margin="40,34,0,0" Content="Order Number" Width="206" Height="39" FontSize="20"/>
-        <Label Style="{StaticResource classicLbl}" Margin="348,168,0,0" Content="Order Date" Width="119" Height="38"/>
-        <TextBox x:Name="OrderDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="460,172,0,0" TextWrapping="Wrap" Text="01/01/0001" VerticalAlignment="Top" Width="120" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" Margin="348,0,0,0" Content="Ship Date" Width="120" Height="31" VerticalAlignment="Center"/>
-        <TextBox x:Name="ShipDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="460,206,0,0" TextWrapping="Wrap" Text="01/01/0001" VerticalAlignment="Top" Width="120" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" Margin="347,238,0,0" Content="Delivry Date" Width="120" Height="31"/>
-        <TextBox x:Name="DeliveryDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="460,240,0,0" TextWrapping="Wrap" Text="01/01/0001" VerticalAlignment="Top" Width="120" Height="27"/>
-        <Label Style="{StaticResource classicLbl}" Margin="348,128,0,0" Content="Status" Width="119" Height="35"/>
-        <TextBox x:Name="OrderStatusText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="460,130,0,0" TextWrapping="Wrap" Text="AAAA" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Label Style="{StaticResource classicLbl}" Margin="16,104,0,0" Content="Customer Name" Width="142" Height="38"/>
+        <TextBox x:Name="NameCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="163,104,0,0" TextWrapping="Wrap" Text="{Binding Path=CustomerName, Mode=TwoWay}" VerticalAlignment="Top" Width="129" Height="38"/>
+        <Label Style="{StaticResource classicLbl}" Margin="16,142,0,0" Content="Customer Email" Width="142" Height="34"/>
+        <TextBox x:Name="EmailCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="163,146,0,0" TextWrapping="Wrap" Text="{Binding Path=CustomerEmail, Mode=TwoWay}" VerticalAlignment="Top" Width="129" Height="32"/>
+        <Label Style="{StaticResource classicLbl}" Margin="16,176,0,0" Content="Customer Address" Width="158" Height="31"/>
+        <TextBox x:Name="AddressCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="163,183,0,0" TextWrapping="Wrap" Text="{Binding Path=CustomerAddress, Mode=TwoWay}" VerticalAlignment="Top" Width="129" Height="31"/>
+        <Label Style="{StaticResource classicLbl}" Content="Customer Details:" Margin="16,54,0,0" Width="212" Height="45" Foreground="#FFA895ED" FontSize="22"/>
+        <Label Style="{StaticResource classicLbl}" Content="Order Details:" Margin="16,217,0,0" Height="45" Width="177" Foreground="#FFA895ED" FontSize="22"/>
+        <Label x:Name="IdOrder" Style="{StaticResource classicLbl}" Margin="16,10,0,0" Content="Order Number" Width="206" Height="39" FontSize="20"/>
+        <Label Style="{StaticResource classicLbl}" Margin="16,288,0,0" Content="Order Date" Width="119" Height="38"/>
+        <TextBox x:Name="OrderDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="163,293,0,0" TextWrapping="Wrap" Text="{Binding Path=OrderDate, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Label Style="{StaticResource classicLbl}" Margin="15,326,0,0" Content="Ship Date" Width="120" Height="31"/>
+        <TextBox x:Name="ShipDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="163,331,0,0" TextWrapping="Wrap" Text="{Binding Path=ShipDate, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="31"/>
+        <Label Style="{StaticResource classicLbl}" Margin="16,362,0,0" Content="Delivry Date" Width="120" Height="31"/>
+        <TextBox x:Name="DeliveryDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="163,367,0,0" TextWrapping="Wrap" Text="{Binding Path=DeliveryDate, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Style="{StaticResource classicLbl}" Margin="16,254,0,0" Content="Status" Width="119" Height="34"/>
+        <TextBox x:Name="OrderStatusText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="163,255,0,0" TextWrapping="Wrap" Text="{Binding Path=Status, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Label Style="{StaticResource classicLbl}" Content="Items:" Margin="297,5,0,0" Width="78" Height="45" Foreground="#FFA895ED" FontSize="22"/>
+        <ListView x:Name="OrderItemList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="297,55,10,171">
+            <ListView.View>
+                <GridView AllowsColumnReorder="True">
+                    <GridViewColumn x:Name="ProductID" Header="ID" DisplayMemberBinding="{Binding Path=ProductID}"/>
+                    <GridViewColumn x:Name="ProductName" Header="Name" Width="128" DisplayMemberBinding="{Binding Path=ProductName}"/>
+                    <GridViewColumn x:Name="Amount" Header="Amount" Width="65" DisplayMemberBinding="{Binding Path=Amount}"/>
+                    <GridViewColumn x:Name="Price" Header="Price" Width="50" DisplayMemberBinding="{Binding Path=Price}"/>
+                    <GridViewColumn x:Name="TotalPrice" Header="TotalPrice" Width="65" DisplayMemberBinding="{Binding Path=TotalPrice}"/>
+                    <GridViewColumn Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Tag="{Binding ProductID}" Content="+" Width="15"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Tag="{Binding ProductID}" Content="-" Width="15"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Tag="{Binding ProductID}" Content="Delete"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="UpDateBtn" Style="{StaticResource classicBtn}" Content="UpDate" HorizontalAlignment="Left" Margin="331,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
+        <Button x:Name="AddBtn" Style="{StaticResource classicBtn}" Content="Add" HorizontalAlignment="Left" Margin="492,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
+        <Button x:Name="GoBackBtn" Style="{StaticResource classicBtn}" Content="GoBack" HorizontalAlignment="Left" Margin="646,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
+        <Label Style="{StaticResource classicLbl}" Margin="360,287,0,0" Content="Total Price" Width="119" Height="34"/>
+        <TextBox x:Name="TotalPriceText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="484,288,0,0" TextWrapping="Wrap" Text="{Binding Path=TotalPrice, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="33"/>
+
     </Grid>
 </Window>

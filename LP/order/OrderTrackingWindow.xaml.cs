@@ -2,7 +2,7 @@
 using System.Windows;
 using BlImplementation;
 using BO;
-using PL.order;
+using PL;
 
 namespace PL;
 
@@ -12,19 +12,21 @@ namespace PL;
 public partial class OrderTrackingWindow : Window
 {
     private BlApi.IBL? Bl { get; set; }
+    private int Id { get; set; }
     private Cart CurrentCart { get; set; }
-    public OrderTrackingWindow(BlApi.IBL? bl, OrderTracking orderTrack, Cart? _currentCart = null)
+    public OrderTrackingWindow(BlApi.IBL? bl, OrderTracking orderTrack, Cart? currentCart = null)
     {
         InitializeComponent();
         Bl = bl;
-        IdOrderLabel.Content = $"Order Number {orderTrack.ID}:"; 
+        Id = orderTrack.ID;
+        IdOrderLabel.Content = $"Order Number {orderTrack.ID}:";
         StatusText.Text = orderTrack.Status.ToString();
         TrackList.ItemsSource = orderTrack.TrackList;
     }
 
     private void OrderDetails_Click(object sender, RoutedEventArgs e)
     {
-        new OrderWindow();
+        new OrderWindow(Bl, Id).Show();
         Hide();
     }
 }

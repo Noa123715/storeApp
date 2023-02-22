@@ -40,11 +40,3 @@ C:\Users\אבקסיס נועה\Source\Repos\dotNet5783_7729_0796\DalTest\obj\Deb
 C:\Users\אבקסיס נועה\Source\Repos\dotNet5783_7729_0796\DalTest\obj\Debug\DalTest.pdb
 C:\Users\אבקסיס נועה\Source\Repos\dotNet5783_7729_0796\DalTest\obj\Debug\DalTest.genruntimeconfig.cache
 C:\Users\אבקסיס נועה\Source\Repos\dotNet5783_7729_0796\DalTest\obj\Debug\ref\DalTest.dll
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\DalTest.csproj.AssemblyReference.cache
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\DalTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\DalTest.AssemblyInfoInputs.cache
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\DalTest.AssemblyInfo.cs
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\DalTest.csproj.CoreCompileInputs.cache
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\DalTest.dll
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\refint\DalTest.dll
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalTest\obj\Debug\DalTest.pdb
