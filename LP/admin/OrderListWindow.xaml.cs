@@ -33,7 +33,7 @@ public partial class OrderListWindow : Window
 
     private void OrderListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-       new OrderWindow().Show();
+       new OrderWindow(Bl, (OrderListView?.SelectedItem as BO.OrderForList).ID, true).Show();
         this.Close();   
         
     }

@@ -9,7 +9,7 @@
     <Grid>
         <Label x:Name="orderListLbl" Content="orders list: " HorizontalAlignment="Left" Margin="25,21,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFEC7989" FontWeight="Bold" FontSize="22"/>
 
-        <ListView x:Name="OrderListView" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OrderListView_MouseDoubleClick" FontSize="18" Margin="25,75,46,59" >
+        <ListView x:Name="OrderListView" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OrderListView_MouseDoubleClick" FontSize="18" Margin="25,75,46,113" >
             <ListView.View>
                 <GridView AllowsColumnReorder="true" >
                     <GridViewColumn x:Name="OrderId" DisplayMemberBinding="{Binding Path=ID}" Header="ID" Width="100"/>
@@ -21,7 +21,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Margin="48,384,0,0" Width="105" Height="40"/>
+        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Margin="36,357,0,0" Width="106" Height="40"/>
 
     </Grid>
 </Window>
