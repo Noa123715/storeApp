@@ -26,7 +26,7 @@ public partial class OrderTrackingWindow : Window
 
     private void OrderDetails_Click(object sender, RoutedEventArgs e)
     {
-        new OrderWindow(Bl, Id).Show();
+        new OrderWindow(Bl, Id, false).Show();
         Hide();
     }
 }

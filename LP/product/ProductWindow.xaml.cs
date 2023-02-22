@@ -211,7 +211,7 @@ public partial class ProductWindow : Window
         }
         catch(BlNotExistException err)
         {
-            MessageBox.Show("the product not found or missing ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
+            MessageBox.Show("the product not found or missing ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         catch (Exception err)
         {

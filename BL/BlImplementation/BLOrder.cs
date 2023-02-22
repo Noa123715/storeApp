@@ -2,6 +2,8 @@
 using BO;
 using Dal;
 using DalApi;
+using System.Diagnostics;
+
 namespace BlImplementation;
 
 /// <summary>
@@ -34,7 +36,7 @@ internal class BLOrder : BlApi.IOrder
             orderForList.CustomerName = order.CustomerName;
             orderForList.TotalPrice = 0;
             orderForList.AmountOfItems = 0;
-            IEnumerable<DO.OrderItem> orderItems = DalList.OrderItem.ReadAll(oi=> oi.OrderID==order.ID);
+            IEnumerable<DO.OrderItem> orderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == order.ID);
             foreach (var orderItem in orderItems)
             {
                 orderForList.TotalPrice += orderItem.Price * orderItem.Amount;
@@ -68,7 +70,7 @@ internal class BLOrder : BlApi.IOrder
                 throw new BlNegativeInputException();
             DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
             var DoOrderItems = DalList.OrderItem.ReadAll();
-           
+
             BoOrder.ID = orderID;
             BoOrder.CustomerName = DoOrder.CustomerName;
             BoOrder.CustomerEmail = DoOrder.CustomerEmail;
@@ -115,9 +117,9 @@ internal class BLOrder : BlApi.IOrder
         BO.Order BoOrder = new BO.Order();
         try
         {
-            if(orderID <= 0) throw new BlNegativeInputException();
-            DO.Order DoOrder = DalList.Order.Read(o=>o.ID==orderID);
-            
+            if (orderID <= 0) throw new BlNegativeInputException();
+            DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
+
             DoOrder.ShipDate = DateTime.Now;
             DalList.Order.UpDate(DoOrder);
             BoOrder.ID = DoOrder.ID;
@@ -157,12 +159,12 @@ internal class BLOrder : BlApi.IOrder
     /// <returns>the updates order</returns>
     /// <exception cref="BlWrongDateSequenceException"></exception>
     /// <exception cref="BlNotExistException"></exception>
-    public BO.Order UpdateOrderDelivery(int orderID)
+    public Order UpdateOrderDelivery(int orderID)
     {
-        BO.Order BoOrder = new BO.Order();
+        Order BoOrder = new();
         try
         {
-            DO.Order DoOrder = DalList.Order.Read(o=>o.ID==  orderID);
+            DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
 
             if (DoOrder.ShipDate == DateTime.MinValue)
                 throw new BlWrongDateSequenceException();
@@ -188,7 +190,7 @@ internal class BLOrder : BlApi.IOrder
                     Amount = oi.Amount,
                     Price = oi.Price,
                     TotalPrice = oi.Amount * oi.Price,
-                };               
+                };
                 BoOrder.TotalPrice += orderItem.TotalPrice;
                 BoOrder.Items.Add(orderItem);
             }
@@ -206,7 +208,7 @@ internal class BLOrder : BlApi.IOrder
     /// <param name="orderID">to find the require order</param>
     /// <returns> list off all stages in delivery with their dates. </returns>
     /// <exception cref="BlNotExistException"></exception>
-    
+
     public BO.OrderTracking TrackOrder(int orderID)
     {
         try
@@ -233,6 +235,48 @@ internal class BLOrder : BlApi.IOrder
             throw new BlNotExistException(err);
         }
     }
+
+    public Order AddAmount(int orderId, int productId, int? addOrSubstract = null)
+    {
+        try
+        {
+            DO.OrderItem oi;
+            if (addOrSubstract != null)
+            {
+                oi = DalList.OrderItem.Read(o => o.OrderID == orderId && o.ProductID == productId);
+                if (addOrSubstract == 1)
+                {
+                    oi.Amount++;
+                    DalList.OrderItem.UpDate(oi);
+                }
+                else if (addOrSubstract == -1)
+                {
+                    oi.Amount--;
+                    DalList.OrderItem.UpDate(oi);
+                }
+                else if (addOrSubstract == 0)
+                    DalList.OrderItem.Delete(oi.ID);
+                else
+                    throw new BlInValidInputException();
+            }
+            else
+            {
+                oi = new();
+                oi.OrderID = orderId;
+                oi.ProductID = productId;
+                oi.Price = DalList.Product.Read(p => p.ID == productId).Price;
+                oi.Amount = 1;
+                DalList.OrderItem.Create(oi);
+            }
+        }
+        catch (BlApi.BlInValidInputException ex)
+        {
+            throw new Exception();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception();
+        }
+        return ReadOrderProperties(orderId);
+    }
 }
-
-

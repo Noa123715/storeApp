@@ -15,7 +15,7 @@
         <TextBox x:Name="AddressCustomerText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="151,183,0,0" TextWrapping="Wrap" Text="{Binding Path=CustomerAddress, Mode=TwoWay}" VerticalAlignment="Top" Width="141" Height="31"/>
         <Label Style="{StaticResource classicLbl}" Content="Customer Details:" Margin="16,54,0,0" Width="212" Height="45" Foreground="#FFA895ED" FontSize="22"/>
         <Label Style="{StaticResource classicLbl}" Content="Order Details:" Margin="16,217,0,0" Height="45" Width="177" Foreground="#FFA895ED" FontSize="22"/>
-        <Label x:Name="IdOrder" Style="{StaticResource classicLbl}" Margin="16,10,0,0" Content="Order Number" Width="206" Height="39" FontSize="20"/>
+        <Label x:Name="IdOrder" Style="{StaticResource classicLbl}" Margin="16,10,0,0" Content="Order Number" Width="206" Height="39" FontSize="20" FontWeight="Bold"/>
         <Label Style="{StaticResource classicLbl}" Margin="16,288,0,0" Content="Order Date" Width="119" Height="38"/>
         <TextBox x:Name="OrderDateText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="104,293,0,0" TextWrapping="Wrap" Text="{Binding Path=OrderDate, Mode=TwoWay}" VerticalAlignment="Top" Width="179" Height="33"/>
         <Label Style="{StaticResource classicLbl}" Margin="15,326,0,0" Content="Ship Date" Width="120" Height="31"/>
@@ -36,29 +36,29 @@
                     <GridViewColumn Width="30">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding ProductID}" Content="+" Width="15"/>
+                                <Button Tag="{Binding ProductID}" Click="AddBtn_Click" Content="+" Width="15"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="30">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding ProductID}" Content="-" Width="15"/>
+                                <Button Tag="{Binding ProductID}" Click="MinusBtn_Click" Content="-" Width="15"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="50">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding ProductID}" Content="Delete"/>
+                                <Button Tag="{Binding ProductID}" Click="DeleteBtn_Click" Content="Delete"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="UpDateBtn" Style="{StaticResource classicBtn}" Content="UpDate" HorizontalAlignment="Left" Margin="331,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
-        <Button x:Name="AddBtn" Style="{StaticResource classicBtn}" Content="Add" HorizontalAlignment="Left" Margin="492,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
+        <Button x:Name="UpDateBtn" Click="UpDateBtn_Click" Style="{StaticResource classicBtn}" Content="UpDate Status" Margin="297,360,0,0" Width="182" Height="56"/>
+        <Button x:Name="AddOrderBtn" Click="AddOrderBtn_Click" Style="{StaticResource classicBtn}" Content="Add Product" Margin="492,360,0,0" Width="149" Height="56"/>
         <Button x:Name="GoBackBtn" Style="{StaticResource classicBtn}" Content="GoBack"  Click="GoBackBtn_Click" HorizontalAlignment="Left" Margin="646,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
         <Label Style="{StaticResource classicLbl}" Margin="360,287,0,0" Content="Total Price" Width="119" Height="34"/>
         <TextBox x:Name="TotalPriceText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="484,288,0,0" TextWrapping="Wrap" Text="{Binding Path=TotalPrice, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="33"/>
