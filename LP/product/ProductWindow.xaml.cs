@@ -25,7 +25,7 @@ public partial class ProductWindow : Window
     /// <param name="pList_id"></param>
 
     public ProductWindow(BlApi.IBL ProductList_bl, bool isAdmin, int? pList_id = null, BO.Cart? _cart = null)
-    {
+    { 
         InitializeComponent();
         Bl = ProductList_bl;
         cart = _cart ?? new();
@@ -183,27 +183,39 @@ public partial class ProductWindow : Window
     /// <param name="e"></param>
     private void deleteProduct_Click(object sender, RoutedEventArgs e)
     {
-        int id = int.Parse(IdTextBox.Text);
-        MessageBoxResult result = MessageBox.Show(
-                      "Are you sure you want to delete this product?",
-                      "Delete Product",
-                      MessageBoxButton.YesNo,
-                      MessageBoxImage.Question);
-        if (result == MessageBoxResult.Yes)
+        try
         {
-            Bl.Product.DeleteProduct(id);
-            // if the process ends successfully, return to the previous window
-            MessageBox.Show(
-                "Delete Successfull 👍",
-                "Delete Product",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
-            new ProductListWindow(Bl).Show();
-            Hide();
+            int id = int.Parse(IdTextBox.Text);
+           
+            MessageBoxResult result = MessageBox.Show(
+                          "Are you sure you want to delete this product?",
+                          "Delete Product",
+                          MessageBoxButton.YesNo,
+                          MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                Bl.Product.DeleteProduct(id);
+                // if the process ends successfully, return to the previous window
+                MessageBox.Show(
+                    "Delete Successfull 👍",
+                    "Delete Product",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+                new ProductListWindow(Bl).Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("The deletion did not occur", "Delete Product");
+            }
         }
-        else
+        catch(BlNotExistException err)
         {
-            MessageBox.Show("The deletion did not occur", "Delete Product");
+            MessageBox.Show("the product not found or missing ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
         }
     }
 
