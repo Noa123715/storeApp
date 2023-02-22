@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="OrderListWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label x:Name="orderListLbl" Content="orders list: " HorizontalAlignment="Left" Margin="25,21,0,0" VerticalAlignment="Top" Width="128" Foreground="#FFEC7989" FontWeight="Bold" FontSize="22"/>
+
+        <ListView x:Name="OrderListView" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OrderListView_MouseDoubleClick" FontSize="18" Margin="25,75,46,113" >
+            <ListView.View>
+                <GridView AllowsColumnReorder="true" >
+                    <GridViewColumn x:Name="OrderId" DisplayMemberBinding="{Binding Path=ID}" Header="ID" Width="100"/>
+                    <GridViewColumn x:Name="CustomerName" DisplayMemberBinding="{Binding Path=CustomerName}" Header="Name" Width="250"/>
+                    <GridViewColumn x:Name="ProductPrice" DisplayMemberBinding="{Binding Path=TotalPrice}" Header="Total Price" Width="100"/>
+                    <GridViewColumn x:Name="ProductCategory" DisplayMemberBinding="{Binding Path=Status}" Header="Status" Width="120"/>
+                    <GridViewColumn x:Name="AmountOfItems" DisplayMemberBinding="{Binding Path=AmountOfItems}" Header="Amount of items" Width="140"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Margin="36,357,0,0" Width="106" Height="40"/>
+
     </Grid>
 </Window>
