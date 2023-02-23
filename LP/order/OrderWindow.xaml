@@ -58,7 +58,7 @@
             </ListView.View>
         </ListView>
         <Button x:Name="UpDateBtn" Click="UpDateBtn_Click" Style="{StaticResource classicBtn}" Content="UpDate Status" Margin="297,360,0,0" Width="182" Height="56"/>
-        <Button x:Name="AddOrderBtn" Click="AddOrderBtn_Click" Style="{StaticResource classicBtn}" Content="Add Product" Margin="492,360,0,0" Width="149" Height="56"/>
+        <Button x:Name="AddOrderBtn" Click="AddProductBtn_Click" Style="{StaticResource classicBtn}" Content="Add Product" Margin="492,360,0,0" Width="149" Height="56"/>
         <Button x:Name="GoBackBtn" Style="{StaticResource classicBtn}" Content="GoBack"  Click="GoBackBtn_Click" HorizontalAlignment="Left" Margin="646,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
         <Label Style="{StaticResource classicLbl}" Margin="360,287,0,0" Content="Total Price" Width="119" Height="34"/>
         <TextBox x:Name="TotalPriceText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="484,288,0,0" TextWrapping="Wrap" Text="{Binding Path=TotalPrice, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="33"/>

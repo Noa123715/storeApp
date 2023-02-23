@@ -37,122 +37,200 @@ public partial class OrderWindow : Window
         }
     }
 
+
+    /// <summary>
+    /// GoBackBtn_Click method- Return to the order list screen for admin and to order tracking screen for customer.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void GoBackBtn_Click(object sender, RoutedEventArgs e)
     {
-        if (IsAdmin)
+        try
         {
-            new OrderListWindow(Bl).Show();
-            Hide();
-        }
-        else
-        {
-            BO.OrderTracking order = new()
+            if (IsAdmin)
             {
-                ID = MyOrder.ID,
-                Status = MyOrder.Status,
-                TrackList = new()
-            };
-            order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.OrderDate, "OrderDate"));
-            order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.DeliveryDate, "DeliveryDate"));
-            order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.ShipDate, "ShipDate"));
-            new OrderTrackingWindow(Bl, order).Show();
-            Hide();
-        }
-    }
-
-    private void MinusBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (!IsAdmin)
-        {
-            MessageBox.Show(
-                "We are so sorry! but You can't change your order now",
-                "Error",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-                );
-        }
-        else
-        {
-            var productId = ((Button)sender).Tag;
-            MyOrder = Bl.Order.AddAmount(MyOrder.ID, Convert.ToInt32(productId), -1);
-            OrderItemList.ItemsSource = MyOrder.Items;
-        }
-    }
-
-    private void AddBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (!IsAdmin)
-        {
-            MessageBox.Show(
-                "We are so sorry! but You can't change your order now",
-                "Error",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-                );
-        }
-        else
-        {
-            var productId = ((Button)sender).Tag;
-            MyOrder = Bl.Order.AddAmount(MyOrder.ID, Convert.ToInt32(productId), 1);
-            OrderItemList.ItemsSource = MyOrder.Items;
-        }
-    }
-
-    private void DeleteBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (!IsAdmin)
-        {
-            MessageBox.Show(
-                "We are so sorry! but You can't delete your order now",
-                "Error",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-                );
-        }
-        else
-        {
-            var productId = ((Button)sender).Tag;
-            MyOrder = Bl.Order.AddAmount(MyOrder.ID, Convert.ToInt32(productId), 0);
-            OrderItemList.ItemsSource = MyOrder.Items;
-        }
-    }
-
-    private void AddOrderBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (IsAdmin)
-        {
-            new ProductListWindow(Bl).Show();
-            //Hide();
-        }
-    }
-
-    private void UpDateBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (IsAdmin)
-        {
-            if (MyOrder?.Status == BO.eOrderStatus.Delivered)
-                return;
-            else if (MyOrder?.Status == BO.eOrderStatus.Shipped)
-            {
-                Bl.Order.UpdateOrderDelivery(Convert.ToInt32(OrderId));
-                this.Close();
+                new OrderListWindow(Bl).Show();
+                Hide();
             }
             else
             {
-                Bl.Order.UpdateOrderSent(Convert.ToInt32(OrderId));
-                this.Close();
+                BO.OrderTracking order = new()
+                {
+                    ID = MyOrder.ID,
+                    Status = MyOrder.Status,
+                    TrackList = new()
+                };
+                order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.OrderDate, "OrderDate"));
+                order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.DeliveryDate, "DeliveryDate"));
+                order.TrackList.Add(new Tuple<DateTime?, string>(MyOrder.ShipDate, "ShipDate"));
+                new OrderTrackingWindow(Bl, order).Show();
+                Hide();
             }
-            //OrderList?.Clear();
-            //Bl.Order.ReadOrderList().ToList().ForEach(item => OrderList?.Add(item));
         }
-        else
+
+        catch (Exception err)
         {
-            MessageBox.Show(
-                "We are so sorry! but You can't delete your order now",
-                "Error",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-                );
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+        }
+    }
+
+    /// <summary>
+    /// MinusBtn_Click method decreases the quantity of the product in the order by one if it hasn't been sent yet.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void MinusBtn_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (!IsAdmin)
+            {
+                MessageBox.Show(
+                    "We are so sorry! but You can't change your order now",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                    );
+            }
+            else
+            {
+                var productId = ((Button)sender).Tag;
+                MyOrder = Bl.Order.AddAmount(MyOrder.ID, Convert.ToInt32(productId), -1);
+                OrderItemList.ItemsSource = MyOrder.Items;
+            }
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+    /// <summary>
+    /// AddBtn_Click method Increases the quantity of the product in the order by one if it hasn't been sent yet.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void AddBtn_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (!IsAdmin)
+            {
+                MessageBox.Show(
+                    "We are so sorry! but You can't change your order now",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                    );
+            }
+            else
+            {
+                var productId = ((Button)sender).Tag;
+                MyOrder = Bl.Order.AddAmount(MyOrder.ID, Convert.ToInt32(productId), 1);
+                OrderItemList.ItemsSource = MyOrder.Items;
+            }
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+
+    /// <summary>
+    /// DeleteBtn_Click  method deletes the product from the order if it hasn't been sent yet.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (!IsAdmin)
+            {
+                MessageBox.Show(
+                    "We are so sorry! but You can't delete your order now",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                    );
+            }
+            else
+            {
+                var productId = ((Button)sender).Tag;
+                MyOrder = Bl.Order.AddAmount(MyOrder.ID, Convert.ToInt32(productId), 0);
+                OrderItemList.ItemsSource = MyOrder.Items;
+            }
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+
+    /// <summary>
+    ///  AddProductBtn_Click method adds product to the order if it hasn't been sent yet.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void AddProductBtn_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (IsAdmin)
+            {
+                new ProductListWindow(Bl).Show();
+
+            }
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+
+    /// <summary>
+    /// UpDateBtn_Click method lets the admin updates the order details if it hasn't been sent yet.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+
+    private void UpDateBtn_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (IsAdmin)
+            {
+                if (MyOrder?.Status == BO.eOrderStatus.Delivered)
+                    return;
+                else if (MyOrder?.Status == BO.eOrderStatus.Shipped)
+                {
+                    Bl.Order.UpdateOrderDelivery(Convert.ToInt32(OrderId));
+                    this.Close();
+                }
+                else
+                {
+                    Bl.Order.UpdateOrderSent(Convert.ToInt32(OrderId));
+                    this.Close();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(
+                    "We are so sorry! but You can't delete your order now",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                    );
+            }
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

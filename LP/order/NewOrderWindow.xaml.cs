@@ -37,7 +37,18 @@ public partial class NewOrderWindow : Window
     /// <param name="e"></param>
     private void FilterDelete_Click(object sender, RoutedEventArgs e)
     {
-        NewOrderView.ItemsSource = Bl.Product.ReadProductsList();
+        try
+        {
+            NewOrderView.ItemsSource = Bl.Product.ReadProductsList();
+        }
+        catch(BlNotExistException err)
+        {
+            MessageBox.Show( "No products found","", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
     /// <summary>
     /// when the user choose a category to search
@@ -47,13 +58,32 @@ public partial class NewOrderWindow : Window
     /// <param name="e"></param>
     private void CategorySelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
-        NewOrderView.ItemsSource = Bl.Product.ReadProductsList((eCategories)SelectorProduct.SelectedItem);
+        try
+        {
+            NewOrderView.ItemsSource = Bl.Product.ReadProductsList((eCategories)SelectorProduct.SelectedItem);
+        }
+        catch (BlNotExistException err)
+        {
+            MessageBox.Show("No products found", "", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
     private void GoToCart_Click(object sender, RoutedEventArgs e)
+        
     {
-        new CartWindow(Bl, CurrentCart).Show();
-        Hide();
+        try
+        {
+            new CartWindow(Bl, CurrentCart).Show();
+            Hide();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
     private void GoToProductProperties(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -66,12 +96,19 @@ public partial class NewOrderWindow : Window
         }
         catch (Exception err)
         {
-            MessageBox.Show(new PlGenericException(err.Message).Message);
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
     public void GoBack_Click(object sender, RoutedEventArgs e)
     {
-        new MainWindow(CurrentCart).Show();
-        this.Close();
+        try
+        {
+            new MainWindow(CurrentCart).Show();
+            this.Close();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }

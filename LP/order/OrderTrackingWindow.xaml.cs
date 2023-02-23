@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using BlImplementation;
 using BO;
@@ -25,7 +26,14 @@ public partial class OrderTrackingWindow : Window
 
     private void OrderDetails_Click(object sender, RoutedEventArgs e)
     {
-        new OrderWindow(Bl, Id, false).Show();
-        Hide();
+        try
+        {
+            new OrderWindow(Bl, Id, false).Show();
+            Hide();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }

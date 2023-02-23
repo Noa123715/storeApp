@@ -221,16 +221,31 @@ public partial class ProductWindow : Window
 
     private void add_Click(object sender, RoutedEventArgs e)
     {
-        product.Amount++;
-        AmountTextBox.Text = product.Amount.ToString();
+        try
+        {
+            product.Amount++;
+            AmountTextBox.Text = product.Amount.ToString();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
     private void minus_Click(object sender, RoutedEventArgs e)
     {
-        if (product.Amount > 0)
+        try
         {
-            product.Amount--;
-            AmountTextBox.Text = product.Amount.ToString();
+
+            if (product.Amount > 0)
+            {
+                product.Amount--;
+                AmountTextBox.Text = product.Amount.ToString();
+            }
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
