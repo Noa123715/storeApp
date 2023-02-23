@@ -51,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalTest\\DalTest.csproj",
+      "projectUniqueName": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07964\\DalTest\\DalTest.csproj",
       "projectName": "DalTest",
-      "projectPath": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalTest\\DalTest.csproj",
+      "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07964\\DalTest\\DalTest.csproj",
       "packagesPath": "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalTest\\obj\\",
+      "outputPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07964\\DalTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\נועה אבקסיס\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -72,11 +72,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalFacade\\DalFacade.csproj": {
-              "projectPath": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalFacade\\DalFacade.csproj"
+            "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07964\\DalFacade\\DalFacade.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07964\\DalFacade\\DalFacade.csproj"
             },
-            "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalList\\DalList.csproj": {
-              "projectPath": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalList\\DalList.csproj"
+            "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07964\\DalList\\DalList.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\source\\repos\\dotNet5783_7729_07964\\DalList\\DalList.csproj"
             }
           }
         }
