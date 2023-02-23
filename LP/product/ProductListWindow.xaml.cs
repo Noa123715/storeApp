@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using BlApi;
 using BO;
 namespace PL;
 
@@ -29,7 +31,18 @@ public partial class ProductListWindow : Window
     /// <param name="e"></param>
     private void SelectionChangedCategory(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
-        ProductListView.ItemsSource = bl.Product.ReadProductsList((eCategories)ProductSelector.SelectedItem);
+        try
+        {
+            ProductListView.ItemsSource = bl.Product.ReadProductsList((eCategories)ProductSelector.SelectedItem);
+        }
+        catch(BlNotExistException err)
+        {
+            MessageBox.Show("No products were found in this category, try choosing another category.", "No products in this category", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
     /// <summary>
     /// when the button:"add a product" is press the function is activated
@@ -39,9 +52,16 @@ public partial class ProductListWindow : Window
     /// <param name="e"></param>
     private void AddItemBtn_Click(object sender, RoutedEventArgs e)
     {
-        ProductWindow p = new ProductWindow(bl, true);
-        p.Show();
-        this.Hide();
+        try
+        {
+            ProductWindow p = new ProductWindow(bl, true);
+            p.Show();
+            this.Hide();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
     /// <summary>
     /// when the button:"X" is press the functionis activated
@@ -51,7 +71,14 @@ public partial class ProductListWindow : Window
     /// <param name="e"></param>
     private void DeleteFilter_Click(object sender, RoutedEventArgs e)
     {
-        ProductListView.ItemsSource = bl.Product.ReadProductsList();
+        try
+        {
+            ProductListView.ItemsSource = bl.Product.ReadProductsList();
+        }
+        catch (BlNotExistException err)
+        {
+            MessageBox.Show("No products were found.", " products not found", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
     /// <summary>
     /// when a product is press the function is activated
@@ -61,7 +88,14 @@ public partial class ProductListWindow : Window
     /// <param name="e"></param>
     private void UpdateProduct(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
-        new ProductWindow(bl, true, ((ProductForList)ProductListView.SelectedItem).ID).Show();
-        Close();
+        try
+        {
+            new ProductWindow(bl, true, ((ProductForList)ProductListView.SelectedItem).ID).Show();
+            Close();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
 }

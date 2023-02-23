@@ -31,17 +31,42 @@ public partial class OrderListWindow : Window
         OrderListView.ItemsSource = orderList;
     }
 
+    /// <summary> 
+    /// MouseDoubleClick handler. During a double-click event on a certain product, switches to display product details.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+
     private void OrderListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-        new OrderWindow(Bl, (OrderListView?.SelectedItem as BO.OrderForList).ID, true).Show();
-        this.Close();
-
+        try
+        {
+            new OrderWindow(Bl, (OrderListView?.SelectedItem as BO.OrderForList).ID, true).Show();
+            this.Close();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
+
+    /// <summary>
+    /// go back click handler switches to display the admin window.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
 
     public void GoBack_Click(object sender, RoutedEventArgs e)
     {
-        new AdminWindow(Bl).Show();
-        this.Close();
+        try
+        {
+            new AdminWindow(Bl).Show();
+            this.Close();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
 
 }

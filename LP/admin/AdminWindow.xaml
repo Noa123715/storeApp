@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Ooders management" Click="Orders_Click" Margin="94,0,0,0" RenderTransformOrigin="2.133,-4.808" Height="126" Width="223" Style="{StaticResource classicBtn}" VerticalAlignment="Center"/>
+        
+        <Button Content="Orders management" Click="Orders_Click" Margin="94,0,0,0" RenderTransformOrigin="2.133,-4.808" Height="126" Width="223" Style="{StaticResource classicBtn}" VerticalAlignment="Center"/>
         <Button Content="products management" Click="Products_Click" Margin="477,0,0,0" RenderTransformOrigin="2.133,-4.808" Height="126" Width="226" Style="{StaticResource classicBtn}" VerticalAlignment="Center"/>
 
     </Grid>

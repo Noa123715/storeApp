@@ -31,15 +31,28 @@ public partial class AdminWindow : Window
 
     private void Orders_Click(object sender, RoutedEventArgs e)
     {
+        try
+        {
 
-        new OrderListWindow(Bl).Show();
-        Close();
+            new OrderListWindow(Bl).Show();
+            Close();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
     private void Products_Click(object sender, RoutedEventArgs e)
     {
-
-        new ProductListWindow(Bl).Show();
-        Close();
+        try
+        {
+            new ProductListWindow(Bl).Show();
+            Close();
+        }
+        catch (Exception err)
+        {
+            MessageBox.Show(new PlGenericException(err.Message).Message);
+        }
     }
 
 }
