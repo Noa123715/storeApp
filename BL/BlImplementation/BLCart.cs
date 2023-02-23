@@ -14,8 +14,8 @@ internal class BLCart : ICart
     /// creating Idal instance for using its methods and members in BLOrder.
     /// </summary>
     /// 
-    private static DalApi.IDal? dal =  DalApi.Factory.Get();
-    private static int maxCartOrderItemID=1;
+    private static DalApi.IDal? dal = DalApi.Factory.Get();
+    private static int maxCartOrderItemID = 1;
     public static int MaxCartOrderItemID { get { return maxCartOrderItemID++; } }
 
 
@@ -31,21 +31,21 @@ internal class BLCart : ICart
     {
         try
         {
-            DO.Product product = dal.Product.Read(p=> p.ID==productID);
+            DO.Product product = dal.Product.Read(p => p.ID == productID);
             int productInStock = product.InStock;
             double productPrice = product.Price;
-            int index=-1;
-            BO.OrderItem ?orderItem = new BO.OrderItem();
+            int index = -1;
+            BO.OrderItem? orderItem = new BO.OrderItem();
             if (productInStock <= 0)
                 throw new BlOutOfStockException();
             if (cart.Items.Count != 0)
                 index = cart.Items.FindIndex(item => item.ProductID == productID);
-            if (index !=-1)
+            if (index != -1)
             {
                 cart.Items[index].Amount++;
                 cart.Items[index].TotalPrice += productPrice;
                 cart.Items[index].Price += productPrice;
-                
+
             }
             else
             {
@@ -59,19 +59,19 @@ internal class BLCart : ICart
                 aOrderItem?.Add(orderItem);
                 cart.Items = aOrderItem;
                 cart.Price += productPrice;
-            }                
+            }
         }
         catch (DalApi.NotExistException notExistException)
         {
             throw new BlNotExistException(notExistException);
         }
-        catch(BlOutOfStockException err)
+        catch (BlOutOfStockException err)
         {
             Console.WriteLine(err.Message);
         }
         return cart;
     }
- 
+
 
     /// <summary>
     /// UpdateProductAmount method updates an product's amount in cart.
@@ -86,38 +86,38 @@ internal class BLCart : ICart
     {
         try
         {
-        int productInStock = dal.Product.Read(p => p.ID == productID).InStock;
-        double productPrice = dal.Product.Read(p => p.ID == productID).Price;
-        BO.OrderItem ?orderItem = new BO.OrderItem();
-        orderItem = cart.Items.Find(item => item.ProductID == productID);
-        if (orderItem == null)
-           throw new BlNotExistException(); 
-          
-        if (newAmount > orderItem.Amount)
-        {
-            if (newAmount - orderItem.Amount > productInStock)
-                throw new BlOutOfStockException();
-            cart.Price += (newAmount - orderItem.Amount) * productPrice;
-            orderItem.TotalPrice += (newAmount - orderItem.Amount) * productPrice;
-            orderItem.Amount = newAmount;
-        }
+            int productInStock = dal.Product.Read(p => p.ID == productID).InStock;
+            double productPrice = dal.Product.Read(p => p.ID == productID).Price;
+            BO.OrderItem? orderItem = new BO.OrderItem();
+            orderItem = cart.Items.Find(item => item.ProductID == productID);
+            if (orderItem == null)
+                throw new BlNotExistException();
 
-        else if (newAmount == 0)
-        {
-            cart.Price -= productPrice * orderItem.Amount;
-            cart.Items.Remove(orderItem);
-        }
+            if (newAmount > orderItem.Amount)
+            {
+                if (newAmount - orderItem.Amount > productInStock)
+                    throw new BlOutOfStockException();
+                cart.Price += (newAmount - orderItem.Amount) * productPrice;
+                orderItem.TotalPrice += (newAmount - orderItem.Amount) * productPrice;
+                orderItem.Amount = newAmount;
+            }
+
+            else if (newAmount == 0)
+            {
+                cart.Price -= productPrice * orderItem.Amount;
+                cart.Items.Remove(orderItem);
+            }
             else // newAmount>0 & newAmount<Amount
             {
-            cart.Price -= productPrice * (orderItem.Amount - newAmount);
-            orderItem.Amount = newAmount;
-            orderItem.TotalPrice = productPrice * newAmount;
-        }
-        return cart;
+                cart.Price -= productPrice * (orderItem.Amount - newAmount);
+                orderItem.Amount = newAmount;
+                orderItem.TotalPrice = productPrice * newAmount;
+            }
+            return cart;
         }
         catch (DalApi.NotExistException notExist)
         {
-           throw new BlNotExistException(notExist);
+            throw new BlNotExistException(notExist);
         }
     }
 
@@ -155,7 +155,7 @@ internal class BLCart : ICart
             DoOrder.CustomerName = cart.CustomerName;
             DoOrder.CustomerEmail = cart.CustomerEmail;
             DoOrder.CustomerAddress = cart.CustomerAddress;
-            DoOrder.ID =0;
+            DoOrder.ID = 0;
             dal?.Order.Create(DoOrder);
             foreach (BO.OrderItem orderItem in cart.Items)
             {
@@ -168,7 +168,7 @@ internal class BLCart : ICart
                 {
                     throw new BlOutOfStockException();
                 }
-                 DO.OrderItem DoOrderItem = new DO.OrderItem();
+                DO.OrderItem DoOrderItem = new DO.OrderItem();
                 DoOrderItem.ID = orderItem.ID;
                 DoOrderItem.ProductID = orderItem.ProductID;
                 DoOrderItem.OrderID = DoOrder.ID;
@@ -178,7 +178,7 @@ internal class BLCart : ICart
                 DO.Product DoProduct = dal.Product.Read(p => p.ID == DoOrderItem.ProductID);
                 DoProduct.InStock -= orderItem.Amount;
                 dal.Product.UpDate(DoProduct);
-            } 
+            }
         }
         catch (DalApi.NotExistException err)
         {

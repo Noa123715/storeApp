@@ -12,12 +12,12 @@ namespace Dal;
 public struct DalOrderItem : IOrderItem
 {
     // create new order item.
-    public  int Create(OrderItem newOrderItem)
+    public int Create(OrderItem newOrderItem)
     {
         int index = DataSource.orderItemList.FindIndex(item => item.ID == newOrderItem.ID);
         if (index != -1)
             throw new AlreadyExistException();
-        
+
         DataSource.orderItemList.Add(newOrderItem);
         return newOrderItem.OrderID;
     }
@@ -43,7 +43,7 @@ public struct DalOrderItem : IOrderItem
 
     }
     //ReadByOrderID method receives orderId and returns all order-Items in specific order.
-    public  IEnumerable<OrderItem> ReadByOrderID(int orderID)
+    public IEnumerable<OrderItem> ReadByOrderID(int orderID)
     {
         List<OrderItem> itemsInOrder = new List<OrderItem>();
         foreach (OrderItem item in DataSource.orderItemList)
@@ -56,7 +56,7 @@ public struct DalOrderItem : IOrderItem
     }
 
     //ReadOrderItem method 2- receives orderId and productID and returns specific orderItem according to these parameters.
-    public  OrderItem ReadByProdAndOrder(int prodID, int orderID)
+    public OrderItem ReadByProdAndOrder(int prodID, int orderID)
     {
         foreach (OrderItem item in DataSource.orderItemList)
         {
@@ -68,12 +68,12 @@ public struct DalOrderItem : IOrderItem
     }
 
     //ReadOrderItem method 3- returns the current list of order items.
-    public  IEnumerable<OrderItem> ReadAll(Func< OrderItem, bool>? condition = null)
+    public IEnumerable<OrderItem> ReadAll(Func<OrderItem, bool>? condition = null)
     {
-       
+
         if (condition is null)
             return DataSource.orderItemList ?? throw new NotExistException();
-        return DataSource.orderItemList.Where(condition).ToList() ?? throw new NotExistException(); 
+        return DataSource.orderItemList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
     //
@@ -86,10 +86,10 @@ public struct DalOrderItem : IOrderItem
             throw new NotExistException();
         }
         DataSource.orderItemList.RemoveAt(index);
-       
+
     }
 
-    public  void UpDate(OrderItem UpOrderItem)
+    public void UpDate(OrderItem UpOrderItem)
     {
         int index = DataSource.orderItemList.FindIndex(item => item.ID == UpOrderItem.ID);
         if (index == -1)

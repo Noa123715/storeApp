@@ -40,14 +40,14 @@ public class Product : IProduct
         List<DO.Product>? products = (List<DO.Product>?)ser.Deserialize(reader);
         reader.Close();
         DO.Product prod = products.Where(p => p.ID == product.ID).FirstOrDefault();
-        if(!prod.Equals(default(DO.Product)))
+        if (!prod.Equals(default(DO.Product)))
             throw new AlreadyExistException();
         products.Add(product);
         StreamWriter w = new StreamWriter(@"..\xml\product.xml");
         ser.Serialize(w, products);
         w.Close();
         return product.ID;
-       
+
 
     }
 
@@ -62,14 +62,14 @@ public class Product : IProduct
         {
             ElementName = "ProductList",
             IsNullable = true
-        };       
+        };
         XmlSerializer ser = new(typeof(List<DO.Product>), xRoot);
         StreamReader reader = new(@"..\xml\product.xml");
         List<DO.Product>? products = (List<DO.Product>?)ser.Deserialize(reader);
         reader.Close();
         StreamWriter writer = new(@"..\xml\product.xml");
         DO.Product product = products.Where(p => p.ID == id).FirstOrDefault();
-        if(product.ID == 0)
+        if (product.ID == 0)
             throw new NotExistException();
         products.Remove(product);
         ser.Serialize(writer, products);
@@ -87,13 +87,13 @@ public class Product : IProduct
         {
             ElementName = "ProductList",
             IsNullable = true
-        };        
+        };
         StreamReader r = new(@"..\xml\product.xml");
         XmlSerializer ser = new(typeof(List<DO.Product>), xmlRoot);
-        List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(r);        
+        List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(r);
         r.Close();
-        return condition == null ? productList : (productList.Where(condition).ToList() ?? throw new NotExistException());    
-}
+        return condition == null ? productList : (productList.Where(condition).ToList() ?? throw new NotExistException());
+    }
 
     /// <summary>
     /// read specific product that implement certain condition.
@@ -116,14 +116,14 @@ public class Product : IProduct
         {
             ElementName = "ProductList",
             IsNullable = true
-        };        
+        };
         StreamReader productReader = new(@"..\xml\product.xml");
         XmlSerializer ser = new(typeof(List<DO.Product>), xmlRoot);
         List<DO.Product>? productList = (List<DO.Product>?)ser.Deserialize(productReader);
         productReader.Close();
         DO.Product product1 = productList.Where(productItem => productItem.ID == product.ID).FirstOrDefault();
-        if(product1.Equals(default(DO.Product)))
-        { 
+        if (product1.Equals(default(DO.Product)))
+        {
             throw new NotExistException();
         }
         productList.Remove(product1);

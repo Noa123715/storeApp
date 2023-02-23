@@ -11,16 +11,3 @@ C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\refint\DalXmlTest.dll
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\DalXmlTest.pdb
 C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_07961\DalXmlTest\obj\Debug\ref\DalXmlTest.dll
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\DalXmlTest.deps.json
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\DalXmlTest.dll
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\bin\DalXmlTest.pdb
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.csproj.AssemblyReference.cache
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.AssemblyInfoInputs.cache
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.AssemblyInfo.cs
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.csproj.CoreCompileInputs.cache
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.csproj.CopyComplete
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.dll
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\refint\DalXmlTest.dll
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\DalXmlTest.pdb
-C:\Users\אבקסיס נועה1\source\repos\dotNet5783_7729_0796\DalXmlTest\obj\Debug\ref\DalXmlTest.dll

@@ -12,7 +12,7 @@ namespace PL;
 public partial class MainWindow : Window
 {
     private static BlApi.IBL? Bl { get; set; }
-    private BO.Cart ?CurrentCart { get; set; }
+    private BO.Cart? CurrentCart { get; set; }
     /// <summary>
     /// constractor of the main window
     /// </summary>
@@ -21,10 +21,10 @@ public partial class MainWindow : Window
         InitializeComponent();
         Bl = BlApi.Factory.Get();
     }
-    public MainWindow(BO.Cart ?_currentCart= null)
+    public MainWindow(BO.Cart? _currentCart = null)
     {
         InitializeComponent();
-        CurrentCart = _currentCart?? new();
+        CurrentCart = _currentCart ?? new();
         Bl = BlApi.Factory.Get();
     }
 
@@ -53,10 +53,10 @@ public partial class MainWindow : Window
         {
             int idOrderTrack = Convert.ToInt32(TrackOrderText.Text);
             OrderTracking orderTrack = Bl.Order.TrackOrder(idOrderTrack);
-            new OrderTrackingWindow(Bl,orderTrack).Show();
+            new OrderTrackingWindow(Bl, orderTrack).Show();
             Hide();
         }
-        catch(BlNotExistException ex)
+        catch (BlNotExistException ex)
         {
             MessageBox.Show(
                 ex.Message,

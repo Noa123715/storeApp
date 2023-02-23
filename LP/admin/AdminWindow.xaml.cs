@@ -23,10 +23,10 @@ public partial class AdminWindow : Window
 
     public AdminWindow(BlApi.IBL bL)
     {
-       
+
         InitializeComponent();
         Bl = bL;
-        
+
     }
 
     private void Orders_Click(object sender, RoutedEventArgs e)

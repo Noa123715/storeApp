@@ -25,7 +25,7 @@ public partial class ProductWindow : Window
     /// <param name="pList_id"></param>
 
     public ProductWindow(BlApi.IBL ProductList_bl, bool isAdmin, int? pList_id = null, BO.Cart? _cart = null)
-    { 
+    {
         InitializeComponent();
         Bl = ProductList_bl;
         cart = _cart ?? new();
@@ -186,7 +186,7 @@ public partial class ProductWindow : Window
         try
         {
             int id = int.Parse(IdTextBox.Text);
-           
+
             MessageBoxResult result = MessageBox.Show(
                           "Are you sure you want to delete this product?",
                           "Delete Product",
@@ -209,7 +209,7 @@ public partial class ProductWindow : Window
                 MessageBox.Show("The deletion did not occur", "Delete Product");
             }
         }
-        catch(BlNotExistException err)
+        catch (BlNotExistException err)
         {
             MessageBox.Show("the product not found or missing ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }

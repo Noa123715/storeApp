@@ -31,7 +31,7 @@ internal class OrderItem : IOrderItem
         id.Value = orderItemID.ToString();
         rootConfig?.Save(@"..\xml\config.xml");
         newOrderItem.ID = orderItemID;
-        OrderItemList= new();
+        OrderItemList = new();
         OrderItemList.Add(newOrderItem);
         XElement xmlOrderItem = new("OrderItem",
                                 new XElement("ID", newOrderItem.ID),
@@ -45,7 +45,7 @@ internal class OrderItem : IOrderItem
         root?.Save(@"..\xml\orderItem.xml");
         return newOrderItem.ID;
     }
-     
+
     // read all orderitems -according to specific condition or all.
     public IEnumerable<DO.OrderItem> ReadAll(Func<DO.OrderItem, bool>? condition = null)
     {

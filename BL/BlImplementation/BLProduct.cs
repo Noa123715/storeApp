@@ -59,7 +59,7 @@ internal class BLProduct : IProduct
         {
             if (productId <= 0)
                 throw new BlInValidInputException();
-            DO.Product prod = Dal.Product.Read(p=>p.ID== productId);
+            DO.Product prod = Dal.Product.Read(p => p.ID == productId);
             product.ID = prod.ID;
             product.Name = prod.Name;
             product.Price = prod.Price;
@@ -84,7 +84,7 @@ internal class BLProduct : IProduct
         try
         {
             if (productId <= 0) throw new BlNegativeInputException();
-            DO.Product dalProduct = Dal.Product.Read(p=> p.ID == productId);
+            DO.Product dalProduct = Dal.Product.Read(p => p.ID == productId);
             BO.ProductItem product = new BO.ProductItem();
             product.ID = dalProduct.ID;
             product.Name = dalProduct.Name;
@@ -177,7 +177,7 @@ internal class BLProduct : IProduct
     {
         try
         {
-            DO.Product DOProduct = Dal.Product.Read(p=>p.ID==product.ID);
+            DO.Product DOProduct = Dal.Product.Read(p => p.ID == product.ID);
             if (string.IsNullOrEmpty(product.Name))
                 throw new BlNullValueException();
             if (product.Price <= 0)

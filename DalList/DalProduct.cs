@@ -49,7 +49,7 @@ public struct DalProduct : IProduct
         if (condition is null)
             return DataSource.productList ?? throw new NotExistException();
 
-        return DataSource.productList.Where(condition).ToList()?? throw new NotExistException();
+        return DataSource.productList.Where(condition).ToList() ?? throw new NotExistException();
     }
 
     public void Delete(int id)

@@ -33,9 +33,9 @@ public partial class OrderListWindow : Window
 
     private void OrderListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-       new OrderWindow(Bl, (OrderListView?.SelectedItem as BO.OrderForList).ID, true).Show();
-        this.Close();   
-        
+        new OrderWindow(Bl, (OrderListView?.SelectedItem as BO.OrderForList).ID, true).Show();
+        this.Close();
+
     }
 
     public void GoBack_Click(object sender, RoutedEventArgs e)

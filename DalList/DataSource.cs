@@ -7,7 +7,7 @@ namespace Dal;
 public static class DataSource
 {
     // datasource members- arrays of limited size for productList, arrays.
-   
+
     public static List<Product> productList = new List<Product>();
     public static List<Order> orderList = new List<Order>();
     public static List<OrderItem> orderItemList = new List<OrderItem>();
@@ -27,7 +27,7 @@ public static class DataSource
     // Config- nested class, Holds the indexes from which the array is empty- for each array and the IDS
     public static class Config
     {
-        
+
 
         private static int orderItemId = 1;
         public static int OrderItemId { get { return orderItemId++; } }
@@ -60,16 +60,16 @@ public static class DataSource
                 exists = false;
 
                 barcode = rand.Next(100000, 10000000);
-                foreach(var prod in productList)
+                foreach (var prod in productList)
                 {
-                    if(prod.ID== barcode) 
-                    { 
-                        exists=true;
+                    if (prod.ID == barcode)
+                    {
+                        exists = true;
                         break;
                     }
                 }
 
-              
+
             } while (exists);
             product.ID = barcode;
 
@@ -149,7 +149,7 @@ public static class DataSource
 
     private static void initOrderItemData()
     {
-        foreach(var order in orderList)
+        foreach (var order in orderList)
         {
             bool[] exists = new bool[productList.Count];
             int randomProduct;
@@ -165,13 +165,13 @@ public static class DataSource
                 // that it does not already exist in the order.
                 //Then, creating a flag that the product already exists on this order.
                 do
-                    randomProduct = random.Next(0,productList.Count);
+                    randomProduct = random.Next(0, productList.Count);
                 while (exists[randomProduct] != false);
                 exists[randomProduct] = true;
 
                 orderItem.ProductID = productList[randomProduct].ID;
-                
-                int randomAmount = (productList[randomProduct].InStock != 0)? random.Next(1, productList[randomProduct].InStock + 1):0;
+
+                int randomAmount = (productList[randomProduct].InStock != 0) ? random.Next(1, productList[randomProduct].InStock + 1) : 0;
                 orderItem.Amount = randomAmount;
                 Product prod = productList[randomProduct];
                 prod.InStock -= randomAmount;

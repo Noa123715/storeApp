@@ -39,7 +39,7 @@ public partial class OrderWindow : Window
 
     private void GoBackBtn_Click(object sender, RoutedEventArgs e)
     {
-        if(IsAdmin)
+        if (IsAdmin)
         {
             new OrderListWindow(Bl).Show();
             Hide();

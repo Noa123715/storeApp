@@ -5,9 +5,9 @@ using BlImplementation;
 /// </summary>
 public static class Factory
 {
-    public static IBL Get() 
-    { 
-        BL bl= new BL();
+    public static IBL Get()
+    {
+        BL bl = new();
         return bl;
     }
 }

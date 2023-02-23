@@ -17,7 +17,7 @@ using System.Xml.Serialization;
 internal class Order : IOrder
 {
     private List<DO.Order>? OrderList { get; set; }
-   
+
 
     /// <summary>
     /// create a new order.
@@ -32,10 +32,10 @@ internal class Order : IOrder
         XElement? id = rootConfig?.Element("orderID");
         int orderId = Convert.ToInt32(id?.Value);
         newOrder.ID = ++orderId;
-        
+
         id?.SetValue(orderId.ToString());
         rootConfig?.Save(@"..\xml\config.xml");
-        XmlRootAttribute xRoot = new ();
+        XmlRootAttribute xRoot = new();
         xRoot.ElementName = "OrdersList";
         xRoot.IsNullable = true;
         StreamReader reader = new(@"..\xml\order.xml");
@@ -49,8 +49,8 @@ internal class Order : IOrder
         return newOrder.ID;
     }
 
-    
-    
+
+
     /// <summary>
     /// 
     /// </summary>
@@ -81,7 +81,7 @@ internal class Order : IOrder
         {
             ElementName = "OrdersList",
             IsNullable = true
-        };       
+        };
         XmlSerializer ser = new(typeof(List<DO.Order>), xRoot);
         StreamReader reader = new(@"..\xml\order.xml");
         OrderList = (List<DO.Order>?)ser.Deserialize(reader);

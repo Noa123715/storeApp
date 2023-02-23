@@ -6,8 +6,8 @@
 
 namespace DO;
 
-    public struct Order
-    {
+public struct Order
+{
 
     public int ID { get; set; }
     public string? CustomerName { get; set; }
@@ -23,5 +23,5 @@ namespace DO;
         CustomerAdress = {CustomerAddress}
         OrderDate = {OrderDate}
         ShipDate = {ShipDate}
-        DeliveryDate = {DeliveryDate}";  	
-    }
+        DeliveryDate = {DeliveryDate}";
+}

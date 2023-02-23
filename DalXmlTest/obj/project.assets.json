@@ -50,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07963\\DalXmlTest\\DalXmlTest.csproj",
+      "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalXmlTest\\DalXmlTest.csproj",
       "projectName": "DalXmlTest",
-      "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07963\\DalXmlTest\\DalXmlTest.csproj",
+      "projectPath": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalXmlTest\\DalXmlTest.csproj",
       "packagesPath": "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07963\\DalXmlTest\\obj\\",
+      "outputPath": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalXmlTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\נועה אבקסיס\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,8 +71,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07963\\DalXml\\DalXml.csproj": {
-              "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_07963\\DalXml\\DalXml.csproj"
+            "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalXml\\DalXml.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\Downloads\\dotNet5783_7729_0796-Nisyon2\\dotNet5783_7729_0796-Nisyon2\\DalXml\\DalXml.csproj"
             }
           }
         }
@@ -102,7 +102,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

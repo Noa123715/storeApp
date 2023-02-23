@@ -8,7 +8,7 @@ namespace DO;
 /// </summary>
 public enum eCategories
 {
-    Accessories=1,
+    Accessories = 1,
     Women,
     Men,
     Children,
@@ -29,8 +29,8 @@ public enum eOptions
 /// <summary>
 /// ENUM for selecting the part in the Order class to update
 /// </summary>
-public enum eUpDateOrder 
-{ 
+public enum eUpDateOrder
+{
     Name = 1,
     Mail,
     Adress
@@ -40,7 +40,7 @@ public enum eUpDateOrder
 /// ENUM for selecting the part in the Order Item class to update
 /// </summary>
 public enum eUpDateOrderItem
-{ 
+{
     Amount = 1,
     Price
 }
@@ -50,7 +50,7 @@ public enum eUpDateOrderItem
 /// </summary>
 public enum eUpDateProduct
 {
-    Name= 1,
+    Name = 1,
     Price,
     InStock,
     Category

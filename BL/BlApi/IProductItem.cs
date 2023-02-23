@@ -1,3 +1,3 @@
 ﻿namespace BlApi;
 
-public interface IProductItem {}
+public interface IProductItem { }

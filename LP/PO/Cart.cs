@@ -8,48 +8,48 @@ using System.Windows;
 
 namespace PL.PO;
 
-  
-  
-    /// <summary>
-    /// A PO entity of shopping cart
-    /// for the shopping cart management screen and order confirmation
-    /// implement singleton pattern.
-    /// </summary>
-   sealed public class Cart : DependencyObject
+
+
+/// <summary>
+/// A PO entity of shopping cart
+/// for the shopping cart management screen and order confirmation
+/// implement singleton pattern.
+/// </summary>
+sealed public class Cart : DependencyObject
+{
+    public static readonly DependencyProperty customerNameProperty = DependencyProperty.Register("CustomerName", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
+    public static readonly DependencyProperty customerEmailProperty = DependencyProperty.Register("CustomerEmail", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
+    public static readonly DependencyProperty customerAddressProperty = DependencyProperty.Register("CustomerAddress", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
+    public static readonly DependencyProperty totalPriceProperty = DependencyProperty.Register("TotalPrice", typeof(double), typeof(Cart), new UIPropertyMetadata(0.0));
+    public static readonly DependencyProperty itemsProperty = DependencyProperty.Register("Items", typeof(ObservableCollection<PO.OrderItem?>), typeof(Cart), new UIPropertyMetadata(new ObservableCollection<PO.OrderItem?>()));
+    public string? CustomerName
     {
-        public static readonly DependencyProperty customerNameProperty = DependencyProperty.Register("CustomerName", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
-        public static readonly DependencyProperty customerEmailProperty = DependencyProperty.Register("CustomerEmail", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
-        public static readonly DependencyProperty customerAddressProperty = DependencyProperty.Register("CustomerAddress", typeof(string), typeof(Cart), new UIPropertyMetadata(""));
-        public static readonly DependencyProperty totalPriceProperty = DependencyProperty.Register("TotalPrice", typeof(double), typeof(Cart), new UIPropertyMetadata(0.0));
-        public static readonly DependencyProperty itemsProperty = DependencyProperty.Register("Items", typeof(ObservableCollection<PO.OrderItem?>), typeof(Cart), new UIPropertyMetadata(new ObservableCollection<PO.OrderItem?>()));
-        public string? CustomerName
-        {
-            get { return (string)GetValue(customerNameProperty); }
-            set { SetValue(customerNameProperty, value); }
-        }
-        public string? CustomerEmail
-        {
-            get { return (string)GetValue(customerEmailProperty); }
-            set { SetValue(customerEmailProperty, value); }
-        }
-        public string? CustomerAddress
-        {
-            get { return (string)GetValue(customerAddressProperty); }
-            set { SetValue(customerAddressProperty, value); }
-        }
-        public ObservableCollection<PO.OrderItem?> Items//a list of the items in the shopping cart 
-        {
-            get { return (ObservableCollection<PO.OrderItem?>)GetValue(itemsProperty); }
-            set { SetValue(itemsProperty, value); }
-        }
-        public double TotalPrice//the total price of the shopping cart
-        {
-            get { return (double)GetValue(totalPriceProperty); }
-            set { SetValue(totalPriceProperty, value); }
-        }
+        get { return (string)GetValue(customerNameProperty); }
+        set { SetValue(customerNameProperty, value); }
+    }
+    public string? CustomerEmail
+    {
+        get { return (string)GetValue(customerEmailProperty); }
+        set { SetValue(customerEmailProperty, value); }
+    }
+    public string? CustomerAddress
+    {
+        get { return (string)GetValue(customerAddressProperty); }
+        set { SetValue(customerAddressProperty, value); }
+    }
+    public ObservableCollection<PO.OrderItem?> Items//a list of the items in the shopping cart 
+    {
+        get { return (ObservableCollection<PO.OrderItem?>)GetValue(itemsProperty); }
+        set { SetValue(itemsProperty, value); }
+    }
+    public double TotalPrice//the total price of the shopping cart
+    {
+        get { return (double)GetValue(totalPriceProperty); }
+        set { SetValue(totalPriceProperty, value); }
+    }
 
     static readonly Cart cart = new Cart();
- 
+
     public static Cart SingletonCart { get { return cart; } }
     static Cart() { }
 
@@ -60,7 +60,7 @@ namespace PL.PO;
         items: {Items},
         totalPrice: {TotalPrice}
         ";
-    }
+}
 
 
 

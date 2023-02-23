@@ -11,9 +11,9 @@ namespace BlApi;
 
 public class BlNotExistException : Exception
 {
-    public BlNotExistException(DalApi.NotExistException? inner= null ) : base("", inner) { }
+    public BlNotExistException(DalApi.NotExistException? inner = null) : base("", inner) { }
     public override string Message => $"{InnerException.Message}";
-                   
+
 }
 
 
@@ -25,9 +25,9 @@ public class BlNotExistException : Exception
 
 public class BlAlreadyExistException : Exception
 {
-    public BlAlreadyExistException(DalApi.AlreadyExistException ? inner= null): base("", inner) { }
+    public BlAlreadyExistException(DalApi.AlreadyExistException? inner = null) : base("", inner) { }
     public override string Message => $"{InnerException.Message}";
-           
+
 }
 
 
@@ -89,7 +89,7 @@ public class BlWrongDateSequenceException : Exception
 /// <summary>
 /// exception for Illegal deletion attempt (for example: a product that has already been ordered ).
 /// </summary>
-public class BlIllegalDeletionAttempt: Exception
+public class BlIllegalDeletionAttempt : Exception
 {
     public override string Message =>
                   "Illegal deletion attempt - the item exists in a confirmed order or does not exist at all.";

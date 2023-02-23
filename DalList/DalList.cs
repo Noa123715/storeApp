@@ -8,14 +8,15 @@ namespace Dal;
 /// </summary>
 internal sealed class DalList : IDal
 {
-   
-    private static  Lazy<DalList> ?instance ;
+
+    private static Lazy<DalList>? instance;
 
     public static DalList Instance { get { return GetInstance(); } }
-    public static DalList GetInstance () {
+    public static DalList GetInstance()
+    {
         if (instance == null)
             instance = new Lazy<DalList>(() => new DalList());
-        return instance.Value; 
+        return instance.Value;
     }
 
     private DalList()
@@ -23,7 +24,7 @@ internal sealed class DalList : IDal
 
     }
 
-    public IOrder Order => new DalOrder(); 
+    public IOrder Order => new DalOrder();
     public IProduct Product => new DalProduct();
     public IOrderItem OrderItem => new DalOrderItem();
 }

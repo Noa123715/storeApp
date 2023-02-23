@@ -28,12 +28,12 @@ public class PlInvalidEmailException : Exception
     /// <summary>
     /// Default constructor.
     /// </summary>
-   
+
     public override string Message => $@"invalid email exception";
 
 }
 
-public class PlGenericException: Exception
+public class PlGenericException : Exception
 {
 
     public string err { get; set; }

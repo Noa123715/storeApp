@@ -6,20 +6,20 @@ namespace Dal;
 /// </summary>
 sealed internal class DalXml : IDal
 {
-  
-        private static Lazy<DalXml> instance = new Lazy<DalXml>(() => new DalXml());
-        public static DalXml Instance { get => GetInstance(); }
-        private DalXml() { }
-        public static DalXml GetInstance()
+
+    private static Lazy<DalXml> instance = new Lazy<DalXml>(() => new DalXml());
+    public static DalXml Instance { get => GetInstance(); }
+    private DalXml() { }
+    public static DalXml GetInstance()
+    {
+        lock (instance)
         {
-            lock (instance)
-            {
-                if (instance == null)
-                    instance = new Lazy<DalXml>(() => new DalXml());
-                return instance.Value;
-            }
+            if (instance == null)
+                instance = new Lazy<DalXml>(() => new DalXml());
+            return instance.Value;
         }
-    
+    }
+
     public IOrder Order => new Order();
     public IProduct Product => new Product();
     public IOrderItem OrderItem => new OrderItem();

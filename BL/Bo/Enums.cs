@@ -16,16 +16,16 @@ public enum eOrderStatus
 
 public enum eCategories
 {
-   
-    Accessories=1,
+
+    Accessories = 1,
     Women,
     Men,
     Children,
     Beauty
 }
 
-public enum eOptions 
-{ 
+public enum eOptions
+{
     Exit,
     Order,
     Cart,
