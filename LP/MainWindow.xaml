@@ -13,5 +13,6 @@
         <TextBox x:Name="TrackOrderText" Text="0000" Margin="576,246,101,153" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF698AED" BorderBrush="#FF698AED" KeyUp="NumberOrderTrack"/>
         <Button Content="new order" Click="NewOrder_Click" Margin="0,149,0,0" RenderTransformOrigin="2.133,-4.808" Height="43" Width="124" Style="{StaticResource classicBtn}" HorizontalAlignment="Center"/>
         <Button x:Name="followBtn" Content="Follow Your Order" Click="FollowOrder_Click" Margin="511,149,0,0" Width="251" Height="43" Style="{StaticResource classicBtn}" IsEnabled="False"/>
+        <Button Content="Simulator" Style="{StaticResource classicBtn}" HorizontalAlignment="Left" Height="48" Margin="108,247,0,0" VerticalAlignment="Top" Width="354" Click="Simulator_Click"/>
     </Grid>
 </Window>

@@ -47,6 +47,12 @@ public partial class MainWindow : Window
         Close();
     }
 
+    private void Simulator_Click(object sender, RoutedEventArgs e)
+    {
+
+        new SimulatorWindow(Bl).Show();
+      
+    }
     private void FollowOrder_Click(object sender, RoutedEventArgs e)
     {
         try

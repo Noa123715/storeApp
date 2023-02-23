@@ -153,3 +153,15 @@ C:\Users\נועה אבקסיס\Downloads\dotNet5783_7729_0796-Nisyon2\dotNet5783
 C:\Users\נועה אבקסיס\Downloads\dotNet5783_7729_0796-Nisyon2\dotNet5783_7729_0796-Nisyon2\DalFacade\obj\Debug\refint\DalFacade.dll
 C:\Users\נועה אבקסיס\Downloads\dotNet5783_7729_0796-Nisyon2\dotNet5783_7729_0796-Nisyon2\DalFacade\obj\Debug\DalFacade.pdb
 C:\Users\נועה אבקסיס\Downloads\dotNet5783_7729_0796-Nisyon2\dotNet5783_7729_0796-Nisyon2\DalFacade\obj\Debug\ref\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\bin\DalFacade.deps.json
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\bin\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\bin\DalFacade.pdb
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\DalFacade.csproj.AssemblyReference.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\DalFacade.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\DalFacade.AssemblyInfoInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\DalFacade.AssemblyInfo.cs
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\DalFacade.csproj.CoreCompileInputs.cache
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\refint\DalFacade.dll
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\DalFacade.pdb
+C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\DalFacade\obj\Debug\ref\DalFacade.dll

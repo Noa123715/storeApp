@@ -28,6 +28,9 @@
     <Compile Update="product\ProductWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SimulatorWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="admin\AdminWindow.xaml">
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="product\ProductWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SimulatorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -11,4 +11,5 @@ public interface IOrder
     public Order UpdateOrderDelivery(int orderID);
     public OrderTracking TrackOrder(int orderID);
     public Order AddAmount(int productId, int orderId, int? Amount);
+    public int? ChooseOrder();
 }

@@ -30,8 +30,11 @@ internal class BLCart : ICart
     public BO.Cart AddProductToCart(BO.Cart cart, int productID)
     {
         try
-        {
-            DO.Product product = dal.Product.Read(p => p.ID == productID);
+        { DO.Product product; 
+            lock (dal)
+            {
+                product = dal.Product.Read(p => p.ID == productID);
+             }
             int productInStock = product.InStock;
             double productPrice = product.Price;
             int index = -1;

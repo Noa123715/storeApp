@@ -19,7 +19,7 @@ internal class BLOrder : BlApi.IOrder
     /// <summary>
     /// creating Idal instance for using its methods and members in BLOrder.
     /// </summary>
-    private IDal DalList { get; set; } = DalApi.Factory.Get();
+    private IDal Dal { get; set; } = DalApi.Factory.Get();
 
     /// <summary>
     /// ReadOrderList method require from Dal-layer all orders in the OrderList.
@@ -27,7 +27,7 @@ internal class BLOrder : BlApi.IOrder
     /// <returns> all orders in the orderList (for manager)</returns>
     public IEnumerable<BO.OrderForList> ReadOrderList()
     {
-        IEnumerable<DO.Order> orders = DalList.Order.ReadAll();
+        IEnumerable<DO.Order> orders = Dal.Order.ReadAll();
         List<BO.OrderForList> orderList = new();
         foreach (var order in orders)
         {
@@ -36,7 +36,7 @@ internal class BLOrder : BlApi.IOrder
             orderForList.CustomerName = order.CustomerName;
             orderForList.TotalPrice = 0;
             orderForList.AmountOfItems = 0;
-            IEnumerable<DO.OrderItem> orderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == order.ID);
+            IEnumerable<DO.OrderItem> orderItems = Dal.OrderItem.ReadAll(oi => oi.OrderID == order.ID);
             foreach (var orderItem in orderItems)
             {
                 orderForList.TotalPrice += orderItem.Price * orderItem.Amount;
@@ -68,8 +68,8 @@ internal class BLOrder : BlApi.IOrder
         {
             if (orderID <= 0)
                 throw new BlNegativeInputException();
-            DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
-            var DoOrderItems = DalList.OrderItem.ReadAll();
+            DO.Order DoOrder = Dal.Order.Read(o => o.ID == orderID);
+            var DoOrderItems = Dal.OrderItem.ReadAll();
 
             BoOrder.ID = orderID;
             BoOrder.CustomerName = DoOrder.CustomerName;
@@ -90,7 +90,7 @@ internal class BLOrder : BlApi.IOrder
                 {
                     ID = oi.ID,
                     ProductID = oi.ProductID,
-                    ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name,
+                    ProductName = Dal.Product.Read(p => p.ID == oi.ProductID).Name,
                     Amount = oi.Amount,
                     Price = oi.Price,
                     TotalPrice = oi.Amount * oi.Price,
@@ -118,10 +118,10 @@ internal class BLOrder : BlApi.IOrder
         try
         {
             if (orderID <= 0) throw new BlNegativeInputException();
-            DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
+            DO.Order DoOrder = Dal.Order.Read(o => o.ID == orderID);
 
             DoOrder.ShipDate = DateTime.Now;
-            DalList.Order.UpDate(DoOrder);
+            Dal.Order.UpDate(DoOrder);
             BoOrder.ID = DoOrder.ID;
             BoOrder.CustomerName = DoOrder.CustomerName;
             BoOrder.CustomerEmail = DoOrder.CustomerEmail;
@@ -131,13 +131,13 @@ internal class BLOrder : BlApi.IOrder
             BoOrder.ShipDate = DateTime.Now;
             BoOrder.DeliveryDate = DateTime.MinValue;
             BoOrder.TotalPrice = 0;
-            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == orderID);
+            IEnumerable<DO.OrderItem> DoOrderItems = Dal.OrderItem.ReadAll(oi => oi.OrderID == orderID);
             foreach (var OrderItem in DoOrderItems)
             {
                 BO.OrderItem orderItem = new();
                 orderItem.ID = OrderItem.ID;
                 orderItem.ProductID = OrderItem.ProductID;
-                orderItem.ProductName = DalList.Product.Read(p => p.ID == OrderItem.ProductID).Name;
+                orderItem.ProductName = Dal.Product.Read(p => p.ID == OrderItem.ProductID).Name;
                 orderItem.Amount = OrderItem.Amount;
                 orderItem.Price = OrderItem.Price;
                 orderItem.TotalPrice = OrderItem.Amount * OrderItem.Price;
@@ -163,8 +163,8 @@ internal class BLOrder : BlApi.IOrder
     {
         Order BoOrder = new();
         try
-        {
-            DO.Order DoOrder = DalList.Order.Read(o => o.ID == orderID);
+        {   
+            DO.Order DoOrder = Dal.Order.Read(o => o.ID == orderID);
 
             if (DoOrder.ShipDate == DateTime.MinValue)
                 throw new BlWrongDateSequenceException();
@@ -179,14 +179,14 @@ internal class BLOrder : BlApi.IOrder
             BoOrder.DeliveryDate = DateTime.Now;
             BoOrder.Status = (BO.eOrderStatus)2;
             BoOrder.TotalPrice = 0;
-            IEnumerable<DO.OrderItem> DoOrderItems = DalList.OrderItem.ReadAll(oi => oi.OrderID == orderID);
+            IEnumerable<DO.OrderItem> DoOrderItems = Dal.OrderItem.ReadAll(oi => oi.OrderID == orderID);
             foreach (var oi in DoOrderItems)
             {
                 BO.OrderItem orderItem = new()
                 {
                     ID = oi.ID,
                     ProductID = oi.ProductID,
-                    ProductName = DalList.Product.Read(p => p.ID == oi.ProductID).Name,
+                    ProductName = Dal.Product.Read(p => p.ID == oi.ProductID).Name,
                     Amount = oi.Amount,
                     Price = oi.Price,
                     TotalPrice = oi.Amount * oi.Price,
@@ -213,7 +213,7 @@ internal class BLOrder : BlApi.IOrder
     {
         try
         {
-            DO.Order order = DalList.Order.Read(o => o.ID == orderID);
+            DO.Order order = Dal.Order.Read(o => o.ID == orderID);
             BO.OrderTracking BoOrderTracking = new();
             BoOrderTracking.ID = order.ID;
             BoOrderTracking.TrackList.Add(new Tuple<DateTime?, string>(order.OrderDate, BO.eOrderStatus.Ordered.ToString()));
@@ -243,19 +243,19 @@ internal class BLOrder : BlApi.IOrder
             DO.OrderItem oi;
             if (addOrSubstract != null)
             {
-                oi = DalList.OrderItem.Read(o => o.OrderID == orderId && o.ProductID == productId);
+                oi = Dal.OrderItem.Read(o => o.OrderID == orderId && o.ProductID == productId);
                 if (addOrSubstract == 1)
                 {
                     oi.Amount++;
-                    DalList.OrderItem.UpDate(oi);
-                }
+                    Dal.OrderItem.UpDate(oi);
+                }   
                 else if (addOrSubstract == -1)
                 {
                     oi.Amount--;
-                    DalList.OrderItem.UpDate(oi);
+                    Dal.OrderItem.UpDate(oi);
                 }
                 else if (addOrSubstract == 0)
-                    DalList.OrderItem.Delete(oi.ID);
+                    Dal.OrderItem.Delete(oi.ID);
                 else
                     throw new BlInValidInputException();
             }
@@ -264,9 +264,9 @@ internal class BLOrder : BlApi.IOrder
                 oi = new();
                 oi.OrderID = orderId;
                 oi.ProductID = productId;
-                oi.Price = DalList.Product.Read(p => p.ID == productId).Price;
+                oi.Price = Dal.Product.Read(p => p.ID == productId).Price;
                 oi.Amount = 1;
-                DalList.OrderItem.Create(oi);
+                Dal.OrderItem.Create(oi);
             }
         }
         catch (BlApi.BlInValidInputException ex)
@@ -278,5 +278,30 @@ internal class BLOrder : BlApi.IOrder
             throw new Exception();
         }
         return ReadOrderProperties(orderId);
+    }
+
+    /// <summary>
+    /// ChooseOrder method chooses order for simulator.
+    /// </summary>
+    /// <returns></returns>
+    public int? ChooseOrder()
+    {
+        try
+        {
+            IEnumerable<DO.Order>? confirmDateOrders = Dal.Order.ReadAll(o => o.ShipDate == null);
+            IEnumerable<DO.Order>? shipDateOrders = Dal.Order.ReadAll(o => (o.ShipDate != null && o.DeliveryDate == null));
+            DateTime? minConfirmDate = confirmDateOrders.Min(x => x.OrderDate);
+            DateTime? minShipDate = shipDateOrders.Min(x => x.ShipDate);
+            DO.Order minConfirmOrderDate = confirmDateOrders.Where(o => o.OrderDate == minConfirmDate).FirstOrDefault();
+            DO.Order minShipOrderDate = shipDateOrders.Where(o => o.ShipDate == minShipDate).FirstOrDefault();
+            if (confirmDateOrders == null && shipDateOrders == null) return null;
+            if (confirmDateOrders == null) return minShipOrderDate.ID;
+            if (shipDateOrders == null) return minConfirmOrderDate.ID;
+            return minConfirmDate < minShipDate ? minConfirmOrderDate.ID : minShipOrderDate.ID;
+        }
+        catch (NotExistException err)
+        {
+            throw new BlNotExistException(err);
+        }
     }
 }
