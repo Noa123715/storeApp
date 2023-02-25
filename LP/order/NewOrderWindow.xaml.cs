@@ -62,7 +62,7 @@ public partial class NewOrderWindow : Window
         {
             NewOrderView.ItemsSource = Bl.Product.ReadProductsList((eCategories)SelectorProduct.SelectedItem);
         }
-        catch (BlNotExistException err)
+        catch (BlNotExistException)
         {
             MessageBox.Show("No products found", "", MessageBoxButton.OK, MessageBoxImage.Error);
         }

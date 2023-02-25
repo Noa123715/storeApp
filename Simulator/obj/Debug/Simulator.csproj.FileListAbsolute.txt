@@ -11,3 +11,16 @@ C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\Simula
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\Simulator\obj\Debug\refint\Simulator.dll
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\Simulator\obj\Debug\Simulator.pdb
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\Simulator\obj\Debug\ref\Simulator.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\bin\Simulator.deps.json
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\bin\Simulator.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\bin\Simulator.pdb
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.csproj.AssemblyReference.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.AssemblyInfoInputs.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.AssemblyInfo.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.csproj.CoreCompileInputs.cache
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.csproj.CopyComplete
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\refint\Simulator.dll
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\Simulator.pdb
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\Simulator\obj\Debug\ref\Simulator.dll

@@ -62,8 +62,6 @@ C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\P
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\ref\PL.dll
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.g.cs
-C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\CompleteOrderWindow.baml
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\CartWindow.g.cs
 C:\Users\אבקסיס נועה1\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\cart\CartWindow.baml
 C:\Users\מורגנשטרן שושנה\source\repos\dotNet5783_7729_0796\LP\obj\Debug\PL.csproj.AssemblyReference.cache
@@ -399,3 +397,11 @@ C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\LP\obj
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\LP\obj\Debug\ref\PL.dll
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\LP\obj\Debug\SimulatorWindow.g.cs
 C:\Users\מורגנשטרן שושנה\Source\Repos\dotNet5783_7729_07962\LP\obj\Debug\SimulatorWindow.baml
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\admin\AdminWindow.g.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\admin\OrderListWindow.g.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\OrderWindow.g.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\SimulatorWindow.g.cs
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\admin\AdminWindow.baml
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\admin\OrderListWindow.baml
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\order\OrderWindow.baml
+C:\Users\נועה אבקסיס\Source\Repos\dotNet5783_7729_0796\LP\obj\Debug\SimulatorWindow.baml

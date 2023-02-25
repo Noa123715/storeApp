@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "PL/1.0.0": {
         "dependencies": {
-          "BL": "1.0.0"
+          "BL": "1.0.0",
+          "Simulator": "1.0.0"
         },
         "runtime": {
           "PL.dll": {}
@@ -35,6 +36,14 @@
         "runtime": {
           "DalXml.dll": {}
         }
+      },
+      "Simulator/1.0.0": {
+        "dependencies": {
+          "BL": "1.0.0"
+        },
+        "runtime": {
+          "Simulator.dll": {}
+        }
       }
     }
   },
@@ -55,6 +64,11 @@
       "sha512": ""
     },
     "DalXml/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Simulator/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

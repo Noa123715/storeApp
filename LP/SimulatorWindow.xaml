@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="SimulatorWindow" Height="450" Width="800">
+        Title="SimulatorWindow" Height="450" Width="800" Loaded="Window_Loaded"
+        Closing="Window_Closing">
     <Grid>
-        
+        <Button x:Name="endOfSimulator" Style="{StaticResource classicBtn}" Content="End" Click="EndOfSimulator_Click" Margin="634,337,0,0" Width="133" Height="62"/>
+        <Label x:Name="NowLbl" Style="{StaticResource classicLbl}" Content="{Binding}" HorizontalAlignment="Left" Margin="35,27,0,0" VerticalAlignment="Top" Width="337" Height="51"/>
+
     </Grid>
 </Window>

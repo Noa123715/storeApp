@@ -209,7 +209,7 @@ public partial class ProductWindow : Window
                 MessageBox.Show("The deletion did not occur", "Delete Product");
             }
         }
-        catch (BlNotExistException err)
+        catch (BlNotExistException)
         {
             MessageBox.Show("the product not found or missing ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }

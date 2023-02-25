@@ -38,6 +38,19 @@
         "runtime": {
           "bin/placeholder/DalXml.dll": {}
         }
+      },
+      "Simulator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Simulator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Simulator.dll": {}
+        }
       }
     }
   },
@@ -56,32 +69,33 @@
       "type": "project",
       "path": "../DalXml/DalXml.csproj",
       "msbuildProject": "../DalXml/DalXml.csproj"
+    },
+    "Simulator/1.0.0": {
+      "type": "project",
+      "path": "../Simulator/Simulator.csproj",
+      "msbuildProject": "../Simulator/Simulator.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "BL >= 1.0.0"
+      "BL >= 1.0.0",
+      "Simulator >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_07962\\LP\\PL.csproj",
+      "projectUniqueName": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
       "projectName": "PL",
-      "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_07962\\LP\\PL.csproj",
-      "packagesPath": "C:\\Users\\מורגנשטרן שושנה\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_07962\\LP\\obj\\",
+      "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+      "packagesPath": "C:\\Users\\נועה אבקסיס\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_0796\\LP\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\מורגנשטרן שושנה\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\נועה אבקסיס\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -89,15 +103,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_07962\\BL\\BL.csproj": {
-              "projectPath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_07962\\BL\\BL.csproj"
+            "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_0796\\BL\\BL.csproj"
+            },
+            "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_0796\\Simulator\\Simulator.csproj": {
+              "projectPath": "C:\\Users\\נועה אבקסיס\\Source\\Repos\\dotNet5783_7729_0796\\Simulator\\Simulator.csproj"
             }
           }
         }
@@ -130,7 +146,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -35,7 +35,7 @@ public partial class ProductListWindow : Window
         {
             ProductListView.ItemsSource = bl.Product.ReadProductsList((eCategories)ProductSelector.SelectedItem);
         }
-        catch(BlNotExistException err)
+        catch(BlNotExistException)
         {
             MessageBox.Show("No products were found in this category, try choosing another category.", "No products in this category", MessageBoxButton.OK, MessageBoxImage.Error);
         }
@@ -75,7 +75,7 @@ public partial class ProductListWindow : Window
         {
             ProductListView.ItemsSource = bl.Product.ReadProductsList();
         }
-        catch (BlNotExistException err)
+        catch (BlNotExistException)
         {
             MessageBox.Show("No products were found.", " products not found", MessageBoxButton.OK, MessageBoxImage.Error);
         }
