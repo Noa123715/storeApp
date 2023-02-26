@@ -288,33 +288,16 @@ internal class BLOrder : BlApi.IOrder
     {
         try
         {
-            DateTime minDate = DateTime.Now;
-            int? orderId = null;
-            List<OrderForList>? orderList = ReadOrderList().ToList();
-            orderList?.ForEach(o =>
-            {
-                switch (o.Status)
-                {
-                    case eOrderStatus.Ordered:
-                        if (ReadOrderProperties(o.ID).OrderDate < minDate)
-                        {
-                            orderId = o.ID;
-                            minDate = (DateTime)ReadOrderProperties(o.ID).OrderDate;
-                        }
-                        break;
-                    case eOrderStatus.Shipped:
-                        if (ReadOrderProperties(o.ID).ShipDate < minDate)
-                        {
-                            orderId = o.ID;
-                            minDate = (DateTime)ReadOrderProperties(o.ID).ShipDate;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            });
-            return orderId;
-        
+            IEnumerable<DO.Order>? confirmDateOrders = Dal.Order.ReadAll(o => o.ShipDate == DateTime.MinValue );
+            IEnumerable<DO.Order>? shipDateOrders = Dal.Order.ReadAll(o => (o.ShipDate != DateTime.MinValue && o.DeliveryDate == DateTime.MinValue));
+            DateTime? minConfirmDate = confirmDateOrders.Min(x => x.OrderDate);
+            DateTime? minShipDate = shipDateOrders.Min(x => x.ShipDate);
+            DO.Order minConfirmOrderDate = confirmDateOrders.Where(o => o.OrderDate == minConfirmDate).FirstOrDefault();
+            DO.Order minShipOrderDate = shipDateOrders.Where(o => o.ShipDate == minShipDate).FirstOrDefault();
+            if (confirmDateOrders == null && shipDateOrders == null) return 0;
+            if (confirmDateOrders == null) return minShipOrderDate.ID;
+            if (shipDateOrders == null) return minConfirmOrderDate.ID;
+            return minConfirmDate < minShipDate ? minConfirmOrderDate.ID : minShipOrderDate.ID;
         }
         catch (NotExistException err)
         {

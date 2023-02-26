@@ -30,7 +30,7 @@ public static class Simulator
                 orderId = bl?.Order.ChooseOrder();
                 if (orderId == 0)
                 {
-                    //OnStopSimulator();
+                    Stop();
                     break;
                 }
                 int time = rand.Next(5, 10);
@@ -47,12 +47,7 @@ public static class Simulator
     }
 
 
-    private static void OnStopSimulator()
-    {
-        if (StopSimulator != null)
-            StopSimulator(null, EventArgs.Empty);
-        stop = true;
-    }
+
 
     private static void OnUpdateProgress()
     {
@@ -65,6 +60,8 @@ public static class Simulator
 
     public static void Stop()
     {
+        if (StopSimulator != null)
+            StopSimulator(null, EventArgs.Empty);
         stop = true;
     }
 }

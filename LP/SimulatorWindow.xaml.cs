@@ -61,11 +61,10 @@ public partial class SimulatorWindow : Window
 
     private void BackgroundWorker_RunWorkerCompleted(object? sender, RunWorkerCompletedEventArgs e)
     {
-        if (!isFinish)
-        {
-            isFinish = true;
-            Simulator.Simulator.Stop();
-        }
+        Simulator.Simulator.StopSimulator -= StopSimulator;
+        Simulator.Simulator.UpdateProgress -= BackgroundWorker_ProgressChanged;
+        MessageBox.Show("simulation stoped");
+        this.Close();
     }
 
     /// <summary>
