@@ -16,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Simulator;
+using System.Diagnostics;
 
 namespace PL;
 
@@ -28,15 +30,21 @@ public partial class SimulatorWindow : Window
     DoubleAnimation animation;
     ProgressBar progressBar;
     BackgroundWorker backgroundWorker;
-
+    public BO.eOrderStatus nextStatus;
     private BlApi.IBL Bl { get; set; }
     private bool isFinish = false;
-    private static extern int SetWindow(IntPtr hWnd, int nIndex, int newLoad);
-    private static extern int GetWindow(IntPtr hWnd, int nIndex);
+    Tuple<BO.Order, int> DetailsTuple;
+    ProgressBar ProgressingOrderBar;
+    Duration duration;
+    DoubleAnimation doubleanimation;
+    private Stopwatch stopWatch;
+    //private static extern int SetWindow(IntPtr hWnd, int nIndex, int newLoad);
+    //private static extern int GetWindow(IntPtr hWnd, int nIndex);
     public SimulatorWindow(BlApi.IBL bl)
     {
         InitializeComponent();
         Bl = bl;
+        stopWatch = new Stopwatch();
         backgroundWorker = new BackgroundWorker();
         backgroundWorker.DoWork += BackgroundWorker_DoWork;
         backgroundWorker.ProgressChanged += BackgroundWorker_ProgressChanged;
@@ -44,7 +52,11 @@ public partial class SimulatorWindow : Window
         backgroundWorker.WorkerReportsProgress = true;
         backgroundWorker.WorkerSupportsCancellation = true;
         backgroundWorker.RunWorkerAsync();
-        DataContext = DateTime.Now.ToString();
+        DataContext = DetailsTuple;
+        stopWatch.Restart();
+        Simulator.Simulator.StopSimulator += StopSimulator;
+        Simulator.Simulator.UpdateProgress += BackgroundWorker_ProgressChanged;
+
     }
 
     private void BackgroundWorker_RunWorkerCompleted(object? sender, RunWorkerCompletedEventArgs e)
@@ -83,8 +95,7 @@ public partial class SimulatorWindow : Window
     private void BackgroundWorker_DoWork(object? sender, DoWorkEventArgs e)
     {
         Simulator.Simulator.Run();
-        Simulator.Simulator.Progress += ChangeDisplay;
-        Simulator.Simulator.StopSimulator += StopSimulator;
+  
         if (!isFinish)
         {
             backgroundWorker.ReportProgress(1);
@@ -103,16 +114,47 @@ public partial class SimulatorWindow : Window
         Close();
     }
 
-    private void ChangeDisplay(object? sender, EventArgs e)
-    {
 
+
+    private void BackgroundWorker_ProgressChanged(object? sender, EventArgs e)
+    {
+     
+
+            if (e is not SimulatorEventDetails)
+                return;
+            SimulatorEventDetails details = e as SimulatorEventDetails;
+            DetailsTuple = new Tuple<BO.Order, int>(details.Order, details.time);
+            if (!CheckAccess())
+            {
+                Dispatcher.BeginInvoke(BackgroundWorker_ProgressChanged, sender, e);
+            }
+            else
+            {
+                nextStatus = (BO.eOrderStatus)((int)details.Order.Status + 1);
+                nextStateTxt.Text = nextStatus.ToString();
+                DataContext = DetailsTuple;
+
+                ProgressBarStart(details.time);
+            }
+            
     }
 
-    private void BackgroundWorker_ProgressChanged(object? sender, ProgressChangedEventArgs e)
+    void ProgressBarStart(int sec)
     {
-        NowLbl.DataContext = DateTime.Now.ToString();
+        if (ProgressingOrderBar != null)
+        {
+            SBar.Items.Remove(ProgressingOrderBar);
+        }
+        ProgressingOrderBar = new ProgressBar();
+        ProgressingOrderBar.IsIndeterminate = false;
+        ProgressingOrderBar.Orientation = Orientation.Horizontal;
+        ProgressingOrderBar.Width = 500;
+        ProgressingOrderBar.Height = 30;
+        duration = new Duration(TimeSpan.FromSeconds(sec * 2));
+        doubleanimation = new DoubleAnimation(200.0, duration);
+        ProgressingOrderBar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);
+        SBar.Items.Add(ProgressingOrderBar);
     }
-
     private void Window_Loaded(object sender, RoutedEventArgs e)
     {
         IntPtr hWnd = new WindowInteropHelper(this).Handle;

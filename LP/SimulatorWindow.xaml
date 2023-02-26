@@ -8,8 +8,21 @@
         Title="SimulatorWindow" Height="450" Width="800" Loaded="Window_Loaded"
         Closing="Window_Closing">
     <Grid>
-        <Button x:Name="endOfSimulator" Style="{StaticResource classicBtn}" Content="End" Click="EndOfSimulator_Click" Margin="634,337,0,0" Width="133" Height="62"/>
-        <Label x:Name="NowLbl" Style="{StaticResource classicLbl}" Content="{Binding}" HorizontalAlignment="Left" Margin="35,27,0,0" VerticalAlignment="Top" Width="337" Height="51"/>
-
+        <StatusBar Name="SBar" Grid.Column="0" Grid.Row="5" VerticalAlignment="Bottom" Background="Lavender">
+            <StatusBarItem Height="80">
+                <TextBlock Width="72" FontSize="20">Status:</TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+        <Label Style="{StaticResource classicLbl}" Margin="262,121,0,0" Content="order ID:" Width="119" Height="34"/>
+        <TextBox x:Name="OrderIDText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="381,122,0,0" TextWrapping="Wrap" Text="{Binding Item1.ID, Mode=OneWay}" VerticalAlignment="Top" Width="179" Height="33"/>
+        <Label Style="{StaticResource classicLbl}" Margin="261,193,0,0" Content="next state:" Width="120" Height="31"/>
+        <TextBox x:Name="nextStateTxt" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="381,198,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="179" Height="31"/>
+        <Label Style="{StaticResource classicLbl}" Margin="262,155,0,0" Content="previous state" Width="119" Height="38"/>
+        <TextBox x:Name="prevStateTxt" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="381,160,0,0" TextWrapping="Wrap" Text="{Binding Item1.Status, Mode=OneWay}" VerticalAlignment="Top" Width="179" Height="33"/>
+        <Label Style="{StaticResource classicLbl}" Margin="262,229,0,0" Content="Estimated order processing time:" Width="120" Height="31"/>
+        <TextBox x:Name="estimatedTimeTxt" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="381,234,0,0" TextWrapping="Wrap" Text="{Binding Path=Item2, Mode=OneWay}" VerticalAlignment="Top" Width="179" Height="26"/>
+        <Button x:Name="endOfSimulator" Style="{StaticResource classicBtn}" Content="End" Click="EndOfSimulator_Click" Margin="638,38,0,0" Width="133" Height="62"/>
+        <!--<Label x:Name="NowLbl"  Content="{Binding}" HorizontalAlignment="Left" Margin="35,27,0,0" VerticalAlignment="Top" Width="337" Height="51"/>-->
+        <Label Style="{StaticResource classicLbl}" x:Name="timerTextBlock" HorizontalAlignment="Left" Margin="70,40,0,0"  Content="00:00:00" VerticalAlignment="Top" Height="52" Width="232"/>
     </Grid>
 </Window>
