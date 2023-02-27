@@ -16,7 +16,7 @@ public static class Simulator
     //private static bool finish = true;
     private static bool stop { get; set; } = false;
     private static Random rand = new Random();
-    public static event EventHandler? Progress;
+    public static event EventHandler? Progress ;
     public static event EventHandler ?StopSimulator;
     private static SimulatorEventDetails Details { get; set; }
     public static event EventHandler UpdateProgress;

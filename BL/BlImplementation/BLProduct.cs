@@ -27,9 +27,9 @@ internal class BLProduct : IProduct
     {
         IEnumerable<DO.Product>? dalProduct;
         if (categories is null)
-            dalProduct = Dal.Product.ReadAll();
+          lock(Dal)  dalProduct = Dal.Product.ReadAll();
         else
-            dalProduct = Dal.Product.ReadAll(product => (BO.eCategories)product.Category == categories);
+           lock (Dal) dalProduct = Dal.Product.ReadAll(product => (BO.eCategories)product.Category == categories);
         List<BO.ProductForList> products = new List<BO.ProductForList>();
         if (dalProduct is null) throw new BlNullValueException();
         foreach (var prod in dalProduct)
@@ -59,7 +59,8 @@ internal class BLProduct : IProduct
         {
             if (productId <= 0)
                 throw new BlInValidInputException();
-            DO.Product prod = Dal.Product.Read(p => p.ID == productId);
+            DO.Product prod;
+            lock (Dal) prod = Dal.Product.Read(p => p.ID == productId);
             product.ID = prod.ID;
             product.Name = prod.Name;
             product.Price = prod.Price;
@@ -84,7 +85,8 @@ internal class BLProduct : IProduct
         try
         {
             if (productId <= 0) throw new BlNegativeInputException();
-            DO.Product dalProduct = Dal.Product.Read(p => p.ID == productId);
+            DO.Product dalProduct;
+            lock (Dal) dalProduct = Dal.Product.Read(p => p.ID == productId);
             BO.ProductItem product = new BO.ProductItem();
             product.ID = dalProduct.ID;
             product.Name = dalProduct.Name;
@@ -138,7 +140,8 @@ internal class BLProduct : IProduct
             DOProduct.Price = product.Price;
             DOProduct.Category = (DO.eCategories)product.Category;
             DOProduct.InStock = product.InStock;
-            Dal.Product.Create(DOProduct);
+            lock (Dal)
+                Dal.Product.Create(DOProduct);
         }
         catch (DalApi.AlreadyExistException err)
         {
@@ -155,13 +158,15 @@ internal class BLProduct : IProduct
     {
         try
         {
-            IEnumerable<DO.OrderItem> orderitems = Dal.OrderItem.ReadAll();
+            IEnumerable<DO.OrderItem> orderitems;
+            lock(Dal) orderitems = Dal.OrderItem.ReadAll();
             foreach (var item in orderitems)
             {
                 if (item.ProductID == productId)
                     throw new BlIllegalDeletionAttempt();
             }
-            Dal.Product.Delete(productId);
+            lock (Dal)
+                Dal.Product.Delete(productId);
         }
         catch (DalApi.NotExistException err)
         {
@@ -177,7 +182,9 @@ internal class BLProduct : IProduct
     {
         try
         {
-            DO.Product DOProduct = Dal.Product.Read(p => p.ID == product.ID);
+            DO.Product DOProduct;
+            lock (Dal)
+                DOProduct = Dal.Product.Read(p => p.ID == product.ID);
             if (string.IsNullOrEmpty(product.Name))
                 throw new BlNullValueException();
             if (product.Price <= 0)
@@ -188,7 +195,7 @@ internal class BLProduct : IProduct
             DOProduct.Price = product.Price;
             DOProduct.Category = (DO.eCategories)product.Category;
             DOProduct.InStock = product.InStock;
-            Dal.Product.UpDate(DOProduct);
+            lock (Dal) Dal.Product.UpDate(DOProduct);
         }
         catch (DalApi.NotExistException err)
         {

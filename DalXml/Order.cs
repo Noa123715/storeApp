@@ -122,6 +122,7 @@ internal class Order : IOrder
         XMLorder.Element("DeliveryDate").Value = upOrder.DeliveryDate.ToString();
         upOrder.ID = Convert.ToInt32(XMLorder?.Element("ID")?.Value);
         int index = OrderList.FindIndex(item => item.ID == upOrder.ID);
+        if (index == -1) throw new NotExistException();
         OrderList[index] = upOrder;
     }
 }

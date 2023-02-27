@@ -87,10 +87,16 @@ internal class BLCart : ICart
     /// <exception cref="BlOutOfStockException"></exception>
     public BO.Cart UpdateProductAmount(BO.Cart cart, int productID, int newAmount)
     {
+
         try
         {
-            int productInStock = dal.Product.Read(p => p.ID == productID).InStock;
-            double productPrice = dal.Product.Read(p => p.ID == productID).Price;
+            int productInStock;
+            double productPrice;
+            lock (dal)
+            {
+                productInStock = dal.Product.Read(p => p.ID == productID).InStock;
+                productPrice = dal.Product.Read(p => p.ID == productID).Price;
+            }
             BO.OrderItem? orderItem = new BO.OrderItem();
             orderItem = cart.Items.Find(item => item.ProductID == productID);
             if (orderItem == null)
@@ -159,7 +165,10 @@ internal class BLCart : ICart
             DoOrder.CustomerEmail = cart.CustomerEmail;
             DoOrder.CustomerAddress = cart.CustomerAddress;
             DoOrder.ID = 0;
-            dal?.Order.Create(DoOrder);
+            lock (dal)
+            {
+                dal?.Order.Create(DoOrder);
+            }
             foreach (BO.OrderItem orderItem in cart.Items)
             {
                 productInStock = dal.Product.Read(p => p.ID == orderItem.ProductID).InStock;
@@ -177,10 +186,17 @@ internal class BLCart : ICart
                 DoOrderItem.OrderID = DoOrder.ID;
                 DoOrderItem.Amount = orderItem.Amount;
                 DoOrderItem.Price = orderItem.TotalPrice;
-                dal.OrderItem.Create(DoOrderItem);
-                DO.Product DoProduct = dal.Product.Read(p => p.ID == DoOrderItem.ProductID);
+                DO.Product DoProduct;
+                lock (dal)
+                {
+                    dal.OrderItem.Create(DoOrderItem);
+                    DoProduct = dal.Product.Read(p => p.ID == DoOrderItem.ProductID);
+                }
                 DoProduct.InStock -= orderItem.Amount;
-                dal.Product.UpDate(DoProduct);
+                lock (dal)
+                {
+                    dal.Product.UpDate(DoProduct);
+                }
             }
         }
         catch (DalApi.NotExistException err)

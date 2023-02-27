@@ -64,7 +64,7 @@ public partial class SimulatorWindow : Window
         Simulator.Simulator.StopSimulator -= StopSimulator;
         Simulator.Simulator.UpdateProgress -= BackgroundWorker_ProgressChanged;
         MessageBox.Show("simulation stoped");
-        this.Close();
+        //this.Close();
     }
 
     /// <summary>
@@ -95,7 +95,7 @@ public partial class SimulatorWindow : Window
     {
         Simulator.Simulator.Run();
   
-        if (!isFinish)
+        while (backgroundWorker.WorkerSupportsCancellation)
         {
             backgroundWorker.ReportProgress(1);
             Thread.Sleep(1000);
