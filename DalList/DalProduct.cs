@@ -20,9 +20,9 @@ public struct DalProduct : IProduct
         return newProduct.ID;
     }
 
-    public Product Read(int id)
+    public DO.Product Read(int id)
     {
-        foreach (Product item in DataSource.productList)
+        foreach (DO.Product item in DataSource.productList)
         {
             if (item.ID == id)
             {

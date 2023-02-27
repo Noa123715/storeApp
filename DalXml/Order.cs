@@ -111,18 +111,24 @@ internal class Order : IOrder
     /// <exception cref="NotExistException"></exception>
     public void UpDate(DO.Order upOrder)
     {
-        XElement? root = XDocument.Load(@"..\xml\order.xml").Root;
-        XElement? XMLorder = root?.Elements("Order").Where(o => o.Element("ID")?.Value == upOrder.ID.ToString()).FirstOrDefault();
-        if (XMLorder is null) { throw new NotExistException(); }
-        XMLorder.Element("CustomerName").Value = upOrder.CustomerName;
-        XMLorder.Element("CustomerEmail").Value = upOrder.CustomerEmail;
-        XMLorder.Element("CustomerAddress").Value = upOrder.CustomerAddress;
-        XMLorder.Element("OrderDate").Value = upOrder.OrderDate.ToString();
-        XMLorder.Element("ShipDate").Value = upOrder.ShipDate.ToString();
-        XMLorder.Element("DeliveryDate").Value = upOrder.DeliveryDate.ToString();
-        upOrder.ID = Convert.ToInt32(XMLorder?.Element("ID")?.Value);
-        int index = OrderList.FindIndex(item => item.ID == upOrder.ID);
-        if (index == -1) throw new NotExistException();
-        OrderList[index] = upOrder;
+        XmlRootAttribute xmlRoot = new()
+        {
+            ElementName = "OrdersList",
+            IsNullable = true
+        };
+        StreamReader orderReader = new(@"..\xml\order.xml");
+        XmlSerializer ser = new(typeof(List<DO.Order>), xmlRoot);
+        List<DO.Order>? orderList = (List<DO.Order>?)ser.Deserialize(orderReader);
+        orderReader.Close();
+        DO.Order order1 = orderList.Where(order => order.ID == order.ID).FirstOrDefault();
+        if (order1.Equals(default(DO.Order)))
+        {
+            throw new NotExistException();
+        }
+        orderList.Remove(order1);
+        orderList.Add(order1);
+        StreamWriter pWrite = new(@"..\xml\order.xml");
+        ser.Serialize(pWrite, orderList);
+        pWrite.Close();
     }
 }
