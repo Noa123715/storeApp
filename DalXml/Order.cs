@@ -115,13 +115,13 @@ internal class Order : IOrder
         XmlSerializer ser = new(typeof(List<DO.Order>), xmlRoot);
         List<DO.Order>? orderList = (List<DO.Order>?)ser.Deserialize(orderReader);
         orderReader.Close();
-        DO.Order order1 = orderList.Where(order => order.ID == order.ID).FirstOrDefault();
+        DO.Order order1 = orderList.Where(order => order.ID == upOrder.ID).FirstOrDefault();
         if (order1.Equals(default(DO.Order)))
         {
             throw new NotExistException();
         }
         orderList.Remove(order1);
-        orderList.Add(order1);
+        orderList.Add(upOrder);
         StreamWriter pWrite = new(@"..\xml\order.xml");
         ser.Serialize(pWrite, orderList);
         pWrite.Close();

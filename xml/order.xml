@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <OrdersList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Order>
+<<<<<<< HEAD
     <ID>3</ID>
     <CustomerName>Bill Gates</CustomerName>
     <CustomerEmail>billgates@gmail.com</CustomerEmail>
@@ -10,6 +11,8 @@
     <DeliveryDate xsi:nil="true">0001-01-01T00:00:00</DeliveryDate>
   </Order>
   <Order>
+=======
+>>>>>>> 18f50e87ae747ee73753dcd904a396939e792faa
     <ID>1</ID>
     <CustomerName>Donald Trump</CustomerName>
     <CustomerEmail>donaldtrump@gmail.com</CustomerEmail>
@@ -24,8 +27,94 @@
     <CustomerEmail>elonmusk@gmail.com</CustomerEmail>
     <CustomerAddress>Ein Kerem, 7th floor</CustomerAddress>
     <OrderDate>2023-02-21T11:16:48.2484391+02:00</OrderDate>
+<<<<<<< HEAD
     <ShipDate>0001-01-01T00:00:00</ShipDate>
     <DeliveryDate xsi:nil="true">0001-01-01T00:00:00</DeliveryDate>
+=======
+    <ShipDate>2023-02-28T13:28:10.3253734+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:24:58.1510793+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>3</ID>
+    <CustomerName>ESTI</CustomerName>
+    <CustomerEmail>S@gmail.com</CustomerEmail>
+    <CustomerAddress>sssssss</CustomerAddress>
+    <OrderDate>2023-02-26T21:16:27.1900914+02:00</OrderDate>
+    <ShipDate>2023-02-28T13:28:28.9796739+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:25:06.8256614+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>4</ID>
+    <CustomerName>ddddd</CustomerName>
+    <CustomerEmail>f@gmail.com</CustomerEmail>
+    <CustomerAddress>gggg</CustomerAddress>
+    <OrderDate>2023-02-28T13:31:59.5894746+02:00</OrderDate>
+    <ShipDate>2023-02-28T13:32:16.4099907+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:25:17.5361895+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>5</ID>
+    <CustomerName>S</CustomerName>
+    <CustomerEmail>S@outlook.co.il</CustomerEmail>
+    <CustomerAddress>sss</CustomerAddress>
+    <OrderDate>2023-02-28T14:02:39.5046823+02:00</OrderDate>
+    <ShipDate>2023-02-28T14:03:00.803139+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:25:25.2269103+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>6</ID>
+    <CustomerName>eee</CustomerName>
+    <CustomerEmail>dd@gmail.com</CustomerEmail>
+    <CustomerAddress>gg</CustomerAddress>
+    <OrderDate>2023-02-28T14:17:23.70667+02:00</OrderDate>
+    <ShipDate>2023-02-28T14:18:59.3971081+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:25:35.9473449+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>7</ID>
+    <CustomerName>tt</CustomerName>
+    <CustomerEmail>d@gmail.com</CustomerEmail>
+    <CustomerAddress>sss</CustomerAddress>
+    <OrderDate>2023-02-28T14:18:04.7705195+02:00</OrderDate>
+    <ShipDate>2023-02-28T14:19:11.233568+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:25:46.6777395+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>8</ID>
+    <CustomerName>ddd</CustomerName>
+    <CustomerEmail>ss@gmail.com</CustomerEmail>
+    <CustomerAddress>www</CustomerAddress>
+    <OrderDate>2023-02-28T14:18:22.329421+02:00</OrderDate>
+    <ShipDate>2023-02-28T14:19:20.0428604+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:25:56.4007337+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>9</ID>
+    <CustomerName>dd</CustomerName>
+    <CustomerEmail>d@gmail.com</CustomerEmail>
+    <CustomerAddress>aaa</CustomerAddress>
+    <OrderDate>2023-02-28T14:29:06.4469203+02:00</OrderDate>
+    <ShipDate>2023-02-28T14:29:42.5053772+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:29:53.3548398+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>10</ID>
+    <CustomerName>dddd</CustomerName>
+    <CustomerEmail>s@gmail.com</CustomerEmail>
+    <CustomerAddress>sss</CustomerAddress>
+    <OrderDate>2023-02-28T14:35:35.9477316+02:00</OrderDate>
+    <ShipDate>2023-02-28T14:35:49.8739169+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:35:57.8425762+02:00</DeliveryDate>
+  </Order>
+  <Order>
+    <ID>11</ID>
+    <CustomerName>dd</CustomerName>
+    <CustomerEmail>ddd@gmail.com</CustomerEmail>
+    <CustomerAddress>aa</CustomerAddress>
+    <OrderDate>2023-02-28T14:44:40.7219652+02:00</OrderDate>
+    <ShipDate>2023-02-28T14:46:37.7042395+02:00</ShipDate>
+    <DeliveryDate>2023-02-28T14:47:05.5967251+02:00</DeliveryDate>
+>>>>>>> 18f50e87ae747ee73753dcd904a396939e792faa
   </Order>
   <Order>
     <ID>4</ID>

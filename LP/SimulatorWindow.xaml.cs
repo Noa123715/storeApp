@@ -47,7 +47,7 @@ public partial class SimulatorWindow : Window
         stopWatch = new Stopwatch();
         backgroundWorker = new BackgroundWorker();
         backgroundWorker.DoWork += BackgroundWorker_DoWork;
-        backgroundWorker.ProgressChanged += BackgroundWorker_ProgressChanged;
+        backgroundWorker.ProgressChanged += Worker_ProgressChanged;
         backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
         backgroundWorker.WorkerReportsProgress = true;
         backgroundWorker.WorkerSupportsCancellation = true;
@@ -61,10 +61,18 @@ public partial class SimulatorWindow : Window
 
     private void BackgroundWorker_RunWorkerCompleted(object? sender, RunWorkerCompletedEventArgs e)
     {
-        Simulator.Simulator.StopSimulator -= StopSimulator;
-        Simulator.Simulator.UpdateProgress -= BackgroundWorker_ProgressChanged;
-        MessageBox.Show("simulation stoped");
-        //this.Close();
+        try
+        {
+            Simulator.Simulator.StopSimulator -= StopSimulator;
+            Simulator.Simulator.UpdateProgress -= BackgroundWorker_ProgressChanged;
+            MessageBox.Show("simulation stoped");
+            isFinish = true;
+            this.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
     /// <summary>
@@ -74,7 +82,15 @@ public partial class SimulatorWindow : Window
     /// <param name="e"></param>
     private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
-        e.Cancel = true;
+        try
+        {
+            if (!isFinish)
+                e.Cancel = true;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
     /// <summary>
@@ -84,40 +100,68 @@ public partial class SimulatorWindow : Window
     /// <param name="e"></param>
     private void EndOfSimulator_Click(object sender, RoutedEventArgs e)
     {
-        if (!isFinish)
+        try
         {
-            isFinish = true;
-            Simulator.Simulator.Stop();
+            if (backgroundWorker.WorkerSupportsCancellation == true)
+                backgroundWorker.WorkerSupportsCancellation = false;
         }
+        catch (Exception ex)
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+
     }
 
     private void BackgroundWorker_DoWork(object? sender, DoWorkEventArgs e)
     {
-        Simulator.Simulator.Run();
-  
-        while (backgroundWorker.WorkerSupportsCancellation)
+        try
         {
-            backgroundWorker.ReportProgress(1);
-            Thread.Sleep(1000);
+            Simulator.Simulator.Run();
+            while (backgroundWorker.WorkerSupportsCancellation)
+            {
+                backgroundWorker.ReportProgress(1);
+                Thread.Sleep(1000);
+            }
+        }
+        catch (Exception ex) 
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 
     private void StopSimulator(object? sender, EventArgs e)
     {
-        MessageBox.Show(
-            "simulator's update is finished",
-            "simulator finish",
-            MessageBoxButton.OK,
-            MessageBoxImage.Information
-            );
-        Close();
+        try
+        {
+            MessageBox.Show("There are no more orders to process");
+            EndOfSimulator_Click(sender, e as RoutedEventArgs);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
 
+    private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    {
+        try
+        {
+            string timerText = stopWatch.Elapsed.ToString();
+            timerText = timerText.Substring(0, 8);
+            timerTextBlock.Content = timerText;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
 
     private void BackgroundWorker_ProgressChanged(object? sender, EventArgs e)
     {
-     
+        try
+        {
 
             if (e is not SimulatorEventDetails)
                 return;
@@ -135,24 +179,36 @@ public partial class SimulatorWindow : Window
 
                 ProgressBarStart(details.time);
             }
-            
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
     }
 
     void ProgressBarStart(int sec)
     {
-        if (ProgressingOrderBar != null)
+        try
         {
-            SBar.Items.Remove(ProgressingOrderBar);
+            if (ProgressingOrderBar != null)
+            {
+                SBar.Items.Remove(ProgressingOrderBar);
+            }
+            ProgressingOrderBar = new ProgressBar();
+            ProgressingOrderBar.IsIndeterminate = false;
+            ProgressingOrderBar.Orientation = Orientation.Horizontal;
+            ProgressingOrderBar.Width = 500;
+            ProgressingOrderBar.Height = 30;
+            duration = new Duration(TimeSpan.FromSeconds(sec * 2));
+            doubleanimation = new DoubleAnimation(200.0, duration);
+            ProgressingOrderBar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);
+            SBar.Items.Add(ProgressingOrderBar);
         }
-        ProgressingOrderBar = new ProgressBar();
-        ProgressingOrderBar.IsIndeterminate = false;
-        ProgressingOrderBar.Orientation = Orientation.Horizontal;
-        ProgressingOrderBar.Width = 500;
-        ProgressingOrderBar.Height = 30;
-        duration = new Duration(TimeSpan.FromSeconds(sec * 2));
-        doubleanimation = new DoubleAnimation(200.0, duration);
-        ProgressingOrderBar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);
-        SBar.Items.Add(ProgressingOrderBar);
+        catch (Exception ex)
+        {
+            MessageBox.Show(new PlGenericException(ex.Message).Message, "system error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
     private void Window_Loaded(object sender, RoutedEventArgs e)
     {

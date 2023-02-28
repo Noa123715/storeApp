@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
+<<<<<<< HEAD
   <orderID>20</orderID>
   <orderItemID>40</orderItemID>
+=======
+  <orderID>11</orderID>
+  <orderItemID>56</orderItemID>
+>>>>>>> 18f50e87ae747ee73753dcd904a396939e792faa
 </config>

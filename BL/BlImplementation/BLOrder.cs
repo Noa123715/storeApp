@@ -204,6 +204,10 @@ internal class BLOrder : BlApi.IOrder
                 throw new BlWrongDateSequenceException();
 
             DoOrder.DeliveryDate = DateTime.Now;
+            lock (Dal)
+            {
+                Dal.Order.UpDate(DoOrder);
+            }
             BoOrder.ID = DoOrder.ID;
             BoOrder.CustomerName = DoOrder.CustomerName;
             BoOrder.CustomerEmail = DoOrder.CustomerEmail;
@@ -340,20 +344,27 @@ internal class BLOrder : BlApi.IOrder
     {
         try
         {
+
             IEnumerable<DO.Order>? confirmDateOrders;
             IEnumerable<DO.Order>? shipDateOrders;
+            DO.Order order;
             lock (Dal)
             {
                 confirmDateOrders = Dal.Order.ReadAll(o => o.ShipDate == DateTime.MinValue);
                 shipDateOrders = Dal.Order.ReadAll(o => (o.ShipDate != DateTime.MinValue && o.DeliveryDate == DateTime.MinValue));
             }
-            DateTime? minConfirmDate = confirmDateOrders.Min(x => x.OrderDate);
-            DateTime? minShipDate = shipDateOrders.Min(x => x.ShipDate);
-            DO.Order minConfirmOrderDate = confirmDateOrders.Where(o => o.OrderDate == minConfirmDate).FirstOrDefault();
-            DO.Order minShipOrderDate = shipDateOrders.Where(o => o.ShipDate == minShipDate).FirstOrDefault();
             if (confirmDateOrders == default(IEnumerable<DO.Order>) && shipDateOrders == default(IEnumerable<DO.Order>)) return 0;
-            if (confirmDateOrders == default(IEnumerable<DO.Order>)) return minShipOrderDate.ID;
-            else return minConfirmOrderDate.ID;
+            if (confirmDateOrders.Count()>0)
+            {
+                DateTime? minConfirmDate = confirmDateOrders.Min(x => x.OrderDate);
+                order = confirmDateOrders.Where(o => o.OrderDate == minConfirmDate).FirstOrDefault();
+            }
+            else 
+            {
+                DateTime? minShipDate = shipDateOrders.Min(x => x.ShipDate);
+                order= shipDateOrders.Where(o => o.ShipDate == minShipDate).FirstOrDefault();
+            } 
+            return order.ID;
 
         }
         catch (NotExistException err)
