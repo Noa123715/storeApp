@@ -47,7 +47,7 @@ public partial class SimulatorWindow : Window
         stopWatch = new Stopwatch();
         backgroundWorker = new BackgroundWorker();
         backgroundWorker.DoWork += BackgroundWorker_DoWork;
-        backgroundWorker.ProgressChanged += BackgroundWorker_ProgressChanged;
+        backgroundWorker.ProgressChanged += Worker_ProgressChanged;
         backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
         backgroundWorker.WorkerReportsProgress = true;
         backgroundWorker.WorkerSupportsCancellation = true;
@@ -64,7 +64,8 @@ public partial class SimulatorWindow : Window
         Simulator.Simulator.StopSimulator -= StopSimulator;
         Simulator.Simulator.UpdateProgress -= BackgroundWorker_ProgressChanged;
         MessageBox.Show("simulation stoped");
-        //this.Close();
+        isFinish= true;
+        this.Close();
     }
 
     /// <summary>
@@ -74,7 +75,8 @@ public partial class SimulatorWindow : Window
     /// <param name="e"></param>
     private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
-        e.Cancel = true;
+        if(!isFinish)
+            e.Cancel = true;
     }
 
     /// <summary>
@@ -84,11 +86,11 @@ public partial class SimulatorWindow : Window
     /// <param name="e"></param>
     private void EndOfSimulator_Click(object sender, RoutedEventArgs e)
     {
-        if (!isFinish)
-        {
-            isFinish = true;
-            Simulator.Simulator.Stop();
-        }
+      
+        if (backgroundWorker.WorkerSupportsCancellation == true)
+            backgroundWorker.WorkerSupportsCancellation = false;
+       
+
     }
 
     private void BackgroundWorker_DoWork(object? sender, DoWorkEventArgs e)
@@ -104,16 +106,17 @@ public partial class SimulatorWindow : Window
 
     private void StopSimulator(object? sender, EventArgs e)
     {
-        MessageBox.Show(
-            "simulator's update is finished",
-            "simulator finish",
-            MessageBoxButton.OK,
-            MessageBoxImage.Information
-            );
-        Close();
+        MessageBox.Show("There are no more orders to process");
+        EndOfSimulator_Click(sender, e as RoutedEventArgs);
     }
 
 
+    private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    {
+        string timerText = stopWatch.Elapsed.ToString();
+        timerText = timerText.Substring(0, 8);
+        timerTextBlock.Content = timerText;
+    }
 
     private void BackgroundWorker_ProgressChanged(object? sender, EventArgs e)
     {

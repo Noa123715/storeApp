@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProductList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Product>
-    <InStock>100</InStock>
-    <Name>coat - Moncler</Name>
-    <Price>970</Price>
-    <ID>123456</ID>
-    <Category>Women</Category>
-  </Product>
-  <Product>
-    <InStock>42</InStock>
-    <Name>Elegant suit - Hermes</Name>
-    <Price>4500</Price>
-    <ID>587654</ID>
-    <Category>Women</Category>
-  </Product>
-  <Product>
-    <InStock>13</InStock>
-    <Name>Bag - Louis Vuitton</Name>
-    <Price>1500</Price>
-    <ID>328605</ID>
-    <Category>Accessories</Category>
-  </Product>
-  <Product>
     <InStock>40</InStock>
     <Name>eyeliner - clinic</Name>
     <Price>250</Price>
     <ID>696722</ID>
     <Category>Accessories</Category>
-  </Product>
-  <Product>
-    <InStock>9</InStock>
-    <Name>Classic dress - Fendi</Name>
-    <Price>4500</Price>
-    <ID>234535</ID>
-    <Category>Women</Category>
   </Product>
   <Product>
     <InStock>29</InStock>
@@ -43,25 +15,11 @@
     <Category>Accessories</Category>
   </Product>
   <Product>
-    <InStock>50</InStock>
-    <Name>AAAA</Name>
-    <Price>56</Price>
-    <ID>721329</ID>
-    <Category>Accessories</Category>
-  </Product>
-  <Product>
     <InStock>14</InStock>
     <Name>Elegant pants- ferragamo</Name>
     <Price>2500</Price>
     <ID>925483</ID>
     <Category>Men</Category>
-  </Product>
-  <Product>
-    <InStock>24</InStock>
-    <Name>Pink scarf - Hermes</Name>
-    <Price>970</Price>
-    <ID>156613</ID>
-    <Category>Accessories</Category>
   </Product>
   <Product>
     <InStock>6</InStock>
@@ -83,5 +41,47 @@
     <Price>1000</Price>
     <ID>804942</ID>
     <Category>Women</Category>
+  </Product>
+  <Product>
+    <InStock>98</InStock>
+    <Name>coat - Moncler</Name>
+    <Price>970</Price>
+    <ID>123456</ID>
+    <Category>Women</Category>
+  </Product>
+  <Product>
+    <InStock>12</InStock>
+    <Name>Bag - Louis Vuitton</Name>
+    <Price>1500</Price>
+    <ID>328605</ID>
+    <Category>Accessories</Category>
+  </Product>
+  <Product>
+    <InStock>8</InStock>
+    <Name>Classic dress - Fendi</Name>
+    <Price>4500</Price>
+    <ID>234535</ID>
+    <Category>Women</Category>
+  </Product>
+  <Product>
+    <InStock>41</InStock>
+    <Name>Elegant suit - Hermes</Name>
+    <Price>4500</Price>
+    <ID>587654</ID>
+    <Category>Women</Category>
+  </Product>
+  <Product>
+    <InStock>49</InStock>
+    <Name>AAAA</Name>
+    <Price>56</Price>
+    <ID>721329</ID>
+    <Category>Accessories</Category>
+  </Product>
+  <Product>
+    <InStock>23</InStock>
+    <Name>Pink scarf - Hermes</Name>
+    <Price>970</Price>
+    <ID>156613</ID>
+    <Category>Accessories</Category>
   </Product>
 </ProductList>
