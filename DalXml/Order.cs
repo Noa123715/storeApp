@@ -1,10 +1,7 @@
 ﻿namespace Dal;
 using DalApi;
-using DO;
 using System;
 using System.Collections.Generic;
-using System.Reflection.PortableExecutable;
-using System.Runtime.ConstrainedExecution;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
@@ -48,8 +45,6 @@ internal class Order : IOrder
         write.Close();
         return newOrder.ID;
     }
-
-
 
     /// <summary>
     /// 
