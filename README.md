@@ -5,4 +5,5 @@ stage 3 - Extension Method: Bl and Dal.
 stage 4- Thread safe and Lazy initialization and Singelton: DalList.
 stage 5 - Observable collection: Po.
           Transferring information between windows and PO and Style and Binding and Data-contex: PL.
+          אפשרות מחיקת אוביקטים של יישויות: PL-BL.
 stage 7 - Prograss Bar: Simulator.

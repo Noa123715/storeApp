@@ -97,12 +97,12 @@ public partial class ProductWindow : Window
         if (IsAdmin)
         {
             new ProductListWindow(Bl).Show();
-            Hide();
+            Close();
         }
         else
         {
             new NewOrderWindow(Bl, cart).Show();
-            Hide();
+            Close();
         }
     }
     /// <summary>
@@ -148,7 +148,7 @@ public partial class ProductWindow : Window
                 }
                 //if the process ends successfully, return to the previous window
                 new ProductListWindow(Bl).Show();
-                Hide();
+                Close();
             }
             else  // customer- add product to cart.
             {
@@ -156,7 +156,7 @@ public partial class ProductWindow : Window
 
                 MessageBox.Show("The product has been successfully added", "Adding a product");
                 new NewOrderWindow(Bl, cart).Show();
-                Hide();
+                Close();
             }
         }
         catch (BlAlreadyExistException)
@@ -202,7 +202,7 @@ public partial class ProductWindow : Window
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
                 new ProductListWindow(Bl).Show();
-                Hide();
+                Close();
             }
             else
             {

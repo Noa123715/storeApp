@@ -21,7 +21,7 @@ public partial class NewOrderWindow : Window
     /// and initializes the categories
     /// </summary>
     /// <param name="bl"></param>
-    public NewOrderWindow(BlApi.IBL? bl, BO.Cart c = null, Window sourcW = null)
+    public NewOrderWindow(BlApi.IBL? bl, BO.Cart? c = null, Window? sourcW = null)
     {
         InitializeComponent();
         CurrentCart = c ?? new BO.Cart();
@@ -78,7 +78,7 @@ public partial class NewOrderWindow : Window
         try
         {
             new CartWindow(Bl, CurrentCart).Show();
-            Hide();
+            Close();
         }
         catch (Exception err)
         {
@@ -91,8 +91,8 @@ public partial class NewOrderWindow : Window
         //not covert a item from producyForList to Product
         try
         {
-            new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID).Show();
-            Hide();
+            new ProductWindow(Bl, false, ((ProductForList)NewOrderView.SelectedItem).ID, CurrentCart).Show();
+            Close();
         }
         catch (Exception err)
         {
