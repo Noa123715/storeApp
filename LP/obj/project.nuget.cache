@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "t7eksCmOBbktNotl/hzQrInfEpwikBp6VuA62q4+OAVlRPePln8Dq+zYOsPe8CE6owO/zEiPY65hURSFEZkk6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+=======
+  "dgSpecHash": "ArFo0is48UfdXLvwDO1gWuGX42J7JmdVe61hlDzFBW3rr1oDB6SVvvs5oeYFauAPEfMUYrWUW1Mfpp7mLegCjg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\LP\\PL.csproj",
+>>>>>>> b0d354771e83f7a9a4af262b4e145bf712ad233c
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "nAaritnIYG+0QolASzftDcuENqBK+oABiuUeVEqJEyoPIY35nwVFohC63GG0P7Wt9ZGJKDIvrv1P2mNcJmC3kA==",
   "success": true,
   "projectFilePath": "C:\\Users\\מורגנשטרן שושנה\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
+=======
+  "dgSpecHash": "zIBWPqeTp9JzFG45XC4UsqXQ4/Td3nCyvAHDF5paYT5lHP3fWZ79G5TJwosWQQXmgjzABtcrTVn6iB5REfhd6w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\אבקסיס נועה1\\Source\\Repos\\dotNet5783_7729_0796\\DalXml\\DalXml.csproj",
+>>>>>>> b0d354771e83f7a9a4af262b4e145bf712ad233c
   "expectedPackageFiles": [],
   "logs": []
 }
