@@ -30,20 +30,27 @@
                 <GridView AllowsColumnReorder="True">
                     <GridViewColumn x:Name="ProductID" Header="ID" DisplayMemberBinding="{Binding Path=ProductID}"/>
                     <GridViewColumn x:Name="ProductName" Header="Name" Width="128" DisplayMemberBinding="{Binding Path=ProductName}"/>
-                    <GridViewColumn x:Name="Amount" Header="Amount" Width="65" DisplayMemberBinding="{Binding Path=Amount}"/>
-                    <GridViewColumn x:Name="Price" Header="Price" Width="50" DisplayMemberBinding="{Binding Path=Price}"/>
-                    <GridViewColumn x:Name="TotalPrice" Header="TotalPrice" Width="65" DisplayMemberBinding="{Binding Path=TotalPrice}"/>
+                    <GridViewColumn x:Name="Amount" Header="Amount" Width="55" DisplayMemberBinding="{Binding Path=Amount}"/>
+                    <GridViewColumn x:Name="Price" Header="Price" Width="45" DisplayMemberBinding="{Binding Path=Price}"/>
                     <GridViewColumn Width="30">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding ProductID}" Click="AddBtn_Click" Content="+" Width="15"/>
+                                <Label Tag="{Binding ProductId}" Content="💲" Width="19"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="30">
+                    <GridViewColumn x:Name="TotalPrice" Header="TotalPrice" Width="58" DisplayMemberBinding="{Binding Path=TotalPrice}"/>
+                    <GridViewColumn Width="25">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Tag="{Binding ProductID}" Click="MinusBtn_Click" Content="-" Width="15"/>
+                                <Button Tag="{Binding ProductID}" Click="AddBtn_Click" Content="+" Width="13"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="25">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Tag="{Binding ProductID}" Click="MinusBtn_Click" Content="-" Width="13"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -62,6 +69,7 @@
         <Button x:Name="GoBackBtn" Style="{StaticResource classicBtn}" Content="GoBack"  Click="GoBackBtn_Click" HorizontalAlignment="Left" Margin="646,360,0,0" VerticalAlignment="Top" Width="118" Height="56"/>
         <Label Style="{StaticResource classicLbl}" Margin="360,287,0,0" Content="Total Price" Width="119" Height="34"/>
         <TextBox x:Name="TotalPriceText" Style="{StaticResource classicText}" HorizontalAlignment="Left" Margin="484,288,0,0" TextWrapping="Wrap" Text="{Binding Path=TotalPrice, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Label x:Name="dollar" Content="💲" HorizontalAlignment="Left" Margin="603,288,0,0" VerticalAlignment="Top" Height="33" Width="22" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="16"/>
 
     </Grid>
 </Window>

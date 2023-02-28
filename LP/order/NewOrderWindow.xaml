@@ -26,10 +26,15 @@
         <ListView x:Name="NewOrderView" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="18" MouseDoubleClick="GoToProductProperties" >
             <ListView.View>
                 <GridView AllowsColumnReorder="true" >
-                    <!--<GridViewColumn x:Name="IdProduct" DisplayMemberBinding="{Binding Path=ID}" Header="ID 🔢" Width="120"/>-->
-                    <GridViewColumn x:Name="NameProduct" DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="400"/>
-                    <GridViewColumn x:Name="PriceProduct" DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="400"/>
-                    <!--<GridViewColumn x:Name="CategoryProduct" DisplayMemberBinding="{Binding Path=Category}" Header="Category" Width="150"/>-->
+                    <GridViewColumn x:Name="NameProduct" DisplayMemberBinding="{Binding Path=Name}" Header="Name" Width="420"/>
+                    <GridViewColumn x:Name="PriceProduct" DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="80"/>
+                    <GridViewColumn Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Tag="{Binding NameProduct}" Content="💲" Width="40"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

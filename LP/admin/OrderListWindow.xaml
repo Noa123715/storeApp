@@ -12,9 +12,16 @@
         <ListView x:Name="OrderListView" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="OrderListView_MouseDoubleClick" FontSize="18" Margin="25,75,46,113" >
             <ListView.View>
                 <GridView AllowsColumnReorder="true" >
-                    <GridViewColumn x:Name="OrderId" DisplayMemberBinding="{Binding Path=ID}" Header="ID" Width="100"/>
-                    <GridViewColumn x:Name="CustomerName" DisplayMemberBinding="{Binding Path=CustomerName}" Header="Name" Width="250"/>
+                    <GridViewColumn x:Name="OrderId" DisplayMemberBinding="{Binding Path=ID}" Header="ID" Width="80"/>
+                    <GridViewColumn x:Name="CustomerName" DisplayMemberBinding="{Binding Path=CustomerName}" Header="Name" Width="230"/>
                     <GridViewColumn x:Name="ProductPrice" DisplayMemberBinding="{Binding Path=TotalPrice}" Header="Total Price" Width="100"/>
+                    <GridViewColumn Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Tag="{Binding ProductId}" Content="💲" Width="30"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn x:Name="ProductCategory" DisplayMemberBinding="{Binding Path=Status}" Header="Status" Width="120"/>
                     <GridViewColumn x:Name="AmountOfItems" DisplayMemberBinding="{Binding Path=AmountOfItems}" Header="Amount of items" Width="140"/>
 

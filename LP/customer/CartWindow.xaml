@@ -22,11 +22,18 @@
                     <GridViewColumn DisplayMemberBinding="{Binding ProductId,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Product Id" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Name,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Header="Name" Width="100"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Price,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="Price" Width="70"/>
+                    <GridViewColumn Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Tag="{Binding ProductId}" Content="💲" Width="30"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Amount, Mode=TwoWay }" Header="Amount" Width="70"/>
                     <GridViewColumn Width="30" >
                         <GridViewColumn.CellTemplate  >
                             <DataTemplate>
-                                <Button Content="+"   Click="IncreaseBtn_Click"  Tag="{Binding ProductID}" />
+                                <Button Content="+" Click="IncreaseBtn_Click"  Tag="{Binding ProductID}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -43,6 +50,13 @@
                     </GridViewColumn>
 
                     <GridViewColumn DisplayMemberBinding="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay }" Header="TotalPrice" />
+                    <GridViewColumn Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Tag="{Binding ProductId}" Content="💲" Width="30"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -64,7 +78,7 @@
         <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Grid.ColumnSpan="2" Margin="60,358,0,0" Width="105" Height="40"/>
         <Label   Content="TotalPrice:" Style="{StaticResource classicLbl}" FontWeight="Bold" Height="38" Margin="264,13,0,0" Width="103" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label Name="TotalPriceLbl" Content="{Binding TotalPrice,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" Style="{StaticResource classicLbl}" Height="28" Margin="30,13,0,0" Width="64" Grid.Column="2" RenderTransformOrigin="-0.009,0.857"/>
-        <Button Grid.Column="3" Content="Empty cart" Click="EmptyCart_Click"  Margin="2,358,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" RenderTransformOrigin="0.609,0.176"/>
+        <Button Grid.Column="3" Content="Empty cart" Click="EmptyCart_Click"  Margin="2,358,0,0" Width="249" Height="40" Style="{StaticResource classicBtn}" RenderTransformOrigin="0.609,0.176" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Content="name: " Grid.ColumnSpan="2" Height="29" Margin="238,259,0,0" Width="86"  Style="{StaticResource classicLbl}"/>
         <Label Content="email: " Grid.ColumnSpan="2" Height="28" Margin="238,288,0,0" Width="86" Style="{StaticResource classicLbl}"/>
         <Label Content="address: " Grid.ColumnSpan="2" Height="37" Margin="238,316,0,0" Width="74" Style="{StaticResource classicLbl}" RenderTransformOrigin="0.56,0.303"/>
