@@ -1,10 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <OrderItemsList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <OrderItem>
-    <ID>2</ID>
-    <ProductID>374806</ProductID>
-    <OrderID>0</OrderID>
-    <Amount>1</Amount>
-    <Price>5000</Price>
-  </OrderItem>
+
 </OrderItemsList>
