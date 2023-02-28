@@ -98,4 +98,10 @@ public partial class ProductListWindow : Window
             MessageBox.Show(new PlGenericException(err.Message).Message);
         }
     }
+
+    private void GoBack_Click(object sender, RoutedEventArgs e)
+    {
+        new AdminWindow(bl).Show();
+        this.Close();
+    }
 }

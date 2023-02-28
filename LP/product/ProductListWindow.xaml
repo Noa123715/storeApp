@@ -41,6 +41,6 @@
             </ListView.View>
         </ListView>
         <Button x:Name="AddItemBtn" Content="Add Product" HorizontalAlignment="Left" Margin="334,30,0,0" Grid.Row="2" VerticalAlignment="Top" Width="147" Height="53" Click="AddItemBtn_Click" Background="{x:Null}" Foreground="#FFEC7989" BorderBrush="#FFEC7989"/>
-
+        <Button Content="Go Back↺" Style="{StaticResource classicBtn}" Click="GoBack_Click" Width="116" Height="41" Margin="62,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
     </Grid>
 </Window>

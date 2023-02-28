@@ -109,7 +109,7 @@ namespace PL {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PL;V1.0.0.0;component/simulatorwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PL;component/simulatorwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\SimulatorWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
